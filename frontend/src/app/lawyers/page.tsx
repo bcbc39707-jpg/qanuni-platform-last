@@ -23,9 +23,9 @@ export default function LawyersPage() {
           {filtered.map((l) => (
             <div key={l.id} className="card hover:shadow-md transition-shadow">
               <h3 className="text-lg font-bold text-primary-700 mb-1">{l.name}</h3>
-              <p className="text-sm text-gray-600 mb-2">{l.specialization} • {l.city}</p>
+              <p className="text-sm text-gray-600 mb-2">{l.specialization} â€¢ {l.city}</p>
               <div className="flex justify-between items-center">
-                <span className="text-sm text-amber-600">? {l.rating} • {l.experience} ??? ????</span>
+                <span className="text-sm text-amber-600">? {l.rating} â€¢ {l.experience} ??? ????</span>
                 <button className="text-sm bg-primary-100 text-primary-700 px-3 py-1 rounded hover:bg-primary-200">?????</button>
               </div>
             </div>

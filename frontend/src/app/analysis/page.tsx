@@ -61,7 +61,7 @@ export default function AnalysisPage() {
               <div className="mt-4 pt-4 border-t">
                 <h4 className="font-bold text-sm text-gray-600 mb-2">???????:</h4>
                 {sources.map((s, i) => (
-                  <div key={i} className="text-sm text-gray-500">• {s.title} (???: {(s.score * 100).toFixed(0)}%)</div>
+                  <div key={i} className="text-sm text-gray-500">â€¢ {s.title} (???: {(s.score * 100).toFixed(0)}%)</div>
                 ))}
               </div>
             )}
