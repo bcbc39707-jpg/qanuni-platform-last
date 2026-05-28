@@ -1,0 +1,32 @@
+{
+  "settings": {
+    "number_of_shards": 1,
+    "number_of_replicas": 0,
+    "analysis": {
+      "analyzer": {
+        "arabic_legal": {
+          "type": "custom",
+          "tokenizer": "standard",
+          "filter": ["lowercase", "arabic_normalization", "arabic_stemmer", "arabic_stop"]
+        }
+      },
+      "filter": {
+        "arabic_stemmer": { "type": "stemmer", "language": "arabic" },
+        "arabic_stop": { "type": "stop", "stopwords": "_arabic_" }
+      }
+    }
+  },
+  "mappings": {
+    "properties": {
+      "title": { "type": "text", "analyzer": "arabic_legal", "boost": 3.0 },
+      "content": { "type": "text", "analyzer": "arabic_legal" },
+      "category": { "type": "keyword" },
+      "doc_type": { "type": "keyword" },
+      "law_number": { "type": "keyword" },
+      "year": { "type": "integer" },
+      "court_name": { "type": "keyword" },
+      "case_type": { "type": "keyword" },
+      "created_at": { "type": "date" }
+    }
+  }
+}
