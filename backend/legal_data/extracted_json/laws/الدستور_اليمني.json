@@ -1,0 +1,4162 @@
+{
+  "document": {
+    "document_id": "66d8ffabd67b7774",
+    "title": "الدستور اليمني",
+    "country": "اليمن",
+    "jurisdiction": "الجمهورية اليمنية",
+    "document_type": "دستور",
+    "law_number": null,
+    "issue_date": "2001",
+    "effective_date": "2001",
+    "source_file": "الدستور اليمني.pdf",
+    "language": "ar",
+    "total_articles": 162,
+    "extraction_date": "2026-06-09T18:52:03.807787",
+    "table_of_contents": {
+      "books": [],
+      "chapters": []
+    },
+    "chapters": [
+      {
+        "chapter_number": "1",
+        "chapter_title": "أسس الدولة",
+        "sections": [
+          {
+            "section_number": "1",
+            "section_title": "الأسس السياسية",
+            "articles": [
+              {
+                "article_number": "1",
+                "article_title": null,
+                "article_text": "الجمهورية اليمنية دولة عربية إسالمية مستقلة ذات سيادة وهي وحدة ال تتجزأ وال يجوز التنازل عن أي\n.جزء منها والشعب اليمني جزء من األمة العربية والإسلامية",
+                "page_number": null,
+                "summary": "الجمهورية اليمنية دولة عربية إسالمية مستقلة ذات سيادة وهي وحدة ال تتجزأ وال يجوز التنازل عن أي\n.جزء منها والشعب اليمني جزء من األمة العربية والإسلامية",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "2",
+                "article_title": null,
+                "article_text": "الإسلام دين الدولة واللغة العربية لغتها الرسمية",
+                "page_number": null,
+                "summary": "الإسلام دين الدولة واللغة العربية لغتها الرسمية",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "3",
+                "article_title": null,
+                "article_text": "الشريعة الإسلامية مصدر جميع التشريعات",
+                "page_number": null,
+                "summary": "الشريعة الإسلامية مصدر جميع التشريعات",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "4",
+                "article_title": null,
+                "article_text": "الشعب مالك السلطة ومصدرها ويمارسها بشكل مباشر عن طريق الاستفتاء و الانتخابات العامة كما يزاولها\n.بطريقه غير مباشرة عن طريق الهيئات التشريعية والتنفيذية والقضائية وعن طريق المجالس المحلية المنتخبة",
+                "page_number": null,
+                "summary": "الشعب مالك السلطة ومصدرها ويمارسها بشكل مباشر عن طريق الاستفتاء و الانتخابات العامة كما يزاولها\n.بطريقه غير مباشرة عن طريق الهيئات التشريعية والتنفيذي...",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "5",
+                "article_title": null,
+                "article_text": "يقوم النظام السياسي للجمهورية على التعددية السياسية والحزبية وذلك بهدف تداول السلطة سلميا وينظم\nالأحزاب وممارسة النشاط السياسي وال يجوز الإجراءات الخاصة بتكوين التنظيمات و القانون األحكام و\n.تسخير الوظيفة العامة أو المال العام لمخاصة بحزب أو تنظيم سياسي معين",
+                "page_number": null,
+                "summary": "يقوم النظام السياسي للجمهورية على التعددية السياسية والحزبية وذلك بهدف تداول السلطة سلميا وينظم\nالأحزاب وممارسة النشاط السياسي وال يجوز الإجراءات الخا...",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "6",
+                "article_title": null,
+                "article_text": "تؤكد الدولة العمل بميثاق األمم المتحدة والإعلان العالمي لحقوق الإنسان وميثاق جامعة الدول العربية\n.وقواعد القانون الدولي المعترف بها بصورة عامة\nالاألسس الاقتصادية",
+                "page_number": null,
+                "summary": "تؤكد الدولة العمل بميثاق األمم المتحدة والإعلان العالمي لحقوق الإنسان وميثاق جامعة الدول العربية\n.وقواعد القانون الدولي المعترف بها بصورة عامة\nالاألسس...",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              }
+            ]
+          },
+          {
+            "section_number": "2",
+            "section_title": "الأسس الاقتصادية",
+            "articles": [
+              {
+                "article_number": "7",
+                "article_title": null,
+                "article_text": "الوطني على أساس حرية النشاط الاقتصادي بما يحقق مالفرد والمجتمع وبما يعزز ) يقوم الاقتصاد\nالاستقلال الوطني وباعتماد المبادئ التالية:ـ\nالعدالة الاجتماعية الإسلامية في العالقات الاقتصادية الهادفة إلى تنمية الإنتاج وتطويره وتحقيق التكافل والتوازن-أ\n.الاجتماعي وتكافؤ الفرص ورفع مستوى معيشة المجتمع\nالتنافس المشروع بين القطاع العام والخاص والتعاوني والمختلط وتحقيق المعاملة المتساوية العادلة بين جميع-ب\n.القطاعات\n.ةالخاصة فال تمس إال للضرورة ولمعامة وبتعويض عادل وفقا للقانون ي ك ل حماية واحترام الم-ج",
+                "page_number": null,
+                "summary": "الوطني على أساس حرية النشاط الاقتصادي بما يحقق مالفرد والمجتمع وبما يعزز ) يقوم الاقتصاد\nالاستقلال الوطني وباعتماد المبادئ التالية:ـ\nالعدالة الاجتماعي...",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "8",
+                "article_title": null,
+                "article_text": "الثروات الطبيعية بجميع أنواعها ومصادر الطاقة الموجودة في باطن األرض أو فوقها أو في المياه\n.الإقليمية أو الامتداد القاري والمنطقة الاقتصادية الخالصة ملك للدولة، وهي التي تكفل استغاللها للمالعامة",
+                "page_number": null,
+                "summary": "الثروات الطبيعية بجميع أنواعها ومصادر الطاقة الموجودة في باطن األرض أو فوقها أو في المياه\n.الإقليمية أو الامتداد القاري والمنطقة الاقتصادية الخالصة مل...",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "9",
+                "article_title": null,
+                "article_text": "تقوم السياسة الاقتصادية للدولة على أساس التخطيط الاقتصادي العلمي، وبما يكفل الاستغلال األمثل لكافة\nالموارد وتنمية وتطوير قدرات كل القطاعات الاقتصادية في شتى مج الت التنمية الاقتصادية و الاجتماعية وفي إطار\n.الخطة العامة للدولة بما يخدم المالعامة و الاقتصاد الوطني\n\n2/20",
+                "page_number": null,
+                "summary": "تقوم السياسة الاقتصادية للدولة على أساس التخطيط الاقتصادي العلمي، وبما يكفل الاستغلال األمثل لكافة\nالموارد وتنمية وتطوير قدرات كل القطاعات الاقتصادية ...",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "10",
+                "article_title": null,
+                "article_text": "ترعى الدولة حرية التجارة و الاستثمار وذلك بما يخدم الاقتصاد الوطني وتصدر التشريعات التي تكفل\nحماية المنتجين والمستهلكين وتوفير السلع األساسية للمواطنين، ومنع الاحتكار وتشجيع رؤوس األموال الخاصة\n.على الاستثمار في مختلف مج الت التنمية الاقتصادية و الاجتماعية وفقا للقانون",
+                "page_number": null,
+                "summary": "ترعى الدولة حرية التجارة و الاستثمار وذلك بما يخدم الاقتصاد الوطني وتصدر التشريعات التي تكفل\nحماية المنتجين والمستهلكين وتوفير السلع األساسية للمواطني...",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "11",
+                "article_title": null,
+                "article_text": "ينظم القانون العملة الرسمية للدولة والنظام المالي والمصرفي ويحدد المقاييس والمكاييل والموازين",
+                "page_number": null,
+                "summary": "ينظم القانون العملة الرسمية للدولة والنظام المالي والمصرفي ويحدد المقاييس والمكاييل والموازين",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "12",
+                "article_title": null,
+                "article_text": "يراعى في فرض الضرائب والتكاليف العامة مالمجتمع وتحقيق العدالة الاجتماعية بين المواطنين",
+                "page_number": null,
+                "summary": "يراعى في فرض الضرائب والتكاليف العامة مالمجتمع وتحقيق العدالة الاجتماعية بين المواطنين",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "13",
+                "article_title": null,
+                "article_text": "إنشاء الضرائب العامة وتعديلها وإلغاؤها ال يكون إال بقانون وال يعفى احد من أدائها كلها أو بعضها إال-) أ\nفي األحوال المبينة في القانون وال يجوز تكليف احد بأداء غير ذلك من الضرائب والرسوم والتكاليف العامة إال\n.بقانون\n. إنشاء الرسوم وجبايتها وأوجه صرفها وتعديلها والإعفاء منها ال يكون إال بقانون-ب",
+                "page_number": null,
+                "summary": "إنشاء الضرائب العامة وتعديلها وإلغاؤها ال يكون إال بقانون وال يعفى احد من أدائها كلها أو بعضها إال-) أ\nفي األحوال المبينة في القانون وال يجوز تكليف اح...",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "14",
+                "article_title": null,
+                "article_text": "تشجع الدولة التعاون و الادخار وتكفل وترعى وتشجع تكوين المنشآت والنشاطات التعاونية بمختلف\n.صورها",
+                "page_number": null,
+                "summary": "تشجع الدولة التعاون و الادخار وتكفل وترعى وتشجع تكوين المنشآت والنشاطات التعاونية بمختلف\n.صورها",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "15",
+                "article_title": null,
+                "article_text": "يحدد القانون القواعد األساسية لجباية األموال العامة وإجراءات صرفها",
+                "page_number": null,
+                "summary": "يحدد القانون القواعد األساسية لجباية األموال العامة وإجراءات صرفها",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "16",
+                "article_title": null,
+                "article_text": "ال يجوز للسلطة التنفيذية عقد قروض أو كفالتها أو الارتباط بمشروع يترتب عليه إنفاق من خزانة الدولة\n.في سنة أو سنوات مقبلة إال بموافقة مجلس النواب",
+                "page_number": null,
+                "summary": "ال يجوز للسلطة التنفيذية عقد قروض أو كفالتها أو الارتباط بمشروع يترتب عليه إنفاق من خزانة الدولة\n.في سنة أو سنوات مقبلة إال بموافقة مجلس النواب",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "17",
+                "article_title": null,
+                "article_text": "يحدد القانون منح المرتبات والمعاشات والتعويضات والإعانات والمكافآت التي تتقرر على خزانة الدولة",
+                "page_number": null,
+                "summary": "يحدد القانون منح المرتبات والمعاشات والتعويضات والإعانات والمكافآت التي تتقرر على خزانة الدولة",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "18",
+                "article_title": null,
+                "article_text": "يتم إال بقانون ويجوز أن يبين ) عقد الامتيازات المتعلقة باستغالل موارد الثروة الطبيعية والمرافق العامة ال\nالقانون الح الت محدودة األهمية التي يتم منح الامتيازات بشأنها وفقا للقواعد والإجراءات التي يتظمنها ويبين\nالقانون أحوال وطرق التصرف مجانا في العقارات المملوكة للدولة والتنازل عن أموالها المنقولة والقواعد\nوالإجراءات المنظمة لذلك كما ينظم القانون كيفية منح الامتيازات للوحدات المحلية والتصرف مجانا في األموال\n.العامة",
+                "page_number": null,
+                "summary": "يتم إال بقانون ويجوز أن يبين ) عقد الامتيازات المتعلقة باستغالل موارد الثروة الطبيعية والمرافق العامة ال\nالقانون الح الت محدودة األهمية التي يتم منح ا...",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "19",
+                "article_title": null,
+                "article_text": "لألموال والممتلكات العامة حرمة وعلى الدولة وجميع أفراد المجتمع صيانتها وحمايتها وكل عبث بها أو\n.عدوان عليها يعتبر تخريبا وعدوانا على المجتمع ويعاقب كل من ينتهك حرمتها وفقا للقانون",
+                "page_number": null,
+                "summary": "لألموال والممتلكات العامة حرمة وعلى الدولة وجميع أفراد المجتمع صيانتها وحمايتها وكل عبث بها أو\n.عدوان عليها يعتبر تخريبا وعدوانا على المجتمع ويعاقب كل...",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "20",
+                "article_title": null,
+                "article_text": "المصادرة العامة لألموال محظورة وال تجوز المصادرة الخاصة إال بحكم قضائي",
+                "page_number": null,
+                "summary": "المصادرة العامة لألموال محظورة وال تجوز المصادرة الخاصة إال بحكم قضائي",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "21",
+                "article_title": null,
+                "article_text": "تتولى الدولة تحصيل الزكاة وصرفها في مصارفها الشرعية وفقا للقانون",
+                "page_number": null,
+                "summary": "تتولى الدولة تحصيل الزكاة وصرفها في مصارفها الشرعية وفقا للقانون",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "22",
+                "article_title": null,
+                "article_text": "لألوقاف حرمتها وعلى القائمين عليها تحسين وتطوير مواردها وتصريفها بما يكفل تحقيق أهدافها\n.ومقاصدها الشرعية",
+                "page_number": null,
+                "summary": "لألوقاف حرمتها وعلى القائمين عليها تحسين وتطوير مواردها وتصريفها بما يكفل تحقيق أهدافها\n.ومقاصدها الشرعية",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "23",
+                "article_title": null,
+                "article_text": "حق الإرث مكفول وفقا للشريعة الإسلامية ويصدر به قانون\nالاألسس الاجتماعية والثقافية",
+                "page_number": null,
+                "summary": "حق الإرث مكفول وفقا للشريعة الإسلامية ويصدر به قانون\nالاألسس الاجتماعية والثقافية",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              }
+            ]
+          },
+          {
+            "section_number": "3",
+            "section_title": "الأسس الاجتماعية والثقافية",
+            "articles": [
+              {
+                "article_number": "24",
+                "article_title": null,
+                "article_text": "تكفل الدولة تكافؤ الفرص لجميع المواطنين سياسيا واقتصاديا واجتماعيا وثقافيا وتصدر القوانين لتحقيق\n.ذلك",
+                "page_number": null,
+                "summary": "تكفل الدولة تكافؤ الفرص لجميع المواطنين سياسيا واقتصاديا واجتماعيا وثقافيا وتصدر القوانين لتحقيق\n.ذلك",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "25",
+                "article_title": null,
+                "article_text": "على أساس التضامن الاجتماعي القائم على العدل والحرية والمساواة وفقا للقانون اليمني ) يقوم المجتمع",
+                "page_number": null,
+                "summary": "على أساس التضامن الاجتماعي القائم على العدل والحرية والمساواة وفقا للقانون اليمني ) يقوم المجتمع",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "26",
+                "article_title": null,
+                "article_text": "الدين واألخالق وحب الوطن يحافظ القانون على كيانها ويقوي أواصرها قوامها ألسرة أساس المجتمع ا )\n\n3/20",
+                "page_number": null,
+                "summary": "الدين واألخالق وحب الوطن يحافظ القانون على كيانها ويقوي أواصرها قوامها ألسرة أساس المجتمع ا )\n\n3/20",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "27",
+                "article_title": null,
+                "article_text": "تكفل الدولة حرية البحث العلمي والإنجازات األدبية والفنية والثقافية المتفقة وروح وأهداف الدستور كما\nتوفر الوسائل المحققة لذلك وتقدم الدولة كل مساعدة لتقدم العلوم والفنون كما تشجع الاختراعات العلمية والفنية\n.والإبداع الفني وتحمي الدولة نتائجها",
+                "page_number": null,
+                "summary": "تكفل الدولة حرية البحث العلمي والإنجازات األدبية والفنية والثقافية المتفقة وروح وأهداف الدستور كما\nتوفر الوسائل المحققة لذلك وتقدم الدولة كل مساعدة لت...",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "28",
+                "article_title": null,
+                "article_text": "الخدمة العامة تكليف وشرف للقائمين بها ويستهدف الموظفون القائمون بها في أدائهم ال عمالهم\n.المالعامة وخدمة الشعب ويحدد القانون شروط الخدمة العامة وحقوق وواجبات القائمين بها",
+                "page_number": null,
+                "summary": "الخدمة العامة تكليف وشرف للقائمين بها ويستهدف الموظفون القائمون بها في أدائهم ال عمالهم\n.المالعامة وخدمة الشعب ويحدد القانون شروط الخدمة العامة وحقوق ...",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "29",
+                "article_title": null,
+                "article_text": "العمل حق وشرف وضرورة لتطور المجتمع ولكل مواطن الحق في ممارسة العمل الذي يختاره لنفسه في\nر أج حدود القانون وال يجوز فرض أي عمل جبرا على المواطنين إال بمقتضى قانون وألداء خدمة عامة وبمق.عادل وينظم القانون العمل النقوالمهني والعالقة بين العمال وأصح",
+                "page_number": null,
+                "summary": "العمل حق وشرف وضرورة لتطور المجتمع ولكل مواطن الحق في ممارسة العمل الذي يختاره لنفسه في\nر أج حدود القانون وال يجوز فرض أي عمل جبرا على المواطنين إال ب...",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "30",
+                "article_title": null,
+                "article_text": "تحمي الدولة األمومة والطفولة وترعى النشء والشباب",
+                "page_number": null,
+                "summary": "تحمي الدولة األمومة والطفولة وترعى النشء والشباب",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "31",
+                "article_title": null,
+                "article_text": "النساء شقائق الرجال ولهن من الحقوق وعليهن من الواجبات ما تكفله وتوجبه الشريعة وينص عليه\n.القانون",
+                "page_number": null,
+                "summary": "النساء شقائق الرجال ولهن من الحقوق وعليهن من الواجبات ما تكفله وتوجبه الشريعة وينص عليه\n.القانون",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "32",
+                "article_title": null,
+                "article_text": "التعليم والصحة والخدمات الاجتماعية أركان أساسية لبناء المجتمع وتقدمه يسهم المجتمع مع الدولة في\n.توفيرها",
+                "page_number": null,
+                "summary": "التعليم والصحة والخدمات الاجتماعية أركان أساسية لبناء المجتمع وتقدمه يسهم المجتمع مع الدولة في\n.توفيرها",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "33",
+                "article_title": null,
+                "article_text": "تكفل الدولة بالتضامن مع المجتمع تحمل األعباء الناجمة عن الكوارث الطبيعية والمحن العامة",
+                "page_number": null,
+                "summary": "تكفل الدولة بالتضامن مع المجتمع تحمل األعباء الناجمة عن الكوارث الطبيعية والمحن العامة",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "34",
+                "article_title": null,
+                "article_text": "على الدولة وجميع أفراد المجتمع حماية وصيانة اآلثار والمنشئات التاريخية وكل عبث بها أو عدوان\n.عليها يعتبر تخريبا وعدوانا على المجتمع ويعاقب كل من ينتهكها أو يبيعها وفقا للقانون",
+                "page_number": null,
+                "summary": "على الدولة وجميع أفراد المجتمع حماية وصيانة اآلثار والمنشئات التاريخية وكل عبث بها أو عدوان\n.عليها يعتبر تخريبا وعدوانا على المجتمع ويعاقب كل من ينتهك...",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "35",
+                "article_title": null,
+                "article_text": "حماية البيئة مسئولية الدولة والمجتمع وهي واجب ديني ووطني على كل مواطن\nالالوطني",
+                "page_number": null,
+                "summary": "حماية البيئة مسئولية الدولة والمجتمع وهي واجب ديني ووطني على كل مواطن\nالالوطني",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              }
+            ]
+          },
+          {
+            "section_number": "4",
+            "section_title": "أسس الدفاع الوطني",
+            "articles": [
+              {
+                "article_number": "36",
+                "article_title": null,
+                "article_text": "وات أخرى.. وهي ملك الشعب كله ق ) الدولة هي التي تنشئ القوات المسلحة والشرطة واألمن وأية\nومهمتها حماية الجمهورية وسالمة أراضيها وأمنها وال يجوز ألي هيئة أو فرد أو جماعة أو تنظيم أو حزب سياسي\nإنشاء قوات أو تشكيالت عسكرية أو شبه عسكرية ألي غرض كان وتحت أي مسمى ويبين القانون شروط الخدمة\n.والترقية والتأديب في القوات المسلحة والشرطة واألمن",
+                "page_number": null,
+                "summary": "وات أخرى.. وهي ملك الشعب كله ق ) الدولة هي التي تنشئ القوات المسلحة والشرطة واألمن وأية\nومهمتها حماية الجمهورية وسالمة أراضيها وأمنها وال يجوز ألي هيئ...",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "37",
+                "article_title": null,
+                "article_text": "تنظم التعبئة العامة بقانون ويعلنها رئيس الجمهورية بعد موافقة مجلس النواب",
+                "page_number": null,
+                "summary": "تنظم التعبئة العامة بقانون ويعلنها رئيس الجمهورية بعد موافقة مجلس النواب",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "38",
+                "article_title": null,
+                "article_text": "ينشأ مجلس يسمى(مجلس الدفاع الوطني) ويتولى رئيس الجمهورية رئاسته ويختص بالنظر في الشئون\n.الخاصة بوسائل تأمين الجمهورية وسالمتها ويبين القانون طريقة تكوينه ويحدد اختصاصاته ومهامه األخرى",
+                "page_number": null,
+                "summary": "ينشأ مجلس يسمى(مجلس الدفاع الوطني) ويتولى رئيس الجمهورية رئاسته ويختص بالنظر في الشئون\n.الخاصة بوسائل تأمين الجمهورية وسالمتها ويبين القانون طريقة تكو...",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "39",
+                "article_title": null,
+                "article_text": "الشرطة هيئة مدنية نظامية تؤدي واجبها لخدمة الشعب وتكفل للمواطنين الطمأنينة واألمن وتعمل على\nحفظ النظام واألمن العام واآلدوتنفيذ ما تصدره إليها السلطة القضائية من أوامر كما تتولى تنفيذ ما\n.تفرضه عليها القوانين واللوائح من واجبات وذلك كله على الوجه المبين في القانون",
+                "page_number": null,
+                "summary": "الشرطة هيئة مدنية نظامية تؤدي واجبها لخدمة الشعب وتكفل للمواطنين الطمأنينة واألمن وتعمل على\nحفظ النظام واألمن العام واآلدوتنفيذ ما تصدره إليها السلطة ...",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "40",
+                "article_title": null,
+                "article_text": "يحظر تسخير القوات المسلحة واألمن والشرطة وأية قوات أخرى لصالح حزب أو فرد أو جماعة ويجب\nصيانتها عن كل صور التفرقة الحزبية والعنصرية والطائفية والمناطقية والقبلية وذلك ضمانا لحيادها وقيامها\n.بمهامها الوطنية على الوجه األمثل ويحظر الانتماء والنشاط الحزبي فيها وفقا للقانون\nال4/20\nحقوق وواجبات المواطنين األساسية",
+                "page_number": null,
+                "summary": "يحظر تسخير القوات المسلحة واألمن والشرطة وأية قوات أخرى لصالح حزب أو فرد أو جماعة ويجب\nصيانتها عن كل صور التفرقة الحزبية والعنصرية والطائفية والمناطقي...",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "chapter_number": "2",
+        "chapter_title": "حقوق وواجبات المواطنين",
+        "sections": [
+          {
+            "section_number": "1",
+            "section_title": "حقوق وواجبات المواطنين",
+            "articles": [
+              {
+                "article_number": "41",
+                "article_title": null,
+                "article_text": "المواطنون جميعهم متساوون في الحقوق والواجبات العامة",
+                "page_number": null,
+                "summary": "المواطنون جميعهم متساوون في الحقوق والواجبات العامة",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "42",
+                "article_title": null,
+                "article_text": "لكل مواطن حق السهام في الحياة السياسية و الاقتصادية و الاجتماعية والثقافية وتكفل الدولة حرية الفكر\n.واإلعرالرأي بالقول والكتوالتصوير في حدود القانون",
+                "page_number": null,
+                "summary": "لكل مواطن حق السهام في الحياة السياسية و الاقتصادية و الاجتماعية والثقافية وتكفل الدولة حرية الفكر\n.واإلعرالرأي بالقول والكتوالتصوير في حدود القانون",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "43",
+                "article_title": null,
+                "article_text": "الرأي في الاستفتاء وينظم القانون األحكام المتعلقة بممارسة هذا وإبداء ) للمواطن حق النتخ.الحق",
+                "page_number": null,
+                "summary": "الرأي في الاستفتاء وينظم القانون األحكام المتعلقة بممارسة هذا وإبداء ) للمواطن حق النتخ.الحق",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "44",
+                "article_title": null,
+                "article_text": "ينظم القانون الجنسية اليمنية وال يجوز إسقاطها عن يمني إطالقا وال يجوز سحبها ممن اكتسبها إال وفقا\n.للقانون",
+                "page_number": null,
+                "summary": "ينظم القانون الجنسية اليمنية وال يجوز إسقاطها عن يمني إطالقا وال يجوز سحبها ممن اكتسبها إال وفقا\n.للقانون",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "45",
+                "article_title": null,
+                "article_text": "ال يجوز تسليم أي مواطن يمني إلى سلطة أجنبية",
+                "page_number": null,
+                "summary": "ال يجوز تسليم أي مواطن يمني إلى سلطة أجنبية",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "46",
+                "article_title": null,
+                "article_text": "تسليم الالجئين السياسيين محظور",
+                "page_number": null,
+                "summary": "تسليم الالجئين السياسيين محظور",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "47",
+                "article_title": null,
+                "article_text": "المسئولية الجنائية شخصية وال جريمة وال عقوبة إال بناء على نص شرعي أو قانوني وكل متهم برئ\n.حتى تثبت إدانته بحكم قضائي بات، وال يجوز سن قانون يعاقب على أي أفعال بأثر رجعي لصدوره",
+                "page_number": null,
+                "summary": "المسئولية الجنائية شخصية وال جريمة وال عقوبة إال بناء على نص شرعي أو قانوني وكل متهم برئ\n.حتى تثبت إدانته بحكم قضائي بات، وال يجوز سن قانون يعاقب على ...",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "48",
+                "article_title": null,
+                "article_text": "تكفل الدولة للمواطنين حريتهم الشخصية وتحافظ على كرامتهم وأمنهم ويحدد القانون الح الت التي تقيد-) أ\n.فيها حرية المواطن وال يجوز تقييد حرية أحد إال بحكم من محكمة مختصة\nال يجوز القبض على أي شخص أو تفتيشه أو حجزه إال في حالة التلبس أو بأمر توجبه ضرورة التحقيق وصيانة-ب\n.األمن يصدره القاضي أو النيالعامة وفقا ألحكام القانون\nكما ال يجوز مراقبة أي شخص أو التحري عنه إال وفقا للقانون وكل إنسان تقيد حريته بأي قيد يجب أن تصان كرامته\nويحظر التعذيب جسديا أو نفسيا أو معنويا ويحظر القسر على الاعتراف أثناء التحقيقات ولالنسان الذي تقيد حريته\nبأية أقوال إال بحضور محاميه ويحظر حبس أو حجز أي إنسان في غير األماكن إلدالء الحق في الامتناع عن ا\nالخاضعة لقانون تنظيم السجون ويحرم التعذيب والمعاملة غير الإنسانية عند القبض أو أثناء فترة الاحتجاز أو\n.السجن\nكل من يقبض عليه بصفة مؤقتة بسبب الشتباه في ارتكجريمة يجب أن يقدم إلى القضاء خالل أربع وعشرين-ج\nساعة من تاريخ القبض عليه على األكثر وعلى القاضي أو النيالعامة تبليغه بأسواستجووتمكينه\nمن إبداء دفاعه واعتراضاته ويجب على الفور إصدار أمر مسبب باستمرار القبض أو الإفراج عنه, وفي كل األحوال\nال يجوز للنيالعامة الاستمرار في الحجز ألكثر من سبعة أيام إال بأمر قضائي ويحدد القانون المدة القصوى\n.للحبس الاحتياطي\nعند إلقاء القبض على أي شخص ألي سبب يجب أن يخطر فورا من يختاره المقبوض عليه كما يجب ذلك عند-د\n.صدور كل أمر قضائي باستمرار الحجز فإذا تعذر على المقبوض عليه الاختيار وجب إبالغ أقاربه أو من يهمه األمر\nيحدد القانون عقيخالف أحكام أي فقرة من فقرات هذه المادة كما يحدد التعويض المناسب عن األضرار التي-هـ\nأو السجن جريمة ال قد تلحق بالشخص من جراء المخالفة ويعتبر التعذيب الجسدي أو النفسي عند القبض أو الاحتجاز\n.بها أو يشارك فيها تسقط بالتقادم ويعاقب عليها كل من يمارسها أو يأمر",
+                "page_number": null,
+                "summary": "تكفل الدولة للمواطنين حريتهم الشخصية وتحافظ على كرامتهم وأمنهم ويحدد القانون الح الت التي تقيد-) أ\n.فيها حرية المواطن وال يجوز تقييد حرية أحد إال بحكم...",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "49",
+                "article_title": null,
+                "article_text": "حق الدفاع أصالة أو وكالة مكفول في جميع مراحل التحقيق والدعوى وأمام جميع المحاكم وفقا ألحكام\n.القانون وتكفل الدولة العون القضائي لغير القادرين وفقا للقانون\n\n5/20",
+                "page_number": null,
+                "summary": "حق الدفاع أصالة أو وكالة مكفول في جميع مراحل التحقيق والدعوى وأمام جميع المحاكم وفقا ألحكام\n.القانون وتكفل الدولة العون القضائي لغير القادرين وفقا للق...",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "50",
+                "article_title": null,
+                "article_text": "ال يجوز تنفيذ العقوبات بوسائل غير مشروعة وينظم ذلك القانون",
+                "page_number": null,
+                "summary": "ال يجوز تنفيذ العقوبات بوسائل غير مشروعة وينظم ذلك القانون",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "51",
+                "article_title": null,
+                "article_text": "يحق للمواطن أن يلجأ إلى القضاء لحماية حقوقه ومصالحة المشروعة وله الحق في تقديم الشكاوى\n.و النتقادات والمقترحات إلى أجهزة الدولة ومؤسساتها بصورة مباشرة أو غير مباشرة",
+                "page_number": null,
+                "summary": "يحق للمواطن أن يلجأ إلى القضاء لحماية حقوقه ومصالحة المشروعة وله الحق في تقديم الشكاوى\n.و النتقادات والمقترحات إلى أجهزة الدولة ومؤسساتها بصورة مباشرة...",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "52",
+                "article_title": null,
+                "article_text": "للمساكن ودور العبادة ودور العلم حرمة وال يجوز مراقبتها أو تفتيشها إال في الح الت التي يبينها\n.القانون",
+                "page_number": null,
+                "summary": "للمساكن ودور العبادة ودور العلم حرمة وال يجوز مراقبتها أو تفتيشها إال في الح الت التي يبينها\n.القانون",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "53",
+                "article_title": null,
+                "article_text": "حرية وسرية المواصالت البريدية والهاتفية والبرقية وكافة وسائل التصال مكفولة وال يجوز مراقبتها أو\n.تفتيشها أو إفشاء سريتها أو تأخيرها أو مصادرتها إال في الح الت التي يبينها القانون وبأمر فضائي",
+                "page_number": null,
+                "summary": "حرية وسرية المواصالت البريدية والهاتفية والبرقية وكافة وسائل التصال مكفولة وال يجوز مراقبتها أو\n.تفتيشها أو إفشاء سريتها أو تأخيرها أو مصادرتها إال في...",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "54",
+                "article_title": null,
+                "article_text": "التعليم حق للمواطنين جميعا تكفله الدولة وفقا للقانون بإنشاء مختلف المدارس والمؤسسات الثقافية\nاألمية وتهتم بالتوسع في التعليم الفني والتربوية والتعليم في المرحلة األساسية إلزامي وتعمل الدولة على محو\nوالمهني كما تهتم الدولة بصورة خاصة برعاية النشء وتحميه من الانحراف وتوفر له التربية الدينية والعقلية و\n.وتهيئ له الظروف المناسبة لتنمية ملكاته في جميع المج الت البدنية",
+                "page_number": null,
+                "summary": "التعليم حق للمواطنين جميعا تكفله الدولة وفقا للقانون بإنشاء مختلف المدارس والمؤسسات الثقافية\nاألمية وتهتم بالتوسع في التعليم الفني والتربوية والتعليم ...",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "55",
+                "article_title": null,
+                "article_text": "الرعاية الصحية حق لجميع المواطنين وتكفل الدولة هذا الحق بإنشاء مختلف المستشفيات والمؤسسات\nالصحية والتوسع فيها وينظم القانون مهنة الطب والتوسع في الخدمات الصحية المجانية ونشر الوعي الصحي بين\n.المواطنين",
+                "page_number": null,
+                "summary": "الرعاية الصحية حق لجميع المواطنين وتكفل الدولة هذا الحق بإنشاء مختلف المستشفيات والمؤسسات\nالصحية والتوسع فيها وينظم القانون مهنة الطب والتوسع في الخدم...",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "56",
+                "article_title": null,
+                "article_text": "تكفل الدولة توفير الضمانات الاجتماعية للمواطنين كافة في ح الت المرض أو العجز أو البطالة أو\n.الشيخوخة أو فقدان العائل كما تكفل ذلك بصفة خاصة ألسر الشهداء وفقا للقانون",
+                "page_number": null,
+                "summary": "تكفل الدولة توفير الضمانات الاجتماعية للمواطنين كافة في ح الت المرض أو العجز أو البطالة أو\n.الشيخوخة أو فقدان العائل كما تكفل ذلك بصفة خاصة ألسر الشهد...",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "57",
+                "article_title": null,
+                "article_text": "حرية التنقل من مكان إلى آخر في األراضي اليمنية مكفولة لكل مواطن وال يجوز تقييدها إال في الح الت\nالتي يبينها القانون لمقتضيات أمن وسالمة المواطنين وحرية الدخول إلى الجمهورية والخروج منها ينظمها القانون\n.وال يجوز إبعاد أي مواطن عن األراضي اليمنية أو منعة من العودة إليها",
+                "page_number": null,
+                "summary": "حرية التنقل من مكان إلى آخر في األراضي اليمنية مكفولة لكل مواطن وال يجوز تقييدها إال في الح الت\nالتي يبينها القانون لمقتضيات أمن وسالمة المواطنين وحري...",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "58",
+                "article_title": null,
+                "article_text": "للمواطنين في عموم الجمهورية ـ بما ال يتعارض مع نصوص الدستورـ الحق في تنظيم أنفسهم سياسيا\nتحادات الوطنية بما يخدم أهداف إ ومهنيا ونقوالحق في تكوين المنظمات العلمية والثقافية و الاجتماعية وال\nالدستور وتضمن الدولة هذا الحق كما تتخذ جميع الوسائل الضرورية التي تمكن المواطنين من ممارسته وتضمن\n.كافة الحريات للمؤسسات والمنظمات السياسية والنقوالثقافية والعلمية و الاجتماعية",
+                "page_number": null,
+                "summary": "للمواطنين في عموم الجمهورية ـ بما ال يتعارض مع نصوص الدستورـ الحق في تنظيم أنفسهم سياسيا\nتحادات الوطنية بما يخدم أهداف إ ومهنيا ونقوالحق في تكوين المن...",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "59",
+                "article_title": null,
+                "article_text": "أداء الضرائب والتكاليف العامة واجب وفقا للقانون",
+                "page_number": null,
+                "summary": "أداء الضرائب والتكاليف العامة واجب وفقا للقانون",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "60",
+                "article_title": null,
+                "article_text": "الدفاع عن الدين والوطن واجب مقدس والخدمة العسكرية شرف وخدمة الدفاع الوطني ينظمها القانون",
+                "page_number": null,
+                "summary": "الدفاع عن الدين والوطن واجب مقدس والخدمة العسكرية شرف وخدمة الدفاع الوطني ينظمها القانون",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "61",
+                "article_title": null,
+                "article_text": "الحفاظ على الوحدة الوطنية وصيانة أسرار الدولة واحترام القوانين والتقيد بأحكامها واجب على كل\n.مواطن\nالتنظيم سلطات الدولة\nال) السلطة التشريعية( مجلس النو",
+                "page_number": null,
+                "summary": "الحفاظ على الوحدة الوطنية وصيانة أسرار الدولة واحترام القوانين والتقيد بأحكامها واجب على كل\n.مواطن\nالتنظيم سلطات الدولة\nال) السلطة التشريعية( مجلس الن...",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "chapter_number": "3",
+        "chapter_title": "تنظيم سلطات الدولة",
+        "sections": [
+          {
+            "section_number": "1",
+            "section_title": "السلطة التشريعية - مجلس النواب",
+            "articles": [
+              {
+                "article_number": "62",
+                "article_title": null,
+                "article_text": "مجلس النوالسلطة التشريعية للدولة وهو الذي يقرر القوانين ويقر السياسة العامة للدولة والخطة\nالعامة للتنمية الاقتصادية و الاجتماعية والموازنة العامة والحسكما يمارس الرقعلى أعمال الهيئة\n.التنفيذية على الوجه المبين في الدستور",
+                "page_number": null,
+                "summary": "مجلس النوالسلطة التشريعية للدولة وهو الذي يقرر القوانين ويقر السياسة العامة للدولة والخطة\nالعامة للتنمية الاقتصادية و الاجتماعية والموازنة العامة والح...",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "63",
+                "article_title": null,
+                "article_text": "يتألف مجلس النوثالثمائة عضو وعضو واحد ينتخبون بطريق الاقتراع السري العام الحر المباشر\n)% 5( المتساوي وتقسم الجمهورية إلى دوائر انتخمتساوية من حيث العدد السكاني مع التجاوز عن نسبة\n.زيادة أو نقصانا وينتخب عن كل دائرة عضو واحد",
+                "page_number": null,
+                "summary": "يتألف مجلس النوثالثمائة عضو وعضو واحد ينتخبون بطريق الاقتراع السري العام الحر المباشر\n)% 5( المتساوي وتقسم الجمهورية إلى دوائر انتخمتساوية من حيث العد...",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "64",
+                "article_title": null,
+                "article_text": "يشترط في الناخب الشرطان اآلتيان:ـ-1 )\n.أن يكون يمنيا-أ\n.يقل سنه عن ثمانية عشر عاما أن ال-ب\nيشترط في المرشح لعضوية مجلس النواآلتية:ـ-2\n.أن يكون يمنيا-أ\n.يقل سنه عن خمسة وعشرين عاما أن ال-ب\n.أن يكون مجيدا للقراءة والكتيكون قد صدر ضده حكم قضائي بات في قضية أن يكون مستقيم الخلق والسلوك مؤديا للفرائض الدينية وأن ال-د\n.مخلة بالشرف واألمانة مالم يكن قد رد إليه اعتباره",
+                "page_number": null,
+                "summary": "يشترط في الناخب الشرطان اآلتيان:ـ-1 )\n.أن يكون يمنيا-أ\n.يقل سنه عن ثمانية عشر عاما أن ال-ب\nيشترط في المرشح لعضوية مجلس النواآلتية:ـ-2\n.أن يكون يمنيا-أ...",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "65",
+                "article_title": null,
+                "article_text": "مدة مجلس النوسنوات شمسية تبدأ من تاريخ أول اجتماع له ويدعو رئيس الجمهورية الناخبين\nإلى انتخجديد قبل انتهاء مدة المجلس بستين يوما على األقل فإذا تعذر ذلك لظروف قاهرة ظل المجلس\n.قائما ويباشر سلطاته الدستورية حتى تزول هذه الظروف ويتم انتخالجديد",
+                "page_number": null,
+                "summary": "مدة مجلس النوسنوات شمسية تبدأ من تاريخ أول اجتماع له ويدعو رئيس الجمهورية الناخبين\nإلى انتخجديد قبل انتهاء مدة المجلس بستين يوما على األقل فإذا تعذر ذ...",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "66",
+                "article_title": null,
+                "article_text": "مقر مجلس النوصنعاء وتحدد الالئحة الداخلية الح الت والظروف التي يجوز فيها للمجلس\n.عقد اجتماعاته خارج العاصمة",
+                "page_number": null,
+                "summary": "مقر مجلس النوصنعاء وتحدد الالئحة الداخلية الح الت والظروف التي يجوز فيها للمجلس\n.عقد اجتماعاته خارج العاصمة",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "67",
+                "article_title": null,
+                "article_text": "يضع مجلس النوالداخلية متضمنة سير العمل في المجلس ولجانه وأصول ممارسته لكافة\nصالحياته الدستورية وال يجوز أن تتضمن الالئحة نصوصا مخالفة ألحكام الدستور أو معدلة لها ويكون صدور\n.الالئحة وتعديلها بقانون",
+                "page_number": null,
+                "summary": "يضع مجلس النوالداخلية متضمنة سير العمل في المجلس ولجانه وأصول ممارسته لكافة\nصالحياته الدستورية وال يجوز أن تتضمن الالئحة نصوصا مخالفة ألحكام الدستور أ...",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "68",
+                "article_title": null,
+                "article_text": "ويجب إحالة الطعن إلى المحكمة العليا خالل أعضائه ) يختص مجلس النوفي صحة عضوية\nخمسة عشر يوما من تاريخ تسليمه للمجلس وتعرض نتيجة التحقيق بالرأي الذي انتهت إليه المحكمة على مجلس\nالنوفي صحة الطعن خالل ستين يوما من تاريخ استالم نتيجة التحقيق من المحكمة وال تعتبر العضوية\nباطلة إال بقرار يصدر من مجلس النوثلثي أعضاء المجلس ويجب الانتهاء من التحقيق خالل تسعين يوما\n.من تاريخ إحالته إلى المحكمة",
+                "page_number": null,
+                "summary": "ويجب إحالة الطعن إلى المحكمة العليا خالل أعضائه ) يختص مجلس النوفي صحة عضوية\nخمسة عشر يوما من تاريخ تسليمه للمجلس وتعرض نتيجة التحقيق بالرأي الذي انته...",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "69",
+                "article_title": null,
+                "article_text": "لمجلس النوحق المحافظة على النظام واألمن داخل أبنية المجلس ويتولى ذلك رئيس المجلس\nعن طريق حرس خاص يأتمرون بأمره وال يجوز ألي قوة مسلحة أخرى دخول المجلس أو الاستقرار على مقربة\n.من أبوبطلب من رئيس المجلس",
+                "page_number": null,
+                "summary": "لمجلس النوحق المحافظة على النظام واألمن داخل أبنية المجلس ويتولى ذلك رئيس المجلس\nعن طريق حرس خاص يأتمرون بأمره وال يجوز ألي قوة مسلحة أخرى دخول المجلس...",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "70",
+                "article_title": null,
+                "article_text": "يعقد مجلس النواجتماع له خالل أسبوعين على األكثر من إعالن نتائج الانتخعلى دعوة\n.رئيس الجمهورية فأن لم ُيدع اجتمع المجلس من تلقاء نفسه صباح اليوم التالي لألسبوعين المذكورين\n\n7/20",
+                "page_number": null,
+                "summary": "يعقد مجلس النواجتماع له خالل أسبوعين على األكثر من إعالن نتائج الانتخعلى دعوة\n.رئيس الجمهورية فأن لم ُيدع اجتمع المجلس من تلقاء نفسه صباح اليوم التالي...",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "71",
+                "article_title": null,
+                "article_text": "ينتخب مجلس النوأول اجتماع له من بين أعضائه رئيسا وثالثة نويكونون جميعا هيئة\nرئاسة المجلس ويرأس المجلس أثناء انتخالمجلس أكبر األعضاء سًنا وتحدد الالئحة الداخلية إجراءات\nانتخرئاسة المجلس ومدتها واختصاصاتها األخرى ويكون للمجلس أمانة عامة يرأسها أمين عام وتحدد\n.الالئحة الداخلية للمجلس األحكام المتعلقة بتشكيلها واألحكام األخرى المتبها",
+                "page_number": null,
+                "summary": "ينتخب مجلس النوأول اجتماع له من بين أعضائه رئيسا وثالثة نويكونون جميعا هيئة\nرئاسة المجلس ويرأس المجلس أثناء انتخالمجلس أكبر األعضاء سًنا وتحدد الالئحة...",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "72",
+                "article_title": null,
+                "article_text": "يشترط لصحة اجتماعات مجلس النوأكثر من نصف أعضائه مع استبعاد األعضاء الذين أعلن\nخلو مقاعدهم وتصدر القرارات باألغلبية المطلقة لألعضاء الحاضرين إال في الح الت التي يشترط فيها بموجب\nالدستور والالئحة الداخلية للمجلس أغلبية خاصة وعند تساوي األصوات يعتبر موضوع المداولة مرفوضا في نفس\n.الدورة وتكون له أولوية العرض على المجلس في حالة تقديمه في دورة انعقاد أخرى",
+                "page_number": null,
+                "summary": "يشترط لصحة اجتماعات مجلس النوأكثر من نصف أعضائه مع استبعاد األعضاء الذين أعلن\nخلو مقاعدهم وتصدر القرارات باألغلبية المطلقة لألعضاء الحاضرين إال في الح...",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "73",
+                "article_title": null,
+                "article_text": "في جلسات سرية بناء على طلب رئيسه أو رئيس الجمهورية ه ) جلسات مجلس النوويجوز انعقاد\nأو الحكومة أو عشرين عضوا من أعضائه على األقل ثم يقرر المجلس ما إذا كانت المناقشة في الموضوع المطروح\n.أمامه تجري في جلسات علنية أو سرية",
+                "page_number": null,
+                "summary": "في جلسات سرية بناء على طلب رئيسه أو رئيس الجمهورية ه ) جلسات مجلس النوويجوز انعقاد\nأو الحكومة أو عشرين عضوا من أعضائه على األقل ثم يقرر المجلس ما إذا ...",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "74",
+                "article_title": null,
+                "article_text": "كما يجوز دعوته لدورات انعقاد غير عادية وتحدد الالئحة ة ) يعقد مجلس النوعاديتين في السن\nالداخلية للمجلس مواعيد الدورات العادية ومددها ويدعى في ح الت الضرورة لدورات انعقاد غير عادية بقرار من\nرئيس الجمهورية أو بقرار من هيئة رئاسة المجلس بناء على رغبتها أو بطلب خطي من ثلث أعضاء المجلس وال\n.قبل اعتماد الموازنة العامة للدولة ة يجوز فض دورة الانعقاد خالل الربع األخير من السن",
+                "page_number": null,
+                "summary": "كما يجوز دعوته لدورات انعقاد غير عادية وتحدد الالئحة ة ) يعقد مجلس النوعاديتين في السن\nالداخلية للمجلس مواعيد الدورات العادية ومددها ويدعى في ح الت ال...",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "75",
+                "article_title": null,
+                "article_text": "يقيد نيقيد أو شرط ) عضو مجلس النوالشعب بكامله ويرعى المالعامة وال",
+                "page_number": null,
+                "summary": "يقيد نيقيد أو شرط ) عضو مجلس النوالشعب بكامله ويرعى المالعامة وال",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "76",
+                "article_title": null,
+                "article_text": "يقسم عضو مجلس النومباشرة مهام العضوية أمام المجلس اليمين الدستورية في جلسة علنية",
+                "page_number": null,
+                "summary": "يقسم عضو مجلس النومباشرة مهام العضوية أمام المجلس اليمين الدستورية في جلسة علنية",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "77",
+                "article_title": null,
+                "article_text": "يتقاضى رئيس مجلس النوهيئة الرئاسة وبقية أعضاء المجلس مكافأة عادلة يحددها القانون\n.يستحق رئيس مجلس الوزراء ونووالوزراء المكافأة المذكورة إذا كانوا أعضاء في مجلس النو",
+                "page_number": null,
+                "summary": "يتقاضى رئيس مجلس النوهيئة الرئاسة وبقية أعضاء المجلس مكافأة عادلة يحددها القانون\n.يستحق رئيس مجلس الوزراء ونووالوزراء المكافأة المذكورة إذا كانوا أعضا...",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "78",
+                "article_title": null,
+                "article_text": "يقل عن سنة انتخب خلف له ) إذا خال مكان عضو من أعضاء مجلس النونهاية مدة المجلس بما ال\n.خالل ستين يوما من تاريخ إعالن قرار المجلس بخلو مكانه وتنتهي عضويته بانتهاء مدة المجلس",
+                "page_number": null,
+                "summary": "يقل عن سنة انتخب خلف له ) إذا خال مكان عضو من أعضاء مجلس النونهاية مدة المجلس بما ال\n.خالل ستين يوما من تاريخ إعالن قرار المجلس بخلو مكانه وتنتهي عضوي...",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "79",
+                "article_title": null,
+                "article_text": "ال يجوز لعضو مجلس النويتدخل في األعمال التي تكون من اختصاص السلطتين التنفيذية\n.والقضائية",
+                "page_number": null,
+                "summary": "ال يجوز لعضو مجلس النويتدخل في األعمال التي تكون من اختصاص السلطتين التنفيذية\n.والقضائية",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "80",
+                "article_title": null,
+                "article_text": "ال يجوز الجمع بين عضوية مجلس النوالمجلس المحلي أو أي وظيفة عامة ويجوز الجمع\n.بين عضوية مجلس النوالوزراء",
+                "page_number": null,
+                "summary": "ال يجوز الجمع بين عضوية مجلس النوالمجلس المحلي أو أي وظيفة عامة ويجوز الجمع\n.بين عضوية مجلس النوالوزراء",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "81",
+                "article_title": null,
+                "article_text": "يؤاخذ عضو مجلس النومن األحوال بسبب الوقائع التي يطلع عليها أو يورها للمجلس أو ) ال\nاألحكام واآلراء التي يبديها في عمله في المجلس أو لجانه أو بسبب التصويت في الجلسات العلنية أو السرية وال\n.سب يصدر من العضو من قذف أو يطبق هذا الحكم على ما",
+                "page_number": null,
+                "summary": "يؤاخذ عضو مجلس النومن األحوال بسبب الوقائع التي يطلع عليها أو يورها للمجلس أو ) ال\nاألحكام واآلراء التي يبديها في عمله في المجلس أو لجانه أو بسبب التص...",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "82",
+                "article_title": null,
+                "article_text": "ال يجوز أن ُيتخذ نحو عضو مجلس النوإجراء من إجراءات التحقيق أو التفتيش أو القبض أو\nالحبس أو أي إجراء جزائي إال بإذن من مجلس النوحالة التلبس وفي هذه الحالة يجب إخطار المجلس\nفورا وعلى المجلس أن يتأكد من سالمة الإجراءات وفي غير دورة انعقاد المجلس يتعين الحصول على إذن من هيئة\n.الرئاسة ويخطر المجلس عند أول انعقاد الحق له بما اتخذ من إجراءات",
+                "page_number": null,
+                "summary": "ال يجوز أن ُيتخذ نحو عضو مجلس النوإجراء من إجراءات التحقيق أو التفتيش أو القبض أو\nالحبس أو أي إجراء جزائي إال بإذن من مجلس النوحالة التلبس وفي هذه الح...",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "83",
+                "article_title": null,
+                "article_text": "يوجه أعضاء مجلس النوإلى المجلس وهو الذي يقبل استقالتهم\n\n8/20",
+                "page_number": null,
+                "summary": "يوجه أعضاء مجلس النوإلى المجلس وهو الذي يقبل استقالتهم\n\n8/20",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "84",
+                "article_title": null,
+                "article_text": "ال يجوز إسقاط عضوية أي عضو من أعضاء مجلس النوإذا فقد أحد شروط العضوية المنصوص\n.تحدده الالئحة الداخلية للمجلس عليها في هذا الدستور أو أخل إخالال جسيما بواجبات العضوية وفقا لما",
+                "page_number": null,
+                "summary": "ال يجوز إسقاط عضوية أي عضو من أعضاء مجلس النوإذا فقد أحد شروط العضوية المنصوص\n.تحدده الالئحة الداخلية للمجلس عليها في هذا الدستور أو أخل إخالال جسيما ...",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "85",
+                "article_title": null,
+                "article_text": "لعضو مجلس النوحق اقتراح القوانين واقتراح تعديلها على أن القوانين المالية التي تهدف\nإلى زيادة أو إلغاء ضريبة قائمة أو تخفيضها أو اإلعفاء من بعضها أو التي ترمي إلى تخصيص جزء من أموال الدولة\n) من النواألقل وكل% 20( لمشروع ما فال يجوز اقتراحها إال من قبل الحكومة أو عشرين في المائة\nتحال إلى إحدى لجان المجلس إال بعد مقترحات القوانين المقدمة من عضو أو أكثر من أعضاء مجلس النوفحصها أمام لجنة خاصة إلبداء الرأي في جواز نظر المجلس فيها فإذا قرر المجلس نظر أي منها يحال إلى اللجنة\nالمختصة لفحصه وتقديم تقرير عنه وأي مشروع قانون قدم من غير الحكومة ورفضه المجلس ال يجوز تقديمه ثانية\n.في نفس دور الانعقاد",
+                "page_number": null,
+                "summary": "لعضو مجلس النوحق اقتراح القوانين واقتراح تعديلها على أن القوانين المالية التي تهدف\nإلى زيادة أو إلغاء ضريبة قائمة أو تخفيضها أو اإلعفاء من بعضها أو ال...",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "86",
+                "article_title": null,
+                "article_text": "يقدم رئيس مجلس الوزراء خالل خمسة وعشرين يوما على األكثر من تاريخ تشكيل الحكومة برنامجها\nالعام إلى مجلس النوعلى الثقة باألغلبية لعدد أعضاء المجلس وإذا كان المجلس في غير انعقاده العادي\nدعي إلى دورة انعقاد غير عادية وألعضاء المجلس وللمجلس ككل التعقيب على برنامج الحكومة ويعتبر عدم\n.حصول الحكومة على األغلبية المذكورة بمثحجب للثقة",
+                "page_number": null,
+                "summary": "يقدم رئيس مجلس الوزراء خالل خمسة وعشرين يوما على األكثر من تاريخ تشكيل الحكومة برنامجها\nالعام إلى مجلس النوعلى الثقة باألغلبية لعدد أعضاء المجلس وإذا ...",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "87",
+                "article_title": null,
+                "article_text": "يقر مجلس النوالتنمية الاقتصادية و الاجتماعية ويحدد القانون طريقة إعداد تلك الخطط وكيفية\n.عرضها والتصويت عليها وإصدارها",
+                "page_number": null,
+                "summary": "يقر مجلس النوالتنمية الاقتصادية و الاجتماعية ويحدد القانون طريقة إعداد تلك الخطط وكيفية\n.عرضها والتصويت عليها وإصدارها",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "88",
+                "article_title": null,
+                "article_text": "يجب عرض مشروع ألموا زنه العامة على مجلس النوشهرين على األقل من بدء ألسنه المالية-) أ\nويتم التصويت على مشروع الموازنة باًبا باًبا وتصدر بقانون وال يجوز لمجلس النويعدل مشروع الموازنة إال\nبموافقة الحكومة وال يجوز تخصيص أي إيراد من الإيرادات لوجه معين من أوجه الصرف إال بقانون وإذا لم يصدر\n.قانون الموازنة الجديدة قبل بدء السنة المالية عمل بموازنة السنة السإلى حين اعتماد الموازنة الجديدة\n.يحدد القانون طريقة إعداد الموازنة وتبويبها كما يحدد السنة المالية-ب",
+                "page_number": null,
+                "summary": "يجب عرض مشروع ألموا زنه العامة على مجلس النوشهرين على األقل من بدء ألسنه المالية-) أ\nويتم التصويت على مشروع الموازنة باًبا باًبا وتصدر بقانون وال يجوز...",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "89",
+                "article_title": null,
+                "article_text": "رو منأخر من أبوالعامة وكل مص غ ) يجب موافقة مجلس النونقل أي مبل\n.ف غير وارد بها أو زائد في إيراداتها يتعين أن يحدد بقانون",
+                "page_number": null,
+                "summary": "رو منأخر من أبوالعامة وكل مص غ ) يجب موافقة مجلس النونقل أي مبل\n.ف غير وارد بها أو زائد في إيراداتها يتعين أن يحدد بقانون",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "90",
+                "article_title": null,
+                "article_text": "يحدد القانون أحكام موازنات الهيئات والمؤسسات والشركات العامة وحسوالموازنات المستقلة\nوالملحقة وحسالختامية وفيما عدا ذلك تسري عليها األحكام الخاصة بالموازنة العامة وحسالختامي بما\n.في ذلك عرضها على مجلس النو",
+                "page_number": null,
+                "summary": "يحدد القانون أحكام موازنات الهيئات والمؤسسات والشركات العامة وحسوالموازنات المستقلة\nوالملحقة وحسالختامية وفيما عدا ذلك تسري عليها األحكام الخاصة بالمو...",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "91",
+                "article_title": null,
+                "article_text": "تزيد على تسعة أشهر من ) يجب عرض الحسلموازنة الدولة على مجلس النومدة ال\nكما يجب عرض التقرير تاريخ انتهاء السنة المالية ويتم التصويت عليهوتصدر مصادقة المجلس بقانون\nالسنوي للجهاز المختص بالرقالمحاسبية ومالحظاته على مجلس النوأن يطلب من هذا الجهاز أي\n.بيانات أو تقارير أخرى",
+                "page_number": null,
+                "summary": "تزيد على تسعة أشهر من ) يجب عرض الحسلموازنة الدولة على مجلس النومدة ال\nكما يجب عرض التقرير تاريخ انتهاء السنة المالية ويتم التصويت عليهوتصدر مصادقة ال...",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "92",
+                "article_title": null,
+                "article_text": "يصادق مجلس النوالمعاهدات و التفاقيات السياسية و الاقتصادية الدولية ذات الطالعام أيا كان\nشكلها أو مستواها خاصة تلك المتعلقة بالدفاع أو التحالف أو الوالسلم والحدود أو التي يترتب عليها التزامات\n.مالية على الدولة أو التي يحتاج تنفيذها إلى إصدار قانون\n\n9/20",
+                "page_number": null,
+                "summary": "يصادق مجلس النوالمعاهدات و التفاقيات السياسية و الاقتصادية الدولية ذات الطالعام أيا كان\nشكلها أو مستواها خاصة تلك المتعلقة بالدفاع أو التحالف أو الوال...",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "93",
+                "article_title": null,
+                "article_text": "ـ لمجلس النوتوجيه التوصيات للحكومة في المسائل العامة أو في أي شأن يتعلق بأدائها لمهامها ) أ\n.أو بأداء أي من أعضائها وعلى الحكومة تنفيذها فإذا استحال عليها التنفيذ بينت ذلك للمجلس\nب ـ إذا لم يقتنع المجلس بالمبررات يحق له مباشرة إجراءات سحب الثقة من أحد نومجلس الوزراء أو\nأي من الوزراء المعنيين وال يجوز عرض طلب سحب الثقة على المجلس إال بناء على اقتراح من ربع أعضاء\nالمجلس وبعد استجويجوز للمجلس أن يصدر قراره في الطلب قبل مرور سبعة أيام من عرضه ويكون قرار\n.سحب الثقة بأغلبية أعضاء المجلس",
+                "page_number": null,
+                "summary": "ـ لمجلس النوتوجيه التوصيات للحكومة في المسائل العامة أو في أي شأن يتعلق بأدائها لمهامها ) أ\n.أو بأداء أي من أعضائها وعلى الحكومة تنفيذها فإذا استحال ع...",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "94",
+                "article_title": null,
+                "article_text": "يجوز لعشرين بالمائة على األقل من أعضاء المجلس طرح موضوع عام لمناقشته واستيضاح سياسة\n.الحكومة فيه وتبادل الرأي حوله",
+                "page_number": null,
+                "summary": "يجوز لعشرين بالمائة على األقل من أعضاء المجلس طرح موضوع عام لمناقشته واستيضاح سياسة\n.الحكومة فيه وتبادل الرأي حوله",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "95",
+                "article_title": null,
+                "article_text": "لمجلس النوعلى طلب موقع من عشرة أعضاء على األقل من أعضائه أن يكون لجنة خاصة أو\nيكلف لجنة من لجانه لتقصي الحقائق في موضوع يتعارض مع المالعامة أو فحص نشاط إحدى الوزارات\nوالهيئات والمؤسسات العامة أو وحدات القطاع العام أو المختلط أو المجالس المحلية وللجنة في سبيل القيام بمهامها\nتراه من أدلة وأن تطلب سماع من ترى ضرورة سماع أقواله وعلى جميع الجهات التنفيذية والخاصة أن أن تجمع ما\n.تملكه من مستندات أو بيانات تستجيب لطلبها وأن تضع تحت تصرفها لهذا الغرض ما",
+                "page_number": null,
+                "summary": "لمجلس النوعلى طلب موقع من عشرة أعضاء على األقل من أعضائه أن يكون لجنة خاصة أو\nيكلف لجنة من لجانه لتقصي الحقائق في موضوع يتعارض مع المالعامة أو فحص نشا...",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "96",
+                "article_title": null,
+                "article_text": "مجلس الوزراء مسئول مسئولية جماعية وفردية ولكل عضو من أعضاء مجلس النويوجه إلى\nرئيس مجلس الوزراء أو أحد نوأو أحد الوزراء أو نوأسئلة في أي موضوع يدخل في اختصاصهم وعلى من\n.أن يجيب عليه وال يجوز تحويل السؤال إلى استجونفس الجلسة السؤال يوجه إليه",
+                "page_number": null,
+                "summary": "مجلس الوزراء مسئول مسئولية جماعية وفردية ولكل عضو من أعضاء مجلس النويوجه إلى\nرئيس مجلس الوزراء أو أحد نوأو أحد الوزراء أو نوأسئلة في أي موضوع يدخل في ...",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "97",
+                "article_title": null,
+                "article_text": "نوأو الوزراء ) لكل عضو من أعضاء مجلس النوتوجيه استجورئيس مجلس الوزراء أو\nلمحاسبتهم عن الشئون التي تدخل في اختصاصهم وتجري المناقشة في الستجوسبعة أيام على األقل من\n.تقديمه إال في ح الت الستعجال التي يراها المجلس وبموافقة الحكومة",
+                "page_number": null,
+                "summary": "نوأو الوزراء ) لكل عضو من أعضاء مجلس النوتوجيه استجورئيس مجلس الوزراء أو\nلمحاسبتهم عن الشئون التي تدخل في اختصاصهم وتجري المناقشة في الستجوسبعة أيام ع...",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "98",
+                "article_title": null,
+                "article_text": "بعد استجوإلى رئيس )لمجلس النوسحب الثقة من الحكومة وال يجوز طلب سحب الثقة إال\nالوزراء أو من ينوب عنه ويجب أن يكون الطلب موقعا من ثلث أعضاء المجلس وال يجوز للمجلس أن يصدر قراره\n.بالطلب قبل سبعة أيام على األقل من تقديمه ويكون سحب الثقة من الحكومة بأغلبية أعضاء المجلس",
+                "page_number": null,
+                "summary": "بعد استجوإلى رئيس )لمجلس النوسحب الثقة من الحكومة وال يجوز طلب سحب الثقة إال\nالوزراء أو من ينوب عنه ويجب أن يكون الطلب موقعا من ثلث أعضاء المجلس وال ي...",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "99",
+                "article_title": null,
+                "article_text": "يسمع رئيس مجلس الوزراء ونووالوزراء ونوفي مجلس النوكلما طلبوا الكالم ولهم أن\nيكون لهم أي صوت معدود عند أخذ الرأي إال إذا كانوا من أعضاء مجلس يستعينوا بمن يرون من كبار الموظفين وال\n.النوالنويطلب من الحكومة أو احد الوزراء حضور أي من جلساته وعليهم تلبية ذلك",
+                "page_number": null,
+                "summary": "يسمع رئيس مجلس الوزراء ونووالوزراء ونوفي مجلس النوكلما طلبوا الكالم ولهم أن\nيكون لهم أي صوت معدود عند أخذ الرأي إال إذا كانوا من أعضاء مجلس يستعينوا ب...",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "100",
+                "article_title": null,
+                "article_text": "يجري التصويت على مشاريع القوانين مادة مادة ويتم التصويت النهائي على كل مشروع قانون جملة\n.وتوضح الالئحة الداخلية للمجلس الإجراءات المتعلقة بذلك",
+                "page_number": null,
+                "summary": "يجري التصويت على مشاريع القوانين مادة مادة ويتم التصويت النهائي على كل مشروع قانون جملة\n.وتوضح الالئحة الداخلية للمجلس الإجراءات المتعلقة بذلك",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "101",
+                "article_title": null,
+                "article_text": "ال يجوز لرئيس الجمهورية حل مجلس النوعند الضرورة وبعد استفتاء الشعب ويجب أن يشتمل-) أ\nقرار الحل على األسبني عليها وعلى دعوة الناخبين الانتخنوخالل ستين يوما من تاريخ\n.صدور قرار الحل\nلرئيس الجمهورية حق الدعوة الانتخنيمبكرة دون حاجة إلى استفتاء في األحوال اآلتية:ـ-ب\nـ إذا لم تفض الانتخإلى أغلبية تمكن رئيس الجمهورية من تكليف من يشكل الحكومة وتعذر تشكيل حكومة1\n.ائتالف\n\n10/20\nحجب مجلس النوعن الحكومة أكثر من مرتين متتاليتين مالم يكن الحجب بسبب التعارض مع أحكام ـ إذا2\n.(ب) من هذه المادة ة ) من الفقر1(البند\n.ـ إذا سحب المجلس الثقة من الحكومة أكثر من مرتين خالل سنتين متتاليتين3\nوفي كل األحوال إذا لم يتضمن قرار الحل أو الدعوة إلى انتخمبكرة دعوة الناخبين خالل الستين يوما التالية\nلصدور قرار الحل أو الدعوة الانتخمبكرة أو لم تجر الانتخفي الموعد المحدد أعتبر القرار باطال ويجتمع\nالمجلس بقوة الدستور فإذا أجريت الانتخيجتمع المجلس الجديد خالل العشرة األيام التالية إلتمام الانتخفإذا\nلم ُيدع لالانعقاد اجتمع بحكم الدستور في نهاية األيام العشرة المشار إليها وإذا حل المجلس فال يجوز حله مرة أخرى\n.للسبب نفسه كما ال يجوز حل المجلس في دورة انعقاده األولى",
+                "page_number": null,
+                "summary": "ال يجوز لرئيس الجمهورية حل مجلس النوعند الضرورة وبعد استفتاء الشعب ويجب أن يشتمل-) أ\nقرار الحل على األسبني عليها وعلى دعوة الناخبين الانتخنوخالل ستين ...",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "102",
+                "article_title": null,
+                "article_text": "النظر في أي مشروع قانون أقره مجلس النوعليه حينئذ أن إعادة ) لرئيس الجمهورية حق طلب\nيعيده إلى مجلس النوثالثين يوما من تاريخ رفعه إليه بقرار مسبب فإذا لم يرده إلى المجلس خالل هذه المدة\nأو ُرد إليه وأقره ثانية بأغلبية مجموع أعضائه أعتبر قانونا وعلى رئيس الجمهورية إصداره خالل أسبوعين فإذا لم\nيصدره اعتبر صادرا بقوة الدستور دون حاجة إلى إصدار وينشر في الجريدة الرسمية فورا ويعمل به بعد أسبوعين\n.من تاريخ النشر",
+                "page_number": null,
+                "summary": "النظر في أي مشروع قانون أقره مجلس النوعليه حينئذ أن إعادة ) لرئيس الجمهورية حق طلب\nيعيده إلى مجلس النوثالثين يوما من تاريخ رفعه إليه بقرار مسبب فإذا ل...",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "103",
+                "article_title": null,
+                "article_text": "تنشر القوانين في الجريدة الرسمية وتذاع خالل أسبوعين من تاريخ إصدارها ويعمل بها بعد ثالثين\n.يوما من تاريخ نشرها ويجوز مد أو قصر هذا الميعاد بنص خاص في القانون",
+                "page_number": null,
+                "summary": "تنشر القوانين في الجريدة الرسمية وتذاع خالل أسبوعين من تاريخ إصدارها ويعمل بها بعد ثالثين\n.يوما من تاريخ نشرها ويجوز مد أو قصر هذا الميعاد بنص خاص في ...",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "104",
+                "article_title": null,
+                "article_text": "ومع وقع قبل إصدارها يترتب أثر على ما يقع من تاريخ العمل بها وال تسري أحكام القوانين إال على ما ) ال\n.ذلك يجوز في غير المواد الضريبية والجزائية النص في القانون على خالف ذلك وبموافقة ثلثي أعضاء المجلس\n \nالالسلطة التنفيذية",
+                "page_number": null,
+                "summary": "ومع وقع قبل إصدارها يترتب أثر على ما يقع من تاريخ العمل بها وال تسري أحكام القوانين إال على ما ) ال\n.ذلك يجوز في غير المواد الضريبية والجزائية النص في...",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              }
+            ]
+          },
+          {
+            "section_number": "2",
+            "section_title": "السلطة التنفيذية",
+            "articles": [
+              {
+                "article_number": "105",
+                "article_title": null,
+                "article_text": "يمارس السلطة التنفيذية نيعن الشعب رئيس الجمهورية ومجلس الوزراء ضمن الحدود المنصوص\n.عليها في الدستور\nالفرع الول\nرئاسة الجمهورية",
+                "page_number": null,
+                "summary": "يمارس السلطة التنفيذية نيعن الشعب رئيس الجمهورية ومجلس الوزراء ضمن الحدود المنصوص\n.عليها في الدستور\nالفرع الول\nرئاسة الجمهورية",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "106",
+                "article_title": null,
+                "article_text": "رئيس الجمهورية هو رئيس الدولة ويتم انتخوفقا للدستور-) أ\n) من128و118و117و107(يكون لرئيس الجمهورية نائبا يعينه الرئيس وتطبق بشأن النائب أحكام المواد-ب\n.الدستور",
+                "page_number": null,
+                "summary": "رئيس الجمهورية هو رئيس الدولة ويتم انتخوفقا للدستور-) أ\n) من128و118و117و107(يكون لرئيس الجمهورية نائبا يعينه الرئيس وتطبق بشأن النائب أحكام المواد-ب\n....",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "107",
+                "article_title": null,
+                "article_text": "كل يمني تتوفر فيه الشروط المحددة فيما يأتي يمكن أن يرشح لمنصب رئيس الجمهورية:ـ\n.يقل سنه عن أربعين سنة أن ال-أ\n.أن يكون من والدين يمنيين-ب\n.أن يكون متمتعا بحقوقه السياسية والمدنية-ج\nيكون قد صدر ضده حكم قضائي بات في أن يكون مستقيم األخالق والسلوك محافظا على الشعائر الإسلامية وأن ال-د\n.قضية مخلة بالشرف أو األمانة مالم يكن قد رد إليه اعتباره\n\n11/20\n.هـ ـ أن ال يكون متزوجا من أجنبية وأال يتزوج أثناء مدة واليته من أجنبية",
+                "page_number": null,
+                "summary": "كل يمني تتوفر فيه الشروط المحددة فيما يأتي يمكن أن يرشح لمنصب رئيس الجمهورية:ـ\n.يقل سنه عن أربعين سنة أن ال-أ\n.أن يكون من والدين يمنيين-ب\n.أن يكون متم...",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "108",
+                "article_title": null,
+                "article_text": "يلي:ـ ) يكون الترشيح و الانتخالجمهورية كما\n.تقدم الترشيحات إلى رئيس مجلس النويتم فحص الترشيحات للتأكد من انطباق الشروط الدستورية على المرشحين في اجتماع مشترك لهيئتي رئاسة-ب\n.مجلس النوالشورى\nتعرض أسماء المرشحين الذين تتوفر فيهم الشروط في اجتماع مشترك لمجلس النوللتزكية ويعتبر-ج\n) من مجموع عدد األعضاء%5(مرشحا لمنصب رئيس الجمهورية من يحتزكية نسبة(خمسة في المائة\n.الحاضرين للمجلسين وتكون التزكية ب الاقتراع السري المباشر\nيكون الاجتماع المشترك ملزما أن يزكي لمنصب رئيس الجمهورية ثالثة أشخاص على األقل تمهيدا لعرض-د\n.المرشحين على الشعب في انتختنافسية ال يقل عدد المرشحين فيها عن اثنين\n.يتم انتخالجمهورية من الشعب في انتختنافسية-هـ\nيعتبر رئيسا للجمهورية من يحاألغلبية المطلقة للذين شاركوا في الانتخوإذا لم يحمن-و\nالمرشحين على هذه األغلبية أعيد الانتخالإجراءات السللمرشحين اللذين حصال على أكثر عدد من\n.أصوات الناخبين اللذين أدلوا بأصواتهم",
+                "page_number": null,
+                "summary": "يلي:ـ ) يكون الترشيح و الانتخالجمهورية كما\n.تقدم الترشيحات إلى رئيس مجلس النويتم فحص الترشيحات للتأكد من انطباق الشروط الدستورية على المرشحين في اجتما...",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "109",
+                "article_title": null,
+                "article_text": "يؤدي رئيس الجمهورية أمام مجلس النوأن يباشر مهام منصبه اليمين الدستورية",
+                "page_number": null,
+                "summary": "يؤدي رئيس الجمهورية أمام مجلس النوأن يباشر مهام منصبه اليمين الدستورية",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "110",
+                "article_title": null,
+                "article_text": "يعمل رئيس الجمهورية على تجسيد إرادة الشعب واحترام الدستور والقانون وحماية الوحدة الوطنية\nومبادئ وأهداف الثورة اليمنية و اللتزام بالتداول السلمي للسلطة والإشراف على المهام السيادية المتعلقة بالدفاع\n.عن الجمهورية وتلك المرتبطة بالسياسة الخارجية للدولة ويمارس صالحياته على الوجه المبين في الدستور",
+                "page_number": null,
+                "summary": "يعمل رئيس الجمهورية على تجسيد إرادة الشعب واحترام الدستور والقانون وحماية الوحدة الوطنية\nومبادئ وأهداف الثورة اليمنية و اللتزام بالتداول السلمي للسلطة...",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "111",
+                "article_title": null,
+                "article_text": "رئيس الجمهورية هو القائد األعلى للقوات المسلحة",
+                "page_number": null,
+                "summary": "رئيس الجمهورية هو القائد األعلى للقوات المسلحة",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "112",
+                "article_title": null,
+                "article_text": "مدة رئيس الجمهورية سبع سنوات شمسية تبدأ من تاريخ أداء اليمين الدستورية وال يجوز ألي شخص\n.تولى منصب الرئيس ألكثر من دورتين مدة كل دورة سبع سنوات فقط",
+                "page_number": null,
+                "summary": "مدة رئيس الجمهورية سبع سنوات شمسية تبدأ من تاريخ أداء اليمين الدستورية وال يجوز ألي شخص\n.تولى منصب الرئيس ألكثر من دورتين مدة كل دورة سبع سنوات فقط",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "113",
+                "article_title": null,
+                "article_text": "إذا انتهت مدة مجلس النوالشهر الذي انتهت فيه مدة رئيس الجمهورية يستمر رئيس الجمهورية\nبعد انتهاء الانتخالنيواجتماع المجلس الجديد على أن يتم انتخالجمهورية ليمارس مهامه إلى ما\n.)يوما من أول انعقاد لمجلس النوالجديد وذلك خالل ستين",
+                "page_number": null,
+                "summary": "إذا انتهت مدة مجلس النوالشهر الذي انتهت فيه مدة رئيس الجمهورية يستمر رئيس الجمهورية\nبعد انتهاء الانتخالنيواجتماع المجلس الجديد على أن يتم انتخالجمهوري...",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "114",
+                "article_title": null,
+                "article_text": "قبل انتهاء مدة رئيس الجمهورية بتسعين يوما تبدأ الإجراءات الانتخرئيس للجمهورية جديد ويجب\nأن يتم انتخقبل انتهاء المدة بأسبوع على األقل فإذا انتهت المدة دون أن يتم انتخالجديد ألي سبب كان\nال تزيد هذه أستمر الرئيس السفي مباشرة مهام منصبه بتكليف من مجلس النوال تتجاوز تسعين يوما و\n.المدة إال في حالة حرب أو كارثة طبيعية أو أية حالة أخرى يستحيل معها إجراء النتخ",
+                "page_number": null,
+                "summary": "قبل انتهاء مدة رئيس الجمهورية بتسعين يوما تبدأ الإجراءات الانتخرئيس للجمهورية جديد ويجب\nأن يتم انتخقبل انتهاء المدة بأسبوع على األقل فإذا انتهت المدة ...",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "115",
+                "article_title": null,
+                "article_text": "يجوز لرئيس الجمهورية أن يقدم استقالة مسببة إلى مجلس النوقرار مجلس النوالاستقالة باألغلبية المطلقة لعدد أعضائه فإذا لم تقبل الاستقالة فمن حقه خالل ثالثة أشهر أن يقدم الاستقالة وعلى\n.مجلس النويقبلها\n\n12/20",
+                "page_number": null,
+                "summary": "يجوز لرئيس الجمهورية أن يقدم استقالة مسببة إلى مجلس النوقرار مجلس النوالاستقالة باألغلبية المطلقة لعدد أعضائه فإذا لم تقبل الاستقالة فمن حقه خالل ثالث...",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "116",
+                "article_title": null,
+                "article_text": "في حالة خلو منصب رئيس الجمهورية أو عجزه الدائم عن العمل يتولى مهام الرئاسة مؤقتا نائب الرئيس\nانتخجديدة للرئيس وفي حالة خلو لمدة ال تزيد عن ستين يوما من تاريخ خلو منصب الرئيس يتم خاللها إجراء\nمنصب رئيس الجمهورية ونائب الرئيس معا يتولى مهام الرئاسة مؤقتا رئاسة مجلس النوكان مجلس النورئيس الجمهورية خالل ويتم منحال حلت الحكومة محل رئاسة مجلس النومهام الرئاسة مؤقتا\n.مدة ال تتجاوز ستين يوما من تاريخ أول اجتماع لمجلس النو",
+                "page_number": null,
+                "summary": "في حالة خلو منصب رئيس الجمهورية أو عجزه الدائم عن العمل يتولى مهام الرئاسة مؤقتا نائب الرئيس\nانتخجديدة للرئيس وفي حالة خلو لمدة ال تزيد عن ستين يوما م...",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "117",
+                "article_title": null,
+                "article_text": "يحدد القانون مرتبات ومخصصات رئيس الجمهورية وال يجوز له أن يتقاضى أي مرتب او مكافأة\n.أخرى",
+                "page_number": null,
+                "summary": "يحدد القانون مرتبات ومخصصات رئيس الجمهورية وال يجوز له أن يتقاضى أي مرتب او مكافأة\n.أخرى",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "118",
+                "article_title": null,
+                "article_text": "ال يجوز لرئيس الجمهورية أثناء مدته أن يزاول ولو بطريقة غير مباشرة مهنة حرة أو عمال تجاريا أو\nماليا أو صناعيا كما ال يجوز له أن يشتري أو يستأجر شيئا من أموال الدولة ولو بطريقة المزاد العلني أو أن\n.يؤجرها او يبيعها شيئا من أمواله او يقايضها عليه",
+                "page_number": null,
+                "summary": "ال يجوز لرئيس الجمهورية أثناء مدته أن يزاول ولو بطريقة غير مباشرة مهنة حرة أو عمال تجاريا أو\nماليا أو صناعيا كما ال يجوز له أن يشتري أو يستأجر شيئا من...",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "119",
+                "article_title": null,
+                "article_text": "يتولى رئيس الجمهورية الاختصاصات التالية:ـ\n.ـ تمثيل الجمهورية في الداخل والخارج1\n. ـ دعوة الناخبين في الموعد المحدد إلى انتخالنو.ـ الدعوة إلى الاستفتاء العام3\n.ـ تكليف من يشكل الحكومة وإصدار القرار الجمهوري بتسمية أعضائها4\n.ـ يضع ب الاشتراك مع الحكومة السياسة العامة للدولة ويشرف على تنفيذها على الوجه المبين في الدستور5\n.ـ دعوة مجلس الوزراء إلى اجتماع مشترك مع رئيس الجمهورية كلما دعت الحاجة إلى ذلك6\n.ـ تسمية أعضاء مجلس الدفاع الوطني طبقا للقانون7\n.ـ إصدار القوانين التي وافق عليها مجلس النووإصدار القرارات المنفذة لها8\n.ـ تعيين وعزل كبار موظفي الدولة من المدنيين والعسكريين وفقا للقانون9\n.ـ إنشاء الرتب العسكرية بمقتضى القانون10\n.الإذن بحمل النياشين التي تمنح من دول أخرى ـ منح النياشين واألوسمة التي ينص عليها القانون أو11\n.التي يوافق عليها مجلس النوالتفاقيات ـ إصدار قرار المصادقة على المعاهدات12\n.تحتاج إلى تصديق مجلس النوموافقة مجلس الوزراء ـ المصادقة على التفاقيات التي ال13\n.ـ إنشاء البعثات الدبلوماسية وتعيين واستدعاء السفراء طبقا للقانون14\n.ـ اعتماد الممثلين للدول والهيئات ألجنبية15\n.ـ منح حق اللجؤ السياسي16\n.ـ إعالن حالة الطوارئ والتعبئة العامة وفقا للقانون17\n.ـ يتولى أي اختصاصات أخرى ينص عليه الدستور والقانون18",
+                "page_number": null,
+                "summary": "يتولى رئيس الجمهورية الاختصاصات التالية:ـ\n.ـ تمثيل الجمهورية في الداخل والخارج1\n. ـ دعوة الناخبين في الموعد المحدد إلى انتخالنو.ـ الدعوة إلى الاستفتاء...",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "120",
+                "article_title": null,
+                "article_text": "يصدر رئيس الجمهورية بناء على اقتراح الوزير المختص وبعد موافقة مجلس الوزراء القرارات\nيكون في أي منها تعطيل ألحكام القوانين واللوائح الالزمة لتنفيذ القوانين وتنظيم المصالح والإدارات العامة على أن ال\nأو إعفاء من تنفيذها وله أن يفوض غيره في إصدار تلك اللوائح والقرارات ويجوز أن يعين القانون من يصدر اللوائح\n.والقرارات الالزمة لتنفيذه\n\n13/20",
+                "page_number": null,
+                "summary": "يصدر رئيس الجمهورية بناء على اقتراح الوزير المختص وبعد موافقة مجلس الوزراء القرارات\nيكون في أي منها تعطيل ألحكام القوانين واللوائح الالزمة لتنفيذ القو...",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "121",
+                "article_title": null,
+                "article_text": "يعلن رئيس الجمهورية حالة الطوارئ بقرار جمهوري على الوجه المبين في القانون ويجب دعوة مجلس\nالتالية لالعالن فإذا كان مجلس النوينعقد المجلس القديم األيام النوهذا الإعلان عليه خالل السبعة\nبحكم الدستور فإذا لم يدع المجلس لالانعقاد أو لم تعرض عليه في حالة انعقاده على النحو السزالت حالة الطوارئ\n.بحكم الدستور\nيكون تعلن حالة الطوارئ إال بسبب قيام الحرب أو الفتنة الداخلية أو الكوارث الطبيعية وال وفي جميع األحوال ال\n.لمدة محدودة وال يجوز مدها إال بموافقة مجلس النوحالة الطوارئ إال",
+                "page_number": null,
+                "summary": "يعلن رئيس الجمهورية حالة الطوارئ بقرار جمهوري على الوجه المبين في القانون ويجب دعوة مجلس\nالتالية لالعالن فإذا كان مجلس النوينعقد المجلس القديم األيام ...",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "122",
+                "article_title": null,
+                "article_text": "يحق لرئيس الجمهورية أن يطلب تقارير من رئيس الوزراء تتعلق بتحقيق المهام المسئول عن تنفيذها\n.مجلس الوزراء",
+                "page_number": null,
+                "summary": "يحق لرئيس الجمهورية أن يطلب تقارير من رئيس الوزراء تتعلق بتحقيق المهام المسئول عن تنفيذها\n.مجلس الوزراء",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "123",
+                "article_title": null,
+                "article_text": "ينفذ حكم الإعدام إال بعد التصديق عليه من رئيس الجمهورية ) ال",
+                "page_number": null,
+                "summary": "ينفذ حكم الإعدام إال بعد التصديق عليه من رئيس الجمهورية ) ال",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "124",
+                "article_title": null,
+                "article_text": "اختصاصاته ) يعاون رئيس الجمهورية في أعماله نائب الرئيس وللرئيس أن يفوض نائبه في بعض",
+                "page_number": null,
+                "summary": "اختصاصاته ) يعاون رئيس الجمهورية في أعماله نائب الرئيس وللرئيس أن يفوض نائبه في بعض",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "125",
+                "article_title": null,
+                "article_text": "ينشأ بقرار من رئيس الجمهورية مجلس شورى من ذوي الخبرات والكفاءات والشخصيات الاجتماعية\nلتوسيع قاعدة المشاركة في الرأي و الاستفادة من الكفاءات والخبرات الوطنية وفي سبيل القيام بمهامه يمارس\nمجلس الشورى صالحياته الدستورية التالية:ـ\nتقديم الدراسات والمقترحات التي تساعد الدولة على رسم استراتيجياتها التنموية وتسهم في حشد الجهود الشعبية-أ\nمن أجل ترسيخ النهج الديمقراطي وتقديم الاقتراحات التي تساعد على تفعيل مؤسسات الدولة وتسهم في حل\n.المشاكل الاجتماعية وتعمق الوحدة الوطنية\n.إبداء الرأي والمشورة في المواضيع األساسية التي يرى رئيس الجمهورية عرضها على المجلس-ب\nتقديم الرأي والمشورة بما يسهم في رسم الاستراتيجية الوطنية والقومية للدولة في المج الت السياسية-ج\n.و الاقتصادية و الاجتماعية والعسكرية واألمنية لتحقيق أهدافها على المستويين الوطني والقومي\nإبداء الرأي والمشورة في السياسات والخطط والبرامج المتعلقة بالإصلاح الإداري وتحديث أجهزة الدولة وتحسين-د\n.األداء\nالاشتراك مع مجلس النوالمرشحين لمنصب رئيس الجمهورية والمصادقة على خطط التنمية-هـ\nالاقتصادية و الاجتماعية والمعاهدات و التفاقيات المتعلقة بالدفاع والتحالف والوالسلم والحدود والتشاور فيما\n.يرى رئيس الجمهورية عرضه من قضايا على الاجتماع المشترك\n. رعاية الصحافة ومنظمات المجتمع المدني ودراسة أوضاعها واقتراح تطويرها وتحسين أدائها-و\n. رعاية تجربة السلطة المحلية ودراسة نشاطها وتقييمها واقتراح تطويرها وتعزيز دورها-ز\n.تقييم السياسات الاقتصادية والمالية والنقدية وتقييم تنفيذ برامج الاستثمار السنوية-ح\n.استعراض تقارير جهاز الرقوالمحاسبة ورفع تقرير بشأنها إلى رئيس الجمهورية-ط",
+                "page_number": null,
+                "summary": "ينشأ بقرار من رئيس الجمهورية مجلس شورى من ذوي الخبرات والكفاءات والشخصيات الاجتماعية\nلتوسيع قاعدة المشاركة في الرأي و الاستفادة من الكفاءات والخبرات ا...",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "126",
+                "article_title": null,
+                "article_text": "يتكون مجلس الشورى من مائة وأحد عشر عضوا يعينهم رئيس الجمهورية من غير األعضاء في مجلس\nيقل سنه عن النوالمجالس المحلية, ويحدد القانون الشروط الواجب توفرها في عضو مجلس الشورى على أال\nأربعين عاما. كما يحدد المزايا والحقوق التي يتمتع بها أعضاء مجلس الشورى, ويؤدون اليمين الدستورية أمام\nرئيس الجمهورية , ويضع مجلس الشورى الئحة داخلية تنظم أعماله وطريقة انعقاد اجتماعاته وكيفية اتخاذ قراراته\n.وتصدر بقانون\n\n14/20",
+                "page_number": null,
+                "summary": "يتكون مجلس الشورى من مائة وأحد عشر عضوا يعينهم رئيس الجمهورية من غير األعضاء في مجلس\nيقل سنه عن النوالمجالس المحلية, ويحدد القانون الشروط الواجب توفره...",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "127",
+                "article_title": null,
+                "article_text": "يعقد مجلس النوالشورى اجتماعات مشتركة بدعوة من رئيس الجمهورية لمناقشة المهام\nالمشتركة بينهما المحددة في الدستور ويتم التصويت عليها بأغلبية األعضاء الحاضرين ويتولى رئيس مجلس\n.النوالاجتماعات المشتركة",
+                "page_number": null,
+                "summary": "يعقد مجلس النوالشورى اجتماعات مشتركة بدعوة من رئيس الجمهورية لمناقشة المهام\nالمشتركة بينهما المحددة في الدستور ويتم التصويت عليها بأغلبية األعضاء الحا...",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "128",
+                "article_title": null,
+                "article_text": "يكون اتهام رئيس الجمهورية بالخيانة العظمى أو بخرق الدستور أو بأي عمل يمس استقالل وسيادة\nيصدر قرار التهام إال بأغلبية ثلثي أعضائه ويبين القانون البالد بناء على طلب من نصف أعضاء مجلس النوإجراءات محاكمته فإذا كان التهام موجها إلى رئيس الجمهورية ونائبة تباشر هيئة رئاسة مجلس النورئاسة\nإليه خالل دور الانعقاد العادي األول الجمهورية مؤقتا حتى صدور حكم المحكمة ويجب أن يصدر القانون المشار\nمنهما أعفي من منصبه بحكم الدستور مع عدم لمجلس النولسريان هذا الدستور وإذا حكم بالإدانة على أي\n.تسقط بالتقادم أي من الجرائم المذكورة في هذه المادة الإخلال بالعقوبات األخرى وفي جميع الح الت ال\nالفرع الثاني\nمجلس الوزراء",
+                "page_number": null,
+                "summary": "يكون اتهام رئيس الجمهورية بالخيانة العظمى أو بخرق الدستور أو بأي عمل يمس استقالل وسيادة\nيصدر قرار التهام إال بأغلبية ثلثي أعضائه ويبين القانون البالد ...",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "129",
+                "article_title": null,
+                "article_text": "مجلس الوزراء هو حكومة الجمهورية اليمنية وهو الهيئة التنفيذية والإدارية العليا للدولة ويتبعها بدون\n.استثناء جميع إلدارات واألجهزة والمؤسسات التنفيذية التللدولة",
+                "page_number": null,
+                "summary": "مجلس الوزراء هو حكومة الجمهورية اليمنية وهو الهيئة التنفيذية والإدارية العليا للدولة ويتبعها بدون\n.استثناء جميع إلدارات واألجهزة والمؤسسات التنفيذية ا...",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "130",
+                "article_title": null,
+                "article_text": "تتكون الحكومة من رئيس الوزراء ونووالوزراء ويؤلفون جميعا مجلس الوزراء ويحدد القانون\n.األسس العامة لتنظيم الوزارات وأجهزة الدولة المختلفة",
+                "page_number": null,
+                "summary": "تتكون الحكومة من رئيس الوزراء ونووالوزراء ويؤلفون جميعا مجلس الوزراء ويحدد القانون\n.األسس العامة لتنظيم الوزارات وأجهزة الدولة المختلفة",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "131",
+                "article_title": null,
+                "article_text": "يجب أن تتوفر في رئيس الوزراء ونووالوزراء الشروط الواجب توافرها في عضو مجلس النو.تقل سن أي منهم عن ثالثين سنه باستثناء رئيس الوزراء الذي يجب أن ال يقل سنه عن أربعين سنه مراعاة أن ال",
+                "page_number": null,
+                "summary": "يجب أن تتوفر في رئيس الوزراء ونووالوزراء الشروط الواجب توافرها في عضو مجلس النو.تقل سن أي منهم عن ثالثين سنه باستثناء رئيس الوزراء الذي يجب أن ال يقل ...",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "132",
+                "article_title": null,
+                "article_text": "يختار رئيس الوزراء أعضاء وزارته بالتشاور مع رئيس الجمهورية ويطلب الثقة بالحكومة على ضوء\n.برنامج يتقدم به إلى مجلس النواب",
+                "page_number": null,
+                "summary": "يختار رئيس الوزراء أعضاء وزارته بالتشاور مع رئيس الجمهورية ويطلب الثقة بالحكومة على ضوء\n.برنامج يتقدم به إلى مجلس النواب",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "133",
+                "article_title": null,
+                "article_text": "رئيس الوزراء والوزراء مسئولون أمام رئيس الجمهورية ومجلس النوجماعية عن أعمال\n.الحكومة",
+                "page_number": null,
+                "summary": "رئيس الوزراء والوزراء مسئولون أمام رئيس الجمهورية ومجلس النوجماعية عن أعمال\n.الحكومة",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "134",
+                "article_title": null,
+                "article_text": "قبل أن يباشر رئيس وأعضاء مجلس الوزراء صالحياتهم يؤدون اليمين الدستورية أمام رئيس\n.الجمهورية",
+                "page_number": null,
+                "summary": "قبل أن يباشر رئيس وأعضاء مجلس الوزراء صالحياتهم يؤدون اليمين الدستورية أمام رئيس\n.الجمهورية",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "135",
+                "article_title": null,
+                "article_text": "يحدد القانون مرتبات رئيس الوزراء ونووالوزراء ونو",
+                "page_number": null,
+                "summary": "يحدد القانون مرتبات رئيس الوزراء ونووالوزراء ونو",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "136",
+                "article_title": null,
+                "article_text": "ال يجوز لرئيس الوزراء وال ألي من الوزراء أثناء توليهم الوزارة أن يتولوا أي وظيفة عامة أخرى أو أن\nيزاولوا ولو بطريقة غير مباشرة مهنة حرة أو عمال تجاريا أو ماليا أو صناعيا كما ال يجوز لهم أن يسهموا في\nالتزامات تعقدها الحكومة أو المؤسسات العامة أو أن يجمعوا بين الوزارة والعضوية في مجلس إدارة أي شركة وال\nعليها ولو بطريقة المزاد العلني أو يجوز خالل تلك المدة أن يشتروا أو يستأجروا أمو ال من أموال الدولة أو يقايضوا\n.أن يؤجروها أو يبيعوها شيئا من أموالهم أو يقايضوها عليه",
+                "page_number": null,
+                "summary": "ال يجوز لرئيس الوزراء وال ألي من الوزراء أثناء توليهم الوزارة أن يتولوا أي وظيفة عامة أخرى أو أن\nيزاولوا ولو بطريقة غير مباشرة مهنة حرة أو عمال تجاريا...",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "137",
+                "article_title": null,
+                "article_text": "يتولى مجلس الوزراء تنفيذ السياسة العامة للدولة في المج الت السياسية و الاقتصادية و الاجتماعية\nوفقا للقوانين والقرارات كما يمارس بوجه خاص الاختصاصات التالية:ـ والدفاعية والثقافية\n.الاشتراك مع رئيس الجمهورية في إعداد الخطوط العريضة للسياسة الخارجية والداخلية-أ\n.إعداد مشروع الخطة الاقتصادية للدولة والميزانية السنوية وتنظيم تنفيذها وإعداد الحسللدولة-ب\n\n15/20\n.إعداد مشاريع القوانين والقرارات وتقديمها إلى مجلس النورئيس الجمهورية وفق اختصاص كل منهما-ج\nالموافقة على المعاهدات و التفاقيات قبل عرضها على مجلس النورئيس الجمهورية وفق اختصاص كل-د\n.منهما\n.اتخاذ الإجراءات الالزمة للمحافظة على أمن الدولة الداخلي والخارجي ولحماية حقوق المواطنين-هـ\nتوجيه وتنسيق ومراجعة أعمال الوزارات واألجهزة الإدارية والمؤسسات والهيئات العامة والقطاعين العام-و\n.والمختلط وفقا للقانون\nتعيين وعزل الموظفين القياديين طبقا للقانون ورسم وتنفيذ السياسة الهادفة إلى تنمية الكوادر الفنية في أجهزة-ز\n.الدولة وتأهيل القوى البشرية وفقا الاحتياجات البالد في إطار الخطة الاقتصادية\n.متتنفيذ القوانين والمحافظة على أموال الدولة-ح\n.الإشراف على تنظيم وإدارة نظم النقد و الئتمان والتأمين-ط\n.عقد القروض ومنحها في حدود السياسة العامة للدولة وفي حدود أحكام الدستور-ي",
+                "page_number": null,
+                "summary": "يتولى مجلس الوزراء تنفيذ السياسة العامة للدولة في المج الت السياسية و الاقتصادية و الاجتماعية\nوفقا للقوانين والقرارات كما يمارس بوجه خاص الاختصاصات ال...",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "138",
+                "article_title": null,
+                "article_text": "يدير رئيس الوزراء أعمال المجلس ويرأس اجتماعاته وهو الذي يمثل المجلس فيما يتعلق بتنفيذ السياسة\nالعامة للدولة ويشرف ويعمل على تنفيذ قرارات مجلس الوزراء والسياسة العامة للدولة بشكل موحد ومنسق وله أن\nو الاختصاصات التي يباشرونها والمهام التي الوزارات يطلب من أعضاء المجلس التقارير في أي شأن من شئون\n.يكلفون بها وهم ملزمون بذلك",
+                "page_number": null,
+                "summary": "يدير رئيس الوزراء أعمال المجلس ويرأس اجتماعاته وهو الذي يمثل المجلس فيما يتعلق بتنفيذ السياسة\nالعامة للدولة ويشرف ويعمل على تنفيذ قرارات مجلس الوزراء ...",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "139",
+                "article_title": null,
+                "article_text": "ـ لرئيس الجمهورية ولمجلس النوإحالة رئيس الوزراء أو نوأو الوزراء إلى التحقيق1 )\nًوالمحاكمة عما يقع منهم من جرائم أثناء تأدية أعمال وظائفهم أو بسببها ويكون قرار مجلس النوالتهام بنا\n.يصدر قرار التهام إال بأغلبية ثلثي أعضاء المجلس على اقتراح مقدم من خمس أعضائه على األقل وال\nيحول انتهاء خدمته ) من هذه المادة عن عمله إلى أن يأمره وال1(ـ يوقف من يُتهم ممن ذكروا في الفقرة2\n.دون إقامة الدعوى عليه أو الاستمرار فيها\nـ يكون التحقيق ومحاكمة رئيس مجلس الوزراء ونووالوزراء وإجراءات المحاكمة وضماناتها على الوجه3\n.المبين في القانون\n.ـ تسري أحكام الفقرات السمن هذه المادة على نو",
+                "page_number": null,
+                "summary": "ـ لرئيس الجمهورية ولمجلس النوإحالة رئيس الوزراء أو نوأو الوزراء إلى التحقيق1 )\nًوالمحاكمة عما يقع منهم من جرائم أثناء تأدية أعمال وظائفهم أو بسببها وي...",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "140",
+                "article_title": null,
+                "article_text": "عند استقالة الوزارة أو إقالتها أو سحب الثقة منها تكلف الوزارة بتصريف الشئون العامة العادية\n.ماعدا التعيين والعزل حتى تشكل الوزارة الجديدة",
+                "page_number": null,
+                "summary": "عند استقالة الوزارة أو إقالتها أو سحب الثقة منها تكلف الوزارة بتصريف الشئون العامة العادية\n.ماعدا التعيين والعزل حتى تشكل الوزارة الجديدة",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "141",
+                "article_title": null,
+                "article_text": "يجوز لرئيس الوزراء إذا تبين أن تعاونه مع أحد أعضاء مجلس الوزراء قد أصبح مستحيال أن يطلب\n.من رئيس الجمهورية إعفاء العضو المعنى",
+                "page_number": null,
+                "summary": "يجوز لرئيس الوزراء إذا تبين أن تعاونه مع أحد أعضاء مجلس الوزراء قد أصبح مستحيال أن يطلب\n.من رئيس الجمهورية إعفاء العضو المعنى",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "142",
+                "article_title": null,
+                "article_text": "إذا لم يعد في استطاعة رئيس الوزراء تحمل مسؤولياته أو إذا حجب مجلس النوعن الحكومة\nأو سحبها منها أو تم إجراء انتخعامة لمجلس النوعلى رئيس الوزراء تقديم استقالة الحكومة إلى\n.رئيس الجمهورية",
+                "page_number": null,
+                "summary": "إذا لم يعد في استطاعة رئيس الوزراء تحمل مسؤولياته أو إذا حجب مجلس النوعن الحكومة\nأو سحبها منها أو تم إجراء انتخعامة لمجلس النوعلى رئيس الوزراء تقديم ا...",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "143",
+                "article_title": null,
+                "article_text": "إذا قدم أغلبية أعضاء مجلس الوزراء استقالتهم وجب على رئيس الوزراء تقديم استقالة الحكومة\n\n16/20",
+                "page_number": null,
+                "summary": "إذا قدم أغلبية أعضاء مجلس الوزراء استقالتهم وجب على رئيس الوزراء تقديم استقالة الحكومة\n\n16/20",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "144",
+                "article_title": null,
+                "article_text": "روعها في جميع أنحاء الجمهورية ف )يتولى كل وزير الإشراف على شئون وزارته وتوجيه إدارتها و\nويقوم بتنفيذ السياسة العامة للحكومة في وزارته ويبين القانون الح الت التي يمكن فيها للوزير إصدار القرارات\n.لتنفيذ القوانين\nالفرع الثالث\nأجهزة السلطة المحلية",
+                "page_number": null,
+                "summary": "روعها في جميع أنحاء الجمهورية ف )يتولى كل وزير الإشراف على شئون وزارته وتوجيه إدارتها و\nويقوم بتنفيذ السياسة العامة للحكومة في وزارته ويبين القانون ال...",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "145",
+                "article_title": null,
+                "article_text": "ُتقسم أراضي الجمهورية اليمنية إلى وحدات إدارية يبين القانون عددها وحدودها وتقسيماتها واألسس\nكما يبين القانون طريقة ترشيح وانتخاختيار وتعيين الإداري والمعايير العلمية التي يقوم عليها التقسيم\n.رؤسائها ويحدد اختصاصاتهم واختصاصات رؤساء المصالح فيها",
+                "page_number": null,
+                "summary": "ُتقسم أراضي الجمهورية اليمنية إلى وحدات إدارية يبين القانون عددها وحدودها وتقسيماتها واألسس\nكما يبين القانون طريقة ترشيح وانتخاختيار وتعيين الإداري وا...",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "146",
+                "article_title": null,
+                "article_text": "ً) تتمتع الوحدات الإدارية بالشخصية الاعتبارية ويكون لها مجالس محلية منتخبة انتخحرًا مباشر\nومتساويًا على مستوى المحافظة والمديرية وتمارس مهماتها وصالحياتها في حدود الوحدة الإدارية وتتولى اقتراح\nالبرامج والخطط والموازنات الاستثمارية للوحدة الإدارية كما تقوم بالإشراف والرقوالمحاسبة ألجهزة السلطة\nالمحلية وفقا للقانون ويحدد القانون طريقة الترشيح و الانتخالمحلية ونظام عملها ومواردها المالية\nوحقوق وواجبات أعضائها ودورها في تنفيذ الخطط والبرامج التنموية وجميع األحكام األخرى المتبها وذلك\n.بمراعاة اعتماد مبدأ الالمركزية الإدارية والمالية كأساس لنظام الإدارة المحلية",
+                "page_number": null,
+                "summary": "ً) تتمتع الوحدات الإدارية بالشخصية الاعتبارية ويكون لها مجالس محلية منتخبة انتخحرًا مباشر\nومتساويًا على مستوى المحافظة والمديرية وتمارس مهماتها وصالحي...",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "147",
+                "article_title": null,
+                "article_text": "يتجزأ من سلطة الدولة ويكون المحافظون ) تعتبر كل من الوحدات الإدارية والمجالس المحلية جزءًا ال\nمحاسبين ومسئولين أمام رئيس الجمهورية ومجلس الوزراء وقرار اتهما ُملزمة لهم ويجب عليهم تنفيذها في كل\n.الح الت ويحدد القانون طريقة الرقعلى أعمال المجالس المحلية",
+                "page_number": null,
+                "summary": "يتجزأ من سلطة الدولة ويكون المحافظون ) تعتبر كل من الوحدات الإدارية والمجالس المحلية جزءًا ال\nمحاسبين ومسئولين أمام رئيس الجمهورية ومجلس الوزراء وقرار...",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "148",
+                "article_title": null,
+                "article_text": "تقوم الدولة بتشجيع ورعاية هيئات التطوير التعاوني على مستوى الوحدات الإدارية باعتبارها من أهم\n.وسائل التنمية المحلية\nالالسلطة القضائية",
+                "page_number": null,
+                "summary": "تقوم الدولة بتشجيع ورعاية هيئات التطوير التعاوني على مستوى الوحدات الإدارية باعتبارها من أهم\n.وسائل التنمية المحلية\nالالسلطة القضائية",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              }
+            ]
+          },
+          {
+            "section_number": "3",
+            "section_title": "السلطة القضائية",
+            "articles": [
+              {
+                "article_number": "149",
+                "article_title": null,
+                "article_text": "القضاء سلطة مستقلة قضائيا وماليا وإداريا والنيالعامة هيئة من هيئاته وتتولى المحاكم السلطان عليهم في قضائهم لغير القانون وال يجوز ألية جهة وبأية جميع المنازعات والجرائم والقضاة مستقلون ال\nتسقط صورة التدخل في القضايا أو في شأن من شئون العدالة ويعتبر مثل هذا التدخل جريمة يعاقب عليها القانون وال\n.الدعوى فيها بالتقادم",
+                "page_number": null,
+                "summary": "القضاء سلطة مستقلة قضائيا وماليا وإداريا والنيالعامة هيئة من هيئاته وتتولى المحاكم السلطان عليهم في قضائهم لغير القانون وال يجوز ألية جهة وبأية جميع ا...",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "150",
+                "article_title": null,
+                "article_text": "القضاء وحدة متكاملة ويرتب القانون الجهات القضائية ودرجاتها ويحدد اختصاصاتها كما يحدد الشروط\nالواجب توفرها فيمن يتولى القضاء وشروط وإجراءات تعيين القضاة ونقلهم وترقيتهم والضمانات األخرى الخاصة\n.بهم وال يجوز إنشاء محاكم استثنائية بأي حال من األحوال",
+                "page_number": null,
+                "summary": "القضاء وحدة متكاملة ويرتب القانون الجهات القضائية ودرجاتها ويحدد اختصاصاتها كما يحدد الشروط\nالواجب توفرها فيمن يتولى القضاء وشروط وإجراءات تعيين القضا...",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "151",
+                "article_title": null,
+                "article_text": "القضاة وأعضاء النيالعامة غير قللعزل إال في الح الت وبالشروط التي يحددها القانون وال\nيجوز نقلهم من السلك القضائي إلى أي وظائف غير قضائية إال برضاهم وبموافقة المجلس المختص بشئونهم مالم\n.يكن ذلك على سبيل التأديب وينظم القانون محاكمتهم التأديبية كما ينظم القانون مهنة المحاماة\n\n17/20",
+                "page_number": null,
+                "summary": "القضاة وأعضاء النيالعامة غير قللعزل إال في الح الت وبالشروط التي يحددها القانون وال\nيجوز نقلهم من السلك القضائي إلى أي وظائف غير قضائية إال برضاهم وبم...",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "152",
+                "article_title": null,
+                "article_text": "يكون للقضاء مجلس أعلى ينظمه القانون ويبين اختصاصاته وطريقة ترشيح وتعيين أعضائه ويعمل\nعلى تطبيق الضمانات الممنوحة للقضاة من حيث التعيين والترقية والوفقا للقانون ويتولى المجلس\n.دراسة وإقرار مشروع موازنة القضاء تمهيدا إلدراجها رقما واحدا في الموازنة العامة للدولة",
+                "page_number": null,
+                "summary": "يكون للقضاء مجلس أعلى ينظمه القانون ويبين اختصاصاته وطريقة ترشيح وتعيين أعضائه ويعمل\nعلى تطبيق الضمانات الممنوحة للقضاة من حيث التعيين والترقية والوفق...",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "153",
+                "article_title": null,
+                "article_text": "المحكمة العليا للجمهورية هي أعلى هيئة قضائية ويحدد القانون كيفية تشكيلها ويبين اختصاصاتها\nيلي:ـ والإجراءات التي تتبع أمامها وتمارس على وجه الخصوص في مجال القضاء ما\n.الالدعاوى والدفوع المتعلقة بعدم دستورية القوانين واللوائح واألنظمة والقرارات-أ\n.التنازع الاختصاص بين جهات القضاء-ب\n.بصحة عضوية أي من أعضائه المتعلقة التحقيق وإبداء الرأي في صحة الطعون المحالة إليها من مجلس النوالالطعون في األحكام النهائية وذلك في القضايا المدنية والتجارية والجنائية واألحوال الشخصية-د\n.والمنازعات الإدارية والدعاوى التأديبية وفقًا للقانون\n.محاكمة رئيس الجمهورية ونائب الرئيس ورئيس الوزراء ونووالوزراء ونووفقا للقانون-هـ",
+                "page_number": null,
+                "summary": "المحكمة العليا للجمهورية هي أعلى هيئة قضائية ويحدد القانون كيفية تشكيلها ويبين اختصاصاتها\nيلي:ـ والإجراءات التي تتبع أمامها وتمارس على وجه الخصوص في م...",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "154",
+                "article_title": null,
+                "article_text": "جلسات المحاكم علنية إال إذا قررت المحكمة جعلها سرية مراعاة للنظام العام واآلدجميع\n.األحوال يكون النطق بالحكم في جلسة علنية\nالشعار الجمهورية وعلمها ونشيدها الوطني",
+                "page_number": null,
+                "summary": "جلسات المحاكم علنية إال إذا قررت المحكمة جعلها سرية مراعاة للنظام العام واآلدجميع\n.األحوال يكون النطق بالحكم في جلسة علنية\nالشعار الجمهورية وعلمها ونش...",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "chapter_number": "4",
+        "chapter_title": "شعار الجمهورية وعلمها ونشيدها الوطني",
+        "sections": [
+          {
+            "section_number": "1",
+            "section_title": "شعار الجمهورية وعلمها ونشيدها الوطني",
+            "articles": [
+              {
+                "article_number": "155",
+                "article_title": null,
+                "article_text": "يحدد القانون شعار الجمهورية وشاراتها وأوسمتها ونشيدها الوطني",
+                "page_number": null,
+                "summary": "يحدد القانون شعار الجمهورية وشاراتها وأوسمتها ونشيدها الوطني",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "156",
+                "article_title": null,
+                "article_text": "يتألف العلم الوطني من األلوان المرتبة وتبدأ من أعاله كالتالي:ـ\n.ـ األحمر\n.ـ األبيض\n.ـ األسود",
+                "page_number": null,
+                "summary": "يتألف العلم الوطني من األلوان المرتبة وتبدأ من أعاله كالتالي:ـ\n.ـ األحمر\n.ـ األبيض\n.ـ األسود",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "157",
+                "article_title": null,
+                "article_text": "مدينة صنعاء هي عاصمة الجمهورية اليمنية\nالأصول تعديل الدستور وأحكام عامة",
+                "page_number": null,
+                "summary": "مدينة صنعاء هي عاصمة الجمهورية اليمنية\nالأصول تعديل الدستور وأحكام عامة",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "chapter_number": "5",
+        "chapter_title": "أصول تعديل الدستور وأحكام عامة",
+        "sections": [
+          {
+            "section_number": "1",
+            "section_title": "أصول تعديل الدستور وأحكام عامة",
+            "articles": [
+              {
+                "article_number": "158",
+                "article_title": null,
+                "article_text": "لكل من رئيس الجمهورية ومجلس النوتعديل مادة أو أكثر من مواد الدستور ويجب أن يذكر في\nطلب التعديل المواد المطلوب تعديلها واألسالداعية لهذا التعديل فإذا كان الطلب صادرا عن مجلس\nوفي جميع األحوال يناقش المجلس مبدأ التعديل ويصدر قراره في .النوأن يكون موقعا من ثلث أعضائه\nفإذا تقرر رفض الطلب ال يجوز إعادة طلب تعديل المواد ذاتها قبل مضي سنة على هذا الرفض أعضائه شأنه بأغلبية\nوإذا وافق مجلس النومبدأ التعديل يناقش المجلس بعد شهرين من تاريخ هذه الموافقة المواد المطلوب\n والثاني\n األول\n المواد\n من\n أي\n تعديل\n على\n المجلس\n أرباع\n ثالثة\n وافق\n فإذا\nتعديلها\n110و108و105و101و98 و93و92و82و81و63و62(والمواد\n) من الدستور يتم عرض ذلك على الشعب لالاستفتاء159و158و146و139و128و121و119و116و112و111و\nالعام فإذا وافق على التعديل األغلبية المطلقة لعدد من أدلوا بأصواتهم في الاستفتاء العام أعتبر التعديل نافذا من تاريخ\n.إعالن نتيجة الاستفتاء وفيما عدا ذلك تعدل بموافقة ثالثة أرباع المجلس ويعتبر التعديل نافذا من تاريخ الموافقة\n\n18/20\nعدد التحميالت\nعدد الزيارات",
+                "page_number": null,
+                "summary": "لكل من رئيس الجمهورية ومجلس النوتعديل مادة أو أكثر من مواد الدستور ويجب أن يذكر في\nطلب التعديل المواد المطلوب تعديلها واألسالداعية لهذا التعديل فإذا ك...",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "159",
+                "article_title": null,
+                "article_text": "تتولى الإدارة والإشراف والرقعلى إجراء الانتخابات العامة و الاستفتاء العام لجنة عليا مستقلة\nومحايدة ويحدد القانون عدد أعضاء اللجنة والشروط الالزم توفرها فيهم وطريقة ترشيحهم وتعيينهم كما يحدد\n.القانون اختصاصات وصالحيات اللجنة بما يكفل لها القيام بمهامها على الوجه األمثل",
+                "page_number": null,
+                "summary": "تتولى الإدارة والإشراف والرقعلى إجراء الانتخابات العامة و الاستفتاء العام لجنة عليا مستقلة\nومحايدة ويحدد القانون عدد أعضاء اللجنة والشروط الالزم توفره...",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "160",
+                "article_title": null,
+                "article_text": "اليمين الدستورية التي يؤديها رئيس الجمهورية ونائبه وأعضاء مجلس النووأعضاء\nيلي:ـ الحكومة ورئيس وأعضاء مجلس الشورى نصها كما\n(اقسم باهلل العظيم أن أكون متمسكا بكتوسنة رسوله وأن أحافظ مخلصا على النظام الجمهوري وأن احترم\nالدستور والقانون وأن أرعى مصالح الشعب وحرياته رعاية كاملة وأن أحافظ على وحدة الوطن واستقالله وسالمة\n.)أراضيه",
+                "page_number": null,
+                "summary": "اليمين الدستورية التي يؤديها رئيس الجمهورية ونائبه وأعضاء مجلس النووأعضاء\nيلي:ـ الحكومة ورئيس وأعضاء مجلس الشورى نصها كما\n(اقسم باهلل العظيم أن أكون م...",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "161",
+                "article_title": null,
+                "article_text": "من الدستورمن الدورة األولى الحالية112() تسري مدة السبع السنوات الواردة في نص المادة\n.لمدة رئيس الجمهورية",
+                "page_number": null,
+                "summary": "من الدستورمن الدورة األولى الحالية112() تسري مدة السبع السنوات الواردة في نص المادة\n.لمدة رئيس الجمهورية",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              },
+              {
+                "article_number": "162",
+                "article_title": null,
+                "article_text": "من الدستورمن مدة مجلس65( ) تسري مدة السنتين المضافة إلى مدة مجلس النوالمادة\n.النووقت إقرار هذا التعديل الدستوري",
+                "page_number": null,
+                "summary": "من الدستورمن مدة مجلس65( ) تسري مدة السنتين المضافة إلى مدة مجلس النوالمادة\n.النووقت إقرار هذا التعديل الدستوري",
+                "keywords": [],
+                "legal_topics": [
+                  "دستور"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الدولة",
+                  "المواطن",
+                  "القانون"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

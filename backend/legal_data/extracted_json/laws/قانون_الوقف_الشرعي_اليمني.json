@@ -1,0 +1,3111 @@
+{
+  "document": {
+    "document_id": "0cb4ed6bbd6106fe",
+    "title": "قانون الوقف الشرعي اليمني",
+    "country": "اليمن",
+    "jurisdiction": "الجمهورية اليمنية",
+    "document_type": "قانون",
+    "law_number": "23",
+    "issue_date": "1992",
+    "effective_date": "1992",
+    "source_file": "قانون الوقف الشرعي اليمني.pdf",
+    "language": "ar",
+    "total_articles": 92,
+    "extraction_date": "2026-06-08T15:33:56.434916",
+    "table_of_contents": {
+      "books": [
+        {
+          "number": "الثاني",
+          "title": "في الوالية عىل الوقف"
+        },
+        {
+          "number": "الثالث",
+          "title": "احكام عامة وختامية"
+        }
+      ],
+      "chapters": [
+        {
+          "number": "الثاني",
+          "title": "الوقف واركانه"
+        },
+        {
+          "number": "الثالث",
+          "title": "رشوط الوقف"
+        },
+        {
+          "number": "الرابع",
+          "title": "احكام الوقف العامة"
+        },
+        {
+          "number": "الخامس",
+          "title": "احكام خاصة بالوقف عىل المسجد"
+        },
+        {
+          "number": "السادس",
+          "title": "احكام خاصة بالوقف  الهيل"
+        },
+        {
+          "number": "الثاني",
+          "title": ""
+        },
+        {
+          "number": "الثالث",
+          "title": ""
+        },
+        {
+          "number": "الرابع",
+          "title": "في محاسبة متويل الوقف"
+        },
+        {
+          "number": "الخامس",
+          "title": "في ضمان متويل الوقف ومستاجره"
+        }
+      ]
+    },
+    "chapters": [
+      {
+        "chapter_number": "1",
+        "chapter_title": "قانون الوقف الشرعي اليمني",
+        "sections": [
+          {
+            "section_number": "1",
+            "section_title": "جميع المواد",
+            "articles": [
+              {
+                "article_number": "1",
+                "article_title": null,
+                "article_text": "وافق مجلس النواب في جلسته الرابعة من الفرتة  الوىل للدورة  الوىل من دور  النعقاد السنوي الثاني المنعقدة بتاريخ\n.م بشان الوقف الرشعي1992لسنة)23(م عىل القرار الجمهوري بالقانون رقم21/5/1994 هـ الموافق20/12/1414",
+                "page_number": 1,
+                "summary": "وافق مجلس النواب في جلسته الرابعة من الفرتة  الوىل للدورة  الوىل من دور  النعقاد السنوي الثاني المنعقدة بتاريخ",
+                "keywords": [
+                  "وافق",
+                  "مجلس",
+                  "النواب",
+                  "جلسته",
+                  "الرابعة",
+                  "الفرتة",
+                  "الوىل",
+                  "للدورة",
+                  "النعقاد",
+                  "السنوي"
+                ],
+                "legal_topics": [
+                  "الأحوال الشخصية - الوقف",
+                  "الالتزامات والعقود"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": []
+              },
+              {
+                "article_number": "2",
+                "article_title": null,
+                "article_text": ".يعمل بهذا القرار من تاريخ صدوره وينرش في الجريدة الرسمية\nصدر برئاسة الجمهورية بصنعاء\nهـ20/12/1414 بتاريخ\nم5/1994 /21 الموافق\nعبد هللا بن حسني األحمر\nرئيس مجلس النـــواب\nم1992 لسنة)23(قرار جمهوري بالقانون رقم\nبشان الوقف الرشعي\n-:رئيس مجلس الرئاسة\n.بعد  الطالع عىل اتفاق اعالن الجمهورية اليمنية\n.وعىل دستور الجمهورية اليمنية\n.م بتشكيل مجلس الوزراء1990لسنة)1(وعىل القرار الجمهوري رقم\n\n.وبعد موافقة مجلس الرئاسة\nقـــرر\nالباب  الول\nالتعاريف واركان الوقف ورشوطه واحكامه\nالفصل  الول\nالتسمية والتعاريف",
+                "page_number": 1,
+                "summary": "",
+                "keywords": [
+                  "يعمل",
+                  "بهذا",
+                  "القرار",
+                  "تاريخ",
+                  "صدوره",
+                  "وينرش",
+                  "الجريدة",
+                  "الرسمية",
+                  "برئاسة",
+                  "الجمهورية"
+                ],
+                "legal_topics": [
+                  "الأحوال الشخصية - الوقف"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": []
+              },
+              {
+                "article_number": "3",
+                "article_title": null,
+                "article_text": "-:الوقف هو حبس مال والتصدق بمنفعته او ثمرته عىل سبيل القربه تابيدا وهو نوعان\n. وقف اهيل-1\n. وقف خريي-2",
+                "page_number": 2,
+                "summary": "-:الوقف هو حبس مال والتصدق بمنفعته او ثمرته عىل سبيل القربه تابيدا وهو نوعان",
+                "keywords": [
+                  "الوقف",
+                  "والتصدق",
+                  "بمنفعته",
+                  "ثمرته",
+                  "سبيل",
+                  "القربه",
+                  "تابيدا",
+                  "نوعان",
+                  "اهيل",
+                  "خريي"
+                ],
+                "legal_topics": [
+                  "عقوبات جزائية",
+                  "الأحوال الشخصية - الوقف"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [
+                  "-:الوقف هو حبس مال والتصدق بمنفعته او ثمرته عىل سبيل القربه تابيدا وهو نوعان"
+                ],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": []
+              },
+              {
+                "article_number": "4",
+                "article_title": null,
+                "article_text": "مثل كوائن(هو ما وقف عىل جهات الرب العامة والخاصة:والوقف الخريي.هو ما وقف عىل النفس او الذرية:الوقف  الهيل\nوالكوائن عبارة عن اوقاف من واقفني متعددين جهل ما وقفه كل واحد منهم وجهات مصارفها فضمت اىل  الوقاف)زبيد\n.العامة ورصف ما عني عليها للمدارس والمساجد وغريها",
+                "page_number": 2,
+                "summary": "مثل كوائن(هو ما وقف عىل جهات الرب العامة والخاصة:والوقف الخريي",
+                "keywords": [
+                  "كوائن",
+                  "جهات",
+                  "الرب",
+                  "العامة",
+                  "والخاصة",
+                  "والوقف",
+                  "الخريي",
+                  "النفس",
+                  "الذرية",
+                  "الوقف"
+                ],
+                "legal_topics": [
+                  "الأحوال الشخصية - الوقف"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": []
+              },
+              {
+                "article_number": "5",
+                "article_title": null,
+                "article_text": "يكون الوقف بايجاب من الواقف يقف به م ال معينا منقوال او غري منقول مملوكا له ويتصدق بمنفعته او ثمرته عىل معني\nشخصا كان اوجهة عامة او خاصة ، ويجب ان يقرتن  اليجاب بنية القربة  ال انه في غري الرصيح ال بد من داللة يظهر بها مراد\n.الواقف",
+                "page_number": 2,
+                "summary": "يكون الوقف بايجاب من الواقف يقف به م ال معينا منقوال او غري منقول مملوكا له ويتصدق بمنفعته او ثمرته عىل معني\nشخصا كان او...",
+                "keywords": [
+                  "الوقف",
+                  "بايجاب",
+                  "الواقف",
+                  "معينا",
+                  "منقوال",
+                  "منقول",
+                  "مملوكا",
+                  "ويتصدق",
+                  "بمنفعته",
+                  "ثمرته"
+                ],
+                "legal_topics": [
+                  "الأحوال الشخصية - الوقف"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [
+                  "يكون الوقف بايجاب من الواقف يقف به م ال معينا منقوال او غري منقول مملوكا له ويتصدق بمنفعته او ثمرته عىل معني\nشخصا كان اوجهة عامة او خاصة ، ويجب ان يقرتن  اليجاب بنية القربة  ال انه في غري الرصيح ال بد من داللة يظهر بها مراد"
+                ],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الواقف"
+                ]
+              },
+              {
+                "article_number": "6",
+                "article_title": null,
+                "article_text": ". ال يشرتط في الوقف القبول وانما للموقوف عليه ان يرد  الستحقاق واذا رد استحقاقه بطل حقه فيه ، وال رجوع في الرد",
+                "page_number": 2,
+                "summary": "",
+                "keywords": [
+                  "يشرتط",
+                  "الوقف",
+                  "القبول",
+                  "وانما",
+                  "للموقوف",
+                  "عليه",
+                  "الستحقاق",
+                  "واذا",
+                  "استحقاقه",
+                  "رجوع"
+                ],
+                "legal_topics": [
+                  "الأحوال الشخصية - الوقف"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": []
+              },
+              {
+                "article_number": "7",
+                "article_title": null,
+                "article_text": "يتم الوقف قبوال او كتابة بلفظ رصيح او كتابة او بالفعل كما يتم ب الشارة المفهمة من  الخرس ويكون الوقف بلفظ رصيح\nكقوله وقفت او حبست ، وبلفظ الكناية كقوله تصدقت ويكون بالفعل كان يفعل الواقف شيئا ظاهرة التسبيل مع النية\n.كنصب جرس لمرور الناس عليه ، او تعليق باب في مسجد ، او تركيبه",
+                "page_number": 2,
+                "summary": "يتم الوقف قبوال او كتابة بلفظ رصيح او كتابة او بالفعل كما يتم ب الشارة المفهمة من  الخرس ويكون الوقف بلفظ رصيح\nكقوله وقف...",
+                "keywords": [
+                  "الوقف",
+                  "قبوال",
+                  "كتابة",
+                  "بلفظ",
+                  "رصيح",
+                  "بالفعل",
+                  "الشارة",
+                  "المفهمة",
+                  "الخرس",
+                  "ويكون"
+                ],
+                "legal_topics": [
+                  "عقوبات جزائية",
+                  "الأحوال الشخصية - الوقف"
+                ],
+                "legal_concepts": [
+                  "الإثبات بالكتابة"
+                ],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [
+                  "يتم الوقف قبوال او كتابة بلفظ رصيح او كتابة او بالفعل كما يتم ب الشارة المفهمة من  الخرس ويكون الوقف بلفظ رصيح\nكقوله وقفت او حبست ، وبلفظ الكناية كقوله تصدقت ويكون بالفعل كان يفعل الواقف شيئا ظاهرة التسبيل مع النية"
+                ],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الواقف"
+                ]
+              },
+              {
+                "article_number": "8",
+                "article_title": null,
+                "article_text": ".اذا تم الوقف قوال او كتابة او اشارة وجب  الشهاد عليه ما لم يكن بخط الواقف",
+                "page_number": 3,
+                "summary": "",
+                "keywords": [
+                  "الوقف",
+                  "قوال",
+                  "كتابة",
+                  "اشارة",
+                  "الشهاد",
+                  "عليه",
+                  "الواقف"
+                ],
+                "legal_topics": [
+                  "الأحوال الشخصية - الوقف"
+                ],
+                "legal_concepts": [
+                  "الإثبات بالكتابة"
+                ],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [
+                  "اذا تم الوقف قوال او كتابة او اشارة وجب  الشهاد عليه ما لم يكن بخط الواقف"
+                ],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الواقف"
+                ]
+              },
+              {
+                "article_number": "9",
+                "article_title": null,
+                "article_text": "-:اركان الوقف اربعة هي\n.)اليجاب(  صيغة انشائه-1\n. الواقف-2\n.)العني الموقوفة( الموقوف-3\n.)المرصف( الموقوف عليه-4",
+                "page_number": 3,
+                "summary": "-:اركان الوقف اربعة هي",
+                "keywords": [
+                  "اركان",
+                  "الوقف",
+                  "اربعة",
+                  "اليجاب",
+                  "صيغة",
+                  "انشائه",
+                  "الواقف",
+                  "العني",
+                  "الموقوفة",
+                  "الموقوف"
+                ],
+                "legal_topics": [
+                  "الأحوال الشخصية - الوقف"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الواقف"
+                ]
+              },
+              {
+                "article_number": "10",
+                "article_title": null,
+                "article_text": ".يصح الوقف منجزا او مضافا اىل ما بعد الموت",
+                "page_number": 3,
+                "summary": "",
+                "keywords": [
+                  "الوقف",
+                  "منجزا",
+                  "مضافا",
+                  "الموت"
+                ],
+                "legal_topics": [
+                  "الأحوال الشخصية - الوقف"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": []
+              },
+              {
+                "article_number": "11",
+                "article_title": null,
+                "article_text": ".يصح الوقف معلقا عىل رشط  ال ان يكون محظورا",
+                "page_number": 3,
+                "summary": "",
+                "keywords": [
+                  "الوقف",
+                  "معلقا",
+                  "محظورا"
+                ],
+                "legal_topics": [
+                  "الأحوال الشخصية - الوقف"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": []
+              },
+              {
+                "article_number": "12",
+                "article_title": null,
+                "article_text": ". للواقف او لغريه صح الوقف وبطل الرشط)مصلحة( اذا اقرتن الوقف برشط ال يتعلق بغرض\nالفصل الثالث\nرشوط الوقف",
+                "page_number": 3,
+                "summary": "",
+                "keywords": [
+                  "للواقف",
+                  "لغريه",
+                  "الوقف",
+                  "وبطل",
+                  "الرشط",
+                  "مصلحة",
+                  "اقرتن",
+                  "برشط",
+                  "يتعلق",
+                  "بغرض"
+                ],
+                "legal_topics": [
+                  "الأحوال الشخصية - الوقف"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": []
+              },
+              {
+                "article_number": "13",
+                "article_title": null,
+                "article_text": "-:يشرتط في الواقف ما ياتي\n. ان يكون مكلفا-1\n. ان يكون مختارا-2\n. ان يكون مطلق الترصف-3\n\n. ان يكون مالكا للمال المراد وقفه-4\n ان ال يكون مدينا بدين سابق عىل الوقف مستغرق لجميع ماله او ال يفي ما تبقى من ماله بعد الوقف لسداده ما لم يجز-5\n.الوقف من له الدين",
+                "page_number": 3,
+                "summary": "-:يشرتط في الواقف ما ياتي",
+                "keywords": [
+                  "يشرتط",
+                  "الواقف",
+                  "ياتي",
+                  "مكلفا",
+                  "مختارا",
+                  "مطلق",
+                  "الترصف",
+                  "مالكا",
+                  "للمال",
+                  "المراد"
+                ],
+                "legal_topics": [
+                  "الأحوال الشخصية - الوقف"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [
+                  "ان يكون مالكا للمال المراد وقفه-4\n ان ال يكون مدينا بدين سابق عىل الوقف مستغرق لجميع ماله او ال يفي ما تبقى من ماله بعد الوقف لسداده ما لم يجز-5"
+                ],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الواقف"
+                ]
+              },
+              {
+                "article_number": "14",
+                "article_title": null,
+                "article_text": ".اذا حبس غري المسلم م ال عىل جهة ما ظاهره الرب قبل منه واخذ حكم الوقف وتتواله جهة الوالية العامة",
+                "page_number": 3,
+                "summary": "",
+                "keywords": [
+                  "المسلم",
+                  "ظاهره",
+                  "الرب",
+                  "واخذ",
+                  "الوقف",
+                  "وتتواله",
+                  "الوالية",
+                  "العامة"
+                ],
+                "legal_topics": [
+                  "عقوبات جزائية",
+                  "الأحوال الشخصية - الوقف"
+                ],
+                "legal_concepts": [
+                  "الأحكام القضائية"
+                ],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [
+                  "اذا حبس غري المسلم م ال عىل جهة ما ظاهره الرب قبل منه واخذ حكم الوقف وتتواله جهة الوالية العامة"
+                ],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": []
+              },
+              {
+                "article_number": "15",
+                "article_title": null,
+                "article_text": ".ال يصح وقف الفضويل وال تلحقه  الجازة",
+                "page_number": 3,
+                "summary": "",
+                "keywords": [
+                  "الفضويل",
+                  "تلحقه",
+                  "الجازة"
+                ],
+                "legal_topics": [
+                  "الأحوال الشخصية - الوقف"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": []
+              },
+              {
+                "article_number": "16",
+                "article_title": null,
+                "article_text": ".ال يصح الوقف فرارا من دين او شفعة ، وال بحيلة كالتحايل عىل احكام  الرث",
+                "page_number": 3,
+                "summary": "",
+                "keywords": [
+                  "الوقف",
+                  "فرارا",
+                  "شفعة",
+                  "بحيلة",
+                  "كالتحايل",
+                  "احكام",
+                  "الرث"
+                ],
+                "legal_topics": [
+                  "الأحوال الشخصية - الوقف"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": []
+              },
+              {
+                "article_number": "17",
+                "article_title": null,
+                "article_text": ".ال يصح للشخص ان يقف اكرث من ثلث ماله اذا كان له وارث حال الوقف",
+                "page_number": 3,
+                "summary": "",
+                "keywords": [
+                  "للشخص",
+                  "اكرث",
+                  "ماله",
+                  "وارث",
+                  "الوقف"
+                ],
+                "legal_topics": [
+                  "الأحوال الشخصية - الوقف"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": []
+              },
+              {
+                "article_number": "18",
+                "article_title": null,
+                "article_text": "-: ما ياتي)العني الموقوفة( يشرتط في الموقوف\n. ان يكون م ال معينا منقوال او غري منقول-1\n. ان يكون له منفعة او ثمرة مع بقاء عينه-2\n. ان يكون مملوكا للواقف-3",
+                "page_number": 3,
+                "summary": "-: ما ياتي)العني الموقوفة( يشرتط في الموقوف",
+                "keywords": [
+                  "ياتي",
+                  "العني",
+                  "الموقوفة",
+                  "يشرتط",
+                  "الموقوف",
+                  "معينا",
+                  "منقوال",
+                  "منقول",
+                  "منفعة",
+                  "ثمرة"
+                ],
+                "legal_topics": [
+                  "أحكام عامة"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": []
+              },
+              {
+                "article_number": "19",
+                "article_title": null,
+                "article_text": ".يصح ان يكون الموقوف مشاعا فيما ينقسم وم ال ينقسم",
+                "page_number": 4,
+                "summary": "",
+                "keywords": [
+                  "الموقوف",
+                  "مشاعا",
+                  "فيما",
+                  "ينقسم"
+                ],
+                "legal_topics": [
+                  "أحكام عامة"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": []
+              },
+              {
+                "article_number": "20",
+                "article_title": null,
+                "article_text": ".اذا وقف الواقف ما يصح وقفه وما ال يصح ، صح الوقف فيما يصح وبطل فيما ال يصح",
+                "page_number": 4,
+                "summary": "",
+                "keywords": [
+                  "الواقف",
+                  "وقفه",
+                  "الوقف",
+                  "فيما",
+                  "وبطل"
+                ],
+                "legal_topics": [
+                  "الأحوال الشخصية - الوقف"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الواقف"
+                ]
+              },
+              {
+                "article_number": "21",
+                "article_title": null,
+                "article_text": ".ال يصح التخيري في الوقف وال تعليق تعيينه في الذمة",
+                "page_number": 4,
+                "summary": "",
+                "keywords": [
+                  "التخيري",
+                  "الوقف",
+                  "تعليق",
+                  "تعيينه",
+                  "الذمة"
+                ],
+                "legal_topics": [
+                  "الأحوال الشخصية - الوقف"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": []
+              },
+              {
+                "article_number": "22",
+                "article_title": null,
+                "article_text": "اذا وقف احد الشيئني ولم يعني كان له التعيني في حياته، فان مات ولم يعني كان لورثته التعيني  ال ان يختلفوا فيكون للحاكم\n.تعيني الوقف في  القل قيمة",
+                "page_number": 4,
+                "summary": "اذا وقف احد الشيئني ولم يعني كان له التعيني في حياته، فان مات ولم يعني كان لورثته التعيني  ال ان يختلفوا فيكون للحاكم",
+                "keywords": [
+                  "الشيئني",
+                  "يعني",
+                  "التعيني",
+                  "حياته",
+                  "لورثته",
+                  "يختلفوا",
+                  "فيكون",
+                  "للحاكم",
+                  "تعيني",
+                  "الوقف"
+                ],
+                "legal_topics": [
+                  "الأحوال الشخصية - الوقف"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": []
+              },
+              {
+                "article_number": "23",
+                "article_title": null,
+                "article_text": "اذا وقف جزءا معينا كالربع ونحوه من غلة عني ترصف في مرصف معني صح الوقف ويكون مشاعا في العني بقدره،اما اذا عني\n.الغلة كيال او وزنا او عدا او نحوه فال يصح الوقف",
+                "page_number": 4,
+                "summary": "اذا وقف جزءا معينا كالربع ونحوه من غلة عني ترصف في مرصف معني صح الوقف ويكون مشاعا في العني بقدره،اما اذا عني",
+                "keywords": [
+                  "جزءا",
+                  "معينا",
+                  "كالربع",
+                  "ونحوه",
+                  "ترصف",
+                  "مرصف",
+                  "معني",
+                  "الوقف",
+                  "ويكون",
+                  "مشاعا"
+                ],
+                "legal_topics": [
+                  "الأحوال الشخصية - الوقف"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": []
+              },
+              {
+                "article_number": "24",
+                "article_title": null,
+                "article_text": "-: ما ياتي)المرصف( يشرتط في الموقوف عليه\n،  ان يكون معينا ويعترب المرصف معينا في الفقراء اذا لم يعينه الواقف ، ويكون للواقف اىل حني موته تعيني مرصف اخر-1\n.فاذا مات ولم يعني استمر الرصف للفقراء\n. ان يكون في قربه محققه رشعا-2\n. ان يكون عىل الوجه الذي عينه الواقف موضعه للرصف زمانا ومكانا-3",
+                "page_number": 4,
+                "summary": "-: ما ياتي)المرصف( يشرتط في الموقوف عليه\n،  ان يكون معينا ويعترب المرصف معينا في الفقراء اذا لم يعينه الواقف ، ويكون للو...",
+                "keywords": [
+                  "ياتي",
+                  "المرصف",
+                  "يشرتط",
+                  "الموقوف",
+                  "عليه",
+                  "معينا",
+                  "ويعترب",
+                  "الفقراء",
+                  "يعينه",
+                  "الواقف"
+                ],
+                "legal_topics": [
+                  "أحكام عامة"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الواقف"
+                ]
+              },
+              {
+                "article_number": "25",
+                "article_title": null,
+                "article_text": ".ال يشرتط وجود المرصف في الحال مىت كان وجوده في المستقبل محتمال",
+                "page_number": 4,
+                "summary": "",
+                "keywords": [
+                  "يشرتط",
+                  "وجود",
+                  "المرصف",
+                  "الحال",
+                  "وجوده",
+                  "المستقبل",
+                  "محتمال"
+                ],
+                "legal_topics": [
+                  "أحكام عامة"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": []
+              },
+              {
+                "article_number": "26",
+                "article_title": null,
+                "article_text": ".للواقف في حياته نقل المرصف اىل مرصف اخر في مربة مماثلة او مربة اصلح",
+                "page_number": 4,
+                "summary": "",
+                "keywords": [
+                  "للواقف",
+                  "حياته",
+                  "المرصف",
+                  "مرصف",
+                  "مربة",
+                  "مماثلة",
+                  "اصلح"
+                ],
+                "legal_topics": [
+                  "أحكام عامة"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": []
+              },
+              {
+                "article_number": "27",
+                "article_title": null,
+                "article_text": ".يجوز لمتويل الوقف بارشاف الحاكم وتسويغه نقل المرصف من مربة اىل مربة مماثلة او اصلح منها",
+                "page_number": 4,
+                "summary": "",
+                "keywords": [
+                  "يجوز",
+                  "لمتويل",
+                  "الوقف",
+                  "بارشاف",
+                  "الحاكم",
+                  "وتسويغه",
+                  "المرصف",
+                  "مربة",
+                  "مماثلة",
+                  "اصلح"
+                ],
+                "legal_topics": [
+                  "الأحوال الشخصية - الوقف"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [
+                  "يجوز لمتويل الوقف بارشاف الحاكم وتسويغه نقل المرصف من مربة اىل مربة مماثلة او اصلح منها"
+                ],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": []
+              },
+              {
+                "article_number": "28",
+                "article_title": null,
+                "article_text": ".في الرصف عىل الفقراء يقدم الفقراء من ذرية الواقف في الرصف الحرث فقط",
+                "page_number": 4,
+                "summary": "",
+                "keywords": [
+                  "الرصف",
+                  "الفقراء",
+                  "يقدم",
+                  "ذرية",
+                  "الواقف",
+                  "الحرث"
+                ],
+                "legal_topics": [
+                  "أحكام عامة"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الواقف"
+                ]
+              },
+              {
+                "article_number": "29",
+                "article_title": null,
+                "article_text": "اذا زال المرصف او رشطه او زمانه او مكانه فال يبطل الوقف وانما يكون للواقف في حياته تعيني مرصف اخر ، فاذا كان\n.الواقف قد مات اعترب الوقف منقطع المرصف",
+                "page_number": 4,
+                "summary": "اذا زال المرصف او رشطه او زمانه او مكانه فال يبطل الوقف وانما يكون للواقف في حياته تعيني مرصف اخر ، فاذا كان",
+                "keywords": [
+                  "المرصف",
+                  "رشطه",
+                  "زمانه",
+                  "مكانه",
+                  "يبطل",
+                  "الوقف",
+                  "وانما",
+                  "للواقف",
+                  "حياته",
+                  "تعيني"
+                ],
+                "legal_topics": [
+                  "الأحوال الشخصية - الوقف"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الواقف"
+                ]
+              },
+              {
+                "article_number": "30",
+                "article_title": null,
+                "article_text": "الوقف المنقطع المرصف يرصف في مربة مماثلة او اصلح منها بارشاف الجهة المختصة وتسويغ الحاكم ، ويقدم ورثة\nالموقوف عليه وورثة الواقف ان تحققت فيهم المربة ، واذا التبس مرصف الوقف عمل متويل الرصف بعلمه او بعلم من\nسبقه من المترصفني الثقاة ومع تعذر العلم يعمل بظنه ، فان لم يحصل الظن فعىل وجهني ان كانت المصارف منحرصة\nوقسمت الغلة بينهما بالسوية ، وان كانت غري منحرصة فهو اللبس المطلق ومعه فغلة الوقف بنظر الوالية العامة لرصفها\n.في مصلحة اخرى\nالفصل الرابع\nاحكام الوقف العامة",
+                "page_number": 5,
+                "summary": "الوقف المنقطع المرصف يرصف في مربة مماثلة او اصلح منها بارشاف الجهة المختصة وتسويغ الحاكم ، ويقدم ورثة\nالموقوف عليه وورثة...",
+                "keywords": [
+                  "الوقف",
+                  "المنقطع",
+                  "المرصف",
+                  "يرصف",
+                  "مربة",
+                  "مماثلة",
+                  "اصلح",
+                  "بارشاف",
+                  "الجهة",
+                  "المختصة"
+                ],
+                "legal_topics": [
+                  "الأحوال الشخصية - الوقف"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الواقف"
+                ]
+              },
+              {
+                "article_number": "31",
+                "article_title": null,
+                "article_text": "اذا تم الوقف مستوفيا اركانه ورشوطه عىل النحو المبني في الفصلني المتقدمني فهو صحيح وترتتب عليه جميع اثاره المبينة\n.في هذا القانون ، مع مراعاة ما هو منصوص عليه في المواد التالية",
+                "page_number": 5,
+                "summary": "اذا تم الوقف مستوفيا اركانه ورشوطه عىل النحو المبني في الفصلني المتقدمني فهو صحيح وترتتب عليه جميع اثاره المبينة",
+                "keywords": [
+                  "الوقف",
+                  "مستوفيا",
+                  "اركانه",
+                  "ورشوطه",
+                  "النحو",
+                  "المبني",
+                  "الفصلني",
+                  "المتقدمني",
+                  "صحيح",
+                  "وترتتب"
+                ],
+                "legal_topics": [
+                  "الأحوال الشخصية - الوقف"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": []
+              },
+              {
+                "article_number": "32",
+                "article_title": null,
+                "article_text": ".نصوص الواقف كلها مرعية  ال فيما ينافي القربة",
+                "page_number": 5,
+                "summary": "",
+                "keywords": [
+                  "نصوص",
+                  "الواقف",
+                  "كلها",
+                  "مرعية",
+                  "فيما",
+                  "ينافي",
+                  "القربة"
+                ],
+                "legal_topics": [
+                  "أحكام عامة"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الواقف"
+                ]
+              },
+              {
+                "article_number": "33",
+                "article_title": null,
+                "article_text": "الوقف عىل النفس خاصة او عىل وارث او عىل الورثة او عىل الذرية او عىل  الوالد واوالد  الوالد باطل ما لم يكن المذكورون\nداخلني في عموم جهة بر عينها الواقف في الحال فيعامل الواحد منهم كاحد افرادها، او كان الموقوف عليه عاجزا ك العمى\nو الشل وليس له ما يكفيه وفي هذه الحالة اذا زال عجزه او مات اعترب الوقف منقطع الرصف وياخذ حكمه المبني في",
+                "page_number": 5,
+                "summary": "الوقف عىل النفس خاصة او عىل وارث او عىل الورثة او عىل الذرية او عىل  الوالد واوالد  الوالد باطل ما لم يكن المذكورون\nداخل...",
+                "keywords": [
+                  "الوقف",
+                  "النفس",
+                  "خاصة",
+                  "وارث",
+                  "الورثة",
+                  "الذرية",
+                  "الوالد",
+                  "واوالد",
+                  "باطل",
+                  "المذكورون"
+                ],
+                "legal_topics": [
+                  "الأحوال الشخصية - الوقف",
+                  "قانون العمل"
+                ],
+                "legal_concepts": [
+                  "الأحكام القضائية"
+                ],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [
+                  "الوقف عىل النفس خاصة او عىل وارث او عىل الورثة او عىل الذرية او عىل  الوالد واوالد  الوالد باطل ما لم يكن المذكورون\nداخلني في عموم جهة بر عينها الواقف في الحال فيعامل الواحد منهم كاحد افرادها، او كان الموقوف عليه عاجزا ك العمى\nو الشل وليس له ما يكفيه وفي هذه الحالة اذا زال عجزه او مات اعترب الوقف منقطع الرصف وياخذ حكمه المبني في"
+                ],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [
+                  "الوقف عىل النفس خاصة او عىل وارث او عىل الورثة او عىل الذرية او عىل  الوالد واوالد  الوالد باطل ما لم يكن المذكورون\nداخلني في عموم جهة بر عينها الواقف في الحال فيعامل الواحد منهم كاحد افرادها، او كان الموقوف عليه عاجزا ك العمى\nو الشل وليس له ما يكفيه وفي هذه الحالة اذا زال عجزه او مات اعترب الوقف منقطع الرصف وياخذ حكمه المبني في"
+                ],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الواقف"
+                ]
+              },
+              {
+                "article_number": "34",
+                "article_title": null,
+                "article_text": "الوقف عىل شخص معني غري من ذكروا في المادة السابقة صحيح اذا تحققت فيه القربة ترصيحا من الواقف او ظاهرا كفضيلة\nعلم او عبادة او غريها واذا مات الموقوف عليه اعترب الوقف منقطع المرصف وياخذ الحكم المبني في",
+                "page_number": 5,
+                "summary": "الوقف عىل شخص معني غري من ذكروا في المادة السابقة صحيح اذا تحققت فيه القربة ترصيحا من الواقف او ظاهرا كفضيلة\nعلم او عباد...",
+                "keywords": [
+                  "الوقف",
+                  "معني",
+                  "ذكروا",
+                  "المادة",
+                  "السابقة",
+                  "صحيح",
+                  "تحققت",
+                  "القربة",
+                  "ترصيحا",
+                  "الواقف"
+                ],
+                "legal_topics": [
+                  "الأحوال الشخصية - الوقف"
+                ],
+                "legal_concepts": [
+                  "الأحكام القضائية"
+                ],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الواقف"
+                ]
+              },
+              {
+                "article_number": "35",
+                "article_title": null,
+                "article_text": "اسناد النظر عىل الوقف الحد الورثة او الحد الذرية او لغريهم دون قربة رصيحة او ظاهرة اذا قصد به الرصف فهو غري صحيح واذا\n.قصد به الرصف فيما فيه قربه عينها الواقف فهو صحيح",
+                "page_number": 5,
+                "summary": "اسناد النظر عىل الوقف الحد الورثة او الحد الذرية او لغريهم دون قربة رصيحة او ظاهرة اذا قصد به الرصف فهو غري صحيح واذا",
+                "keywords": [
+                  "اسناد",
+                  "النظر",
+                  "الوقف",
+                  "الحد",
+                  "الورثة",
+                  "الذرية",
+                  "لغريهم",
+                  "قربة",
+                  "رصيحة",
+                  "ظاهرة"
+                ],
+                "legal_topics": [
+                  "الأحوال الشخصية - الوقف"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الواقف"
+                ]
+              },
+              {
+                "article_number": "36",
+                "article_title": null,
+                "article_text": ".الوقف في درس او للقراءة للوارث لما تيرس غري صحيح",
+                "page_number": 6,
+                "summary": "",
+                "keywords": [
+                  "الوقف",
+                  "للقراءة",
+                  "للوارث",
+                  "تيرس",
+                  "صحيح"
+                ],
+                "legal_topics": [
+                  "الأحوال الشخصية - الوقف"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": []
+              },
+              {
+                "article_number": "37",
+                "article_title": null,
+                "article_text": ". الوقف بالتالوة المطلقة او لمعني صحيح وتعترب اجرة المثل في المعني وما تبقى يعود للورثة وفي المطلقة كاملة الغلة",
+                "page_number": 6,
+                "summary": "",
+                "keywords": [
+                  "الوقف",
+                  "بالتالوة",
+                  "المطلقة",
+                  "لمعني",
+                  "صحيح",
+                  "وتعترب",
+                  "اجرة",
+                  "المثل",
+                  "المعني",
+                  "تبقى"
+                ],
+                "legal_topics": [
+                  "الأحوال الشخصية - الوقف"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": []
+              },
+              {
+                "article_number": "38",
+                "article_title": null,
+                "article_text": "الوقف عىل الديوان الطعام الفقراء او الغرباء الوافدين اليه صحيح، واذا زادت الغلة عن حاجه المرصف رصفت في مربة مماثلة\n.بارشاف الجهة المختصة وتسويغ الحاكم",
+                "page_number": 6,
+                "summary": "الوقف عىل الديوان الطعام الفقراء او الغرباء الوافدين اليه صحيح، واذا زادت الغلة عن حاجه المرصف رصفت في مربة مماثلة",
+                "keywords": [
+                  "الوقف",
+                  "الديوان",
+                  "الطعام",
+                  "الفقراء",
+                  "الغرباء",
+                  "الوافدين",
+                  "اليه",
+                  "صحيح",
+                  "واذا",
+                  "زادت"
+                ],
+                "legal_topics": [
+                  "الأحوال الشخصية - الوقف"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": []
+              },
+              {
+                "article_number": "39",
+                "article_title": null,
+                "article_text": "ال يصح الوقف عىل الحرضات واحياء الليايل والموالد و الولياء والقبور وانارتها وتشييدها، اما  الوقاف القديمة منها المعينة\n.من الحكومة للمصالح فتستمر اقرارا لما سبق وما لم يعني في المصالح يرصف فيها\n\nالفصل الخامس\nاحكام خاصة بالوقف عىل المسجد",
+                "page_number": 6,
+                "summary": "ال يصح الوقف عىل الحرضات واحياء الليايل والموالد و الولياء والقبور وانارتها وتشييدها، اما  الوقاف القديمة منها المعينة",
+                "keywords": [
+                  "الوقف",
+                  "الحرضات",
+                  "واحياء",
+                  "الليايل",
+                  "والموالد",
+                  "الولياء",
+                  "والقبور",
+                  "وانارتها",
+                  "وتشييدها",
+                  "الوقاف"
+                ],
+                "legal_topics": [
+                  "الأحوال الشخصية - الوقف"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [
+                  "من الحكومة للمصالح فتستمر اقرارا لما سبق وما لم يعني في المصالح يرصف فيها\n\nالفصل الخامس\nاحكام خاصة بالوقف عىل المسجد"
+                ],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الحكومة"
+                ]
+              },
+              {
+                "article_number": "40",
+                "article_title": null,
+                "article_text": "اذا كان بناء المسجد مفتوحا اىل مباح محض الناس فيه عىل سواء سواء اكان البناء في ملك الباني او في مباح محض او في\n.حقل عام باذن الحكومة و ليس فيه رضر فهو وقف ويصح الوقف عليه وعىل مصالحه",
+                "page_number": 6,
+                "summary": "اذا كان بناء المسجد مفتوحا اىل مباح محض الناس فيه عىل سواء سواء اكان البناء في ملك الباني او في مباح محض او في",
+                "keywords": [
+                  "بناء",
+                  "المسجد",
+                  "مفتوحا",
+                  "مباح",
+                  "الناس",
+                  "اكان",
+                  "البناء",
+                  "الباني",
+                  "باذن",
+                  "الحكومة"
+                ],
+                "legal_topics": [
+                  "الأحوال الشخصية - الوقف",
+                  "الملكية العقارية"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الحكومة"
+                ]
+              },
+              {
+                "article_number": "41",
+                "article_title": null,
+                "article_text": ".يجوز باذن من الحاكم وبارشاف الجهة المختصة نقل مواد المسجد ومرصفه من قفر اىل محل اهل بالسكان للمصلحة",
+                "page_number": 6,
+                "summary": "",
+                "keywords": [
+                  "يجوز",
+                  "باذن",
+                  "الحاكم",
+                  "وبارشاف",
+                  "الجهة",
+                  "المختصة",
+                  "مواد",
+                  "المسجد",
+                  "ومرصفه",
+                  "بالسكان"
+                ],
+                "legal_topics": [
+                  "أحكام عامة"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [
+                  "يجوز باذن من الحاكم وبارشاف الجهة المختصة نقل مواد المسجد ومرصفه من قفر اىل محل اهل بالسكان للمصلحة"
+                ],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": []
+              },
+              {
+                "article_number": "42",
+                "article_title": null,
+                "article_text": "يجوز لكل الناس اعادة المتهدم في المسجد تربعا من اموالهم بغري اذن ، كما يجوز لكل مقتدر من اهل الخري القيام ببناء\n.المساجد و النفاق عليها بعد تحديد الموقع والمواصفات من قبل الجهة المختصة",
+                "page_number": 6,
+                "summary": "يجوز لكل الناس اعادة المتهدم في المسجد تربعا من اموالهم بغري اذن ، كما يجوز لكل مقتدر من اهل الخري القيام ببناء",
+                "keywords": [
+                  "يجوز",
+                  "الناس",
+                  "اعادة",
+                  "المتهدم",
+                  "المسجد",
+                  "تربعا",
+                  "اموالهم",
+                  "بغري",
+                  "مقتدر",
+                  "الخري"
+                ],
+                "legal_topics": [
+                  "أحكام عامة"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [
+                  "يجوز لكل الناس اعادة المتهدم في المسجد تربعا من اموالهم بغري اذن ، كما يجوز لكل مقتدر من اهل الخري القيام ببناء"
+                ],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": []
+              },
+              {
+                "article_number": "43",
+                "article_title": null,
+                "article_text": "يجوز نقض المسجد للتوسيع مع الحاجة وظن قدره الناقض عىل اعادته باذن الجهة المختصة او الحاكم، والضمان عىل الناقض\n.اذا عجز عن  الصالح ويكون للتوسعة حكم  الصل",
+                "page_number": 6,
+                "summary": "يجوز نقض المسجد للتوسيع مع الحاجة وظن قدره الناقض عىل اعادته باذن الجهة المختصة او الحاكم، والضمان عىل الناقض",
+                "keywords": [
+                  "يجوز",
+                  "المسجد",
+                  "للتوسيع",
+                  "الحاجة",
+                  "قدره",
+                  "الناقض",
+                  "اعادته",
+                  "باذن",
+                  "الجهة",
+                  "المختصة"
+                ],
+                "legal_topics": [
+                  "أحكام عامة"
+                ],
+                "legal_concepts": [
+                  "الأحكام القضائية"
+                ],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [
+                  "يجوز نقض المسجد للتوسيع مع الحاجة وظن قدره الناقض عىل اعادته باذن الجهة المختصة او الحاكم، والضمان عىل الناقض"
+                ],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": []
+              },
+              {
+                "article_number": "44",
+                "article_title": null,
+                "article_text": ".يجوز فعل ما يرغب الناس في المسجد من اعمال الرب وانارته للقراءة ونسخ كتب الهداية واحياء حلقات العلم",
+                "page_number": 6,
+                "summary": "",
+                "keywords": [
+                  "يجوز",
+                  "يرغب",
+                  "الناس",
+                  "المسجد",
+                  "اعمال",
+                  "الرب",
+                  "وانارته",
+                  "للقراءة",
+                  "ونسخ",
+                  "الهداية"
+                ],
+                "legal_topics": [
+                  "أحكام عامة"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [
+                  "يجوز فعل ما يرغب الناس في المسجد من اعمال الرب وانارته للقراءة ونسخ كتب الهداية واحياء حلقات العلم"
+                ],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": []
+              },
+              {
+                "article_number": "45",
+                "article_title": null,
+                "article_text": ".يجوز للجهة المختصة رصف فائض غلة اي مسجد عىل المساجد  الخرى\nالفصل السادس\nاحكام خاصة بالوقف  الهيل",
+                "page_number": 6,
+                "summary": "",
+                "keywords": [
+                  "يجوز",
+                  "للجهة",
+                  "المختصة",
+                  "فائض",
+                  "مسجد",
+                  "المساجد",
+                  "الخرى",
+                  "الفصل",
+                  "السادس",
+                  "احكام"
+                ],
+                "legal_topics": [
+                  "الأحوال الشخصية - الوقف"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [
+                  "يجوز للجهة المختصة رصف فائض غلة اي مسجد عىل المساجد  الخرى\nالفصل السادس\nاحكام خاصة بالوقف  الهيل"
+                ],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": []
+              },
+              {
+                "article_number": "46",
+                "article_title": null,
+                "article_text": "الوقاف  الهلية القديمة اليت ال تتفق رشوطها مع الرشوط المنصوص عليها في هذا القانون اذا كانت قد صدرت فيها احكام\nرشعية بصحتها،او كان الورثة قد تراضوا عليها او مىض عليها اربعون عاما تبقى عىل ما هي عليه، وال تنقيض  ال برتايض اهل\nالمرصف او اغلبهم بحسب  الستحقاق واوفرهم صالحا ، ويقدم من خالل الجهة المختصة للحاكم لتحقيقه و الذن بنقض\n. الوقف اذا تحققت المصلحة",
+                "page_number": 6,
+                "summary": "الوقاف  الهلية القديمة اليت ال تتفق رشوطها مع الرشوط المنصوص عليها في هذا القانون اذا كانت قد صدرت فيها احكام\nرشعية بصحت...",
+                "keywords": [
+                  "الوقاف",
+                  "الهلية",
+                  "القديمة",
+                  "اليت",
+                  "تتفق",
+                  "رشوطها",
+                  "الرشوط",
+                  "المنصوص",
+                  "القانون",
+                  "صدرت"
+                ],
+                "legal_topics": [
+                  "الأحوال الشخصية - الوقف"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": []
+              },
+              {
+                "article_number": "47",
+                "article_title": null,
+                "article_text": "اذا حكمت المحكمة بنقض الوقف  الهيل القديم طبقا لما هو مبني بالمادة السابقة تؤول ملكية اعيان الوقف للموقوف\nعليهم كل بقدر استحقاقه الحايل ، ومن مات من طبقة المستحقني الحاليني وله ورثة عند وفاته فيحل ورثته وورثة من مات\n.منهم محله بقدر استحقاقه لو كان حيا كل بقدر نصيبه في المرياث",
+                "page_number": 7,
+                "summary": "اذا حكمت المحكمة بنقض الوقف  الهيل القديم طبقا لما هو مبني بالمادة السابقة تؤول ملكية اعيان الوقف للموقوف\nعليهم كل بقدر ...",
+                "keywords": [
+                  "حكمت",
+                  "المحكمة",
+                  "بنقض",
+                  "الوقف",
+                  "الهيل",
+                  "القديم",
+                  "طبقا",
+                  "مبني",
+                  "بالمادة",
+                  "السابقة"
+                ],
+                "legal_topics": [
+                  "الأحوال الشخصية - الوقف",
+                  "الملكية العقارية"
+                ],
+                "legal_concepts": [
+                  "الأحكام القضائية"
+                ],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "المحكمة"
+                ]
+              },
+              {
+                "article_number": "48",
+                "article_title": null,
+                "article_text": "اذا اختلف الموقوف عليهم في الوقف  الهيل القديم المنقوض طبقا للمنصوص عليه في",
+                "page_number": 7,
+                "summary": "اذا اختلف الموقوف عليهم في الوقف  الهيل القديم المنقوض طبقا للمنصوص عليه في",
+                "keywords": [
+                  "اختلف",
+                  "الموقوف",
+                  "الوقف",
+                  "الهيل",
+                  "القديم",
+                  "المنقوض",
+                  "طبقا",
+                  "للمنصوص",
+                  "عليه"
+                ],
+                "legal_topics": [
+                  "الأحوال الشخصية - الوقف"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": []
+              },
+              {
+                "article_number": "49",
+                "article_title": null,
+                "article_text": "الوالية عىل الوقف للواقف ثم لمنصوبة وصيا او وليا ثم للموقوف عليه ثم لذي الوالية العامة والحاكم او من يعينه احدهما\n.لذلك ويجوز لذي الوالية الخاصة اسناد الوالية لمن يرى فيه الصالح بغري عوض",
+                "page_number": 7,
+                "summary": "الوالية عىل الوقف للواقف ثم لمنصوبة وصيا او وليا ثم للموقوف عليه ثم لذي الوالية العامة والحاكم او من يعينه احدهما",
+                "keywords": [
+                  "الوالية",
+                  "الوقف",
+                  "للواقف",
+                  "لمنصوبة",
+                  "وصيا",
+                  "وليا",
+                  "للموقوف",
+                  "عليه",
+                  "العامة",
+                  "والحاكم"
+                ],
+                "legal_topics": [
+                  "الأحوال الشخصية - الوقف"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [
+                  "لذلك ويجوز لذي الوالية الخاصة اسناد الوالية لمن يرى فيه الصالح بغري عوض"
+                ],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": []
+              },
+              {
+                "article_number": "50",
+                "article_title": null,
+                "article_text": ".التنازل عىل الوالية اذا كان بعوض باطل ، وتبطل والية التنازل ويعود الوقف لدى الوالية العامة",
+                "page_number": 7,
+                "summary": "",
+                "keywords": [
+                  "التنازل",
+                  "الوالية",
+                  "بعوض",
+                  "باطل",
+                  "وتبطل",
+                  "والية",
+                  "ويعود",
+                  "الوقف",
+                  "العامة"
+                ],
+                "legal_topics": [
+                  "الأحوال الشخصية - الوقف"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": []
+              },
+              {
+                "article_number": "51",
+                "article_title": null,
+                "article_text": "يشرتط في متويل الوقف ان يكون مسلما مكلفا عدال حنس السرية والسلوك قادرا عىل الترصف والعمل بما نص عليه الواقف\n.، واذا فقد المتويل رشطا من هذه الرشوط بطلت واليته",
+                "page_number": 7,
+                "summary": "يشرتط في متويل الوقف ان يكون مسلما مكلفا عدال حنس السرية والسلوك قادرا عىل الترصف والعمل بما نص عليه الواقف",
+                "keywords": [
+                  "يشرتط",
+                  "متويل",
+                  "الوقف",
+                  "مسلما",
+                  "مكلفا",
+                  "عدال",
+                  "السرية",
+                  "والسلوك",
+                  "قادرا",
+                  "الترصف"
+                ],
+                "legal_topics": [
+                  "الأحوال الشخصية - الوقف"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الواقف"
+                ]
+              },
+              {
+                "article_number": "52",
+                "article_title": null,
+                "article_text": ".ال تبطل والية اصلها صاحب الوالية العامة او الحاكم لموته",
+                "page_number": 7,
+                "summary": "",
+                "keywords": [
+                  "تبطل",
+                  "والية",
+                  "اصلها",
+                  "صاحب",
+                  "الوالية",
+                  "العامة",
+                  "الحاكم",
+                  "لموته"
+                ],
+                "legal_topics": [
+                  "أحكام عامة"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": []
+              },
+              {
+                "article_number": "53",
+                "article_title": null,
+                "article_text": ".ليس لذي الوالية العامة والحاكم ابطال والية او تعيني ويل اخر ما دام الويل مستوفيا لرشوط الوالية",
+                "page_number": 7,
+                "summary": "",
+                "keywords": [
+                  "الوالية",
+                  "العامة",
+                  "والحاكم",
+                  "ابطال",
+                  "والية",
+                  "تعيني",
+                  "الويل",
+                  "مستوفيا",
+                  "لرشوط"
+                ],
+                "legal_topics": [
+                  "أحكام عامة"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": []
+              },
+              {
+                "article_number": "54",
+                "article_title": null,
+                "article_text": "، ال يجوز اقامة اكرث من متول واحد عىل الوقف  ال اذا تعدد الموقوف عليهم المستحقون للوالية اختار الحاكم اصلحهم للوالية\n.فان تساووا عني احدهم لها\nالفصل الثاني\n\nفي المسوغات في الوقف للترصف فيه وفي غلته وحكمه",
+                "page_number": 7,
+                "summary": "، ال يجوز اقامة اكرث من متول واحد عىل الوقف  ال اذا تعدد الموقوف عليهم المستحقون للوالية اختار الحاكم اصلحهم للوالية",
+                "keywords": [
+                  "يجوز",
+                  "اقامة",
+                  "اكرث",
+                  "متول",
+                  "واحد",
+                  "الوقف",
+                  "تعدد",
+                  "الموقوف",
+                  "المستحقون",
+                  "للوالية"
+                ],
+                "legal_topics": [
+                  "الأحوال الشخصية - الوقف"
+                ],
+                "legal_concepts": [
+                  "الأحكام القضائية"
+                ],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [
+                  "، ال يجوز اقامة اكرث من متول واحد عىل الوقف  ال اذا تعدد الموقوف عليهم المستحقون للوالية اختار الحاكم اصلحهم للوالية"
+                ],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": []
+              },
+              {
+                "article_number": "55",
+                "article_title": null,
+                "article_text": "اصالح عني الوقف مقدم عىل الرصف في مصالحة والرصف في مصالح الوقف مقدم عىل اصالح عني الموقوف عليه واصالح\n.عني الموقوف عليه مقدم عىل الرصف في مصالحه",
+                "page_number": 7,
+                "summary": "اصالح عني الوقف مقدم عىل الرصف في مصالحة والرصف في مصالح الوقف مقدم عىل اصالح عني الموقوف عليه واصالح",
+                "keywords": [
+                  "اصالح",
+                  "الوقف",
+                  "مقدم",
+                  "الرصف",
+                  "مصالحة",
+                  "والرصف",
+                  "مصالح",
+                  "الموقوف",
+                  "عليه",
+                  "واصالح"
+                ],
+                "legal_topics": [
+                  "الأحوال الشخصية - الوقف"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": []
+              },
+              {
+                "article_number": "56",
+                "article_title": null,
+                "article_text": ".ال يجوز الترصف في الوقف  ال باذن الجهة المختصة وفي  الحوال المبينة في هذا القانون",
+                "page_number": 8,
+                "summary": "",
+                "keywords": [
+                  "يجوز",
+                  "الترصف",
+                  "الوقف",
+                  "باذن",
+                  "الجهة",
+                  "المختصة",
+                  "الحوال",
+                  "المبينة",
+                  "القانون"
+                ],
+                "legal_topics": [
+                  "الأحوال الشخصية - الوقف"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [
+                  "ال يجوز الترصف في الوقف  ال باذن الجهة المختصة وفي  الحوال المبينة في هذا القانون"
+                ],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": []
+              },
+              {
+                "article_number": "57",
+                "article_title": null,
+                "article_text": ".الترصف بالوقف منوط بتحقيق المصلحة وكل ترصف انطوى عىل غنب فاحش عىل الوقف فهو باطل",
+                "page_number": 8,
+                "summary": "",
+                "keywords": [
+                  "الترصف",
+                  "بالوقف",
+                  "منوط",
+                  "بتحقيق",
+                  "المصلحة",
+                  "ترصف",
+                  "انطوى",
+                  "فاحش",
+                  "الوقف",
+                  "باطل"
+                ],
+                "legal_topics": [
+                  "الأحوال الشخصية - الوقف"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": []
+              },
+              {
+                "article_number": "58",
+                "article_title": null,
+                "article_text": "اذا لم تكن غلة الوقف كافية الصالح ما تلف من الوقف فيجوز بيع بعضه الصالح البعض  الخر منه اذا لم يكن هناك فائض من\n.غالت اوقاف اخرى",
+                "page_number": 8,
+                "summary": "اذا لم تكن غلة الوقف كافية الصالح ما تلف من الوقف فيجوز بيع بعضه الصالح البعض  الخر منه اذا لم يكن هناك فائض من",
+                "keywords": [
+                  "الوقف",
+                  "كافية",
+                  "الصالح",
+                  "فيجوز",
+                  "بعضه",
+                  "البعض",
+                  "الخر",
+                  "هناك",
+                  "فائض",
+                  "غالت"
+                ],
+                "legal_topics": [
+                  "المعاملات المدنية - البيع",
+                  "الأحوال الشخصية - الوقف"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [
+                  "اذا لم تكن غلة الوقف كافية الصالح ما تلف من الوقف فيجوز بيع بعضه الصالح البعض  الخر منه اذا لم يكن هناك فائض من"
+                ],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": []
+              },
+              {
+                "article_number": "59",
+                "article_title": null,
+                "article_text": ".ًال يجوز بيع بعض الوقف الصالح عني الموقوف عليه  ال اذا كان الواقف لهما واحد",
+                "page_number": 8,
+                "summary": "",
+                "keywords": [
+                  "يجوز",
+                  "الوقف",
+                  "الصالح",
+                  "الموقوف",
+                  "عليه",
+                  "الواقف",
+                  "لهما",
+                  "واحد"
+                ],
+                "legal_topics": [
+                  "المعاملات المدنية - البيع",
+                  "الأحوال الشخصية - الوقف"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [
+                  "ًال يجوز بيع بعض الوقف الصالح عني الموقوف عليه  ال اذا كان الواقف لهما واحد"
+                ],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الواقف"
+                ]
+              },
+              {
+                "article_number": "60",
+                "article_title": null,
+                "article_text": "اذا بطل نفع الوقف في المقصود او نقصت غلته بالقياس اىل قيمته جاز بيعه بما ال يقل عن مثل قيمته زمانا ومكانا\n.و الستعاضة عنه بما ينفع في المقصود او يغل اكرث مع تحقق المصلحة",
+                "page_number": 8,
+                "summary": "اذا بطل نفع الوقف في المقصود او نقصت غلته بالقياس اىل قيمته جاز بيعه بما ال يقل عن مثل قيمته زمانا ومكانا",
+                "keywords": [
+                  "الوقف",
+                  "المقصود",
+                  "نقصت",
+                  "غلته",
+                  "بالقياس",
+                  "قيمته",
+                  "بيعه",
+                  "زمانا",
+                  "ومكانا",
+                  "الستعاضة"
+                ],
+                "legal_topics": [
+                  "المعاملات المدنية - البيع",
+                  "الأحوال الشخصية - الوقف"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": []
+              },
+              {
+                "article_number": "61",
+                "article_title": null,
+                "article_text": "يجوز رشاء مستغل بفائض الغلة ويعترب المستغل المشرتى ملكا للوقف، ولكن ال يجوز الترصف فيها  ال باذن الجهة المختصة\n.مع تحقق المصلحة وترصف غلة المستغل المملوك للوقف في مصارف الوقف",
+                "page_number": 8,
+                "summary": "يجوز رشاء مستغل بفائض الغلة ويعترب المستغل المشرتى ملكا للوقف، ولكن ال يجوز الترصف فيها  ال باذن الجهة المختصة",
+                "keywords": [
+                  "يجوز",
+                  "رشاء",
+                  "مستغل",
+                  "بفائض",
+                  "الغلة",
+                  "ويعترب",
+                  "المستغل",
+                  "المشرتى",
+                  "ملكا",
+                  "للوقف"
+                ],
+                "legal_topics": [
+                  "الأحوال الشخصية - الوقف",
+                  "الملكية العقارية"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [
+                  "يجوز رشاء مستغل بفائض الغلة ويعترب المستغل المشرتى ملكا للوقف، ولكن ال يجوز الترصف فيها  ال باذن الجهة المختصة"
+                ],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": []
+              },
+              {
+                "article_number": "62",
+                "article_title": null,
+                "article_text": "ال يجوز اغتصاب الوقف، واذا اغتصب وقف وجب عىل متوليه اسرتجاعه ويجب عىل المغتصب ارجاعه ، واذا كان قد تلف ضمن\nالمغتصب عوضه مع مراعاة القيمة زمانا ومكانا باوفاها قيمة وقت الغصب او الطلب ، واذا كان قد ترصف فيه وتعذر عليه\n.اسرتجاعه ضمن غلته اىل حني اسرتجاعه",
+                "page_number": 8,
+                "summary": "ال يجوز اغتصاب الوقف، واذا اغتصب وقف وجب عىل متوليه اسرتجاعه ويجب عىل المغتصب ارجاعه ، واذا كان قد تلف ضمن\nالمغتصب عوضه ...",
+                "keywords": [
+                  "يجوز",
+                  "اغتصاب",
+                  "الوقف",
+                  "واذا",
+                  "اغتصب",
+                  "متوليه",
+                  "اسرتجاعه",
+                  "ويجب",
+                  "المغتصب",
+                  "ارجاعه"
+                ],
+                "legal_topics": [
+                  "الأحوال الشخصية - الوقف"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [
+                  "ال يجوز اغتصاب الوقف، واذا اغتصب وقف وجب عىل متوليه اسرتجاعه ويجب عىل المغتصب ارجاعه ، واذا كان قد تلف ضمن\nالمغتصب عوضه مع مراعاة القيمة زمانا ومكانا باوفاها قيمة وقت الغصب او الطلب ، واذا كان قد ترصف فيه وتعذر عليه"
+                ],
+                "prohibitions": [],
+                "permissions": [
+                  "ال يجوز اغتصاب الوقف، واذا اغتصب وقف وجب عىل متوليه اسرتجاعه ويجب عىل المغتصب ارجاعه ، واذا كان قد تلف ضمن\nالمغتصب عوضه مع مراعاة القيمة زمانا ومكانا باوفاها قيمة وقت الغصب او الطلب ، واذا كان قد ترصف فيه وتعذر عليه"
+                ],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": []
+              },
+              {
+                "article_number": "63",
+                "article_title": null,
+                "article_text": ".ال يجوز البسط عىل الوقف من اي شخص او جهة  ال باذن المتويل وبعد  الستئجار منه",
+                "page_number": 8,
+                "summary": "",
+                "keywords": [
+                  "يجوز",
+                  "البسط",
+                  "الوقف",
+                  "باذن",
+                  "المتويل",
+                  "وبعد",
+                  "الستئجار"
+                ],
+                "legal_topics": [
+                  "الأحوال الشخصية - الوقف"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [
+                  "ال يجوز البسط عىل الوقف من اي شخص او جهة  ال باذن المتويل وبعد  الستئجار منه"
+                ],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": []
+              },
+              {
+                "article_number": "64",
+                "article_title": null,
+                "article_text": ".العوض عن الوقف او عن بعضه وقفا مثله وينتفع به وترصف غلته في مصارف الوقف\nالفصل الثالث\n\nفيما يجب عىل المتويل فعله وما يجوز له وما ال يجوز",
+                "page_number": 8,
+                "summary": "",
+                "keywords": [
+                  "العوض",
+                  "الوقف",
+                  "بعضه",
+                  "وقفا",
+                  "مثله",
+                  "وينتفع",
+                  "وترصف",
+                  "غلته",
+                  "مصارف",
+                  "الفصل"
+                ],
+                "legal_topics": [
+                  "الأحوال الشخصية - الوقف"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [
+                  "العوض عن الوقف او عن بعضه وقفا مثله وينتفع به وترصف غلته في مصارف الوقف\nالفصل الثالث\n\nفيما يجب عىل المتويل فعله وما يجوز له وما ال يجوز"
+                ],
+                "prohibitions": [],
+                "permissions": [
+                  "العوض عن الوقف او عن بعضه وقفا مثله وينتفع به وترصف غلته في مصارف الوقف\nالفصل الثالث\n\nفيما يجب عىل المتويل فعله وما يجوز له وما ال يجوز"
+                ],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": []
+              },
+              {
+                "article_number": "65",
+                "article_title": null,
+                "article_text": ".يجب عىل المتويل تنفيذ رشوط الواقف والتقيد بها زمانا ومكانا",
+                "page_number": 8,
+                "summary": "",
+                "keywords": [
+                  "المتويل",
+                  "تنفيذ",
+                  "رشوط",
+                  "الواقف",
+                  "والتقيد",
+                  "زمانا",
+                  "ومكانا"
+                ],
+                "legal_topics": [
+                  "أحكام عامة"
+                ],
+                "legal_concepts": [
+                  "التنفيذ الجبري للأحكام"
+                ],
+                "rights": [],
+                "obligations": [
+                  "يجب عىل المتويل تنفيذ رشوط الواقف والتقيد بها زمانا ومكانا"
+                ],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الواقف"
+                ]
+              },
+              {
+                "article_number": "66",
+                "article_title": null,
+                "article_text": "يجب عىل المتويل المحافظة عىل عني الوقف وعني الموقوف عليه وامالك الوقف المشرتاة من فائض غلته ورعايتها واصالح\nما تلف منها واجراء الرتميمات وغريها مما يلزم لصيانتها مع مراعاة ما هو منصوص عليه في",
+                "page_number": 8,
+                "summary": "يجب عىل المتويل المحافظة عىل عني الوقف وعني الموقوف عليه وامالك الوقف المشرتاة من فائض غلته ورعايتها واصالح\nما تلف منها ...",
+                "keywords": [
+                  "المتويل",
+                  "المحافظة",
+                  "الوقف",
+                  "وعني",
+                  "الموقوف",
+                  "عليه",
+                  "وامالك",
+                  "المشرتاة",
+                  "فائض",
+                  "غلته"
+                ],
+                "legal_topics": [
+                  "الأحوال الشخصية - الوقف"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [
+                  "يجب عىل المتويل المحافظة عىل عني الوقف وعني الموقوف عليه وامالك الوقف المشرتاة من فائض غلته ورعايتها واصالح\nما تلف منها واجراء الرتميمات وغريها مما يلزم لصيانتها مع مراعاة ما هو منصوص عليه في"
+                ],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": []
+              },
+              {
+                "article_number": "67",
+                "article_title": null,
+                "article_text": "يجب عىل المتويل استغالل عني الوقف وادارتها واستعمالها فيما اعدت له و  ال تعلق من عليها فيما يلزم لذلك باصالح\nالتالف والمتهدم عىل الرتتيب المبني في",
+                "page_number": 9,
+                "summary": "يجب عىل المتويل استغالل عني الوقف وادارتها واستعمالها فيما اعدت له و  ال تعلق من عليها فيما يلزم لذلك باصالح\nالتالف والم...",
+                "keywords": [
+                  "المتويل",
+                  "استغالل",
+                  "الوقف",
+                  "وادارتها",
+                  "واستعمالها",
+                  "فيما",
+                  "اعدت",
+                  "تعلق",
+                  "يلزم",
+                  "لذلك"
+                ],
+                "legal_topics": [
+                  "الأحوال الشخصية - الوقف"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [
+                  "يجب عىل المتويل استغالل عني الوقف وادارتها واستعمالها فيما اعدت له و  ال تعلق من عليها فيما يلزم لذلك باصالح\nالتالف والمتهدم عىل الرتتيب المبني في"
+                ],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": []
+              },
+              {
+                "article_number": "68",
+                "article_title": null,
+                "article_text": "يجب عىل المتويل اسرتجاع المغتصب من الوقف والرجوع عىل المغتصب بالضمان والغلة طبقا للمبني ب",
+                "page_number": 9,
+                "summary": "يجب عىل المتويل اسرتجاع المغتصب من الوقف والرجوع عىل المغتصب بالضمان والغلة طبقا للمبني ب",
+                "keywords": [
+                  "المتويل",
+                  "اسرتجاع",
+                  "المغتصب",
+                  "الوقف",
+                  "والرجوع",
+                  "بالضمان",
+                  "والغلة",
+                  "طبقا",
+                  "للمبني"
+                ],
+                "legal_topics": [
+                  "الأحوال الشخصية - الوقف"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [
+                  "يجب عىل المتويل اسرتجاع المغتصب من الوقف والرجوع عىل المغتصب بالضمان والغلة طبقا للمبني ب"
+                ],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": []
+              },
+              {
+                "article_number": "69",
+                "article_title": null,
+                "article_text": ".يجوز لمتويل الوقف القيام بالترصفات المنصوص عليها في الفصل السابق بالرشوط المنصوص عليها فيه مع تحقق المصلحة",
+                "page_number": 9,
+                "summary": "",
+                "keywords": [
+                  "يجوز",
+                  "لمتويل",
+                  "الوقف",
+                  "القيام",
+                  "بالترصفات",
+                  "المنصوص",
+                  "الفصل",
+                  "السابق",
+                  "بالرشوط",
+                  "تحقق"
+                ],
+                "legal_topics": [
+                  "الأحوال الشخصية - الوقف"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [
+                  "يجوز لمتويل الوقف القيام بالترصفات المنصوص عليها في الفصل السابق بالرشوط المنصوص عليها فيه مع تحقق المصلحة"
+                ],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": []
+              },
+              {
+                "article_number": "70",
+                "article_title": null,
+                "article_text": ".يجوز للمتويل معاملة نفسه في الرصف كواحد من جنس الموقوف عليهم اذا توفرت فيه الرشوط",
+                "page_number": 9,
+                "summary": "",
+                "keywords": [
+                  "يجوز",
+                  "للمتويل",
+                  "معاملة",
+                  "نفسه",
+                  "الرصف",
+                  "كواحد",
+                  "الموقوف",
+                  "توفرت",
+                  "الرشوط"
+                ],
+                "legal_topics": [
+                  "قانون العمل"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [
+                  "يجوز للمتويل معاملة نفسه في الرصف كواحد من جنس الموقوف عليهم اذا توفرت فيه الرشوط"
+                ],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": []
+              },
+              {
+                "article_number": "71",
+                "article_title": null,
+                "article_text": "..يجوز للمتويل دفع العني الموقوفة اىل المستحق اذا كان شخصا معينا او جهة لها من يمثلها الستغاللها باجرة المثل",
+                "page_number": 9,
+                "summary": "",
+                "keywords": [
+                  "يجوز",
+                  "للمتويل",
+                  "العني",
+                  "الموقوفة",
+                  "المستحق",
+                  "شخصا",
+                  "معينا",
+                  "يمثلها",
+                  "الستغاللها",
+                  "باجرة"
+                ],
+                "legal_topics": [
+                  "أحكام عامة"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [
+                  "يجوز للمتويل دفع العني الموقوفة اىل المستحق اذا كان شخصا معينا او جهة لها من يمثلها الستغاللها باجرة المثل"
+                ],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": []
+              },
+              {
+                "article_number": "72",
+                "article_title": null,
+                "article_text": "ال يجوز للمتويل تاجري عني الوقف او امالكه الكرث من ثالث سنوات سواء كان للحرث او للبناء وال يمنع ذلك من تجديد  الجارة مع\n.مراعاة ما هو منصوص عليه في المادة التالية",
+                "page_number": 9,
+                "summary": "ال يجوز للمتويل تاجري عني الوقف او امالكه الكرث من ثالث سنوات سواء كان للحرث او للبناء وال يمنع ذلك من تجديد  الجارة مع",
+                "keywords": [
+                  "يجوز",
+                  "للمتويل",
+                  "تاجري",
+                  "الوقف",
+                  "امالكه",
+                  "الكرث",
+                  "ثالث",
+                  "سنوات",
+                  "للحرث",
+                  "للبناء"
+                ],
+                "legal_topics": [
+                  "الأحوال الشخصية - الوقف"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [
+                  "ال يجوز للمتويل تاجري عني الوقف او امالكه الكرث من ثالث سنوات سواء كان للحرث او للبناء وال يمنع ذلك من تجديد  الجارة مع"
+                ],
+                "permissions": [
+                  "ال يجوز للمتويل تاجري عني الوقف او امالكه الكرث من ثالث سنوات سواء كان للحرث او للبناء وال يمنع ذلك من تجديد  الجارة مع"
+                ],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": []
+              },
+              {
+                "article_number": "73",
+                "article_title": null,
+                "article_text": ".ال يجوز للمتويل تاجري عني الوقف او امالكه باقل من اجرة المثل زمانا ومكانا",
+                "page_number": 9,
+                "summary": "",
+                "keywords": [
+                  "يجوز",
+                  "للمتويل",
+                  "تاجري",
+                  "الوقف",
+                  "امالكه",
+                  "باقل",
+                  "اجرة",
+                  "المثل",
+                  "زمانا",
+                  "ومكانا"
+                ],
+                "legal_topics": [
+                  "الأحوال الشخصية - الوقف"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [
+                  "ال يجوز للمتويل تاجري عني الوقف او امالكه باقل من اجرة المثل زمانا ومكانا"
+                ],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": []
+              },
+              {
+                "article_number": "74",
+                "article_title": null,
+                "article_text": ".ال يجوز للمتويل ان يستدين  ال باذن الجهة المختصة مع تحقق المصلحة  ال ما يلزم الدارة الوقف واستغالله\nالفصل الرابع\nفي محاسبة متويل الوقف",
+                "page_number": 9,
+                "summary": "",
+                "keywords": [
+                  "يجوز",
+                  "للمتويل",
+                  "يستدين",
+                  "باذن",
+                  "الجهة",
+                  "المختصة",
+                  "تحقق",
+                  "المصلحة",
+                  "يلزم",
+                  "الدارة"
+                ],
+                "legal_topics": [
+                  "الأحوال الشخصية - الوقف"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [
+                  "ال يجوز للمتويل ان يستدين  ال باذن الجهة المختصة مع تحقق المصلحة  ال ما يلزم الدارة الوقف واستغالله\nالفصل الرابع\nفي محاسبة متويل الوقف"
+                ],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": []
+              },
+              {
+                "article_number": "75",
+                "article_title": null,
+                "article_text": "مع قيام وزارة  الوقاف و الرشاد بالوالية عىل  الوقاف العامة اليت تحت نظارتها وبقاء الوالية الخاصة عىل الوقف المتعلق\nبمسجد وتوابعه لمن هي ثابتة له رشعا يجب عىل كل متويل لوقف من هذا النوع خالل شهرين من تاريخ توليه لهذا الوقف\nابالغ وزارة  الوقاف او الحاكم المختص بالوقف الذي يتوىل عليه مع بيان اسم الواقف ونوع الوقف وتعيني امالكه ومرصفه\nوتسليم صور من مستندات الوقف ، وذلك اذا لم يكن قد سبق  البالغ عن الوقف وتسليم صور من مستنده ، ويجب عىل الجهة\nالمختصة او الحاكم المختص فور ابالغ ايهما ابالغ  الخر وقيد بيانات الوقف في الدفرت المعد لذلك اذا لم يكن قد سبق قيده\nويجب عىل  الدارة المختصة محاسبة متويل الوقف طبقا لما هو منصوص عليه في هذا القانون وطبقا للمعمول به في هذا\n.الشان",
+                "page_number": 9,
+                "summary": "مع قيام وزارة  الوقاف و الرشاد بالوالية عىل  الوقاف العامة اليت تحت نظارتها وبقاء الوالية الخاصة عىل الوقف المتعلق\nبمسجد...",
+                "keywords": [
+                  "قيام",
+                  "وزارة",
+                  "الوقاف",
+                  "الرشاد",
+                  "بالوالية",
+                  "العامة",
+                  "اليت",
+                  "نظارتها",
+                  "وبقاء",
+                  "الوالية"
+                ],
+                "legal_topics": [
+                  "الأحوال الشخصية - الوقف"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [
+                  "مع قيام وزارة  الوقاف و الرشاد بالوالية عىل  الوقاف العامة اليت تحت نظارتها وبقاء الوالية الخاصة عىل الوقف المتعلق\nبمسجد وتوابعه لمن هي ثابتة له رشعا يجب عىل كل متويل لوقف من هذا النوع خالل شهرين من تاريخ توليه لهذا الوقف\nابالغ وزارة  الوقاف او الحاكم المختص بالوقف الذي يتوىل عليه مع بيان اسم الواقف ونوع الوقف وتعيني امالكه ومرصفه\nوتسليم صور من مستندات الوقف ، وذلك اذا لم يكن قد سبق  البالغ عن الوقف وتسليم صور من مستنده ، ويجب عىل الجهة\nالمختصة او الحاكم المختص فور ابالغ ايهما ابالغ  الخر وقيد بيانات الوقف في الدفرت المعد لذلك اذا لم يكن قد سبق قيده\nويجب عىل  الدارة المختصة محاسبة متويل الوقف طبقا لما هو منصوص عليه في هذا القانون وطبقا للمعمول به في هذا"
+                ],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الواقف"
+                ]
+              },
+              {
+                "article_number": "76",
+                "article_title": null,
+                "article_text": "يجب عىل المتويل تقديم حساب مؤيد بالمستندات للجهة المختصة كل عام،وعىل الجهة المختصة فور تقديم الحساب فحصه\n.واصدار قرارها فيه",
+                "page_number": 10,
+                "summary": "يجب عىل المتويل تقديم حساب مؤيد بالمستندات للجهة المختصة كل عام،وعىل الجهة المختصة فور تقديم الحساب فحصه",
+                "keywords": [
+                  "المتويل",
+                  "تقديم",
+                  "حساب",
+                  "مؤيد",
+                  "بالمستندات",
+                  "للجهة",
+                  "المختصة",
+                  "عام،وعىل",
+                  "الجهة",
+                  "الحساب"
+                ],
+                "legal_topics": [
+                  "أحكام عامة"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [
+                  "يجب عىل المتويل تقديم حساب مؤيد بالمستندات للجهة المختصة كل عام،وعىل الجهة المختصة فور تقديم الحساب فحصه"
+                ],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": []
+              },
+              {
+                "article_number": "77",
+                "article_title": null,
+                "article_text": ".ال يقبل قول المتويل في الرصف في شئون الوقف  ال بسند ، عدا ما جرى العرف فيه من عدم اخذ سند به",
+                "page_number": 10,
+                "summary": "",
+                "keywords": [
+                  "يقبل",
+                  "المتويل",
+                  "الرصف",
+                  "شئون",
+                  "الوقف",
+                  "بسند",
+                  "العرف"
+                ],
+                "legal_topics": [
+                  "الأحوال الشخصية - الوقف"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": []
+              },
+              {
+                "article_number": "78",
+                "article_title": null,
+                "article_text": "يصدر قرار الجهة المختصة بعد فحص الحساب باعتماده عىل النحو الذي يتحقق به انه صحيح وتكلف المتويل بتسليم فائض\nالغلة ويجب عىل الجهة المختصة ايداع فائض غالت  الوقاف احد المصارف للرصف منها عند الحاجة في شئون اصالح التالف\nوتجديد العمارة وتحسني الغلة او استثمار الفائض بما يحقق المصلحة للوقف، ويقدم الوقف الذي له فائض غلة بقيمة هذا\n.الفائض",
+                "page_number": 10,
+                "summary": "يصدر قرار الجهة المختصة بعد فحص الحساب باعتماده عىل النحو الذي يتحقق به انه صحيح وتكلف المتويل بتسليم فائض\nالغلة ويجب عى...",
+                "keywords": [
+                  "يصدر",
+                  "قرار",
+                  "الجهة",
+                  "المختصة",
+                  "الحساب",
+                  "باعتماده",
+                  "النحو",
+                  "يتحقق",
+                  "صحيح",
+                  "وتكلف"
+                ],
+                "legal_topics": [
+                  "الأحوال الشخصية - الوقف"
+                ],
+                "legal_concepts": [],
+                "rights": [
+                  "يصدر قرار الجهة المختصة بعد فحص الحساب باعتماده عىل النحو الذي يتحقق به انه صحيح وتكلف المتويل بتسليم فائض\nالغلة ويجب عىل الجهة المختصة ايداع فائض غالت  الوقاف احد المصارف للرصف منها عند الحاجة في شئون اصالح التالف\nوتجديد العمارة وتحسني الغلة او استثمار الفائض بما يحقق المصلحة للوقف، ويقدم الوقف الذي له فائض غلة بقيمة هذا"
+                ],
+                "obligations": [
+                  "يصدر قرار الجهة المختصة بعد فحص الحساب باعتماده عىل النحو الذي يتحقق به انه صحيح وتكلف المتويل بتسليم فائض\nالغلة ويجب عىل الجهة المختصة ايداع فائض غالت  الوقاف احد المصارف للرصف منها عند الحاجة في شئون اصالح التالف\nوتجديد العمارة وتحسني الغلة او استثمار الفائض بما يحقق المصلحة للوقف، ويقدم الوقف الذي له فائض غلة بقيمة هذا"
+                ],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": []
+              },
+              {
+                "article_number": "79",
+                "article_title": null,
+                "article_text": "يجب عىل الجهة المختصة اعداد مزيانية عامة لالوقاف واعداد مزيانية خاصة لكل وقف وابالغ متوليها بها ، وال يجوز للمتويل\n.تجاوز المزيانية الموضوعة  ال باذن منها مع تحقق المصلحة",
+                "page_number": 10,
+                "summary": "يجب عىل الجهة المختصة اعداد مزيانية عامة لالوقاف واعداد مزيانية خاصة لكل وقف وابالغ متوليها بها ، وال يجوز للمتويل",
+                "keywords": [
+                  "الجهة",
+                  "المختصة",
+                  "اعداد",
+                  "مزيانية",
+                  "عامة",
+                  "لالوقاف",
+                  "واعداد",
+                  "خاصة",
+                  "وابالغ",
+                  "متوليها"
+                ],
+                "legal_topics": [
+                  "الأحوال الشخصية - الوقف"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [
+                  "يجب عىل الجهة المختصة اعداد مزيانية عامة لالوقاف واعداد مزيانية خاصة لكل وقف وابالغ متوليها بها ، وال يجوز للمتويل"
+                ],
+                "prohibitions": [],
+                "permissions": [
+                  "يجب عىل الجهة المختصة اعداد مزيانية عامة لالوقاف واعداد مزيانية خاصة لكل وقف وابالغ متوليها بها ، وال يجوز للمتويل"
+                ],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": []
+              },
+              {
+                "article_number": "80",
+                "article_title": null,
+                "article_text": "اذا تاخر المتويل عن تقديم الحساب في موعده او تقديم المستندات المؤيدة له وطالبته الجهة المختصة بذلك فلم يمتثل جاز\nلها وقفه عن مبارشة اعمال الوالية وتنصيب منصوب مؤقت اىل ا ن يقدم ما تاخر في تقديمه واذا قامت قرائن عىل ان\nالمتويل فرط او خان جاز للجهة المختصة وقفه عن مبارشة اعمال الوالية ونصبت منصوبا مؤقتا له اىل ان يتم فحص الحساب\n.وتظهر براءة المتويل",
+                "page_number": 10,
+                "summary": "اذا تاخر المتويل عن تقديم الحساب في موعده او تقديم المستندات المؤيدة له وطالبته الجهة المختصة بذلك فلم يمتثل جاز\nلها وقف...",
+                "keywords": [
+                  "تاخر",
+                  "المتويل",
+                  "تقديم",
+                  "الحساب",
+                  "موعده",
+                  "المستندات",
+                  "المؤيدة",
+                  "وطالبته",
+                  "الجهة",
+                  "المختصة"
+                ],
+                "legal_topics": [
+                  "الأحوال الشخصية - الوقف"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": []
+              },
+              {
+                "article_number": "81",
+                "article_title": null,
+                "article_text": "يجوز للجهة المختصة حرمان المتويل من اجرته عىل الوالية كلها او بعضها اذا كانت واليته باجرة وذلك اذا تاخر في تقديم\nالحساب والمستندات المؤيدة له او ظهر تفريطه او خيانته عن المدة اليت حصل فيها ذلك ، ويجوز لها عزله في حالة التفريط\n.ويجب عليها عزله في حالة الخيانة",
+                "page_number": 11,
+                "summary": "يجوز للجهة المختصة حرمان المتويل من اجرته عىل الوالية كلها او بعضها اذا كانت واليته باجرة وذلك اذا تاخر في تقديم\nالحساب ...",
+                "keywords": [
+                  "يجوز",
+                  "للجهة",
+                  "المختصة",
+                  "حرمان",
+                  "المتويل",
+                  "اجرته",
+                  "الوالية",
+                  "كلها",
+                  "بعضها",
+                  "واليته"
+                ],
+                "legal_topics": [
+                  "أحكام عامة"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [
+                  "ويجب عليها عزله في حالة الخيانة"
+                ],
+                "prohibitions": [],
+                "permissions": [
+                  "يجوز للجهة المختصة حرمان المتويل من اجرته عىل الوالية كلها او بعضها اذا كانت واليته باجرة وذلك اذا تاخر في تقديم\nالحساب والمستندات المؤيدة له او ظهر تفريطه او خيانته عن المدة اليت حصل فيها ذلك ، ويجوز لها عزله في حالة التفريط"
+                ],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": []
+              },
+              {
+                "article_number": "82",
+                "article_title": null,
+                "article_text": ".اذا تبينت الجهة المختصة خيانة المتويل فعليها تقديمه لجهات الضبط لعقابه\nالفصل الخامس\nفي ضمان متويل الوقف ومستاجره",
+                "page_number": 11,
+                "summary": "",
+                "keywords": [
+                  "تبينت",
+                  "الجهة",
+                  "المختصة",
+                  "خيانة",
+                  "المتويل",
+                  "فعليها",
+                  "تقديمه",
+                  "لجهات",
+                  "الضبط",
+                  "لعقابه"
+                ],
+                "legal_topics": [
+                  "الأحوال الشخصية - الوقف"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": []
+              },
+              {
+                "article_number": "83",
+                "article_title": null,
+                "article_text": ".ال يضمن المتويل من غالت الوقف  ال ما قبض ان خان او فرط او كان اجريا مشرتكا فيما يضمن فيه  الجري المشرتك",
+                "page_number": 11,
+                "summary": "",
+                "keywords": [
+                  "يضمن",
+                  "المتويل",
+                  "غالت",
+                  "الوقف",
+                  "اجريا",
+                  "مشرتكا",
+                  "فيما",
+                  "الجري",
+                  "المشرتك"
+                ],
+                "legal_topics": [
+                  "الأحوال الشخصية - الوقف"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": []
+              },
+              {
+                "article_number": "84",
+                "article_title": null,
+                "article_text": "اذا قرص المتويل في مطالبة مغتصب الوقف برده وغلته في مدة الغصب واستحال اسرتداد العني او الحصول عىل  الجرة بسبب\nذلك ضمن المتويل ما قرص في المطالبة به في حينه طبقا لما هو مبني في",
+                "page_number": 11,
+                "summary": "اذا قرص المتويل في مطالبة مغتصب الوقف برده وغلته في مدة الغصب واستحال اسرتداد العني او الحصول عىل  الجرة بسبب\nذلك ضمن ال...",
+                "keywords": [
+                  "المتويل",
+                  "مطالبة",
+                  "مغتصب",
+                  "الوقف",
+                  "برده",
+                  "وغلته",
+                  "الغصب",
+                  "واستحال",
+                  "اسرتداد",
+                  "العني"
+                ],
+                "legal_topics": [
+                  "الأحوال الشخصية - الوقف"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": []
+              },
+              {
+                "article_number": "85",
+                "article_title": null,
+                "article_text": "المستاجر لعني الوقف او امالكه ضامن لها ولغلتها بما اتلفه منها وكل نقص في الغلة اذا فرط او اهمل وترفع يده، وال يجوز\n.لورثته قسمة  الوقاف المؤجرة له  ال معايشة ويختص بها القوي  المني و ال رفعت يدهم",
+                "page_number": 11,
+                "summary": "المستاجر لعني الوقف او امالكه ضامن لها ولغلتها بما اتلفه منها وكل نقص في الغلة اذا فرط او اهمل وترفع يده، وال يجوز",
+                "keywords": [
+                  "المستاجر",
+                  "لعني",
+                  "الوقف",
+                  "امالكه",
+                  "ضامن",
+                  "ولغلتها",
+                  "اتلفه",
+                  "الغلة",
+                  "اهمل",
+                  "وترفع"
+                ],
+                "legal_topics": [
+                  "المعاملات المدنية - الإيجار",
+                  "الأحوال الشخصية - الوقف"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [
+                  "المستاجر لعني الوقف او امالكه ضامن لها ولغلتها بما اتلفه منها وكل نقص في الغلة اذا فرط او اهمل وترفع يده، وال يجوز"
+                ],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "المؤجر"
+                ]
+              },
+              {
+                "article_number": "86",
+                "article_title": null,
+                "article_text": "ليس لمستاجر عني الوقف او امالكه حق اليد  ال في العناء الظاهر كالغرس والبناء و الصالح اذا كان ذلك بامر المتويل عىل ان\n.يقرره الحاكم باحالة من الجهة المختصة\nالباب الثالث\nاحكام عامة وختامية",
+                "page_number": 11,
+                "summary": "ليس لمستاجر عني الوقف او امالكه حق اليد  ال في العناء الظاهر كالغرس والبناء و الصالح اذا كان ذلك بامر المتويل عىل ان",
+                "keywords": [
+                  "لمستاجر",
+                  "الوقف",
+                  "امالكه",
+                  "اليد",
+                  "العناء",
+                  "الظاهر",
+                  "كالغرس",
+                  "والبناء",
+                  "الصالح",
+                  "بامر"
+                ],
+                "legal_topics": [
+                  "الأحوال الشخصية - الوقف"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": []
+              },
+              {
+                "article_number": "87",
+                "article_title": null,
+                "article_text": "اذا كانت عني الوقف مدونة في دفرت حرص  الوقاف المسودة الحاصلة بخطوط امناء معتربين وظهر ما يخالفها فالعربة\nبالمسودة ويثبت الوقف بالشهرة المستفيضة والذيوع في المحلة وال يكتفي الحاكم بشهادة شاهدين عىل الشهرة حىت\n.يبعث من يثق به اىل المحلة فاذا كان اهلها كلهم او اغلبهم مجمعني عليها عمل بها",
+                "page_number": 11,
+                "summary": "اذا كانت عني الوقف مدونة في دفرت حرص  الوقاف المسودة الحاصلة بخطوط امناء معتربين وظهر ما يخالفها فالعربة\nبالمسودة ويثبت ...",
+                "keywords": [
+                  "الوقف",
+                  "مدونة",
+                  "دفرت",
+                  "الوقاف",
+                  "المسودة",
+                  "الحاصلة",
+                  "بخطوط",
+                  "امناء",
+                  "معتربين",
+                  "وظهر"
+                ],
+                "legal_topics": [
+                  "الأحوال الشخصية - الوقف"
+                ],
+                "legal_concepts": [
+                  "الشهادة كدليل إثبات"
+                ],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": []
+              },
+              {
+                "article_number": "88",
+                "article_title": null,
+                "article_text": "تقوم وزارة  الوقاف و الرشاد بمقتىض الوالية العامة بتنظيم وادارة شئون  الوقاف العامة وحمايتها والمحافظة عليها، ومن\nذلك اوقاف الرتب و الوقاف الصحية كما تقوم ب الرشاف والمحاسبة لالوقاف اليت يشرتط فيها النظارة الحد مستحقيها طبقا\n.لما هو منصوص عليه في هذا القانون",
+                "page_number": 11,
+                "summary": "تقوم وزارة  الوقاف و الرشاد بمقتىض الوالية العامة بتنظيم وادارة شئون  الوقاف العامة وحمايتها والمحافظة عليها، ومن\nذلك او...",
+                "keywords": [
+                  "تقوم",
+                  "وزارة",
+                  "الوقاف",
+                  "الرشاد",
+                  "بمقتىض",
+                  "الوالية",
+                  "العامة",
+                  "بتنظيم",
+                  "وادارة",
+                  "شئون"
+                ],
+                "legal_topics": [
+                  "أحكام عامة"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": []
+              },
+              {
+                "article_number": "89",
+                "article_title": null,
+                "article_text": "تقوم وزارة  الوقاف و الرشاد عن ذوي الوالية العامة ب الرشاف والرقابة والمحاسبة عىل اوقاف الوصايا المتعلق مرصفها\nبمصلحة عامة طبقا لما هو منصوص عليه في هذا القانون ، كما تقوم الوزارة باعمال الوالية عىل الوصايا اليت تنقل واليتها\nاىل ذي الوالية العامة في ضوء النصوص الرشعية والقانونية المنظمة لذلك ، وعليها تقديم حساب عن ايراداتها ومرصوفاتها\nفي نهاية كل عام لذي الوالية العامة وللوزارة ما حدده الواقف للمتويل عىل هذه الوصايا وفي حالة عدم تحديده لذلك\n.فللوزارة نصف العرش من حاصالت الوصايا اليت تقوم بالوالية عليها عن ذي الوالية العامة",
+                "page_number": 11,
+                "summary": "تقوم وزارة  الوقاف و الرشاد عن ذوي الوالية العامة ب الرشاف والرقابة والمحاسبة عىل اوقاف الوصايا المتعلق مرصفها\nبمصلحة عا...",
+                "keywords": [
+                  "تقوم",
+                  "وزارة",
+                  "الوقاف",
+                  "الرشاد",
+                  "الوالية",
+                  "العامة",
+                  "الرشاف",
+                  "والرقابة",
+                  "والمحاسبة",
+                  "اوقاف"
+                ],
+                "legal_topics": [
+                  "أحكام عامة"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": [
+                  "الوزارة",
+                  "الواقف"
+                ]
+              },
+              {
+                "article_number": "90",
+                "article_title": null,
+                "article_text": ".ما لم يذكر في هذا القانون يعمل فيه باقوى  الدلة في الرشيعة  السالمية اليت استمد منها هذا القانون",
+                "page_number": 12,
+                "summary": "",
+                "keywords": [
+                  "يذكر",
+                  "القانون",
+                  "يعمل",
+                  "باقوى",
+                  "الدلة",
+                  "الرشيعة",
+                  "السالمية",
+                  "اليت",
+                  "استمد"
+                ],
+                "legal_topics": [
+                  "أحكام عامة"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [
+                  "ما لم يذكر في هذا القانون يعمل فيه باقوى  الدلة في الرشيعة  السالمية اليت استمد منها هذا القانون"
+                ],
+                "procedures": [],
+                "cross_references": [],
+                "entities": []
+              },
+              {
+                "article_number": "91",
+                "article_title": null,
+                "article_text": "م الصادر في صنعاء بشان الوقف ،كما يلغى التعديل الوارد عليه بالقانون1976 لسنة)78(يلغى القرار بالقانون رقم\n.م ويلغى ا ي نص او حكم يتناقض مع احكام هذا القانون1987لسنة)15(رقم",
+                "page_number": 12,
+                "summary": "م الصادر في صنعاء بشان الوقف ،كما يلغى التعديل الوارد عليه بالقانون1976 لسنة)78(يلغى القرار بالقانون رقم",
+                "keywords": [
+                  "الصادر",
+                  "صنعاء",
+                  "بشان",
+                  "الوقف",
+                  "يلغى",
+                  "التعديل",
+                  "الوارد",
+                  "عليه",
+                  "بالقانون1976",
+                  "لسنة"
+                ],
+                "legal_topics": [
+                  "الأحوال الشخصية - الوقف"
+                ],
+                "legal_concepts": [
+                  "الأحكام القضائية"
+                ],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": []
+              },
+              {
+                "article_number": "92",
+                "article_title": null,
+                "article_text": ".يعمل بهذا القانون من تاريخ صدوره وينرش في الجريدة الرسمية\nصدر برئاسة الجمهورية بصنعاء",
+                "page_number": 12,
+                "summary": "",
+                "keywords": [
+                  "يعمل",
+                  "بهذا",
+                  "القانون",
+                  "تاريخ",
+                  "صدوره",
+                  "وينرش",
+                  "الجريدة",
+                  "الرسمية",
+                  "برئاسة",
+                  "الجمهورية"
+                ],
+                "legal_topics": [
+                  "أحكام عامة"
+                ],
+                "legal_concepts": [],
+                "rights": [],
+                "obligations": [],
+                "prohibitions": [],
+                "permissions": [],
+                "penalties": [],
+                "exceptions": [],
+                "procedures": [],
+                "cross_references": [],
+                "entities": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
