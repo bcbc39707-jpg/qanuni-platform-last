@@ -1,0 +1,6 @@
+DOCX to JSON Conversion Log
+===========================
+Total files: 488
+Success: 488
+Errors: 0
+

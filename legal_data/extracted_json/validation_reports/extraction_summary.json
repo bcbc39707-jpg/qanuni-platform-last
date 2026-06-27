@@ -1,0 +1,214 @@
+{
+  "extraction_date": "2026-06-08T15:33:56.822830",
+  "total_files": 29,
+  "total_articles": 7552,
+  "total_chunks": 7759,
+  "success": 17,
+  "warnings": 12,
+  "errors": 0,
+  "details": [
+    {
+      "status": "success",
+      "law_name": "اللائحة التنفيذية لقانون هيئة الشرطة",
+      "articles": 134,
+      "chunks": 158,
+      "pages": 46
+    },
+    {
+      "status": "success",
+      "law_name": "اللائحة التنفيذية لقانون أراضي وعقارات الدولة",
+      "articles": 189,
+      "chunks": 193,
+      "pages": 33
+    },
+    {
+      "status": "success",
+      "law_name": "قانون الإذاعة والتلفزيون",
+      "articles": 35,
+      "chunks": 42,
+      "pages": 11
+    },
+    {
+      "status": "warning",
+      "law_name": "القانون المدني اليمني",
+      "articles": 1390,
+      "chunks": 1393,
+      "pages": 185
+    },
+    {
+      "status": "success",
+      "law_name": "قانون الإثبات اليمني",
+      "articles": 179,
+      "chunks": 179,
+      "pages": 25
+    },
+    {
+      "status": "warning",
+      "law_name": "قانون المرافعات والتنفيذ المدني اليمني",
+      "articles": 824,
+      "chunks": 844,
+      "pages": 239
+    },
+    {
+      "status": "success",
+      "law_name": "قانون تنظيم العلاقة بين المؤجر والمستأجر اليمني",
+      "articles": 105,
+      "chunks": 107,
+      "pages": 17
+    },
+    {
+      "status": "warning",
+      "law_name": "القانون التجاري اليمني",
+      "articles": 824,
+      "chunks": 831,
+      "pages": 135
+    },
+    {
+      "status": "warning",
+      "law_name": "قانون أنظمة الدفع والعمليات المالية والمصرفية الإلكترونية",
+      "articles": 45,
+      "chunks": 48,
+      "pages": 12
+    },
+    {
+      "status": "success",
+      "law_name": "قانون التجارة الداخلية اليمني",
+      "articles": 31,
+      "chunks": 33,
+      "pages": 6
+    },
+    {
+      "status": "success",
+      "law_name": "قانون الشركات التجارية اليمني",
+      "articles": 299,
+      "chunks": 320,
+      "pages": 64
+    },
+    {
+      "status": "success",
+      "law_name": "قانون مكافحة غسل الأموال",
+      "articles": 24,
+      "chunks": 25,
+      "pages": 6
+    },
+    {
+      "status": "success",
+      "law_name": "الدستور اليمني",
+      "articles": 3,
+      "chunks": 21,
+      "pages": 19
+    },
+    {
+      "status": "warning",
+      "law_name": "قانون الإجراءات الجزائية اليمني",
+      "articles": 565,
+      "chunks": 570,
+      "pages": 90
+    },
+    {
+      "status": "warning",
+      "law_name": "قانون الجرائم والعقوبات اليمني",
+      "articles": 324,
+      "chunks": 333,
+      "pages": 66
+    },
+    {
+      "status": "success",
+      "law_name": "قانون الزكاة",
+      "articles": 51,
+      "chunks": 54,
+      "pages": 11
+    },
+    {
+      "status": "warning",
+      "law_name": "قانون مزاولة المهن الطبية والصيدلانية",
+      "articles": 1390,
+      "chunks": 1395,
+      "pages": 194
+    },
+    {
+      "status": "success",
+      "law_name": "قانون العمل اليمني",
+      "articles": 163,
+      "chunks": 178,
+      "pages": 40
+    },
+    {
+      "status": "warning",
+      "law_name": "قانون نظام الوظائف والأجور والمرتبات",
+      "articles": 40,
+      "chunks": 45,
+      "pages": 12
+    },
+    {
+      "status": "success",
+      "law_name": "قانون الأراضي وعقارات الدولة",
+      "articles": 74,
+      "chunks": 76,
+      "pages": 13
+    },
+    {
+      "status": "warning",
+      "law_name": "قانون الإسكان والتخطيط الحضري",
+      "articles": 63,
+      "chunks": 66,
+      "pages": 16
+    },
+    {
+      "status": "warning",
+      "law_name": "قانون التخطيط الحضري",
+      "articles": 63,
+      "chunks": 66,
+      "pages": 16
+    },
+    {
+      "status": "success",
+      "law_name": "قانون المناجم والمحاجر",
+      "articles": 56,
+      "chunks": 60,
+      "pages": 11
+    },
+    {
+      "status": "warning",
+      "law_name": "قانون المياه",
+      "articles": 39,
+      "chunks": 52,
+      "pages": 17
+    },
+    {
+      "status": "warning",
+      "law_name": "قانون الأحوال الشخصية اليمني",
+      "articles": 349,
+      "chunks": 353,
+      "pages": 76
+    },
+    {
+      "status": "success",
+      "law_name": "قانون الوقف الشرعي اليمني",
+      "articles": 92,
+      "chunks": 92,
+      "pages": 13
+    },
+    {
+      "status": "success",
+      "law_name": "قانون المرور",
+      "articles": 78,
+      "chunks": 90,
+      "pages": 28
+    },
+    {
+      "status": "success",
+      "law_name": "قانون الموانئ البحرية",
+      "articles": 39,
+      "chunks": 50,
+      "pages": 12
+    },
+    {
+      "status": "success",
+      "law_name": "قانون النقل البري",
+      "articles": 84,
+      "chunks": 85,
+      "pages": 15
+    }
+  ]
+}
