@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>قانوني AI — المساعد القانوني الذكي</title>
+  
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="styles/design-system.css">
+  <link rel="stylesheet" href="styles/app.css">
+
+  <!-- Instant theme script loader to prevent white flashes -->
+  <script>
+    (function() {
+      const theme = localStorage.getItem('theme') || 'light';
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+</head>
+<body class="app-body">
+
+  <div class="app-container">
+    
+    <!-- ============================================
+         RIGHT SIDEBAR (History & Navigation)
+         ============================================ -->
+    <aside class="sidebar" id="app-sidebar">
+      <div class="sidebar__header">
+        <a href="index.html" class="sidebar__logo">
+          <div class="sidebar__logo-icon">ق</div>
+          <span class="sidebar__logo-text">قانوني AI</span>
+        </a>
+        <button class="sidebar__settings-btn" id="close-sidebar" style="display:none;">✕</button>
+      </div>
+      
+      <button class="btn btn--primary sidebar__new-chat" id="new-chat-btn">
+        <span>+ محادثة جديدة</span>
+      </button>
+      
+      <div class="sidebar__search" style="padding-top: var(--space-4);">
+        <div class="sidebar__group-title" style="padding-right:0; margin-bottom:var(--space-2);">الأدوات والخدمات</div>
+        <div class="sidebar__list" style="margin-bottom: var(--space-6); gap: 4px;">
+          <a href="dashboard.html" class="sidebar__item" style="display:flex; align-items:center; gap:8px;">
+            <span>📊</span> <span>لوحة التحكم</span>
+          </a>
+          <a href="app.html" class="sidebar__item sidebar__item--active" style="display:flex; align-items:center; gap:8px;">
+            <span>🤖</span> <span>المساعد القانوني الذكي</span>
+          </a>
+          <a href="search.html" class="sidebar__item" style="display:flex; align-items:center; gap:8px;">
+            <span>🔍</span> <span>محرك البحث السيمانتك</span>
+          </a>
+          <a href="library.html" class="sidebar__item" style="display:flex; align-items:center; gap:8px;">
+            <span>📚</span> <span>مكتبة التشريعات</span>
+          </a>
+          <a href="generator.html" class="sidebar__item" style="display:flex; align-items:center; gap:8px;">
+            <span>🖋️</span> <span>منشئ المستندات</span>
+          </a>
+          <a href="analyzer.html" class="sidebar__item" style="display:flex; align-items:center; gap:8px;">
+            <span>📄</span> <span>محلل ومراجع العقود</span>
+          </a>
+          <a href="settings.html" class="sidebar__item" style="display:flex; align-items:center; gap:8px;">
+            <span>⚙️</span> <span>الإعدادات</span>
+          </a>
+        </div>
+        
+        <div class="sidebar__group-title" style="padding-right:0; margin-bottom:var(--space-2);">المحادثات السابقة</div>
+        <input type="text" class="sidebar__search-input" placeholder="ابحث في الاستشارات...">
+      </div>
+      
+      <div class="sidebar__history">
+        <!-- Today Group -->
+        <div class="sidebar__group">
+          <h3 class="sidebar__group-title">اليوم</h3>
+          <div class="sidebar__list">
+            <div class="sidebar__item sidebar__item--active">فسخ عقد الإيجار لعدم دفع الأجرة</div>
+            <div class="sidebar__item">عقوبة الاختلاس في القانون اليمني</div>
+          </div>
+        </div>
+        
+        <!-- Yesterday Group -->
+        <div class="sidebar__group">
+          <h3 class="sidebar__group-title">أمس</h3>
+          <div class="sidebar__list">
+            <div class="sidebar__item">حقوق العامل اليمني عند الفصل التعسفي</div>
+            <div class="sidebar__item">إجراءات صياغة الطعن بالنقض</div>
+          </div>
+        </div>
+        
+        <!-- Older Group -->
+        <div class="sidebar__group">
+          <h3 class="sidebar__group-title">هذا الأسبوع</h3>
+          <div class="sidebar__list">
+            <div class="sidebar__item">عقود تأسيس الشركات ذات المسؤولية المحدودة</div>
+            <div class="sidebar__item">مسؤولية المقاول عن العيوب الخفية</div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="sidebar__footer">
+        <div class="sidebar__user">
+          <div class="sidebar__avatar">مح</div>
+          <span class="sidebar__username" data-user-name>مستخدم</span>
+        </div>
+        <a href="login.html" class="sidebar__settings-btn" title="تسجيل خروج">🚪</a>
+      </div>
+    </aside>
+    
+    <!-- ============================================
+         MAIN CHAT AREA
+         ============================================ -->
+    <main class="chat-container">
+      
+      <!-- Top header bar -->
+      <header class="chat-header">
+        <div class="chat-header__info">
+          <button class="chat-header__menu-btn" id="menu-toggle-btn" aria-label="عرض المحادثات">☰</button>
+          <h2 class="chat-header__title" id="chat-title">فسخ عقد الإيجار لعدم دفع الأجرة</h2>
+        </div>
+        
+        <div class="chat-header__actions">
+          <button class="btn btn--outline btn--sm" id="export-pdf-btn">📄 تصدير PDF</button>
+          <button class="btn btn--ghost btn--sm btn--icon" title="مشاركة">🔗</button>
+          <button class="btn btn--ghost btn--sm btn--icon" title="حذف المحادثة" style="color:var(--color-error-700);">🗑️</button>
+        </div>
+      </header>
+      
+      <!-- Messages stream -->
+      <div class="chat-messages" id="chat-messages-box">
+        
+        <!-- User message -->
+        <div class="msg-bubble msg-bubble--user">
+          <div class="msg-bubble__sender">أنا</div>
+          <div class="msg-bubble__card">
+            ما هي شروط وإجراءات فسخ عقد الإيجار لعدم دفع الأجرة في القانون اليمني؟ وكيف أصوغ إنذاراً قانونياً للمستأجر؟
+          </div>
+        </div>
+        
+        <!-- AI Response -->
+        <div class="msg-bubble msg-bubble--ai">
+          <div class="msg-bubble__sender">
+            <span>قانوني AI</span>
+            <span class="confidence-badge confidence-badge--high">
+              <span>✓</span> موثوقية عالية (98%)
+            </span>
+          </div>
+          <div class="msg-bubble__card">
+            وفقاً لأحكام القانون المدني اليمني رقم (14) لسنة 2002م، يعد دفع الأجرة من الالتزامات الجوهرية المترتبة على المستأجر. وفي حال إخلاله بهذا الالتزام، يحق للمؤجر فسخ عقد الإيجار وفق الشروط والإجراءات التالية:
+            <br><br>
+            <strong>أولاً: الشروط القانونية للفسخ:</strong>
+            <br>
+            1. <strong>ثبوت التأخر أو الامتناع:</strong> أن يتأخر المستأجر عن سداد الأجرة المحددة في العقد في موعد استحقاقها دون مبرر مقبول قانوناً.
+            <br>
+            2. <strong>توجيه الإنذار (الإعذار):</strong> لا يحق للمؤجر طلب الفسخ مباشرة بل يجب عليه إعذار المستأجر رسمياً بأداء الأجرة خلال المدة المحددة قانوناً (غالباً 15 يوماً من تاريخ التبليغ).
+            <br><br>
+            <strong>ثانياً: الإجراءات العملية:</strong>
+            <br>
+            1. صياغة إنذار رسمي بالوفاء بالحق وتوجيهه عن طريق قلم المحضرين في المحكمة المختصة أو بإنذار رسمي مكتوب وموقع بالاستلام.
+            <br>
+            2. في حال انقضاء مهلة الإنذار دون سداد، يتم رفع دعوى "فسخ عقد الإيجار وإخلاء العين المؤجرة لتأخر السداد" أمام محكمة الأمور المستعجلة أو المحكمة المدنية المختصة.
+            
+            <div class="citation-container">
+              <span class="citation-chip">القانون المدني اليمني — المادة (234)</span>
+              <span class="citation-chip">قانون الإجراءات المدنية — المادة (112)</span>
+            </div>
+            
+            <!-- Expandable sources panel -->
+            <div class="sources-panel">
+              <div class="sources-panel__toggle" onclick="toggleSources(this)">
+                <span>📂 عرض النصوص والقرارات الرسمية المرجعية</span>
+              </div>
+              <div class="sources-panel__content">
+                <strong>المادة (234) مدني يمني:</strong> "يلتزم المستأجر بأن يؤدي الأجرة في المواعيد المتفق عليها، فإذا لم يوجد اتفاق وجب دفعها في نهاية كل شهر للعين المؤجرة..."
+                <br>
+                <strong>قرار المحكمة العليا اليمنية رقم (45) لسنة 2018م:</strong> "استقر قضاء المحكمة العليا على أن إعذار المستأجر بالوفاء بالأجرة شرط أساسي لقبول دعوى الإخلاء للتأخر في السداد، وخلو الأوراق من الإعذار يرتب عدم قبول الدعوى."
+              </div>
+            </div>
+          </div>
+          
+          <div class="msg-bubble__actions">
+            <span class="msg-bubble__action" onclick="copyText(this)">📋 نسخ الإجابة</span>
+            <span class="msg-bubble__action">🔄 إعادة توليد</span>
+            <span class="msg-bubble__action">⭐ حفظ للمراجع</span>
+          </div>
+        </div>
+        
+      </div>
+      
+      <!-- Input bar container -->
+      <footer class="chat-input-panel">
+        
+        <!-- Suggested Followups -->
+        <div class="suggested-followups">
+          <span class="suggested-followup" onclick="sendFollowup('كيف أصوغ صيغة الإنذار للمستأجر؟')">كيف أصوغ صيغة الإنذار للمستأجر؟</span>
+          <span class="suggested-followup" onclick="sendFollowup('ماذا لو رفض المستأجر استلام الإنذار؟')">ماذا لو رفض المستأجر استلام الإنذار؟</span>
+          <span class="suggested-followup" onclick="sendFollowup('كم تستغرق دعوى الإخلاء في المحكمة؟')">كم تستغرق دعوى الإخلاء في المحكمة؟</span>
+        </div>
+        
+        <div class="chat-input__box">
+          <textarea class="chat-input__textarea" id="chat-input-field" placeholder="اسأل المساعد القانوني عن القوانين، مراجعة العقود، أو صياغة لوائح الاعتراض..." rows="1"></textarea>
+          
+          <div class="chat-input__footer">
+            <div class="chat-input__tools">
+              <button class="chat-input__tool" title="إرفاق ملف عقد أو قضية (PDF, DOCX)">📎</button>
+              <button class="chat-input__tool" title="تحدث صوتياً">🎙️</button>
+            </div>
+            
+            <button class="chat-input__send-btn" id="send-btn">←</button>
+          </div>
+        </div>
+        <div class="chat-input__hint">
+          مستنداتك وأبحاثك مشفرة بالكامل وخاصة بك فقط بموجب سياسة أمان قانوني.
+        </div>
+      </footer>
+      
+    </main>
+    
+  </div>
+
+  <!-- ============================================
+       SCRIPTS
+       ============================================ -->
+  <script src="api.js"></script>
+  <script>
+    if (!requireAuth()) throw new Error('redirect');
+    // User data
+    const _u = QaniniAuth.getUser();
+    if (_u) {
+      document.querySelectorAll('.sidebar__username').forEach(el => el.textContent = _u.full_name);
+      document.querySelectorAll('.sidebar__avatar').forEach(el => el.textContent = _u.full_name.substring(0,2));
+    }
+    document.querySelectorAll('[title="تسجيل خروج"]').forEach(b => b.addEventListener('click', e => { e.preventDefault(); QaniniAuth.logout(); }));
+
+    // 1. Sidebar Toggle
+    const sidebar = document.getElementById('app-sidebar');
+    const menuBtn = document.getElementById('menu-toggle-btn');
+    const closeBtn = document.getElementById('close-sidebar');
+    menuBtn.addEventListener('click', () => { sidebar.classList.add('sidebar--active'); closeBtn.style.display = 'block'; });
+    closeBtn.addEventListener('click', () => { sidebar.classList.remove('sidebar--active'); closeBtn.style.display = 'none'; });
+
+    // 2. Sources Accordion
+    function toggleSources(element) { element.parentElement.classList.toggle('sources-panel--active'); }
+
+    // 3. Copy
+    function copyText(element) {
+      const card = element.closest('.msg-bubble').querySelector('.msg-bubble__card');
+      if (card) { navigator.clipboard.writeText(card.textContent).then(() => showToast('تم نسخ النص', 'success')); }
+    }
+
+    // 4. Send Message — REAL API
+    const sendBtn = document.getElementById('send-btn');
+    const inputField = document.getElementById('chat-input-field');
+    const messagesBox = document.getElementById('chat-messages-box');
+
+    async function sendMessage() {
+      const text = inputField.value.trim();
+      if (!text) return;
+
+      // User bubble
+      const userBubble = document.createElement('div');
+      userBubble.className = 'msg-bubble msg-bubble--user';
+      userBubble.innerHTML = `<div class="msg-bubble__sender">أنا</div><div class="msg-bubble__card">${text}</div>`;
+      messagesBox.appendChild(userBubble);
+      inputField.value = '';
+      messagesBox.scrollTop = messagesBox.scrollHeight;
+
+      // Typing indicator
+      const typingBubble = document.createElement('div');
+      typingBubble.className = 'msg-bubble msg-bubble--ai';
+      typingBubble.id = 'typing-indicator';
+      typingBubble.innerHTML = `<div class="msg-bubble__sender">قانوني AI</div><div class="msg-bubble__card" style="padding:12px 20px;"><span>جاري التفكير وصياغة الرد القانوني الموثق... 🔍</span></div>`;
+      messagesBox.appendChild(typingBubble);
+      messagesBox.scrollTop = messagesBox.scrollHeight;
+
+      try {
+        const result = await apiQuery(text);
+        messagesBox.removeChild(typingBubble);
+        let uniqueSources = [];
+        const seenSources = new Set();
+        if (result.sources && result.sources.length > 0) {
+          for (const s of result.sources) {
+            const key = `${s.doc_id}-${s.article_number || ''}`;
+            if (!seenSources.has(key)) {
+              seenSources.add(key);
+              uniqueSources.push(s);
+            }
+          }
+        }
+        const sourcesHtml = uniqueSources.length > 0
+          ? `<div class="citation-container">${uniqueSources.map(s => {
+              const url = `law-viewer.html?id=${s.doc_id}${s.article_number ? '#art-' + s.article_number : ''}`;
+              const label = s.article_number ? `${s.title} — المادة (${s.article_number})` : s.title;
+              return `<a href="${url}" class="citation-chip" title="الذهاب إلى نص المادة في مكتبة التشريعات">🏛️ ${label}</a>`;
+            }).join('')}</div>`
+          : '';
+        const aiBubble = document.createElement('div');
+        aiBubble.className = 'msg-bubble msg-bubble--ai';
+        aiBubble.innerHTML = `
+          <div class="msg-bubble__sender">
+            <span>قانوني AI</span>
+            <span class="confidence-badge confidence-badge--high"><span>✓</span> ${result.chunks_used} مصدر مرجعي</span>
+          </div>
+          <div class="msg-bubble__card">${result.answer.replace(/\n/g, '<br>')}${sourcesHtml}</div>
+          <div class="msg-bubble__actions">
+            <span class="msg-bubble__action" onclick="copyText(this)">📋 نسخ</span>
+          </div>`;
+        messagesBox.appendChild(aiBubble);
+      } catch (err) {
+        messagesBox.removeChild(typingBubble);
+        const errBubble = document.createElement('div');
+        errBubble.className = 'msg-bubble msg-bubble--ai';
+        errBubble.innerHTML = `<div class="msg-bubble__sender">قانوني AI</div><div class="msg-bubble__card" style="color:var(--color-error-700);">عذراً، حدث خطأ: ${err.message}</div>`;
+        messagesBox.appendChild(errBubble);
+      }
+      messagesBox.scrollTop = messagesBox.scrollHeight;
+    }
+
+    sendBtn.addEventListener('click', sendMessage);
+    inputField.addEventListener('keypress', (e) => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendMessage(); } });
+
+    // 5. Followup chips
+    function sendFollowup(text) { inputField.value = text; sendMessage(); }
+
+    // 6. New chat
+    document.getElementById('new-chat-btn').addEventListener('click', () => {
+      messagesBox.innerHTML = '';
+      document.getElementById('chat-title').textContent = 'محادثة جديدة';
+    });
+
+    // 7. Export PDF
+    document.getElementById('export-pdf-btn').addEventListener('click', () => { showToast('ميزة التصدير ستكون متاحة قريباً', 'info'); });
+
+    // 8. Handle URL query parameters on page load
+    window.addEventListener('DOMContentLoaded', () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const askParam = urlParams.get('ask');
+      if (askParam) {
+        inputField.value = askParam;
+        sendMessage();
+      }
+    });
+  </script>
+</body>
+</html>

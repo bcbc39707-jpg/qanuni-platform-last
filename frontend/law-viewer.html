@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>استعراض القانون — قانوني AI</title>
+  
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="styles/design-system.css">
+  <link rel="stylesheet" href="styles/app.css">
+  <link rel="stylesheet" href="styles/app-screens.css">
+  <link rel="stylesheet" href="styles/law-viewer.css">
+
+  <!-- Instant theme script loader to prevent white flashes -->
+  <script>
+    (function() {
+      const theme = localStorage.getItem('theme') || 'light';
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+</head>
+<body class="app-body">
+
+  <div class="app-container">
+    
+    <!-- ============================================
+         RIGHT SIDEBAR (Global Workspace Navigation)
+         ============================================ -->
+    <aside class="sidebar" id="app-sidebar">
+      <div class="sidebar__header">
+        <a href="index.html" class="sidebar__logo">
+          <div class="sidebar__logo-icon">ق</div>
+          <span class="sidebar__logo-text">قانوني AI</span>
+        </a>
+        <button class="sidebar__settings-btn" id="close-sidebar" style="display:none;">✕</button>
+      </div>
+      
+      <button class="btn btn--primary sidebar__new-chat" onclick="window.location.href='app.html'">
+        <span>+ محادثة جديدة</span>
+      </button>
+      
+      <div class="sidebar__search" style="padding-top: var(--space-4);">
+        <div class="sidebar__group-title" style="padding-right:0; margin-bottom:var(--space-2);">الأدوات والخدمات</div>
+        <div class="sidebar__list" style="margin-bottom: var(--space-6); gap: 4px;">
+          <a href="dashboard.html" class="sidebar__item" style="display:flex; align-items:center; gap:8px;">
+            <span>📊</span> <span>لوحة التحكم</span>
+          </a>
+          <a href="app.html" class="sidebar__item" style="display:flex; align-items:center; gap:8px;">
+            <span>🤖</span> <span>المساعد القانوني الذكي</span>
+          </a>
+          <a href="search.html" class="sidebar__item" style="display:flex; align-items:center; gap:8px;">
+            <span>🔍</span> <span>محرك البحث السيمانتك</span>
+          </a>
+          <a href="library.html" class="sidebar__item sidebar__item--active" style="display:flex; align-items:center; gap:8px;">
+            <span>📚</span> <span>مكتبة التشريعات</span>
+          </a>
+          <a href="generator.html" class="sidebar__item" style="display:flex; align-items:center; gap:8px;">
+            <span>🖋️</span> <span>منشئ المستندات</span>
+          </a>
+          <a href="analyzer.html" class="sidebar__item" style="display:flex; align-items:center; gap:8px;">
+            <span>📄</span> <span>محلل ومراجع العقود</span>
+          </a>
+          <a href="settings.html" class="sidebar__item" style="display:flex; align-items:center; gap:8px;">
+            <span>⚙️</span> <span>الإعدادات</span>
+          </a>
+        </div>
+      </div>
+      
+      <div class="sidebar__footer">
+        <div class="sidebar__user">
+          <div class="sidebar__avatar">مح</div>
+          <span class="sidebar__username" data-user-name>مستخدم</span>
+        </div>
+        <a href="#" onclick="QaniniAuth.logout(); return false;" class="sidebar__settings-btn" title="تسجيل خروج">🚪</a>
+      </div>
+    </aside>
+    
+    <!-- ============================================
+         MAIN WORKSPACE CONTENT
+         ============================================ -->
+    <main class="chat-container">
+      
+      <!-- Top header bar -->
+      <header class="chat-header">
+        <div class="chat-header__info">
+          <button class="chat-header__menu-btn" id="menu-toggle-btn" aria-label="عرض القائمة">☰</button>
+          <a href="library.html" class="btn btn--ghost btn--sm" style="margin-left:var(--space-2); color:var(--color-primary-800);">📂 رجوع للمكتبة</a>
+          <h2 class="chat-header__title" id="top-bar-title">قراءة وثيقة القانون</h2>
+        </div>
+        
+        <div class="chat-header__actions">
+          <button class="btn btn--outline btn--sm" onclick="window.print()">🖨️ طباعة النص</button>
+        </div>
+      </header>
+      
+      <!-- Content Area -->
+      <div class="app-content" id="law-viewer-root">
+        
+        <div style="text-align:center; padding:var(--space-16);" id="loading-spinner">
+          <h2 style="color:var(--color-primary-800); margin-bottom:var(--space-4);">جاري استرجاع نصوص وبنود القانون... 🔍</h2>
+          <p style="color:var(--color-gray-500);">نقوم بجلب البنود والمواد والتحليلات الخاصة بالقانون المختار.</p>
+        </div>
+
+        <div class="law-viewer-container" id="viewer-container" style="display:none;">
+          
+          <!-- Table of Contents Sidebar -->
+          <aside class="law-viewer-toc">
+            <h3 class="law-viewer-toc__title">فهرس المواد</h3>
+            <input type="text" class="law-viewer-toc__search" id="toc-search" placeholder="ابحث برقم المادة...">
+            <div class="law-viewer-toc__list" id="toc-list">
+              <!-- Dynamically populated -->
+            </div>
+          </aside>
+
+          <!-- Main Content Reading Pane -->
+          <div class="law-viewer-content">
+            
+            <!-- Law Info Banner -->
+            <div class="law-header-banner" id="law-banner">
+              <span class="law-header-banner__category" id="law-category">تصنيف القانون</span>
+              <h1 class="law-header-banner__title" id="law-title">عنوان القانون</h1>
+              <div class="law-header-banner__meta">
+                <span id="law-meta-num">رقم: -</span>
+                <span>•</span>
+                <span id="law-meta-year">سنة الإصدار: -</span>
+                <span>•</span>
+                <span id="law-meta-count">عدد المواد: -</span>
+              </div>
+            </div>
+
+            <!-- Articles reading area -->
+            <div style="display:flex; flex-direction:column; gap:var(--space-4);" id="articles-list">
+              <!-- Dynamically populated -->
+            </div>
+
+          </div>
+
+        </div>
+        
+      </div>
+      
+    </main>
+    
+  </div>
+
+  <script src="api.js"></script>
+  <script>
+    if (!requireAuth()) throw new Error('redirect');
+
+    // User data in sidebar
+    const _u = QaniniAuth.getUser();
+    if (_u) {
+      document.querySelectorAll('.sidebar__username').forEach(el => el.textContent = _u.full_name);
+      document.querySelectorAll('.sidebar__avatar').forEach(el => el.textContent = _u.full_name.substring(0,2));
+    }
+    document.querySelectorAll('[title="تسجيل خروج"]').forEach(b => b.addEventListener('click', e => { e.preventDefault(); QaniniAuth.logout(); }));
+
+    // Sidebar responsive toggle on mobile
+    const sidebar = document.getElementById('app-sidebar');
+    const menuBtn = document.getElementById('menu-toggle-btn');
+    const closeBtn = document.getElementById('close-sidebar');
+
+    menuBtn.addEventListener('click', () => {
+      sidebar.classList.add('sidebar--active');
+      closeBtn.style.display = 'block';
+    });
+
+    closeBtn.addEventListener('click', () => {
+      sidebar.classList.remove('sidebar--active');
+      closeBtn.style.display = 'none';
+    });
+
+    // Parse URL parameter
+    const urlParams = new URLSearchParams(window.location.search);
+    const lawId = urlParams.get('id');
+
+    async function loadLawDetails() {
+      if (!lawId) {
+        document.getElementById('loading-spinner').innerHTML = `
+          <div style="color:var(--color-error-700); padding:var(--space-12);">
+            <h2>عذراً، لم يتم تحديد القانون بشكل صحيح.</h2>
+            <a href="library.html" class="btn btn--primary" style="margin-top:var(--space-4); display:inline-block;">الرجوع للمكتبة</a>
+          </div>
+        `;
+        return;
+      }
+
+      try {
+        const law = await apiFetch(`/laws/${lawId}`);
+        
+        // Hide loading spinner and show layout
+        document.getElementById('loading-spinner').style.display = 'none';
+        const container = document.getElementById('viewer-container');
+        container.style.display = 'flex';
+
+        // Update headers and banner
+        document.getElementById('top-bar-title').textContent = law.title;
+        document.getElementById('law-title').textContent = law.title;
+        document.getElementById('law-category').textContent = law.category || 'تشريع قانوني';
+        document.getElementById('law-meta-num').textContent = law.law_number ? `رقم: ${law.law_number}` : 'بدون رقم رسمي';
+        document.getElementById('law-meta-year').textContent = law.year ? `سنة الإصدار: ${law.year}م` : 'سنة الإصدار: غير محددة';
+        document.getElementById('law-meta-count').textContent = `عدد المواد: ${law.total_articles} مادة`;
+
+        // Render articles list
+        const articlesList = document.getElementById('articles-list');
+        const tocList = document.getElementById('toc-list');
+        
+        if (law.articles.length === 0) {
+          articlesList.innerHTML = `
+            <div class="card" style="padding:var(--space-8); text-align:center; color:var(--color-gray-500);">
+              نص هذا التشريع غير مفصل حالياً، يرجى الاستفسار من المساعد الذكي.
+            </div>
+          `;
+          return;
+        }
+
+        // Helper: render a single article card
+        function renderArticle(art) {
+          const keywordsHtml = art.keywords && art.keywords.length > 0 
+            ? art.keywords.map(kw => `<span class="badge" style="background:var(--color-gray-100); color:var(--color-gray-600); font-size:11px; padding:2px 8px;">${kw}</span>`).join('') 
+            : '';
+          const topicsHtml = art.legal_topics && art.legal_topics.length > 0 
+            ? art.legal_topics.map(tp => `<span class="badge badge--teal" style="font-size:11px; padding:2px 8px;">${tp}</span>`).join('') 
+            : '';
+          return `
+            <article class="article-card" id="art-${art.article_number}">
+              <div class="article-card__header">
+                <span class="article-card__number">المادة (${art.article_number})</span>
+                ${art.article_title ? `<strong style="color:var(--color-primary-800);">${art.article_title}</strong>` : ''}
+              </div>
+              <p class="article-card__text">${art.article_text.replace(/\n/g, '<br>')}</p>
+              ${art.summary ? `<p style="margin-top:var(--space-3); font-size:13px; color:var(--color-gray-500); background:var(--color-gray-50); padding:8px 12px; border-radius:6px; border-left:3px solid var(--color-primary-300);"><strong>الملخص:</strong> ${art.summary}</p>` : ''}
+              ${keywordsHtml || topicsHtml ? `
+                <div class="article-card__analysis">
+                  ${topicsHtml}
+                  ${keywordsHtml}
+                </div>
+              ` : ''}
+            </article>
+          `;
+        }
+
+        // Generate articles with chapter headers
+        if (law.chapters && law.chapters.length > 0) {
+          // Render chapters with collapsible sections
+          articlesList.innerHTML = law.chapters.map((ch, ci) => {
+            const chId = `chapter-${ci}`;
+            const bodyId = `ch-body-${ci}`;
+            return `
+              <div class="law-chapter" id="${chId}">
+                <div class="law-chapter__header" data-ch-body="${bodyId}" style="cursor:pointer;">
+                  <span class="law-chapter__toggle">▶</span>
+                  <h3 class="law-chapter__title">${ch.title}</h3>
+                  <span class="law-chapter__count">${ch.articles.length} مادة</span>
+                </div>
+                <div class="law-chapter__body law-chapter__body--open" id="${bodyId}">
+                  ${ch.articles.map(art => renderArticle(art)).join('')}
+                </div>
+              </div>
+            `;
+          }).join('');
+
+          // TOC with chapter groupings
+          tocList.innerHTML = law.chapters.map((ch, ci) => {
+            const chId = `chapter-${ci}`;
+            return `
+              <div class="law-viewer-toc__group">
+                <div class="law-viewer-toc__group-title">${ch.title}</div>
+                ${ch.articles.map(art => `
+                  <a href="#art-${art.article_number}" class="law-viewer-toc__item" data-art="${art.article_number}">المادة (${art.article_number})</a>
+                `).join('')}
+              </div>
+            `;
+          }).join('');
+        } else {
+          // Flat list (no chapters)
+          articlesList.innerHTML = law.articles.map(art => renderArticle(art)).join('');
+          tocList.innerHTML = law.articles.map(art => `
+            <a href="#art-${art.article_number}" class="law-viewer-toc__item" data-art="${art.article_number}">المادة (${art.article_number})</a>
+          `).join('');
+        }
+
+        // Toggle chapter expand/collapse
+        document.querySelectorAll('.law-chapter__header').forEach(header => {
+          header.addEventListener('click', () => {
+            const bodyId = header.getAttribute('data-ch-body');
+            const body = document.getElementById(bodyId);
+            if (body) {
+              body.classList.toggle('law-chapter__body--open');
+              const toggle = header.querySelector('.law-chapter__toggle');
+              if (toggle) toggle.style.transform = body.classList.contains('law-chapter__body--open') ? 'rotate(90deg)' : '';
+            }
+          });
+        });
+
+        // Smooth scroll to articles from TOC
+        document.querySelectorAll('.law-viewer-toc__item').forEach(item => {
+          item.addEventListener('click', (e) => {
+            e.preventDefault();
+            const href = item.getAttribute('href');
+            if (!href) return;
+            const targetId = decodeURIComponent(href.substring(1));
+            const targetEl = document.getElementById(targetId);
+            const scrollContainer = document.querySelector('.app-content');
+            if (targetEl && scrollContainer) {
+              const containerRect = scrollContainer.getBoundingClientRect();
+              const targetRect = targetEl.getBoundingClientRect();
+              const relativeTop = targetRect.top - containerRect.top + scrollContainer.scrollTop - 20;
+              
+              scrollContainer.scrollTo({
+                top: relativeTop,
+                behavior: 'smooth'
+              });
+              
+              // Set active class in TOC
+              document.querySelectorAll('.law-viewer-toc__item').forEach(i => i.classList.remove('law-viewer-toc__item--active'));
+              item.classList.add('law-viewer-toc__item--active');
+            }
+          });
+        });
+
+
+        // Search/Filter articles in TOC
+        const searchInput = document.getElementById('toc-search');
+        searchInput.addEventListener('input', () => {
+          const query = searchInput.value.trim();
+          document.querySelectorAll('.law-viewer-toc__item').forEach(item => {
+            const artNum = item.getAttribute('data-art');
+            if (!query || artNum.includes(query)) {
+              item.style.display = 'block';
+            } else {
+              item.style.display = 'none';
+            }
+          });
+        });
+
+        // Highlight active article in TOC on scroll (IntersectionObserver)
+        const observerOptions = {
+          root: null,
+          rootMargin: '-80px 0px -60% 0px',
+          threshold: 0
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              const id = entry.target.getAttribute('id');
+              const artNum = id.replace('art-', '');
+              
+              document.querySelectorAll('.law-viewer-toc__item').forEach(item => {
+                if (item.getAttribute('data-art') === artNum) {
+                  item.classList.add('law-viewer-toc__item--active');
+                  // Scroll TOC sidebar to show active item if out of view
+                  item.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+                } else {
+                  item.classList.remove('law-viewer-toc__item--active');
+                }
+              });
+            }
+          });
+        }, observerOptions);
+
+        document.querySelectorAll('.article-card').forEach(card => observer.observe(card));
+
+        // Handle initial hash routing (e.g. #art-23) with a layout-safe retry mechanism
+        const hash = window.location.hash;
+        if (hash) {
+          let retries = 0;
+          const targetId = decodeURIComponent(hash.substring(1));
+          const scrollInterval = setInterval(() => {
+            const targetEl = document.getElementById(targetId);
+            if (targetEl) {
+              const rect = targetEl.getBoundingClientRect();
+              // Check if the element has been layouted (has non-zero height/top)
+              if (rect.top !== 0 || rect.height !== 0) {
+                // Ensure parent chapter is open
+                const parentBody = targetEl.closest('.law-chapter__body');
+                if (parentBody && !parentBody.classList.contains('law-chapter__body--open')) {
+                  parentBody.classList.add('law-chapter__body--open');
+                  // Update toggle icon rotation
+                  const chapterEl = parentBody.closest('.law-chapter');
+                  if (chapterEl) {
+                    const toggle = chapterEl.querySelector('.law-chapter__toggle');
+                    if (toggle) toggle.style.transform = 'rotate(90deg)';
+                  }
+                }
+
+                // Smooth scroll to target article using the same logic as TOC click
+                const scrollContainer = document.querySelector('.app-content');
+                if (scrollContainer) {
+                  const containerRect = scrollContainer.getBoundingClientRect();
+                  const relativeTop = rect.top - containerRect.top + scrollContainer.scrollTop - 20;
+                  
+                  scrollContainer.scrollTo({
+                    top: relativeTop,
+                    behavior: 'smooth'
+                  });
+                }
+
+                // Highlight the article visually with a beautiful soft accent fade
+                targetEl.style.transition = 'background-color 1.5s ease, border-color 1.5s ease, box-shadow 1.5s ease';
+                targetEl.style.backgroundColor = 'var(--color-accent-50)';
+                targetEl.style.borderColor = 'var(--color-accent-400)';
+                targetEl.style.boxShadow = '0 0 16px rgba(0, 176, 160, 0.15)';
+
+                // Fade out highlight after 4 seconds
+                setTimeout(() => {
+                  targetEl.style.backgroundColor = '';
+                  targetEl.style.borderColor = '';
+                  targetEl.style.boxShadow = '';
+                }, 4000);
+
+                clearInterval(scrollInterval);
+              }
+            }
+            retries++;
+            if (retries > 30) {  // Increased retries to 30 to account for slower initial loads
+              clearInterval(scrollInterval);
+            }
+          }, 150);
+        }
+
+      } catch (err) {
+        document.getElementById('loading-spinner').innerHTML = `
+          <div style="color:var(--color-error-700); padding:var(--space-12);">
+            <h2>فشل جلب تفاصيل القانون</h2>
+            <p>${err.message || err}</p>
+            <a href="library.html" class="btn btn--primary" style="margin-top:var(--space-4); display:inline-block;">الرجوع للمكتبة</a>
+          </div>
+        `;
+      }
+    }
+
+    // Load data
+    loadLawDetails();
+  </script>
+</body>
+</html>

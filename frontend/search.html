@@ -1,0 +1,291 @@
+﻿<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>محرك البحث السيمانتك — قانوني AI</title>
+  
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="styles/design-system.css">
+  <link rel="stylesheet" href="styles/app.css">
+  <link rel="stylesheet" href="styles/app-screens.css">
+  <link rel="stylesheet" href="styles/library.css">
+
+  <!-- Instant theme script loader to prevent white flashes -->
+  <script>
+    (function() {
+      const theme = localStorage.getItem('theme') || 'light';
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+</head>
+<body class="app-body">
+
+  <div class="app-container">
+    
+    <!-- ============================================
+         RIGHT SIDEBAR (Global Workspace Navigation)
+         ============================================ -->
+    <aside class="sidebar" id="app-sidebar">
+      <div class="sidebar__header">
+        <a href="index.html" class="sidebar__logo">
+          <div class="sidebar__logo-icon">ق</div>
+          <span class="sidebar__logo-text">قانوني AI</span>
+        </a>
+        <button class="sidebar__settings-btn" id="close-sidebar" style="display:none;">✕</button>
+      </div>
+      
+      <button class="btn btn--primary sidebar__new-chat" onclick="window.location.href='app.html'">
+        <span>+ محادثة جديدة</span>
+      </button>
+      
+      <div class="sidebar__search" style="padding-top: var(--space-4);">
+        <div class="sidebar__group-title" style="padding-right:0; margin-bottom:var(--space-2);">الأدوات والخدمات</div>
+        <div class="sidebar__list" style="margin-bottom: var(--space-6); gap: 4px;">
+          <a href="dashboard.html" class="sidebar__item" style="display:flex; align-items:center; gap:8px;">
+            <span>📊</span> <span>لوحة التحكم</span>
+          </a>
+          <a href="app.html" class="sidebar__item" style="display:flex; align-items:center; gap:8px;">
+            <span>🤖</span> <span>المساعد القانوني الذكي</span>
+          </a>
+          <a href="search.html" class="sidebar__item sidebar__item--active" style="display:flex; align-items:center; gap:8px;">
+            <span>🔍</span> <span>محرك البحث السيمانتك</span>
+          </a>
+          <a href="library.html" class="sidebar__item" style="display:flex; align-items:center; gap:8px;">
+            <span>📚</span> <span>مكتبة التشريعات</span>
+          </a>
+          <a href="generator.html" class="sidebar__item" style="display:flex; align-items:center; gap:8px;">
+            <span>🖋️</span> <span>منشئ المستندات</span>
+          </a>
+          <a href="analyzer.html" class="sidebar__item" style="display:flex; align-items:center; gap:8px;">
+            <span>📄</span> <span>محلل ومراجع العقود</span>
+          </a>
+          <a href="settings.html" class="sidebar__item" style="display:flex; align-items:center; gap:8px;">
+            <span>⚙️</span> <span>الإعدادات</span>
+          </a>
+        </div>
+      </div>
+      
+      <div class="sidebar__footer">
+        <div class="sidebar__user">
+          <div class="sidebar__avatar">مح</div>
+          <span class="sidebar__username" data-user-name>مستخدم</span>
+        </div>
+        <a href="#" onclick="QaniniAuth.logout(); return false;" class="sidebar__settings-btn" title="تسجيل خروج">🚪</a>
+      </div>
+    </aside>
+    
+    <!-- ============================================
+         MAIN WORKSPACE CONTENT
+         ============================================ -->
+    <main class="chat-container">
+      
+      <!-- Top header bar -->
+      <header class="chat-header">
+        <div class="chat-header__info">
+          <button class="chat-header__menu-btn" id="menu-toggle-btn" aria-label="عرض القائمة">☰</button>
+          <h2 class="chat-header__title">البحث السيمانتك المتقدم</h2>
+        </div>
+        
+        <div class="chat-header__actions">
+          <span class="badge badge--teal">البحث بالمعنى الذكي مفعل</span>
+        </div>
+      </header>
+      
+      <!-- Content Area -->
+      <div class="app-content">
+        
+        <!-- Large Search Bar Area -->
+        <div class="card" style="padding: var(--space-6); margin-bottom: var(--space-6); background:white;">
+          <div class="search-demo__bar" style="margin-bottom:var(--space-4);">
+            <span class="search-demo__icon">🔍</span>
+            <input type="text" class="search-demo__input" id="search-engine-input" placeholder="ابحث بالمعنى أو المفاهيم القانونية مثلاً 'حق المؤجر عند امتناع المستأجر عن السداد'..." aria-label="ابحث بالمعنى">
+            <button class="btn btn--primary btn--sm" id="search-btn-action" style="margin-left: var(--space-2);">ابحث الآن</button>
+          </div>
+          
+          <!-- Filters line -->
+          <div class="search-filter-panel">
+            <select class="search-filter-select" id="filter-doc">
+              <option value="all">كل المراجع</option>
+              <option value="civil">القانون المدني</option>
+              <option value="penal">قانون العقوبات</option>
+              <option value="commercial">القانون التجاري</option>
+              <option value="judgments">الأحكام القضائية</option>
+            </select>
+            
+            <select class="search-filter-select" id="filter-country">
+              <option value="ye">الجمهورية اليمنية</option>
+              <option value="eg">جمهورية مصر العربية</option>
+            </select>
+            
+            <select class="search-filter-select" id="filter-sort">
+              <option value="relevance">الأكثر صلة (سيمانتك)</option>
+              <option value="recent">الأحدث تاريخاً</option>
+            </select>
+            
+            <button class="btn btn--ghost btn--sm" style="color:var(--color-gray-500);">✕ مسح التصفية</button>
+          </div>
+        </div>
+        
+        <!-- Search Results area -->
+        <h3 class="quick-actions__title" id="results-count">نتائج البحث (البحث المدني المقترح)</h3>
+        
+        <div class="activity-list" id="results-list">
+          
+          <div class="card" style="background:white; padding:var(--space-5); margin-bottom:var(--space-3); border-right:4px solid var(--color-secondary);">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:var(--space-2);">
+              <span class="badge badge--teal">المادة (234) — القانون المدني اليمني</span>
+              <span style="font-size:var(--text-xs); color:var(--color-gray-400);">التصنيف: عقود الإيجار</span>
+            </div>
+            <h4 style="font-size:var(--text-base); font-weight:bold; color:var(--color-primary-800); margin-bottom:var(--space-2);">التزام المستأجر بدفع الأجرة واستحقاق الفسخ</h4>
+            <p style="font-size:var(--text-sm); color:var(--color-gray-600); line-height:var(--leading-relaxed);">
+              "يلتزم المستأجر بأن يؤدي الأجرة في المواعيد المتفق عليها، فإذا لم يوجد اتفاق وجب دفعها في نهاية كل شهر للعين المؤجرة. وفي حال تأخر المستأجر عن سداد الأجرة يحق للمؤجر إعذاره رسمياً ثم رفع دعوى الفسخ..."
+            </p>
+            <div style="margin-top:var(--space-3); display:flex; gap:var(--space-4); font-size:var(--text-xs); color:var(--color-secondary-700); font-weight:bold;">
+              <a href="#" style="cursor:pointer;">📂 عرض النص الكامل للمادة</a>
+              <a href="app.html?ask=المادة 234 مدني يمني" style="cursor:pointer;">🤖 ناقش المادة مع المساعد الذكي</a>
+            </div>
+          </div>
+          
+          <div class="card" style="background:white; padding:var(--space-5); margin-bottom:var(--space-3); border-right:4px solid var(--color-primary-300);">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:var(--space-2);">
+              <span class="badge badge--primary">المبدأ القضائي — المحكمة العليا اليمنية</span>
+              <span style="font-size:var(--text-xs); color:var(--color-gray-400);">سنة الحكم: 2018م</span>
+            </div>
+            <h4 style="font-size:var(--text-base); font-weight:bold; color:var(--color-primary-800); margin-bottom:var(--space-2);">اشتراط توجيه الإعذار الرسمي قبل قبول دعوى الإخلاء</h4>
+            <p style="font-size:var(--text-sm); color:var(--color-gray-600); line-height:var(--leading-relaxed);">
+              "قضت الهيئة العامة للمحكمة العليا بأن إعذار المستأجر بالوفاء بالأجرة خلال 15 يوماً من تاريخ التبليغ يعتبر شرطاً شكلياً وإجرائياً جوهرياً لا تقبل دعوى الإخلاء والتخلية بدونه، ولا يجوز الاتفاق على مخالفته..."
+            </p>
+            <div style="margin-top:var(--space-3); display:flex; gap:var(--space-4); font-size:var(--text-xs); color:var(--color-secondary-700); font-weight:bold;">
+              <a href="#" style="cursor:pointer;">📂 عرض تفاصيل الحكم القضائي</a>
+              <a href="app.html?ask=شروط الاعذار للمستأجر" style="cursor:pointer;">🤖 استفسر عن هذا المبدأ</a>
+            </div>
+          </div>
+          
+        </div>
+        
+      </div>
+      
+    </main>
+    
+  </div>
+
+  <script src="api.js"></script>
+  <script>
+    if (!requireAuth()) throw new Error('redirect');
+
+    // User data
+    const _u = QaniniAuth.getUser();
+    if (_u) {
+      document.querySelectorAll('.sidebar__username').forEach(el => el.textContent = _u.full_name);
+      document.querySelectorAll('.sidebar__avatar').forEach(el => el.textContent = _u.full_name.substring(0,2));
+    }
+    document.querySelectorAll('[title="تسجيل خروج"]').forEach(b => b.addEventListener('click', e => { e.preventDefault(); QaniniAuth.logout(); }));
+
+    // Sidebar responsive toggle on mobile
+    const sidebar = document.getElementById('app-sidebar');
+    const menuBtn = document.getElementById('menu-toggle-btn');
+    const closeBtn = document.getElementById('close-sidebar');
+
+    menuBtn.addEventListener('click', () => {
+      sidebar.classList.add('sidebar--active');
+      closeBtn.style.display = 'block';
+    });
+
+    closeBtn.addEventListener('click', () => {
+      sidebar.classList.remove('sidebar--active');
+      closeBtn.style.display = 'none';
+    });
+
+    // Real search integration
+    const searchInput = document.getElementById('search-engine-input');
+    const searchBtn = document.getElementById('search-btn-action');
+    const resultsList = document.getElementById('results-list');
+    const resultsCount = document.getElementById('results-count');
+    const filterDoc = document.getElementById('filter-doc');
+
+    function escapeHtml(str) {
+      if (!str) return '';
+      const div = document.createElement('div');
+      div.textContent = str;
+      return div.innerHTML;
+    }
+
+    async function performSearch() {
+      const query = searchInput.value.trim();
+      if (!query) return;
+
+      resultsCount.textContent = `جاري البحث عن: "${query}"...`;
+      resultsList.innerHTML = `
+        <div class="card" style="background:white; padding:var(--space-5); margin-bottom:var(--space-3); border-right:4px solid var(--color-secondary); text-align:center;">
+          <h4 style="font-size:var(--text-base); font-weight:bold; color:var(--color-primary-800); margin-bottom:var(--space-2);">جاري البحث والتحليل السيمانتك لأرشيف القوانين... 🔍</h4>
+          <p style="font-size:var(--text-sm); color:var(--color-gray-500);">نقوم بالبحث والمقارنة الفقهية والبحث عن المترادفات والصلات التشريعية.</p>
+        </div>
+      `;
+
+      // Map doc_type
+      let docType = null;
+      const docVal = filterDoc.value;
+      if (docVal === 'civil' || docVal === 'penal' || docVal === 'commercial') {
+        docType = 'law';
+      } else if (docVal === 'judgments') {
+        docType = 'ruling';
+      }
+
+      setLoadingState(searchBtn, true, 'ابحث الآن');
+
+      try {
+        const data = await apiSearch(query, docType, 1, 15);
+        resultsCount.textContent = `نتائج البحث عن: "${query}" (${data.total} نتيجة)`;
+        
+        if (data.results.length === 0) {
+          resultsList.innerHTML = `
+            <div class="card" style="background:white; padding:var(--space-5); margin-bottom:var(--space-3); text-align:center; color:var(--color-gray-500);">
+              لا توجد نتائج تطابق بحثك. حاول تغيير كلمات البحث أو الفلاتر.
+            </div>
+          `;
+        } else {
+          resultsList.innerHTML = data.results.map(r => {
+            const borderStyle = r.doc_type === 'law' ? 'border-right:4px solid var(--color-secondary);' : 'border-right:4px solid var(--color-primary-300);';
+            const badgeClass = r.doc_type === 'law' ? 'badge--teal' : 'badge--primary';
+            const typeText = r.doc_type === 'law' ? 'مادة قانونية' : r.doc_type === 'ruling' ? 'مبدأ قضائي' : 'مستند';
+            return `
+              <div class="card" style="background:white; padding:var(--space-5); margin-bottom:var(--space-3); ${borderStyle}">
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:var(--space-2);">
+                  <span class="badge ${badgeClass}">${typeText} — ${r.source || 'قانوني AI'}</span>
+                  <span style="font-size:var(--text-xs); color:var(--color-gray-400);">المطابقة: ${Math.round(r.score * 100)}%</span>
+                </div>
+                <h4 style="font-size:var(--text-base); font-weight:bold; color:var(--color-primary-800); margin-bottom:var(--space-2);">${r.title}</h4>
+                <p style="font-size:var(--text-sm); color:var(--color-gray-600); line-height:var(--leading-relaxed);">${escapeHtml(r.snippet)}</p>
+                <div style="display:flex; gap:8px; width:100%; margin-top:var(--space-4);">
+                  ${r.doc_type === 'law' ? `<button class="btn btn--outline btn--sm" style="flex:1; padding: 6px 12px; font-size:12px; display:inline-flex; align-items:center; justify-content:center; gap:4px;" onclick="window.location.href='law-viewer.html?id=${r.id}'">📖 الاطلاع</button>` : ''}
+                  <button class="lib-btn-browse" style="flex:1.5; margin:0; padding: 6px 12px; font-size:12px; display:inline-flex; align-items:center; justify-content:center; gap:4px;" onclick="window.location.href='app.html?ask=${encodeURIComponent('حدثني بالتفصيل عن ' + r.title)}'">تصفح مع المساعد <span>←</span></button>
+                </div>
+              </div>
+            `;
+          }).join('');
+        }
+      } catch (err) {
+        showToast(err.message || 'فشل البحث', 'error');
+        resultsCount.textContent = 'حدث خطأ أثناء البحث';
+        resultsList.innerHTML = `<div class="card" style="background:white; padding:var(--space-5); text-align:center; color:var(--color-error-700);">خطأ: ${err.message}</div>`;
+      } finally {
+        setLoadingState(searchBtn, false, 'ابحث الآن');
+      }
+    }
+
+    searchBtn.addEventListener('click', performSearch);
+    searchInput.addEventListener('keydown', (e) => { if (e.key === 'Enter') performSearch(); });
+
+    // Handle URL search parameter on page load
+    window.addEventListener('DOMContentLoaded', () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const qParam = urlParams.get('q');
+      if (qParam) {
+        searchInput.value = qParam;
+        performSearch();
+      }
+    });
+  </script>
+</body>
+</html>

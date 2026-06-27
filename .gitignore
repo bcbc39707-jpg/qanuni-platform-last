@@ -3,6 +3,7 @@ __pycache__/
 *.egg-info/
 .venv/
 venv/
+backend/venv/
 node_modules/
 .next/
 .env

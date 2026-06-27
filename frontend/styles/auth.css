@@ -1,0 +1,309 @@
+/* ==========================================================================
+   QANUNI — Authentication Styles (تسجيل الدخول والتسجيل - المساعد القانوني)
+   ========================================================================== */
+
+.auth-wrapper {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  min-height: 100vh;
+  background: var(--surface-primary);
+}
+
+/* ---------- Decorative Split Panel (Right side in RTL) ---------- */
+.auth-panel {
+  background: var(--gradient-hero);
+  color: white;
+  padding: var(--space-16) var(--space-12);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+}
+
+.auth-panel::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--gradient-mesh);
+  opacity: 0.7;
+}
+
+.auth-panel__content {
+  position: relative;
+  z-index: 2;
+  max-width: 500px;
+  margin: auto 0;
+}
+
+.auth-panel__logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-8);
+  font-size: var(--text-2xl);
+  font-weight: var(--font-extrabold);
+}
+
+.auth-panel__logo-icon {
+  width: 44px;
+  height: 44px;
+  background: var(--gradient-teal);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.auth-panel__title {
+  font-size: clamp(var(--text-3xl), 3vw, var(--text-5xl));
+  font-weight: var(--font-extrabold);
+  line-height: var(--leading-tight);
+  margin-bottom: var(--space-4);
+  background: linear-gradient(135deg, #ffffff 40%, var(--color-secondary-200) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.auth-panel__desc {
+  font-size: var(--text-base);
+  color: var(--color-gray-300);
+  line-height: var(--leading-relaxed);
+  margin-bottom: var(--space-8);
+}
+
+.auth-panel__footer {
+  position: relative;
+  z-index: 2;
+  font-size: var(--text-sm);
+  color: var(--color-gray-400);
+}
+
+/* ---------- Form Panel (Left side in RTL) ---------- */
+.auth-form-panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: var(--space-16) var(--space-12);
+  overflow-y: auto;
+}
+
+.auth-form-box {
+  width: 100%;
+  max-width: 440px;
+  margin: 0 auto;
+}
+
+.auth-form__header {
+  margin-bottom: var(--space-8);
+}
+
+.auth-form__title {
+  font-size: var(--text-3xl);
+  font-weight: var(--font-extrabold);
+  color: var(--color-primary-800);
+  margin-bottom: var(--space-2);
+}
+
+.auth-form__desc {
+  font-size: var(--text-sm);
+  color: var(--color-gray-500);
+}
+
+.auth-form__group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-bottom: var(--space-5);
+}
+
+.auth-form__label {
+  font-size: var(--text-sm);
+  font-weight: var(--font-semibold);
+  color: var(--color-gray-700);
+}
+
+.auth-form__input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.auth-form__input {
+  width: 100%;
+  padding: var(--space-3) var(--space-4);
+  border: 1.5px solid var(--color-gray-200);
+  border-radius: var(--radius-lg);
+  font-size: var(--text-base);
+  color: var(--color-gray-900);
+  background: white;
+  transition: all var(--transition-base);
+  outline: none;
+}
+
+.auth-form__input:focus {
+  border-color: var(--color-secondary);
+  box-shadow: 0 0 0 4px rgba(0, 176, 160, 0.1);
+  background: white;
+}
+
+.auth-form__toggle-password {
+  position: absolute;
+  left: var(--space-4);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-gray-400);
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+}
+
+.auth-form__options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: var(--text-sm);
+  margin-bottom: var(--space-6);
+}
+
+.auth-form__remember {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--color-gray-600);
+  cursor: pointer;
+}
+
+.auth-form__remember input {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--color-secondary);
+}
+
+.auth-form__forgot {
+  color: var(--color-secondary-600);
+  font-weight: var(--font-semibold);
+}
+
+.auth-form__forgot:hover {
+  color: var(--color-secondary-700);
+  text-decoration: underline;
+}
+
+.auth-form__btn {
+  width: 100%;
+  margin-bottom: var(--space-6);
+}
+
+.auth-form__divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: var(--color-gray-400);
+  font-size: var(--text-xs);
+  margin-bottom: var(--space-6);
+}
+
+.auth-form__divider::before, .auth-form__divider::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1.5px solid var(--color-gray-200);
+}
+
+.auth-form__divider:not(:empty)::before {
+  margin-left: .5em;
+}
+
+.auth-form__divider:not(:empty)::after {
+  margin-right: .5em;
+}
+
+.auth-form__socials {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-3);
+  margin-bottom: var(--space-6);
+}
+
+.auth-form__social-btn {
+  width: 100%;
+  border-color: var(--color-gray-200);
+  color: var(--color-gray-700);
+  background: white;
+}
+
+.auth-form__social-btn:hover {
+  background: var(--color-gray-50);
+  border-color: var(--color-gray-300);
+}
+
+.auth-form__footer {
+  text-align: center;
+  font-size: var(--text-sm);
+  color: var(--color-gray-500);
+}
+
+.auth-form__footer-link {
+  color: var(--color-secondary-600);
+  font-weight: var(--font-bold);
+}
+
+.auth-form__footer-link:hover {
+  color: var(--color-secondary-700);
+  text-decoration: underline;
+}
+
+/* ---------- Role Selection Cards ---------- */
+.auth-roles-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-3);
+  margin-bottom: var(--space-6);
+}
+
+.auth-role-card {
+  border: 1.5px solid var(--color-gray-200);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4) var(--space-3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.auth-role-card:hover {
+  background: var(--color-gray-50);
+}
+
+.auth-role-card--active {
+  border-color: var(--color-secondary);
+  background: var(--color-secondary-50);
+}
+
+.auth-role-card__icon {
+  font-size: var(--text-xl);
+  margin-bottom: var(--space-2);
+}
+
+.auth-role-card__title {
+  font-size: var(--text-sm);
+  font-weight: var(--font-bold);
+  color: var(--color-primary-800);
+}
+
+/* ==========================================================================
+   RESPONSIVE MEDIA QUERIES
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .auth-wrapper {
+    grid-template-columns: 1fr;
+  }
+  .auth-panel {
+    display: none;
+  }
+  .auth-form-panel {
+    padding: var(--space-12) var(--space-6);
+  }
+}

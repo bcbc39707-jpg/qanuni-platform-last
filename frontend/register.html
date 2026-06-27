@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>إنشاء حساب جديد — قانوني</title>
+  
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="styles/design-system.css">
+  <link rel="stylesheet" href="styles/auth.css">
+</head>
+<body>
+
+  <div class="auth-wrapper">
+    
+    <!-- Split form panel -->
+    <main class="auth-form-panel">
+      <div class="auth-form-box">
+        
+        <!-- Header -->
+        <header class="auth-form__header">
+          <h1 class="auth-form__title">ابدأ رحلتك القانونية</h1>
+          <p class="auth-form__desc">أنشئ حساباً مجانياً للوصول لأرشيف القوانين والمساعد الذكي.</p>
+        </header>
+        
+        <!-- Form -->
+        <form id="register-form">
+          <div class="auth-form__group">
+            <label for="name" class="auth-form__label">الاسم الكامل</label>
+            <input type="text" id="name" class="auth-form__input" placeholder="عبد الله أحمد" required autocomplete="name">
+          </div>
+
+          <div class="auth-form__group">
+            <label for="email" class="auth-form__label">البريد الإلكتروني</label>
+            <input type="email" id="email" class="auth-form__input" placeholder="name@example.com" required autocomplete="email">
+          </div>
+
+          <!-- Interactive Role Selection -->
+          <div class="auth-form__group">
+            <label class="auth-form__label">نوع الحساب</label>
+            <div class="auth-roles-grid">
+              <div class="auth-role-card auth-role-card--active" data-role="individual">
+                <span class="auth-role-card__icon">👤</span>
+                <span class="auth-role-card__title">فرد</span>
+              </div>
+              <div class="auth-role-card" data-role="lawyer">
+                <span class="auth-role-card__icon">⚖️</span>
+                <span class="auth-role-card__title">محامي</span>
+              </div>
+              <div class="auth-role-card" data-role="researcher">
+                <span class="auth-role-card__icon">🎓</span>
+                <span class="auth-role-card__title">باحث قانوني</span>
+              </div>
+              <div class="auth-role-card" data-role="corporate">
+                <span class="auth-role-card__icon">🏢</span>
+                <span class="auth-role-card__title">شركة</span>
+              </div>
+            </div>
+            <input type="hidden" id="selected-role" value="individual">
+          </div>
+          
+          <div class="auth-form__group">
+            <label for="password" class="auth-form__label">كلمة المرور</label>
+            <div class="auth-form__input-wrapper">
+              <input type="password" id="password" class="auth-form__input" placeholder="••••••••" required autocomplete="new-password">
+              <button type="button" class="auth-form__toggle-password" id="toggle-password">عرض</button>
+            </div>
+          </div>
+          
+          <div class="auth-form__options">
+            <label class="auth-form__remember" style="align-items: flex-start;">
+              <input type="checkbox" id="agree-terms" required style="margin-top: 3px;">
+              <span>أوافق على <a href="#" class="auth-form__forgot">الشروط والأحكام</a> و<a href="#" class="auth-form__forgot">سياسة الخصوصية</a></span>
+            </label>
+          </div>
+          
+          <button type="submit" class="btn btn--primary btn--lg auth-form__btn">إنشاء حساب جديد</button>
+        </form>
+        
+        <div class="auth-form__divider">أو التسجيل بواسطة</div>
+        
+        <div class="auth-form__socials">
+          <button class="btn btn--outline auth-form__social-btn">
+            <span>التسجيل بواسطة جوجل</span>
+          </button>
+        </div>
+        
+        <footer class="auth-form__footer">
+          <span>لديك حساب بالفعل؟ </span>
+          <a href="login.html" class="auth-form__footer-link">تسجيل الدخول</a>
+        </footer>
+        
+        <div style="text-align: center; margin-top: var(--space-8);">
+          <a href="index.html" class="auth-form__forgot">← العودة للصفحة الرئيسية</a>
+        </div>
+        
+      </div>
+    </main>
+    
+    <!-- Split decorative panel -->
+    <aside class="auth-panel">
+      <a href="index.html" class="auth-panel__logo">
+        <div class="auth-panel__logo-icon">ق</div>
+        <span>قانوني</span>
+      </a>
+      
+      <div class="auth-panel__content">
+        <h2 class="auth-panel__title">المساعد القانوني اليمني المدعوم بالذكاء الاصطناعي</h2>
+        <p class="auth-panel__desc">احصل على وصول فوري لأدق الاستشارات، صياغة المذكرات، وفهرسة التشريعات اليمنية في نظام واحد متطور مصمم لخدمة العدالة.</p>
+      </div>
+      
+      <footer class="auth-panel__footer">
+        <span>جميع الحقوق محفوظة © قانوني 2026.</span>
+      </footer>
+    </aside>
+    
+  </div>
+
+  <script src="api.js"></script>
+  <script>
+    // Redirect if already logged in
+    if (QaniniAuth.isLoggedIn()) { window.location.href = 'dashboard.html'; }
+
+    // Password toggle
+    const toggleBtn = document.getElementById('toggle-password');
+    const passwordInput = document.getElementById('password');
+    toggleBtn.addEventListener('click', () => {
+      if (passwordInput.type === 'password') { passwordInput.type = 'text'; toggleBtn.textContent = 'إخفاء'; }
+      else { passwordInput.type = 'password'; toggleBtn.textContent = 'عرض'; }
+    });
+
+    // Role Selection
+    const roleCards = document.querySelectorAll('.auth-role-card');
+    const selectedRoleInput = document.getElementById('selected-role');
+    roleCards.forEach(card => {
+      card.addEventListener('click', () => {
+        roleCards.forEach(c => c.classList.remove('auth-role-card--active'));
+        card.classList.add('auth-role-card--active');
+        selectedRoleInput.value = card.getAttribute('data-role');
+      });
+    });
+
+    // Role mapping: UI → Backend
+    const roleMap = { 'individual': 'client', 'lawyer': 'lawyer', 'researcher': 'reviewer', 'corporate': 'client' };
+
+    // Real registration
+    const regForm = document.getElementById('register-form');
+    const submitBtn = regForm.querySelector('button[type="submit"]');
+    regForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const full_name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const password = document.getElementById('password').value;
+      const uiRole = selectedRoleInput.value;
+      const role = roleMap[uiRole] || 'client';
+      if (!full_name || !email || !password) { showToast('يرجى ملء جميع الحقول', 'error'); return; }
+      if (password.length < 6) { showToast('كلمة المرور يجب أن تكون 6 أحرف على الأقل', 'error'); return; }
+      setLoadingState(submitBtn, true);
+      try {
+        await apiRegister({ email, password, full_name, role });
+        showToast('تم إنشاء حسابك بنجاح!', 'success');
+        setTimeout(() => { window.location.href = 'dashboard.html'; }, 500);
+      } catch (err) {
+        showToast(err.message || 'فشل إنشاء الحساب', 'error');
+        setLoadingState(submitBtn, false, 'إنشاء حساب جديد');
+      }
+    });
+  </script>
+</body>
+</html>

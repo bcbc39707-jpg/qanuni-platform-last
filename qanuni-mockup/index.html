@@ -1,0 +1,1264 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>قانوني - المنصة القانونية بالذكاء الاصطناعي</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Tajawal', 'sans-serif'] },
+          colors: {
+            primary: { 50: '#eff6ff', 100: '#dbeafe', 300: '#93c5fd', 500: '#3b82f6', 600: '#2563eb', 700: '#1d4ed8', 900: '#1e3a5f' },
+            'accent-gold': '#d4af37',
+            'accent-green': '#10b981',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    * { font-family: 'Tajawal', sans-serif; }
+    html { scroll-behavior: smooth; }
+    body { background: #f9fafb; min-height: 100vh; }
+    .page { display: none; }
+    .page.active { display: block; }
+    .nav-link.active-link { color: #2563eb; border-bottom: 2px solid #2563eb; }
+    .status-open { background: #d1fae5; color: #047857; }
+    .status-progress { background: #fef3c7; color: #b45309; }
+    .status-closed { background: #f3f4f6; color: #4b5563; }
+    .status-archived { background: #fee2e2; color: #b91c1c; }
+    .hero-gradient { background: linear-gradient(135deg, #1e3a5f 0%, #1d4ed8 50%, #2563eb 100%); }
+    .gold-gradient { background: linear-gradient(135deg, #d4af37 0%, #f5d060 50%, #d4af37 100%); }
+    .card-hover { transition: transform 0.2s, box-shadow 0.2s; }
+    .card-hover:hover { transform: translateY(-2px); box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1); }
+    .progress-bar { transition: width 1s ease-in-out; }
+    .fade-in { animation: fadeIn 0.3s ease-in; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    .toast { animation: slideIn 0.3s ease, fadeOut 0.3s 2.7s ease forwards; }
+    @keyframes slideIn { from { transform: translateX(100px); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
+    @keyframes fadeOut { to { opacity: 0; transform: translateX(100px); } }
+    .dashed-border { background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='12' ry='12' stroke='%2393c5fd' stroke-width='2' stroke-dasharray='8 4' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e"); }
+    .lawyer-card:hover { border-color: #d4af37; }
+    [dir="rtl"] .ltr-num { direction: ltr; display: inline-block; }
+    .admin-sidebar { background: linear-gradient(180deg, #1e3a5f 0%, #1d4ed8 100%); }
+    .search-highlight { background: #fef3c7; padding: 0 2px; border-radius: 2px; }
+    .pagination-btn { transition: all 0.2s; }
+    .pagination-btn:hover:not(.active) { background: #dbeafe; }
+    .pagination-btn.active { background: #2563eb; color: white; }
+    .subscription-card.featured { border: 2px solid #d4af37; position: relative; }
+    .subscription-card.featured::before { content: 'الأكثر شعبية'; position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: #d4af37; color: white; padding: 2px 16px; border-radius: 999px; font-size: 12px; font-weight: 700; white-space: nowrap; }
+    @media (max-width: 768px) {
+      .admin-layout { flex-direction: column; }
+      .admin-sidebar { width: 100%; padding: 8px; }
+      .admin-sidebar .sidebar-links { display: flex; overflow-x: auto; gap: 4px; }
+      .admin-sidebar .sidebar-links button { white-space: nowrap; }
+    }
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: #f1f5f9; }
+    ::-webkit-scrollbar-thumb { background: #93c5fd; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #3b82f6; }
+  </style>
+</head>
+<body class="text-gray-700">
+
+<!-- ==================== Toast Container ==================== -->
+<div id="toast-container" class="fixed top-4 left-4 z-[9999] flex flex-col gap-2"></div>
+
+<!-- ==================== Navbar ==================== -->
+<nav class="bg-white shadow-sm border-b border-gray-100 sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <!-- Logo -->
+      <div class="flex items-center gap-2 cursor-pointer" onclick="navigate('landing')">
+        <div class="w-9 h-9 rounded-lg gold-gradient flex items-center justify-center text-white font-extrabold text-lg">ق</div>
+        <span class="text-xl font-extrabold text-primary-900">قانوني</span>
+      </div>
+
+      <!-- Desktop Nav -->
+      <div class="hidden lg:flex items-center gap-1">
+        <button onclick="navigate('search')" data-page="search" class="nav-link px-3 py-2 text-sm font-medium rounded-lg hover:bg-primary-50 transition">بحث</button>
+        <button onclick="navigate('analysis')" data-page="analysis" class="nav-link px-3 py-2 text-sm font-medium rounded-lg hover:bg-primary-50 transition">تحليل</button>
+        <button onclick="navigate('drafting')" data-page="drafting" class="nav-link px-3 py-2 text-sm font-medium rounded-lg hover:bg-primary-50 transition">صياغة</button>
+        <button onclick="navigate('documents')" data-page="documents" class="nav-link px-3 py-2 text-sm font-medium rounded-lg hover:bg-primary-50 transition">مستندات</button>
+        <button onclick="navigate('cases')" data-page="cases" class="nav-link px-3 py-2 text-sm font-medium rounded-lg hover:bg-primary-50 transition">قضايا</button>
+        <button onclick="navigate('lawyers')" data-page="lawyers" class="nav-link px-3 py-2 text-sm font-medium rounded-lg hover:bg-primary-50 transition">محامون</button>
+        <button id="nav-dashboard-link" onclick="navigate('dashboard')" data-page="dashboard" class="nav-link px-3 py-2 text-sm font-medium rounded-lg hover:bg-primary-50 transition hidden">لوحة التحكم</button>
+        <button id="nav-admin-link" onclick="navigate('admin')" data-page="admin" class="nav-link px-3 py-2 text-sm font-medium rounded-lg hover:bg-primary-50 transition hidden">الإدارة</button>
+      </div>
+
+      <!-- Right side -->
+      <div class="flex items-center gap-3">
+        <div id="nav-quota" class="hidden items-center gap-2 text-xs text-gray-500 bg-gray-50 px-3 py-1.5 rounded-full">
+          <i data-lucide="search" class="w-3.5 h-3.5"></i>
+          <span>بحث <span id="quota-search">15</span></span>
+          <span class="text-gray-300">|</span>
+          <i data-lucide="brain" class="w-3.5 h-3.5"></i>
+          <span>تحليل <span id="quota-analysis">10</span></span>
+        </div>
+        <div id="nav-auth-buttons" class="flex items-center gap-2">
+          <button onclick="navigate('login')" class="text-sm font-medium text-primary-600 hover:text-primary-700 px-3 py-1.5">دخول</button>
+          <button onclick="navigate('register')" class="text-sm font-medium bg-primary-600 text-white px-4 py-1.5 rounded-lg hover:bg-primary-700 transition">إنشاء حساب</button>
+        </div>
+        <div id="nav-user-menu" class="hidden items-center gap-2 cursor-pointer relative">
+          <div class="flex items-center gap-2 bg-primary-50 rounded-full px-3 py-1.5 text-sm" onclick="toggleUserDropdown()">
+            <div class="w-7 h-7 rounded-full gold-gradient flex items-center justify-center text-white text-xs font-bold" id="nav-avatar">م</div>
+            <span class="font-medium text-primary-700" id="nav-user-name">مستخدم</span>
+            <i data-lucide="chevron-down" class="w-4 h-4 text-primary-500"></i>
+          </div>
+          <div id="user-dropdown" class="hidden absolute top-full left-0 mt-1 bg-white shadow-lg rounded-xl border border-gray-100 py-2 min-w-[180px] z-50">
+            <button onclick="navigate('dashboard'); toggleUserDropdown()" class="w-full text-right px-4 py-2 text-sm hover:bg-gray-50 flex items-center gap-2"><i data-lucide="layout-dashboard" class="w-4 h-4"></i>لوحة التحكم</button>
+            <button onclick="navigate('subscribe'); toggleUserDropdown()" class="w-full text-right px-4 py-2 text-sm hover:bg-gray-50 flex items-center gap-2"><i data-lucide="credit-card" class="w-4 h-4"></i>الاشتراكات</button>
+            <hr class="my-1 border-gray-100">
+            <button onclick="logout()" class="w-full text-right px-4 py-2 text-sm text-red-600 hover:bg-red-50 flex items-center gap-2"><i data-lucide="log-out" class="w-4 h-4"></i>تسجيل خروج</button>
+          </div>
+        </div>
+        <!-- Mobile menu button -->
+        <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-lg hover:bg-gray-100" onclick="toggleMobileMenu()">
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+      </div>
+    </div>
+    <!-- Mobile Nav -->
+    <div id="mobile-menu" class="hidden lg:hidden pb-4 border-t border-gray-100 pt-3">
+      <div class="grid grid-cols-3 gap-2">
+        <button onclick="navigate('search')" class="text-sm font-medium px-3 py-2 rounded-lg hover:bg-primary-50 transition">بحث</button>
+        <button onclick="navigate('analysis')" class="text-sm font-medium px-3 py-2 rounded-lg hover:bg-primary-50 transition">تحليل</button>
+        <button onclick="navigate('drafting')" class="text-sm font-medium px-3 py-2 rounded-lg hover:bg-primary-50 transition">صياغة</button>
+        <button onclick="navigate('documents')" class="text-sm font-medium px-3 py-2 rounded-lg hover:bg-primary-50 transition">مستندات</button>
+        <button onclick="navigate('cases')" class="text-sm font-medium px-3 py-2 rounded-lg hover:bg-primary-50 transition">قضايا</button>
+        <button onclick="navigate('lawyers')" class="text-sm font-medium px-3 py-2 rounded-lg hover:bg-primary-50 transition">محامون</button>
+        <button id="mobile-nav-dashboard" onclick="navigate('dashboard')" class="text-sm font-medium px-3 py-2 rounded-lg hover:bg-primary-50 transition hidden">لوحة التحكم</button>
+        <button id="mobile-nav-admin" onclick="navigate('admin')" class="text-sm font-medium px-3 py-2 rounded-lg hover:bg-primary-50 transition hidden">الإدارة</button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ==================== PAGE: Landing ==================== -->
+<section id="page-landing" class="page active">
+  <!-- Hero -->
+  <div class="hero-gradient text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div class="fade-in">
+          <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-1.5 text-sm mb-6 border border-white/20">
+            <i data-lucide="sparkles" class="w-4 h-4 text-accent-gold"></i>
+            <span>منصة قانونية يمنية تعمل بالذكاء الاصطناعي</span>
+          </div>
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
+            <span class="text-accent-gold">قانوني</span>
+            <br>شريكك القانوني الذكي
+          </h1>
+          <p class="text-lg text-blue-200 mb-8 leading-relaxed max-w-xl">
+            منصة متكاملة للبحث والتحليل والصياغة القانونية باستخدام أحدث تقنيات الذكاء الاصطناعي، صممت خصيصاً للمحامين والباحثين القانونيين في اليمن.
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <button onclick="navigate('search')" class="gold-gradient text-primary-900 font-bold px-8 py-3.5 rounded-xl shadow-lg hover:shadow-xl transition text-lg flex items-center gap-2">
+              <i data-lucide="search" class="w-5 h-5"></i>
+              ابدأ البحث
+            </button>
+            <button onclick="navigate('register')" class="bg-white/10 backdrop-blur-sm border border-white/30 text-white font-medium px-8 py-3.5 rounded-xl hover:bg-white/20 transition text-lg flex items-center gap-2">
+              <i data-lucide="user-plus" class="w-5 h-5"></i>
+              إنشاء حساب
+            </button>
+          </div>
+          <div class="flex items-center gap-6 mt-10 text-sm text-blue-200">
+            <span class="flex items-center gap-1.5"><i data-lucide="check-circle" class="w-4 h-4 text-accent-green"></i> أكثر من ١٠٠٠ مستند</span>
+            <span class="flex items-center gap-1.5"><i data-lucide="check-circle" class="w-4 h-4 text-accent-green"></i> تغطية القانون اليمني</span>
+            <span class="flex items-center gap-1.5"><i data-lucide="check-circle" class="w-4 h-4 text-accent-green"></i> تحديث مستمر</span>
+          </div>
+        </div>
+        <div class="hidden lg:flex justify-center">
+          <div class="relative">
+            <div class="w-80 h-80 rounded-2xl gold-gradient opacity-20 absolute -top-4 -right-4 blur-3xl"></div>
+            <div class="bg-white/5 backdrop-blur-sm border border-white/20 rounded-3xl p-8 relative">
+              <i data-lucide="scale" class="w-32 h-32 text-accent-gold mx-auto"></i>
+              <div class="mt-6 text-center">
+                <div class="text-3xl font-extrabold text-accent-gold">قانوني</div>
+                <div class="text-blue-200 text-sm mt-1">بالذكاء الاصطناعي</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Features -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+    <div class="text-center mb-14">
+      <h2 class="text-3xl font-extrabold text-primary-900">مميزات المنصة</h2>
+      <p class="text-gray-500 mt-3 max-w-2xl mx-auto">أدوات قانونية متكاملة مدعومة بالذكاء الاصطناعي لتسريع وتبسيط العمل القانوني</p>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 card-hover">
+        <div class="w-12 h-12 rounded-xl bg-primary-100 flex items-center justify-center text-primary-600 mb-4"><i data-lucide="search" class="w-6 h-6"></i></div>
+        <h3 class="text-xl font-bold text-primary-900 mb-2">بحث قانوني ذكي</h3>
+        <p class="text-gray-500 text-sm leading-relaxed">ابحث في آلاف الوثائق والأحكام القانونية اليمنية باستخدام تقنية البحث المتقدم والذكاء الاصطناعي.</p>
+      </div>
+      <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 card-hover">
+        <div class="w-12 h-12 rounded-xl bg-primary-100 flex items-center justify-center text-primary-600 mb-4"><i data-lucide="brain" class="w-6 h-6"></i></div>
+        <h3 class="text-xl font-bold text-primary-900 mb-2">تحليل قانوني</h3>
+        <p class="text-gray-500 text-sm leading-relaxed">حلل النصوص القانونية واستخلص الرؤى والأحكام ذات الصلة بقضيتك بدقة عالية.</p>
+      </div>
+      <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 card-hover">
+        <div class="w-12 h-12 rounded-xl bg-primary-100 flex items-center justify-center text-primary-600 mb-4"><i data-lucide="file-pen" class="w-6 h-6"></i></div>
+        <h3 class="text-xl font-bold text-primary-900 mb-2">صياغة قانونية</h3>
+        <p class="text-gray-500 text-sm leading-relaxed">قم بصياغة مذكرات الدفاع والعقود ولائحات الدعوى بمساعدة الذكاء الاصطناعي.</p>
+      </div>
+      <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 card-hover">
+        <div class="w-12 h-12 rounded-xl bg-primary-100 flex items-center justify-center text-primary-600 mb-4"><i data-lucide="landmark" class="w-6 h-6"></i></div>
+        <h3 class="text-xl font-bold text-primary-900 mb-2">مكتبة قانونية</h3>
+        <p class="text-gray-500 text-sm leading-relaxed">مكتبة شاملة للقوانين اليمنية واللوائح التنفيذية والأحكام القضائية المحدثة.</p>
+      </div>
+      <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 card-hover">
+        <div class="w-12 h-12 rounded-xl bg-primary-100 flex items-center justify-center text-primary-600 mb-4"><i data-lucide="users" class="w-6 h-6"></i></div>
+        <h3 class="text-xl font-bold text-primary-900 mb-2">شبكة محامين</h3>
+        <p class="text-gray-500 text-sm leading-relaxed">تواصل مع محامين متخصصين في مختلف فروع القانون في جميع المحافظات اليمنية.</p>
+      </div>
+      <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 card-hover">
+        <div class="w-12 h-12 rounded-xl bg-primary-100 flex items-center justify-center text-primary-600 mb-4"><i data-lucide="bar-chart-3" class="w-6 h-6"></i></div>
+        <h3 class="text-xl font-bold text-primary-900 mb-2">تقارير وتحليلات</h3>
+        <p class="text-gray-500 text-sm leading-relaxed">تقارير إحصائية وتحليلات متقدمة لمتابعة أدائك القانوني وإدارة قضاياك بكفاءة.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Stats -->
+  <div class="bg-primary-50 py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div><div class="text-4xl font-extrabold text-primary-600">+٥٠٠٠</div><div class="text-gray-500 text-sm mt-1">مستند قانوني</div></div>
+        <div><div class="text-4xl font-extrabold text-primary-600">+١٢٠٠</div><div class="text-gray-500 text-sm mt-1">قضية محللة</div></div>
+        <div><div class="text-4xl font-extrabold text-primary-600">+٣٠٠</div><div class="text-gray-500 text-sm mt-1">محامٍ مسجل</div></div>
+        <div><div class="text-4xl font-extrabold text-primary-600">%٩٥</div><div class="text-gray-500 text-sm mt-1">دقة التحليل</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-white border-t border-gray-100 py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-4 gap-8">
+        <div>
+          <div class="flex items-center gap-2 mb-4">
+            <div class="w-8 h-8 rounded-lg gold-gradient flex items-center justify-center text-white font-extrabold">ق</div>
+            <span class="text-lg font-extrabold text-primary-900">قانوني</span>
+          </div>
+          <p class="text-gray-400 text-sm">منصة قانونية يمنية تعمل بالذكاء الاصطناعي</p>
+        </div>
+        <div><h4 class="font-bold text-primary-900 mb-3">الخدمات</h4><div class="flex flex-col gap-2 text-sm text-gray-500"><span>بحث قانوني</span><span>تحليل ذكي</span><span>صياغة مستندات</span><span>استشارات</span></div></div>
+        <div><h4 class="font-bold text-primary-900 mb-3">الدعم</h4><div class="flex flex-col gap-2 text-sm text-gray-500"><span>مساعدة</span><span>الأسئلة الشائعة</span><span>الشروط والأحكام</span><span>سياسة الخصوصية</span></div></div>
+        <div><h4 class="font-bold text-primary-900 mb-3">تواصل معنا</h4><div class="flex flex-col gap-2 text-sm text-gray-500"><span>info@qanuni.ye</span><span>+٩٦٧ ١ ٢٣٤ ٥٦٧</span><span>صنعاء - اليمن</span></div></div>
+      </div>
+      <div class="border-t border-gray-100 mt-8 pt-8 text-center text-sm text-gray-400">© 2026 قانوني - جميع الحقوق محفوظة</div>
+    </div>
+  </footer>
+</section>
+
+<!-- ==================== PAGE: Login ==================== -->
+<section id="page-login" class="page">
+  <div class="min-h-screen flex items-center justify-center px-4 py-12">
+    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 w-full max-w-md fade-in">
+      <div class="text-center mb-8">
+        <div class="w-14 h-14 rounded-xl gold-gradient flex items-center justify-center text-white text-2xl font-extrabold mx-auto mb-4">ق</div>
+        <h2 class="text-2xl font-extrabold text-primary-900">تسجيل الدخول</h2>
+        <p class="text-gray-400 text-sm mt-1">أهلاً بعودتك إلى قانوني</p>
+      </div>
+      <div id="login-error" class="hidden bg-red-50 text-red-700 text-sm p-3 rounded-lg mb-4 flex items-center gap-2"><i data-lucide="alert-circle" class="w-4 h-4 shrink-0"></i><span id="login-error-text"></span></div>
+      <form onsubmit="handleLogin(event)" class="space-y-5">
+        <div><label class="block text-sm font-medium text-gray-600 mb-1.5">البريد الإلكتروني</label><input id="login-email" type="email" required class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition" placeholder="name@example.com"></div>
+        <div><label class="block text-sm font-medium text-gray-600 mb-1.5">كلمة المرور</label><input id="login-password" type="password" required class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition" placeholder="••••••••"></div>
+        <button type="submit" class="w-full bg-primary-600 text-white font-bold py-3 rounded-lg hover:bg-primary-700 transition text-lg">دخول</button>
+      </form>
+      <div class="text-center mt-6 text-sm text-gray-400">
+        ليس لديك حساب؟ <button onclick="navigate('register')" class="text-primary-600 font-medium hover:underline">إنشاء حساب</button>
+      </div>
+      <div class="mt-4 p-3 bg-gray-50 rounded-lg text-xs text-gray-400 text-center">
+        حساب تجريبي: admin@qanuni.ye / 123456
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== PAGE: Register ==================== -->
+<section id="page-register" class="page">
+  <div class="min-h-screen flex items-center justify-center px-4 py-12">
+    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 w-full max-w-lg fade-in">
+      <div class="text-center mb-8">
+        <div class="w-14 h-14 rounded-xl gold-gradient flex items-center justify-center text-white text-2xl font-extrabold mx-auto mb-4">ق</div>
+        <h2 class="text-2xl font-extrabold text-primary-900">إنشاء حساب جديد</h2>
+        <p class="text-gray-400 text-sm mt-1">انضم إلى منصة قانوني القانونية</p>
+      </div>
+      <div id="register-error" class="hidden bg-red-50 text-red-700 text-sm p-3 rounded-lg mb-4 flex items-center gap-2"><i data-lucide="alert-circle" class="w-4 h-4 shrink-0"></i><span id="register-error-text"></span></div>
+      <form onsubmit="handleRegister(event)" class="space-y-4">
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div><label class="block text-sm font-medium text-gray-600 mb-1.5">الاسم الكامل</label><input id="reg-name" type="text" required class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 outline-none transition" placeholder="محمد أحمد"></div>
+          <div><label class="block text-sm font-medium text-gray-600 mb-1.5">البريد الإلكتروني</label><input id="reg-email" type="email" required class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 outline-none transition" placeholder="name@example.com"></div>
+        </div>
+        <div><label class="block text-sm font-medium text-gray-600 mb-1.5">رقم الهاتف</label><input id="reg-phone" type="tel" class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 outline-none transition" placeholder="+967 7XX XXX XXX"></div>
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div><label class="block text-sm font-medium text-gray-600 mb-1.5">كلمة المرور</label><input id="reg-password" type="password" required class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 outline-none transition" placeholder="••••••••"></div>
+          <div><label class="block text-sm font-medium text-gray-600 mb-1.5">تأكيد كلمة المرور</label><input id="reg-confirm" type="password" required class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 outline-none transition" placeholder="••••••••"></div>
+        </div>
+        <div><label class="block text-sm font-medium text-gray-600 mb-1.5">الدور</label><select id="reg-role" class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 outline-none transition bg-white"><option value="lawyer">محامٍ</option><option value="researcher">باحث قانوني</option><option value="judge">قاضٍ</option><option value="general">مستخدم عام</option></select></div>
+        <button type="submit" class="w-full bg-primary-600 text-white font-bold py-3 rounded-lg hover:bg-primary-700 transition text-lg">إنشاء حساب</button>
+      </form>
+      <div class="text-center mt-6 text-sm text-gray-400">لديك حساب بالفعل؟ <button onclick="navigate('login')" class="text-primary-600 font-medium hover:underline">تسجيل الدخول</button></div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== PAGE: Dashboard ==================== -->
+<section id="page-dashboard" class="page">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div class="flex items-center justify-between mb-8">
+      <div><h2 class="text-3xl font-extrabold text-primary-900">لوحة التحكم</h2><p class="text-gray-400 text-sm mt-1">مرحباً بك في لوحة التحكم الخاصة بك</p></div>
+      <button onclick="navigate('subscribe')" class="bg-accent-gold text-primary-900 font-bold px-5 py-2.5 rounded-lg hover:opacity-90 transition text-sm flex items-center gap-2"><i data-lucide="zap" class="w-4 h-4"></i>الباقة الحالية</button>
+    </div>
+
+    <!-- Stats -->
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+      <div class="bg-white rounded-xl p-5 border border-gray-100 shadow-sm flex items-center gap-4"><div class="w-12 h-12 rounded-xl bg-blue-100 flex items-center justify-center text-primary-600"><i data-lucide="files" class="w-6 h-6"></i></div><div><div class="text-2xl font-extrabold text-primary-900" id="stat-cases">١٢</div><div class="text-sm text-gray-400">إجمالي القضايا</div></div></div>
+      <div class="bg-white rounded-xl p-5 border border-gray-100 shadow-sm flex items-center gap-4"><div class="w-12 h-12 rounded-xl bg-emerald-100 flex items-center justify-center text-emerald-600"><i data-lucide="search" class="w-6 h-6"></i></div><div><div class="text-2xl font-extrabold text-primary-900" id="stat-searches">٤٧</div><div class="text-sm text-gray-400">عملية بحث</div></div></div>
+      <div class="bg-white rounded-xl p-5 border border-gray-100 shadow-sm flex items-center gap-4"><div class="w-12 h-12 rounded-xl bg-amber-100 flex items-center justify-center text-amber-600"><i data-lucide="brain" class="w-6 h-6"></i></div><div><div class="text-2xl font-extrabold text-primary-900" id="stat-analyses">٢٣</div><div class="text-sm text-gray-400">تحليل قانوني</div></div></div>
+      <div class="bg-white rounded-xl p-5 border border-gray-100 shadow-sm flex items-center gap-4"><div class="w-12 h-12 rounded-xl bg-purple-100 flex items-center justify-center text-purple-600"><i data-lucide="file-text" class="w-6 h-6"></i></div><div><div class="text-2xl font-extrabold text-primary-900" id="stat-documents">٣٤</div><div class="text-sm text-gray-400">مستندات</div></div></div>
+    </div>
+
+    <!-- Quotas -->
+    <div class="bg-white rounded-xl p-6 border border-gray-100 shadow-sm mb-8">
+      <h3 class="text-lg font-bold text-primary-900 mb-4">حصص الاستخدام</h3>
+      <div class="space-y-4">
+        <div><div class="flex justify-between text-sm mb-1"><span>البحث القانوني</span><span class="font-medium text-primary-600"><span id="quota-used-search">١٥</span>/٢٠</span></div><div class="h-2 bg-gray-100 rounded-full overflow-hidden"><div id="quota-bar-search" class="h-full bg-primary-600 rounded-full progress-bar" style="width: 75%"></div></div></div>
+        <div><div class="flex justify-between text-sm mb-1"><span>التحليل القانوني</span><span class="font-medium text-primary-600"><span id="quota-used-analysis">١٠</span>/١٥</span></div><div class="h-2 bg-gray-100 rounded-full overflow-hidden"><div id="quota-bar-analysis" class="h-full bg-amber-500 rounded-full progress-bar" style="width: 67%"></div></div></div>
+        <div><div class="flex justify-between text-sm mb-1"><span>الصياغة القانونية</span><span class="font-medium text-primary-600"><span id="quota-used-drafting">٥</span>/١٠</span></div><div class="h-2 bg-gray-100 rounded-full overflow-hidden"><div id="quota-bar-drafting" class="h-full bg-emerald-500 rounded-full progress-bar" style="width: 50%"></div></div></div>
+        <div><div class="flex justify-between text-sm mb-1"><span>رفع المستندات</span><span class="font-medium text-primary-600"><span id="quota-used-upload">٨</span>/١٠</span></div><div class="h-2 bg-gray-100 rounded-full overflow-hidden"><div id="quota-bar-upload" class="h-full bg-purple-500 rounded-full progress-bar" style="width: 80%"></div></div></div>
+      </div>
+    </div>
+
+    <!-- Quick Links & Recent Cases -->
+    <div class="grid lg:grid-cols-3 gap-8">
+      <!-- Quick Links -->
+      <div class="bg-white rounded-xl p-6 border border-gray-100 shadow-sm">
+        <h3 class="text-lg font-bold text-primary-900 mb-4">روابط سريعة</h3>
+        <div class="space-y-3">
+          <button onclick="navigate('search')" class="w-full flex items-center gap-3 p-3 rounded-lg hover:bg-primary-50 transition text-right"><div class="w-10 h-10 rounded-lg bg-primary-100 flex items-center justify-center text-primary-600"><i data-lucide="search" class="w-5 h-5"></i></div><div><div class="font-medium text-primary-900">بحث قانوني</div><div class="text-xs text-gray-400">ابحث في القوانين والأحكام</div></div></button>
+          <button onclick="navigate('analysis')" class="w-full flex items-center gap-3 p-3 rounded-lg hover:bg-primary-50 transition text-right"><div class="w-10 h-10 rounded-lg bg-amber-100 flex items-center justify-center text-amber-600"><i data-lucide="brain" class="w-5 h-5"></i></div><div><div class="font-medium text-primary-900">تحليل قانوني</div><div class="text-xs text-gray-400">تحليل النصوص والقضايا</div></div></button>
+          <button onclick="navigate('drafting')" class="w-full flex items-center gap-3 p-3 rounded-lg hover:bg-primary-50 transition text-right"><div class="w-10 h-10 rounded-lg bg-emerald-100 flex items-center justify-center text-emerald-600"><i data-lucide="file-pen" class="w-5 h-5"></i></div><div><div class="font-medium text-primary-900">صياغة قانونية</div><div class="text-xs text-gray-400">صياغة المستندات القانونية</div></div></button>
+          <button onclick="navigate('cases')" class="w-full flex items-center gap-3 p-3 rounded-lg hover:bg-primary-50 transition text-right"><div class="w-10 h-10 rounded-xl bg-blue-100 flex items-center justify-center text-primary-600"><i data-lucide="folder" class="w-5 h-5"></i></div><div><div class="font-medium text-primary-900">القضايا</div><div class="text-xs text-gray-400">إدارة القضايا الخاصة بك</div></div></button>
+        </div>
+      </div>
+      <!-- Recent Cases -->
+      <div class="lg:col-span-2 bg-white rounded-xl border border-gray-100 shadow-sm">
+        <div class="p-6 border-b border-gray-100 flex items-center justify-between"><h3 class="text-lg font-bold text-primary-900">آخر القضايا</h3><button onclick="navigate('cases')" class="text-sm text-primary-600 font-medium hover:underline">عرض الكل</button></div>
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm">
+            <thead class="bg-gray-50 text-gray-500"><tr><th class="text-right px-4 py-3 font-medium">رقم القضية</th><th class="text-right px-4 py-3 font-medium">النوع</th><th class="text-right px-4 py-3 font-medium">تاريخ الرفع</th><th class="text-right px-4 py-3 font-medium">الحالة</th></tr></thead>
+            <tbody id="dashboard-cases-body" class="divide-y divide-gray-50"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== PAGE: Search ==================== -->
+<section id="page-search" class="page">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <h2 class="text-3xl font-extrabold text-primary-900 mb-2">البحث القانوني</h2>
+    <p class="text-gray-400 text-sm mb-8">ابحث في القوانين والأحكام والوثائق القانونية اليمنية</p>
+    <div class="bg-white rounded-xl p-6 border border-gray-100 shadow-sm mb-6">
+      <div class="flex flex-col sm:flex-row gap-3">
+        <input id="search-input" type="text" placeholder="ابحث عن نص قانوني، حكم، مادة..." class="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition">
+        <select id="search-type" class="px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 outline-none transition bg-white"><option value="all">جميع الأنواع</option><option value="law">قوانين</option><option value="judgment">أحكام قضائية</option><option value="regulation">لوائح</option><option value="article">مقالات</option></select>
+        <button onclick="performSearch()" class="bg-primary-600 text-white font-bold px-6 py-3 rounded-lg hover:bg-primary-700 transition flex items-center gap-2"><i data-lucide="search" class="w-5 h-5"></i>بحث</button>
+      </div>
+    </div>
+    <div id="search-results" class="space-y-4"></div>
+    <div id="search-pagination" class="flex justify-center gap-2 mt-6"></div>
+  </div>
+</section>
+
+<!-- ==================== PAGE: Analysis ==================== -->
+<section id="page-analysis" class="page">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <h2 class="text-3xl font-extrabold text-primary-900 mb-2">التحليل القانوني</h2>
+    <p class="text-gray-400 text-sm mb-8">حلل النصوص والقضايا القانونية باستخدام الذكاء الاصطناعي</p>
+    <!-- Tabs -->
+    <div class="flex gap-2 mb-6">
+      <button id="analysis-tab-text" onclick="switchAnalysisTab('text')" class="px-5 py-2.5 rounded-lg font-medium transition bg-primary-600 text-white">تحليل نص</button>
+      <button id="analysis-tab-query" onclick="switchAnalysisTab('query')" class="px-5 py-2.5 rounded-lg font-medium transition bg-gray-100 text-gray-600 hover:bg-gray-200">استعلام قانوني</button>
+    </div>
+    <!-- Text Analysis -->
+    <div id="analysis-text-section" class="space-y-4">
+      <div class="bg-white rounded-xl p-6 border border-gray-100 shadow-sm">
+        <label class="block text-sm font-medium text-gray-600 mb-2">رفع ملف</label>
+        <div class="dashed-border rounded-xl p-8 text-center cursor-pointer hover:bg-primary-50 transition" onclick="document.getElementById('analysis-file').click()">
+          <i data-lucide="upload" class="w-10 h-10 text-primary-300 mx-auto mb-2"></i>
+          <p class="text-sm text-gray-400">اسحب أو اختر ملف (PDF, DOCX, TXT)</p>
+          <input id="analysis-file" type="file" accept=".pdf,.docx,.txt" class="hidden" onchange="document.querySelector('#analysis-file-name').textContent = this.files[0]?.name || ''">
+          <p id="analysis-file-name" class="text-xs text-primary-600 mt-1"></p>
+        </div>
+      </div>
+      <div class="bg-white rounded-xl p-6 border border-gray-100 shadow-sm">
+        <label class="block text-sm font-medium text-gray-600 mb-2">أو أدخل النص مباشرة</label>
+        <textarea id="analysis-text" rows="6" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 outline-none transition" placeholder="الصق النص القانوني هنا للتحليل..."></textarea>
+      </div>
+      <button onclick="runAnalysis()" class="bg-primary-600 text-white font-bold px-8 py-3 rounded-lg hover:bg-primary-700 transition flex items-center gap-2"><i data-lucide="brain" class="w-5 h-5"></i>تحليل</button>
+    </div>
+    <!-- Query Analysis -->
+    <div id="analysis-query-section" class="hidden space-y-4">
+      <div class="bg-white rounded-xl p-6 border border-gray-100 shadow-sm">
+        <label class="block text-sm font-medium text-gray-600 mb-2">اطرح سؤالك القانوني</label>
+        <textarea id="analysis-query" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 outline-none transition" placeholder="مثال: ما هي الإجراءات القانونية لرفع دعوى تعويض عن ضرر في القانون اليمني؟"></textarea>
+      </div>
+      <button onclick="runQuery()" class="bg-primary-600 text-white font-bold px-8 py-3 rounded-lg hover:bg-primary-700 transition flex items-center gap-2"><i data-lucide="search" class="w-5 h-5"></i>استعلام</button>
+    </div>
+    <!-- Results -->
+    <div id="analysis-results" class="mt-6 hidden"></div>
+  </div>
+</section>
+
+<!-- ==================== PAGE: Drafting ==================== -->
+<section id="page-drafting" class="page">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <h2 class="text-3xl font-extrabold text-primary-900 mb-2">الصياغة القانونية</h2>
+    <p class="text-gray-400 text-sm mb-8">صياغة مستندات قانونية احترافية بمساعدة الذكاء الاصطناعي</p>
+    <!-- Doc Type -->
+    <div class="bg-white rounded-xl p-6 border border-gray-100 shadow-sm mb-6">
+      <label class="block text-sm font-medium text-gray-600 mb-3">نوع المستند</label>
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
+        <button onclick="selectDraftType('complaint')" id="dtype-complaint" class="p-3 rounded-lg border-2 border-gray-200 text-center hover:border-primary-300 transition text-sm font-medium"><i data-lucide="file-text" class="w-6 h-6 mx-auto mb-1 text-primary-500"></i>صحيفة دعوى</button>
+        <button onclick="selectDraftType('defense')" id="dtype-defense" class="p-3 rounded-lg border-2 border-gray-200 text-center hover:border-primary-300 transition text-sm font-medium"><i data-lucide="shield" class="w-6 h-6 mx-auto mb-1 text-primary-500"></i>مذكرة دفاع</button>
+        <button onclick="selectDraftType('memorandum')" id="dtype-memorandum" class="p-3 rounded-lg border-2 border-gray-200 text-center hover:border-primary-300 transition text-sm font-medium"><i data-lucide="file-pen" class="w-6 h-6 mx-auto mb-1 text-primary-500"></i>مذكرة قانونية</button>
+        <button onclick="selectDraftType('appeal')" id="dtype-appeal" class="p-3 rounded-lg border-2 border-gray-200 text-center hover:border-primary-300 transition text-sm font-medium"><i data-lucide="scale" class="w-6 h-6 mx-auto mb-1 text-primary-500"></i>استئناف / تمييز</button>
+        <button onclick="selectDraftType('contract')" id="dtype-contract" class="p-3 rounded-lg border-2 border-gray-200 text-center hover:border-primary-300 transition text-sm font-medium"><i data-lucide="file-signature" class="w-6 h-6 mx-auto mb-1 text-primary-500"></i>عقد</button>
+      </div>
+    </div>
+    <!-- Form -->
+    <div class="bg-white rounded-xl p-6 border border-gray-100 shadow-sm mb-6">
+      <div class="mb-4">
+        <label class="block text-sm font-medium text-gray-600 mb-2">رفع ملفات</label>
+        <div class="dashed-border rounded-xl p-6 text-center cursor-pointer hover:bg-primary-50 transition" onclick="document.getElementById('draft-files').click()">
+          <i data-lucide="upload" class="w-8 h-8 text-primary-300 mx-auto mb-1"></i>
+          <p class="text-sm text-gray-400">رفع ملفات داعمة (PDF, DOCX)</p>
+          <input id="draft-files" type="file" multiple accept=".pdf,.docx" class="hidden">
+        </div>
+      </div>
+      <div class="mb-4"><label class="block text-sm font-medium text-gray-600 mb-2">السياق والتفاصيل</label><textarea id="draft-context" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 outline-none transition" placeholder="صف القضية أو الموضوع القانوني بالتفصيل..."></textarea></div>
+      <div class="mb-4"><label class="block text-sm font-medium text-gray-600 mb-2">تعليمات إضافية</label><textarea id="draft-instructions" rows="2" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 outline-none transition" placeholder="أي توجيهات محددة للصياغة..."></textarea></div>
+      <button onclick="runDrafting()" class="bg-primary-600 text-white font-bold px-8 py-3 rounded-lg hover:bg-primary-700 transition flex items-center gap-2"><i data-lucide="wand-2" class="w-5 h-5"></i>صياغة</button>
+    </div>
+    <!-- Result -->
+    <div id="draft-result" class="hidden bg-white rounded-xl border border-gray-100 shadow-sm">
+      <div class="p-6 border-b border-gray-100 flex items-center justify-between"><h3 class="font-bold text-primary-900">المستند المُصاغ</h3><div class="flex gap-2"><button onclick="copyDraft()" class="px-3 py-1.5 text-sm border border-gray-200 rounded-lg hover:bg-gray-50 flex items-center gap-1"><i data-lucide="copy" class="w-4 h-4"></i>نسخ</button><button onclick="showToast('تم تحميل المستند بصيغة PDF', 'success')" class="px-3 py-1.5 text-sm border border-gray-200 rounded-lg hover:bg-gray-50 flex items-center gap-1"><i data-lucide="download" class="w-4 h-4"></i>PDF</button></div></div>
+      <div class="p-6"><pre id="draft-content" class="whitespace-pre-wrap text-sm leading-relaxed font-sans text-gray-700"></pre></div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== PAGE: Documents ==================== -->
+<section id="page-documents" class="page">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <h2 class="text-3xl font-extrabold text-primary-900 mb-2">المستندات</h2>
+    <p class="text-gray-400 text-sm mb-8">إدارة ورفع المستندات القانونية مع معاينة OCR</p>
+    <!-- Upload -->
+    <div class="bg-white rounded-xl p-6 border border-gray-100 shadow-sm mb-6">
+      <div class="dashed-border rounded-xl p-10 text-center cursor-pointer hover:bg-primary-50 transition" onclick="document.getElementById('doc-upload').click()">
+        <i data-lucide="upload" class="w-12 h-12 text-primary-300 mx-auto mb-3"></i>
+        <p class="text-lg font-medium text-gray-500">ارفع مستنداً قانونياً</p>
+        <p class="text-sm text-gray-400">PDF, DOCX, TXT — بحجم يصل إلى ٢٠ ميجابايت</p>
+        <input id="doc-upload" type="file" accept=".pdf,.docx,.txt" class="hidden" onchange="handleDocUpload(this)">
+      </div>
+      <div id="doc-ocr-preview" class="hidden mt-4">
+        <label class="block text-sm font-medium text-gray-600 mb-2">معاينة النص المستخرج (OCR)</label>
+        <div class="bg-gray-50 rounded-lg p-4 max-h-60 overflow-y-auto text-sm leading-relaxed" id="doc-ocr-text"></div>
+      </div>
+    </div>
+    <!-- Documents List -->
+    <div class="bg-white rounded-xl border border-gray-100 shadow-sm">
+      <div class="p-6 border-b border-gray-100"><h3 class="text-lg font-bold text-primary-900">المستندات المرفوعة</h3></div>
+      <div id="documents-list" class="divide-y divide-gray-50"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== PAGE: Cases ==================== -->
+<section id="page-cases" class="page">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div class="flex items-center justify-between mb-8">
+      <div><h2 class="text-3xl font-extrabold text-primary-900">القضايا</h2><p class="text-gray-400 text-sm mt-1">إدارة ومتابعة القضايا القانونية</p></div>
+      <button onclick="showNewCaseModal()" class="bg-primary-600 text-white font-bold px-5 py-2.5 rounded-lg hover:bg-primary-700 transition flex items-center gap-2"><i data-lucide="plus" class="w-5 h-5"></i>قضية جديدة</button>
+    </div>
+    <div class="bg-white rounded-xl border border-gray-100 shadow-sm overflow-hidden">
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm">
+          <thead class="bg-gray-50 text-gray-500"><tr><th class="text-right px-4 py-3 font-medium">رقم القضية</th><th class="text-right px-4 py-3 font-medium">الموضوع</th><th class="text-right px-4 py-3 font-medium">النوع</th><th class="text-right px-4 py-3 font-medium">المحكمة</th><th class="text-right px-4 py-3 font-medium">تاريخ الرفع</th><th class="text-right px-4 py-3 font-medium">الحالة</th><th class="text-center px-4 py-3 font-medium">إجراءات</th></tr></thead>
+          <tbody id="cases-body" class="divide-y divide-gray-50"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- New Case Modal -->
+<div id="new-case-modal" class="fixed inset-0 bg-black/30 backdrop-blur-sm z-[100] hidden items-center justify-center p-4">
+  <div class="bg-white rounded-2xl p-6 w-full max-w-md shadow-xl fade-in">
+    <div class="flex items-center justify-between mb-4"><h3 class="text-lg font-bold text-primary-900">قضية جديدة</h3><button onclick="closeNewCaseModal()" class="p-1 hover:bg-gray-100 rounded-lg"><i data-lucide="x" class="w-5 h-5"></i></button></div>
+    <form onsubmit="createCase(event)" class="space-y-4">
+      <div><label class="block text-sm font-medium text-gray-600 mb-1.5">الموضوع</label><input id="new-case-subject" type="text" required class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 outline-none" placeholder="موضوع القضية"></div>
+      <div><label class="block text-sm font-medium text-gray-600 mb-1.5">النوع</label><select id="new-case-type" class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 outline-none bg-white"><option value="مدني">مدني</option><option value="تجاري">تجاري</option><option value="جنائي">جنائي</option><option value="عمالي">عمالي</option><option value="أحوال شخصية">أحوال شخصية</option><option value="إداري">إداري</option></select></div>
+      <div><label class="block text-sm font-medium text-gray-600 mb-1.5">المحكمة</label><input id="new-case-court" type="text" required class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 outline-none" placeholder="اسم المحكمة"></div>
+      <button type="submit" class="w-full bg-primary-600 text-white font-bold py-2.5 rounded-lg hover:bg-primary-700 transition">إنشاء القضية</button>
+    </form>
+  </div>
+</div>
+
+<!-- ==================== PAGE: Lawyers ==================== -->
+<section id="page-lawyers" class="page">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <h2 class="text-3xl font-extrabold text-primary-900 mb-2">المحامون</h2>
+    <p class="text-gray-400 text-sm mb-8">ابحث وتواصل مع محامين متخصصين في مختلف المجالات القانونية</p>
+    <div class="mb-6"><div class="flex gap-3 max-w-md"><input id="lawyer-search-input" type="text" placeholder="ابحث عن محامٍ..." class="flex-1 px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 outline-none"><button onclick="filterLawyers()" class="bg-primary-600 text-white px-4 py-2.5 rounded-lg hover:bg-primary-700 transition"><i data-lucide="search" class="w-5 h-5"></i></button></div></div>
+    <div id="lawyers-grid" class="grid md:grid-cols-2 gap-6"></div>
+  </div>
+</section>
+
+<!-- ==================== PAGE: Subscribe ==================== -->
+<section id="page-subscribe" class="page">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-extrabold text-primary-900">خطط الاشتراك</h2>
+      <p class="text-gray-400 mt-2">اختر الخطة المناسبة لاحتياجاتك القانونية</p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+      <!-- Free -->
+      <div class="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm">
+        <h3 class="text-xl font-bold text-primary-900 mb-2">مجاني</h3>
+        <div class="text-4xl font-extrabold text-primary-900 mb-1">٠ ريال</div>
+        <p class="text-sm text-gray-400 mb-6">للمستخدمين الجدد والتجربة</p>
+        <ul class="space-y-3 mb-8 text-sm"><li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-accent-green shrink-0"></i>١٠ عمليات بحث شهرياً</li><li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-accent-green shrink-0"></i>٥ تحليلات قانونية</li><li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-accent-green shrink-0"></i>٣ صياغات مستندات</li><li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-accent-green shrink-0"></i>رفع ١٠ مستندات</li><li class="flex items-center gap-2 text-gray-300"><i data-lucide="x" class="w-4 h-4 shrink-0"></i>البحث المتقدم</li><li class="flex items-center gap-2 text-gray-300"><i data-lucide="x" class="w-4 h-4 shrink-0"></i>تحميل PDF</li></ul>
+        <button onclick="showToast('تم الاشتراك في الخطة المجانية', 'success')" class="w-full py-3 border-2 border-primary-600 text-primary-600 font-bold rounded-lg hover:bg-primary-50 transition">الاشتراك مجاناً</button>
+      </div>
+      <!-- Pro -->
+      <div class="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm subscription-card featured">
+        <h3 class="text-xl font-bold text-primary-900 mb-2">احترافي</h3>
+        <div class="text-4xl font-extrabold text-primary-900 mb-1">٢٩<span class="text-lg text-gray-400">$</span></div>
+        <p class="text-sm text-gray-400 mb-6">شهرياً — للمحامين والمكاتب</p>
+        <ul class="space-y-3 mb-8 text-sm"><li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-accent-green shrink-0"></i>١٠٠ عملية بحث شهرياً</li><li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-accent-green shrink-0"></i>٥٠ تحليلاً قانونياً</li><li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-accent-green shrink-0"></i>صياغة غير محدودة</li><li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-accent-green shrink-0"></i>رفع غير محدود</li><li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-accent-green shrink-0"></i>بحث متقدم بالذكاء الاصطناعي</li><li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-accent-green shrink-0"></i>تحميل PDF وتقارير</li></ul>
+        <button onclick="showToast('تم الاشتراك في الخطة الاحترافية', 'success')" class="w-full gold-gradient text-primary-900 font-bold py-3 rounded-lg hover:opacity-90 transition">اختر الخطة</button>
+      </div>
+      <!-- Enterprise -->
+      <div class="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm">
+        <h3 class="text-xl font-bold text-primary-900 mb-2">مؤسسي</h3>
+        <div class="text-4xl font-extrabold text-primary-900 mb-1">٩٩<span class="text-lg text-gray-400">$</span></div>
+        <p class="text-sm text-gray-400 mb-6">شهرياً — للمؤسسات والمكاتب الكبيرة</p>
+        <ul class="space-y-3 mb-8 text-sm"><li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-accent-green shrink-0"></i>غير محدود للبحث</li><li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-accent-green shrink-0"></i>غير محدود للتحليل</li><li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-accent-green shrink-0"></i>غير محدود للصياغة</li><li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-accent-green shrink-0"></i>رفع غير محدود</li><li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-accent-green shrink-0"></i>API للتكامل</li><li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-accent-green shrink-0"></i>دعم فني مخصص ٢٤/٧</li></ul>
+        <button onclick="showToast('تم الاشتراك في الخطة المؤسسية', 'success')" class="w-full py-3 border-2 border-primary-600 text-primary-600 font-bold rounded-lg hover:bg-primary-50 transition">تواصل معنا</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== ADMIN PAGES ==================== -->
+<!-- Admin Sidebar & Layout -->
+<div id="page-admin" class="page">
+  <div class="flex admin-layout">
+    <div class="admin-sidebar w-56 shrink-0 p-4 text-white hidden lg:flex flex-col min-h-[calc(100vh-4rem)]">
+      <div class="flex items-center gap-2 mb-6 px-2">
+        <div class="w-8 h-8 rounded-lg gold-gradient flex items-center justify-center text-white font-extrabold">ق</div>
+        <span class="font-extrabold text-lg">لوحة الإدارة</span>
+      </div>
+      <div class="space-y-1 flex-1">
+        <button onclick="navigateAdmin('main')" data-admin="main" class="admin-nav-btn w-full text-right px-3 py-2.5 rounded-lg text-sm hover:bg-white/10 transition flex items-center gap-2 bg-white/10 font-medium"><i data-lucide="layout-dashboard" class="w-4 h-4"></i>الرئيسية</button>
+        <button onclick="navigateAdmin('users')" data-admin="users" class="admin-nav-btn w-full text-right px-3 py-2.5 rounded-lg text-sm hover:bg-white/10 transition flex items-center gap-2"><i data-lucide="users" class="w-4 h-4"></i>المستخدمون</button>
+        <button onclick="navigateAdmin('content')" data-admin="content" class="admin-nav-btn w-full text-right px-3 py-2.5 rounded-lg text-sm hover:bg-white/10 transition flex items-center gap-2"><i data-lucide="book-open" class="w-4 h-4"></i>المحتوى</button>
+        <button onclick="navigateAdmin('cases')" data-admin="cases" class="admin-nav-btn w-full text-right px-3 py-2.5 rounded-lg text-sm hover:bg-white/10 transition flex items-center gap-2"><i data-lucide="folder" class="w-4 h-4"></i>القضايا</button>
+        <button onclick="navigateAdmin('subscriptions')" data-admin="subscriptions" class="admin-nav-btn w-full text-right px-3 py-2.5 rounded-lg text-sm hover:bg-white/10 transition flex items-center gap-2"><i data-lucide="credit-card" class="w-4 h-4"></i>الاشتراكات</button>
+        <button onclick="navigateAdmin('rag')" data-admin="rag" class="admin-nav-btn w-full text-right px-3 py-2.5 rounded-lg text-sm hover:bg-white/10 transition flex items-center gap-2"><i data-lucide="database" class="w-4 h-4"></i>RAG</button>
+      </div>
+      <button onclick="navigate('dashboard')" class="w-full text-right px-3 py-2.5 rounded-lg text-sm hover:bg-white/10 transition flex items-center gap-2 mt-auto"><i data-lucide="arrow-right" class="w-4 h-4"></i>العودة للتطبيق</button>
+    </div>
+    <!-- Mobile admin nav -->
+    <div class="lg:hidden bg-white border-b border-gray-100 p-2 flex overflow-x-auto gap-1 sidebar-links">
+      <button onclick="navigateAdmin('main')" data-admin="main" class="admin-nav-btn shrink-0 px-3 py-2 rounded-lg text-sm font-medium bg-primary-600 text-white">الرئيسية</button>
+      <button onclick="navigateAdmin('users')" data-admin="users" class="admin-nav-btn shrink-0 px-3 py-2 rounded-lg text-sm font-medium bg-gray-100 text-gray-600">المستخدمون</button>
+      <button onclick="navigateAdmin('content')" data-admin="content" class="admin-nav-btn shrink-0 px-3 py-2 rounded-lg text-sm font-medium bg-gray-100 text-gray-600">المحتوى</button>
+      <button onclick="navigateAdmin('cases')" data-admin="cases" class="admin-nav-btn shrink-0 px-3 py-2 rounded-lg text-sm font-medium bg-gray-100 text-gray-600">القضايا</button>
+      <button onclick="navigateAdmin('subscriptions')" data-admin="subscriptions" class="admin-nav-btn shrink-0 px-3 py-2 rounded-lg text-sm font-medium bg-gray-100 text-gray-600">الاشتراكات</button>
+      <button onclick="navigateAdmin('rag')" data-admin="rag" class="admin-nav-btn shrink-0 px-3 py-2 rounded-lg text-sm font-medium bg-gray-100 text-gray-600">RAG</button>
+    </div>
+    <div class="flex-1 p-6 lg:p-8">
+      <!-- Admin Main -->
+      <div id="admin-main" class="admin-section">
+        <h2 class="text-2xl font-extrabold text-primary-900 mb-6">لوحة الإدارة الرئيسية</h2>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div class="bg-white rounded-xl p-6 border border-gray-100 shadow-sm card-hover cursor-pointer" onclick="navigateAdmin('users')"><div class="w-12 h-12 rounded-xl bg-blue-100 flex items-center justify-center text-primary-600 mb-3"><i data-lucide="users" class="w-6 h-6"></i></div><h3 class="font-bold text-primary-900">المستخدمون</h3><p class="text-sm text-gray-400">إدارة حسابات المستخدمين والصلاحيات</p></div>
+          <div class="bg-white rounded-xl p-6 border border-gray-100 shadow-sm card-hover cursor-pointer" onclick="navigateAdmin('content')"><div class="w-12 h-12 rounded-xl bg-emerald-100 flex items-center justify-center text-emerald-600 mb-3"><i data-lucide="book-open" class="w-6 h-6"></i></div><h3 class="font-bold text-primary-900">المحتوى</h3><p class="text-sm text-gray-400">إدارة المحتوى القانوني والمقالات</p></div>
+          <div class="bg-white rounded-xl p-6 border border-gray-100 shadow-sm card-hover cursor-pointer" onclick="navigateAdmin('cases')"><div class="w-12 h-12 rounded-xl bg-amber-100 flex items-center justify-center text-amber-600 mb-3"><i data-lucide="folder" class="w-6 h-6"></i></div><h3 class="font-bold text-primary-900">القضايا</h3><p class="text-sm text-gray-400">إدارة القضايا المرفوعة على المنصة</p></div>
+          <div class="bg-white rounded-xl p-6 border border-gray-100 shadow-sm card-hover cursor-pointer" onclick="navigateAdmin('subscriptions')"><div class="w-12 h-12 rounded-xl bg-purple-100 flex items-center justify-center text-purple-600 mb-3"><i data-lucide="credit-card" class="w-6 h-6"></i></div><h3 class="font-bold text-primary-900">الاشتراكات</h3><p class="text-sm text-gray-400">إدارة خطط الاشتراك والمدفوعات</p></div>
+          <div class="bg-white rounded-xl p-6 border border-gray-100 shadow-sm card-hover cursor-pointer" onclick="navigateAdmin('rag')"><div class="w-12 h-12 rounded-xl bg-red-100 flex items-center justify-center text-red-600 mb-3"><i data-lucide="database" class="w-6 h-6"></i></div><h3 class="font-bold text-primary-900">RAG</h3><p class="text-sm text-gray-400">إدارة فهرس البحث المتجهي</p></div>
+          <div class="bg-white rounded-xl p-6 border border-gray-100 shadow-sm"><div class="w-12 h-12 rounded-xl bg-indigo-100 flex items-center justify-center text-indigo-600 mb-3"><i data-lucide="search" class="w-6 h-6"></i></div><h3 class="font-bold text-primary-900">فهرس البحث</h3><p class="text-sm text-gray-400">حالة فهرسة المحتوى: <span class="text-accent-green font-medium">نشط</span></p></div>
+        </div>
+      </div>
+      <!-- Admin Users -->
+      <div id="admin-users" class="admin-section hidden">
+        <div class="flex items-center justify-between mb-6"><h2 class="text-2xl font-extrabold text-primary-900">إدارة المستخدمين</h2><button onclick="showToast('تم إضافة مستخدم جديد', 'success')" class="bg-primary-600 text-white px-4 py-2 rounded-lg text-sm font-bold hover:bg-primary-700 flex items-center gap-2"><i data-lucide="user-plus" class="w-4 h-4"></i>إضافة مستخدم</button></div>
+        <div class="bg-white rounded-xl border border-gray-100 shadow-sm overflow-x-auto">
+          <table class="w-full text-sm"><thead class="bg-gray-50 text-gray-500"><tr><th class="text-right px-4 py-3 font-medium">الاسم</th><th class="text-right px-4 py-3 font-medium">البريد</th><th class="text-right px-4 py-3 font-medium">الدور</th><th class="text-right px-4 py-3 font-medium">الحالة</th><th class="text-center px-4 py-3 font-medium">إجراءات</th></tr></thead>
+            <tbody id="admin-users-body" class="divide-y divide-gray-50"></tbody>
+          </table>
+        </div>
+      </div>
+      <!-- Admin Content -->
+      <div id="admin-content" class="admin-section hidden">
+        <div class="flex items-center justify-between mb-6"><h2 class="text-2xl font-extrabold text-primary-900">إدارة المحتوى</h2><div class="flex gap-2"><select id="admin-content-filter" class="px-3 py-2 border border-gray-300 rounded-lg text-sm bg-white" onchange="renderAdminContent()"><option value="all">جميع الأنواع</option><option value="law">قوانين</option><option value="judgment">أحكام</option><option value="article">مقالات</option></select></div></div>
+        <div class="bg-white rounded-xl border border-gray-100 shadow-sm overflow-x-auto">
+          <table class="w-full text-sm"><thead class="bg-gray-50 text-gray-500"><tr><th class="text-right px-4 py-3 font-medium">العنوان</th><th class="text-right px-4 py-3 font-medium">النوع</th><th class="text-right px-4 py-3 font-medium">تاريخ النشر</th><th class="text-center px-4 py-3 font-medium">إجراءات</th></tr></thead>
+            <tbody id="admin-content-body" class="divide-y divide-gray-50"></tbody>
+          </table>
+        </div>
+      </div>
+      <!-- Admin Cases -->
+      <div id="admin-cases" class="admin-section hidden">
+        <h2 class="text-2xl font-extrabold text-primary-900 mb-6">إدارة القضايا</h2>
+        <div class="bg-white rounded-xl border border-gray-100 shadow-sm overflow-x-auto">
+          <table class="w-full text-sm"><thead class="bg-gray-50 text-gray-500"><tr><th class="text-right px-4 py-3 font-medium">رقم القضية</th><th class="text-right px-4 py-3 font-medium">الموضوع</th><th class="text-right px-4 py-3 font-medium">صاحب القضية</th><th class="text-right px-4 py-3 font-medium">الحالة</th><th class="text-center px-4 py-3 font-medium">إجراءات</th></tr></thead>
+            <tbody id="admin-cases-body" class="divide-y divide-gray-50"></tbody>
+          </table>
+        </div>
+      </div>
+      <!-- Admin Subscriptions -->
+      <div id="admin-subscriptions" class="admin-section hidden">
+        <h2 class="text-2xl font-extrabold text-primary-900 mb-6">إدارة الاشتراكات</h2>
+        <div class="bg-white rounded-xl border border-gray-100 shadow-sm overflow-x-auto">
+          <table class="w-full text-sm"><thead class="bg-gray-50 text-gray-500"><tr><th class="text-right px-4 py-3 font-medium">المستخدم</th><th class="text-right px-4 py-3 font-medium">الباقة</th><th class="text-right px-4 py-3 font-medium">تاريخ البدء</th><th class="text-right px-4 py-3 font-medium">تاريخ الانتهاء</th><th class="text-right px-4 py-3 font-medium">الحالة</th><th class="text-center px-4 py-3 font-medium">إجراءات</th></tr></thead>
+            <tbody id="admin-subs-body" class="divide-y divide-gray-50"></tbody>
+          </table>
+        </div>
+      </div>
+      <!-- Admin RAG -->
+      <div id="admin-rag" class="admin-section hidden">
+        <h2 class="text-2xl font-extrabold text-primary-900 mb-6">إدارة قاعدة المعرفة (RAG)</h2>
+        <div class="grid md:grid-cols-2 gap-6 mb-6">
+          <div class="bg-white rounded-xl p-6 border border-gray-100 shadow-sm">
+            <h3 class="font-bold text-primary-900 mb-4">حالة Qdrant</h3>
+            <div class="space-y-3">
+              <div class="flex justify-between text-sm"><span>حالة الاتصال</span><span class="text-accent-green font-medium flex items-center gap-1"><i data-lucide="check-circle" class="w-4 h-4"></i>متصل</span></div>
+              <div class="flex justify-between text-sm"><span>عدد المتجهات</span><span class="font-medium">١٢٬٤٥٠</span></div>
+              <div class="flex justify-between text-sm"><span>حجم الفهرس</span><span class="font-medium">٢٫٣ جيجابايت</span></div>
+              <div class="flex justify-between text-sm"><span>آخر فهرسة</span><span class="font-medium">منذ ٣ ساعات</span></div>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-gray-100 shadow-sm">
+            <h3 class="font-bold text-primary-900 mb-4">إجراءات</h3>
+            <div class="space-y-3">
+              <button onclick="showToast('جارٍ إعادة الفهرسة...', 'info')" class="w-full bg-primary-600 text-white font-bold px-4 py-3 rounded-lg hover:bg-primary-700 transition flex items-center justify-center gap-2"><i data-lucide="refresh-cw" class="w-4 h-4"></i>إعادة الفهرسة</button>
+              <button onclick="showToast('تم تحديث قاعدة المعرفة', 'success')" class="w-full bg-accent-green text-white font-bold px-4 py-3 rounded-lg hover:opacity-90 transition flex items-center justify-center gap-2"><i data-lucide="upload" class="w-4 h-4"></i>تحديث المحتوى</button>
+              <button onclick="showToast('جارٍ تحسين جودة البحث...', 'info')" class="w-full border-2 border-primary-600 text-primary-600 font-bold px-4 py-3 rounded-lg hover:bg-primary-50 transition flex items-center justify-center gap-2"><i data-lucide="sliders-horizontal" class="w-4 h-4"></i>تحسين الإعدادات</button>
+            </div>
+          </div>
+        </div>
+        <div class="bg-white rounded-xl p-6 border border-gray-100 shadow-sm">
+          <h3 class="font-bold text-primary-900 mb-4">سجل الفهرسة</h3>
+          <div class="space-y-2 text-sm">
+            <div class="flex justify-between py-2 border-b border-gray-50"><span>فهرسة كاملة للمكتبة القانونية</span><span class="text-gray-400">منذ ٣ ساعات</span></div>
+            <div class="flex justify-between py-2 border-b border-gray-50"><span>تحديث الأحكام القضائية - يونيو ٢٠٢٦</span><span class="text-gray-400">منذ يوم</span></div>
+            <div class="flex justify-between py-2 border-b border-gray-50"><span>إضافة القوانين الجديدة - اللائحة التنفيذية</span><span class="text-gray-400">منذ ٣ أيام</span></div>
+            <div class="flex justify-between py-2"><span>فهرسة أولية - إنشاء قاعدة المعرفة</span><span class="text-gray-400">منذ ١٤ يوماً</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== JavaScript ==================== -->
+<script>
+  // ====== Mock Data ======
+  const mockCases = [
+    { id: '2025/45', subject: 'نزاع عقاري على قطعة أرض في صنعاء', type: 'مدني', court: 'محكمة صنعاء الابتدائية', date: '٢٠٢٥/٠٣/١٢', status: 'open', owner: 'أحمد محمد' },
+    { id: '2025/46', subject: 'دعوى تعويض عن ضرر ناتج عن حادث سير', type: 'مدني', court: 'محكمة عدن الابتدائية', date: '٢٠٢٥/٠٢/٢٨', status: 'progress', owner: 'سارة عبدالله' },
+    { id: '2024/120', subject: 'نزاع عمالي - فصل تعسفي', type: 'عمالي', court: 'محكمة تعز العمالية', date: '٢٠٢٤/١١/٠٥', status: 'closed', owner: 'خالد علي' },
+    { id: '2025/12', subject: 'قضية تجارية - إخلال بالتزامات تعاقدية', type: 'تجاري', court: 'محكمة حضرموت التجارية', date: '٢٠٢٥/٠١/٢٠', status: 'open', owner: 'مريم حسين' },
+    { id: '2024/89', subject: 'قضية أحوال شخصية - نفقة وحضانة', type: 'أحوال شخصية', court: 'محكمة الأسرة - صنعاء', date: '٢٠٢٤/٠٨/١٥', status: 'archived', owner: 'فاطمة يحيى' },
+    { id: '2025/78', subject: 'مخالفة تعاقد - مقاولات بناء', type: 'تجاري', court: 'محكمة إب التجارية', date: '٢٠٢٥/٠٤/٠٢', status: 'progress', owner: 'عبدالرحمن صالح' },
+  ];
+
+  const mockLawyers = [
+    { name: 'د. أحمد محمد النجار', specialty: 'القانون التجاري والشركات', city: 'صنعاء', rating: 5, exp: 15, phone: '+967 712 345 678' },
+    { name: 'أ. سارة عبدالله الحميدي', specialty: 'القانون الجنائي', city: 'عدن', rating: 4, exp: 10, phone: '+967 723 456 789' },
+    { name: 'د. خالد علي القدسي', specialty: 'القانون المدني والعقاري', city: 'تعز', rating: 5, exp: 20, phone: '+967 734 567 890' },
+    { name: 'أ. مريم حسين الأغبري', specialty: 'الأحوال الشخصية والأسرة', city: 'حضرموت', rating: 4, exp: 8, phone: '+967 745 678 901' },
+    { name: 'د. عبدالرحمن صالح الحميقاني', specialty: 'القانون الدستوري والإداري', city: 'صنعاء', rating: 5, exp: 25, phone: '+967 756 789 012' },
+    { name: 'أ. فاطمة يحيى الرزامي', specialty: 'القانون الإداري والوظيفي', city: 'عدن', rating: 4, exp: 12, phone: '+967 767 890 123' },
+  ];
+
+  const mockUsers = [
+    { name: 'أحمد محمد النجار', email: 'ahmed@example.com', role: 'محامٍ', status: 'active' },
+    { name: 'سارة عبدالله', email: 'sara@example.com', role: 'باحث قانوني', status: 'active' },
+    { name: 'خالد علي القدسي', email: 'khalid@example.com', role: 'قاضٍ', status: 'active' },
+    { name: 'مريم حسين', email: 'maryam@example.com', role: 'محامٍ', status: 'inactive' },
+    { name: 'فاطمة يحيى', email: 'fatima@example.com', role: 'مستخدم عام', status: 'active' },
+    { name: 'محمد عبدالله', email: 'mohamed@example.com', role: 'محامٍ', status: 'suspended' },
+    { name: 'admin@qanuni.ye', email: 'admin@qanuni.ye', role: 'مدير النظام', status: 'active' },
+  ];
+
+  const mockDocuments = [
+    { name: 'عريضة دعوى - قضية رقم 2025/45.pdf', date: '٢٠٢٥/٠٣/١٥', size: '٢٫٣ م.ب' },
+    { name: 'مذكرة دفاع - قضية رقم 2025/46.docx', date: '٢٠٢٥/٠٣/١٠', size: '١٫١ م.ب' },
+    { name: 'عقد بيع عقاري - 2025.pdf', date: '٢٠٢٥/٠٢/٢٨', size: '٠٫٨ م.ب' },
+    { name: 'حكم قضائي - محكمة استئناف.pdf', date: '٢٠٢٥/٠١/٢٠', size: '١٫٥ م.ب' },
+    { name: 'لائحة اعتراضية - قضية تجارية.docx', date: '٢٠٢٥/٠١/٠٥', size: '٠٫٩ م.ب' },
+    { name: 'تقرير خبرة - نزاع عقاري.pdf', date: '٢٠٢٤/١٢/٢٠', size: '٣٫٢ م.ب' },
+  ];
+
+  const mockSearchResults = [
+    { title: 'المادة ٢٣٢ - القانون المدني اليمني', type: 'قانون', snippet: 'تنص المادة ٢٣٢ من القانون المدني اليمني على أن "كل إضرار بالغير يلزم فاعله بالتعويض". وتعتبر هذه المادة الأساس القانوني لرفع دعاوى التعويض عن الضرر في القانون اليمني.', content: 'التفاصيل الكاملة للمادة وأحكامها...' },
+    { title: 'حكم محكمة النقض - دعوى تعويض رقم ٤٥/٢٠٢٤', type: 'حكم قضائي', snippet: 'قضت محكمة النقض بأنه "يشترط للتعويض عن الضرر توافر أركان المسؤولية التقصيرية: الخطأ والضرر وعلاقة السببية". وأكدت المحكمة على ضرورة إثبات العلاقة السببية بين الخطأ والضرر.', content: 'نص الحكم كاملاً...' },
+    { title: 'اللائحة التنفيذية لقانون المرافعات والتنفيذ', type: 'لائحة', snippet: 'تحدد اللائحة التنفيذية الإجراءات التفصيلية لرفع الدعاوى أمام المحاكم اليمنية، بما في ذلك متطلبات صحيفة الدعوى ومواعيد التبليغ والإعلان.', content: 'نصوص اللائحة...' },
+    { title: 'بحث قانوني: أحكام التعويض عن الضرر في الفقه اليمني', type: 'مقال', snippet: 'يتناول هذا البحث أحكام التعويض عن الضرر في القانون اليمني مقارنة بالفقه الإسلامي، ويستعرض أهم التطبيقات القضائية لمحكمة النقض اليمنية.', content: 'البحث كاملاً...' },
+    { title: 'المادة ٢٨ - قانون الإجراءات الجزائية', type: 'قانون', snippet: 'تنص المادة ٢٨ على أنه "لكل من وقع عليه ضرر من جريمة أن يطلب التعويض أمام المحكمة الجزائية المختصة".', content: 'شرح المادة...' },
+    { title: 'حكم محكمة استئناف عدن - دعوى تعويض عن ضرر', type: 'حكم قضائي', snippet: 'أيدت محكمة استئناف عدن حكم محكمة أول درجة القاضي بإلزام المدعى عليه بدفع تعويض قدره ٥٠٠,٠٠٠ ريال عن الأضرار المادية والأدبية.', content: 'نص الحكم كاملاً...' },
+    { title: 'قانون تنظيم مهنة المحاماة رقم ١١ لسنة ١٩٩٦م', type: 'قانون', snippet: 'ينظم قانون تنظيم مهنة المحاماة شروط مزاولة المهنة وحقوق وواجبات المحامي أمام المحاكم اليمنية.', content: 'نصوص القانون...' },
+    { title: 'دراسة: أثر الذكاء الاصطناعي على العمل القانوني في اليمن', type: 'مقال', snippet: 'تستعرض هذه الدراسة كيف يمكن للذكاء الاصطناعي تحسين كفاءة العمل القانوني في اليمن، مع التركيز على البحث القانوني والتحليل الذكي.', content: 'الدراسة كاملة...' },
+  ];
+
+  const mockContent = [
+    { title: 'القانون المدني اليمني - النص الكامل', type: 'قانون', date: '٢٠٢٥/٠٦/٠١' },
+    { title: 'قانون الإجراءات الجزائية رقم ١٣ لسنة ١٩٩٤م', type: 'قانون', date: '٢٠٢٥/٠٥/٢٨' },
+    { title: 'حكم النقض - طعن رقم ١٢٣ لسنة ٢٠٢٤', type: 'حكم قضائي', date: '٢٠٢٥/٠٥/٢٠' },
+    { title: 'حكم محكمة استئناف - دعوى تعويض رقم ٤٥', type: 'حكم قضائي', date: '٢٠٢٥/٠٥/١٥' },
+    { title: 'أحكام التعويض عن الضرر في القانون اليمني', type: 'مقال', date: '٢٠٢٥/٠٥/١٠' },
+    { title: 'شرح قانون المرافعات - الجزء الأول', type: 'مقال', date: '٢٠٢٥/٠٤/٢٨' },
+    { title: 'اللائحة التنفيذية لقانون الاستثمار', type: 'لائحة', date: '٢٠٢٥/٠٤/٢٠' },
+    { title: 'قانون تنظيم مهنة المحاماة', type: 'قانون', date: '٢٠٢٥/٠٤/١٢' },
+  ];
+
+  const mockSubscriptions = [
+    { user: 'أحمد محمد النجار', plan: 'احترافي', start: '٢٠٢٥/٠٣/٠١', end: '٢٠٢٥/٠٩/٠١', status: 'active' },
+    { user: 'سارة عبدالله', plan: 'مجاني', start: '٢٠٢٥/٠١/١٥', end: '—', status: 'active' },
+    { user: 'خالد علي القدسي', plan: 'مؤسسي', start: '٢٠٢٥/٠٢/٠١', end: '٢٠٢٦/٠٢/٠١', status: 'active' },
+    { user: 'مريم حسين', plan: 'احترافي', start: '٢٠٢٤/١٠/٠١', end: '٢٠٢٥/٠٤/٠١', status: 'expired' },
+    { user: 'فاطمة يحيى', plan: 'مجاني', start: '٢٠٢٥/٠٤/٠١', end: '—', status: 'active' },
+    { user: 'محمد عبدالله', plan: 'احترافي', start: '٢٠٢٥/٠١/٠١', end: '٢٠٢٥/٠٧/٠١', status: 'active' },
+  ];
+
+  // ====== State ======
+  let currentUser = null;
+  let currentPage = 'landing';
+  let selectedDraftType = 'complaint';
+  let searchPage = 1;
+  const searchPerPage = 3;
+  let filteredSearchResults = [];
+
+  // Auto-init Lucide icons on DOM changes
+  const lucideObserver = new MutationObserver(function() {
+    if (typeof lucide !== 'undefined') lucide.createIcons();
+  });
+  lucideObserver.observe(document.body, { childList: true, subtree: true });
+
+  // ====== Navigation ======
+  function navigate(page) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    const target = document.getElementById('page-' + page);
+    if (target) target.classList.add('active');
+    currentPage = page;
+    window.scrollTo(0, 0);
+    closeUserDropdown();
+    closeMobileMenu();
+    // Highlight active nav link
+    document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active-link'));
+    document.querySelectorAll(`.nav-link[data-page="${page}"]`).forEach(l => l.classList.add('active-link'));
+    // Dashboard refresh
+    if (page === 'dashboard') refreshDashboard();
+    if (page === 'cases') renderCases();
+    if (page === 'documents') renderDocuments();
+    if (page === 'lawyers') renderLawyers();
+    if (page === 'search') { document.getElementById('search-results').innerHTML = ''; document.getElementById('search-pagination').innerHTML = ''; }
+    if (page !== 'admin') document.querySelectorAll('.admin-nav-btn').forEach(b => b.classList.remove('bg-primary-600', 'text-white'));
+    // Re-init icons once
+  }
+
+  function navigateAdmin(section) {
+    document.querySelectorAll('.admin-section').forEach(s => s.classList.add('hidden'));
+    const el = document.getElementById('admin-' + section);
+    if (el) el.classList.remove('hidden');
+    document.querySelectorAll('.admin-nav-btn').forEach(b => {
+      b.classList.remove('bg-primary-600', 'text-white');
+      b.classList.add('bg-gray-100', 'text-gray-600');
+    });
+    document.querySelectorAll(`.admin-nav-btn[data-admin="${section}"]`).forEach(b => {
+      b.classList.remove('bg-gray-100', 'text-gray-600');
+      b.classList.add('bg-primary-600', 'text-white');
+    });
+    if (section === 'users') renderAdminUsers();
+    if (section === 'content') renderAdminContent();
+    if (section === 'cases') renderAdminCases();
+    if (section === 'subscriptions') renderAdminSubscriptions();
+  }
+
+  function toggleMobileMenu() {
+    const menu = document.getElementById('mobile-menu');
+    menu.classList.toggle('hidden');
+  }
+  function closeMobileMenu() {
+    const menu = document.getElementById('mobile-menu');
+    if (menu) menu.classList.add('hidden');
+  }
+
+  function toggleUserDropdown() {
+    document.getElementById('user-dropdown').classList.toggle('hidden');
+  }
+
+  function closeUserDropdown() {
+    const dd = document.getElementById('user-dropdown');
+    if (dd) dd.classList.add('hidden');
+  }
+
+  // ====== Auth ======
+  function handleLogin(e) {
+    e.preventDefault();
+    const email = document.getElementById('login-email').value;
+    const password = document.getElementById('login-password').value;
+    const errorEl = document.getElementById('login-error');
+    const errorText = document.getElementById('login-error-text');
+    if (!email || !password) {
+      errorEl.classList.remove('hidden'); errorText.textContent = 'يرجى إدخال البريد الإلكتروني وكلمة المرور';
+        return;
+    }
+    if (email === 'admin@qanuni.ye' && password === '123456') {
+      currentUser = { name: 'مدير النظام', email: 'admin@qanuni.ye', role: 'مدير النظام' };
+      sessionStorage.setItem('qanuni_user', JSON.stringify(currentUser));
+      applyAuthState();
+      showToast('مرحباً بك في قانوني', 'success');
+      navigate('dashboard');
+      return;
+    }
+    // Check registered users
+    const users = JSON.parse(sessionStorage.getItem('qanuni_registered') || '[]');
+    const found = users.find(u => u.email === email && u.password === password);
+    if (found) {
+      currentUser = { name: found.name, email: found.email, role: found.role === 'lawyer' ? 'محامٍ' : found.role === 'researcher' ? 'باحث قانوني' : found.role === 'judge' ? 'قاضٍ' : 'مستخدم عام' };
+      sessionStorage.setItem('qanuni_user', JSON.stringify(currentUser));
+      applyAuthState();
+      showToast('مرحباً بك في قانوني', 'success');
+      navigate('dashboard');
+    } else {
+      errorEl.classList.remove('hidden'); errorText.textContent = 'البريد الإلكتروني أو كلمة المرور غير صحيحة';
+    }
+  }
+
+  function handleRegister(e) {
+    e.preventDefault();
+    const name = document.getElementById('reg-name').value;
+    const email = document.getElementById('reg-email').value;
+    const phone = document.getElementById('reg-phone').value;
+    const password = document.getElementById('reg-password').value;
+    const confirm = document.getElementById('reg-confirm').value;
+    const role = document.getElementById('reg-role').value;
+    const errorEl = document.getElementById('register-error');
+    const errorText = document.getElementById('register-error-text');
+    if (password !== confirm) {
+      errorEl.classList.remove('hidden'); errorText.textContent = 'كلمة المرور وتأكيدها غير متطابقين';
+        return;
+    }
+    const users = JSON.parse(sessionStorage.getItem('qanuni_registered') || '[]');
+    if (users.find(u => u.email === email)) {
+      errorEl.classList.remove('hidden'); errorText.textContent = 'البريد الإلكتروني مسجل مسبقاً';
+        return;
+    }
+    users.push({ name, email, phone, password, role });
+    sessionStorage.setItem('qanuni_registered', JSON.stringify(users));
+    currentUser = { name, email, role: role === 'lawyer' ? 'محامٍ' : role === 'researcher' ? 'باحث قانوني' : role === 'judge' ? 'قاضٍ' : 'مستخدم عام' };
+    sessionStorage.setItem('qanuni_user', JSON.stringify(currentUser));
+    applyAuthState();
+    showToast('تم إنشاء الحساب بنجاح!', 'success');
+    navigate('dashboard');
+  }
+
+  function logout() {
+    currentUser = null;
+    sessionStorage.removeItem('qanuni_user');
+    applyAuthState();
+    showToast('تم تسجيل الخروج', 'info');
+    navigate('landing');
+  }
+
+  function applyAuthState() {
+    const stored = sessionStorage.getItem('qanuni_user');
+    if (stored) {
+      currentUser = JSON.parse(stored);
+      document.getElementById('nav-auth-buttons').classList.add('hidden');
+      document.getElementById('nav-user-menu').classList.remove('hidden');
+      document.getElementById('nav-quota').classList.remove('hidden');
+      document.getElementById('nav-avatar').textContent = currentUser.name.charAt(0);
+      document.getElementById('nav-user-name').textContent = currentUser.name;
+      document.getElementById('nav-dashboard-link').classList.remove('hidden');
+      document.getElementById('mobile-nav-dashboard').classList.remove('hidden');
+      if (currentUser.role === 'مدير النظام') {
+        document.getElementById('nav-admin-link').classList.remove('hidden');
+        document.getElementById('mobile-nav-admin').classList.remove('hidden');
+      } else {
+        document.getElementById('nav-admin-link').classList.add('hidden');
+        document.getElementById('mobile-nav-admin').classList.add('hidden');
+      }
+    } else {
+      document.getElementById('nav-auth-buttons').classList.remove('hidden');
+      document.getElementById('nav-user-menu').classList.add('hidden');
+      document.getElementById('nav-quota').classList.add('hidden');
+      document.getElementById('nav-dashboard-link').classList.add('hidden');
+      document.getElementById('mobile-nav-dashboard').classList.add('hidden');
+      document.getElementById('nav-admin-link').classList.add('hidden');
+      document.getElementById('mobile-nav-admin').classList.add('hidden');
+    }
+  }
+
+  // ====== Dashboard ======
+  function refreshDashboard() {
+    document.getElementById('stat-cases').textContent = mockCases.length;
+    document.getElementById('stat-searches').textContent = 58;
+    document.getElementById('stat-analyses').textContent = 27;
+    document.getElementById('stat-documents').textContent = mockDocuments.length;
+    // Cases table
+    const tbody = document.getElementById('dashboard-cases-body');
+    tbody.innerHTML = mockCases.slice(0, 4).map(c => `<tr><td class="px-4 py-3 font-medium ltr-num">${c.id}</td><td class="px-4 py-3 text-gray-600">${c.subject.substring(0, 30)}...</td><td class="px-4 py-3 text-gray-500">${c.date}</td><td class="px-4 py-3"><span class="status-${c.status} px-2.5 py-1 rounded-full text-xs font-medium">${statusText(c.status)}</span></td></tr>`).join('');
+  }
+
+  // ====== Search ======
+  function performSearch() {
+    const query = document.getElementById('search-input').value.trim();
+    const type = document.getElementById('search-type').value;
+    if (!query) { showToast('يرجى إدخال نص للبحث', 'error'); return; }
+    filteredSearchResults = mockSearchResults.filter(r => {
+      const matchesType = type === 'all' || r.type === (type === 'law' ? 'قانون' : type === 'judgment' ? 'حكم قضائي' : type === 'regulation' ? 'لائحة' : type === 'article' ? 'مقال' : '');
+      const matchesQuery = r.title.includes(query) || r.snippet.includes(query);
+      return matchesType && matchesQuery;
+    });
+    if (filteredSearchResults.length === 0) {
+      document.getElementById('search-results').innerHTML = '<div class="text-center py-12 text-gray-400"><i data-lucide="search-x" class="w-12 h-12 mx-auto mb-3"></i><p>لا توجد نتائج للبحث</p></div>';
+      document.getElementById('search-pagination').innerHTML = '';
+        return;
+    }
+    searchPage = 1;
+    renderSearchResults();
+  }
+
+  function renderSearchResults() {
+    const container = document.getElementById('search-results');
+    const totalPages = Math.ceil(filteredSearchResults.length / searchPerPage);
+    const start = (searchPage - 1) * searchPerPage;
+    const pageResults = filteredSearchResults.slice(start, start + searchPerPage);
+    const query = document.getElementById('search-input').value.trim();
+    container.innerHTML = `<p class="text-sm text-gray-400 mb-4">تم العثور على ${filteredSearchResults.length} نتيجة</p>` +
+      pageResults.map(r => {
+        let snippet = r.snippet;
+        if (query) {
+          const regex = new RegExp(`(${query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
+          snippet = snippet.replace(regex, '<span class="search-highlight">$1</span>');
+        }
+        const typeColors = { 'قانون': 'bg-blue-100 text-blue-700', 'حكم قضائي': 'bg-amber-100 text-amber-700', 'لائحة': 'bg-purple-100 text-purple-700', 'مقال': 'bg-green-100 text-green-700' };
+        return `<div class="bg-white rounded-xl p-5 border border-gray-100 shadow-sm card-hover"><div class="flex items-center gap-2 mb-2"><span class="${typeColors[r.type] || 'bg-gray-100 text-gray-600'} px-2.5 py-0.5 rounded-full text-xs font-medium">${r.type}</span></div><h4 class="font-bold text-primary-900 mb-1">${r.title}</h4><p class="text-sm text-gray-500 leading-relaxed">${snippet}</p></div>`;
+      }).join('');
+    // Pagination
+    const pagContainer = document.getElementById('search-pagination');
+    if (totalPages > 1) {
+      pagContainer.innerHTML = '<div class="flex gap-2 items-center">' +
+        (searchPage > 1 ? `<button onclick="searchPage--; renderSearchResults()" class="pagination-btn px-3 py-1.5 rounded-lg border border-gray-200 text-sm"><i data-lucide="chevron-right" class="w-4 h-4"></i></button>` : '') +
+        Array.from({ length: totalPages }, (_, i) => `<button onclick="searchPage=${i+1}; renderSearchResults()" class="pagination-btn px-3 py-1.5 rounded-lg text-sm font-medium ${searchPage === i+1 ? 'active' : 'border border-gray-200'}">${i+1}</button>`).join('') +
+        (searchPage < totalPages ? `<button onclick="searchPage++; renderSearchResults()" class="pagination-btn px-3 py-1.5 rounded-lg border border-gray-200 text-sm"><i data-lucide="chevron-left" class="w-4 h-4"></i></button>` : '') +
+        '</div>';
+    } else {
+      pagContainer.innerHTML = '';
+    }
+  }
+
+  // ====== Analysis ======
+  function switchAnalysisTab(tab) {
+    document.getElementById('analysis-text-section').classList.toggle('hidden', tab !== 'text');
+    document.getElementById('analysis-query-section').classList.toggle('hidden', tab !== 'query');
+    document.getElementById('analysis-tab-text').className = tab === 'text' ? 'px-5 py-2.5 rounded-lg font-medium transition bg-primary-600 text-white' : 'px-5 py-2.5 rounded-lg font-medium transition bg-gray-100 text-gray-600 hover:bg-gray-200';
+    document.getElementById('analysis-tab-query').className = tab === 'query' ? 'px-5 py-2.5 rounded-lg font-medium transition bg-primary-600 text-white' : 'px-5 py-2.5 rounded-lg font-medium transition bg-gray-100 text-gray-600 hover:bg-gray-200';
+    document.getElementById('analysis-results').classList.add('hidden');
+    document.getElementById('analysis-results').innerHTML = '';
+  }
+
+  function runAnalysis() {
+    const text = document.getElementById('analysis-text').value.trim();
+    const file = document.getElementById('analysis-file').files[0];
+    if (!text && !file) { showToast('يرجى إدخال نص أو رفع ملف للتحليل', 'error'); return; }
+    const results = document.getElementById('analysis-results');
+    results.classList.remove('hidden');
+    results.innerHTML = `
+      <div class="bg-white rounded-xl p-6 border border-gray-100 shadow-sm fade-in">
+        <div class="flex items-center gap-3 mb-4"><i data-lucide="brain" class="w-6 h-6 text-primary-600"></i><h3 class="text-lg font-bold text-primary-900">نتيجة التحليل</h3></div>
+        <div class="text-sm leading-relaxed text-gray-600 space-y-4">
+          <p><strong class="text-primary-900">تصنيف المستند:</strong> هذا النص يتعلق بدعوى تعويض عن ضرر في إطار القانون المدني اليمني.</p>
+          <p><strong class="text-primary-900">المواد ذات الصلة:</strong> المادة ٢٣٢، المادة ٢٣٥، المادة ٢٤٠ من القانون المدني اليمني.</p>
+          <p><strong class="text-primary-900">الأحكام المرتبطة:</strong> حكم محكمة النقض رقم ٤٥/٢٠٢٤، حكم استئناف عدن رقم ١٢/٢٠٢٣.</p>
+          <p><strong class="text-primary-900">التحليل:</strong> بناءً على النص المقدم، يبدو أن هناك أركان المسؤولية التقصيرية متوافرة بشكل مبدئي. ينصح بالرجوع إلى أحكام محكمة النقض اليمنية في قضايا مشابهة لتعزيز الموقف القانوني.</p>
+        </div>
+      </div>`;
+    showToast('تم الانتهاء من التحليل', 'success');
+  }
+
+  function runQuery() {
+    const query = document.getElementById('analysis-query').value.trim();
+    if (!query) { showToast('يرجى كتابة استعلام قانوني', 'error'); return; }
+    const results = document.getElementById('analysis-results');
+    results.classList.remove('hidden');
+    results.innerHTML = `
+      <div class="space-y-4 fade-in">
+        <div class="bg-white rounded-xl p-6 border border-gray-100 shadow-sm">
+          <div class="flex items-center gap-3 mb-4"><i data-lucide="message-square-text" class="w-6 h-6 text-primary-600"></i><h3 class="text-lg font-bold text-primary-900">الإجابة على استفسارك</h3></div>
+          <div class="text-sm leading-relaxed text-gray-600">
+            <p>لرفع دعوى تعويض عن ضرر في القانون اليمني، يجب اتباع الإجراءات التالية:</p>
+            <ol class="list-decimal mr-5 mt-2 space-y-2">
+              <li>تحرير صحيفة الدعوى موضحاً فيها أطراف الدعوى وموضوعها وأسبابها.</li>
+              <li>إرفاق المستندات المؤيدة للدعوى (تقارير، شهود، مستندات).</li>
+              <li>قيد الدعوى في قلم كتاب المحكمة المختصة.</li>
+              <li>دفع الرسوم القضائية المقررة.</li>
+              <li>انتظار تحديد جلسة لنظر الدعوى.</li>
+            </ol>
+          </div>
+        </div>
+        <div class="bg-white rounded-xl p-5 border border-gray-100 shadow-sm">
+          <h4 class="font-bold text-primary-900 text-sm mb-3 flex items-center gap-2"><i data-lucide="bookmark" class="w-4 h-4 text-accent-gold"></i>المصادر</h4>
+          <div class="space-y-2 text-sm">
+            <div class="flex items-center gap-2 p-2 rounded-lg hover:bg-gray-50 cursor-pointer"><i data-lucide="file-text" class="w-4 h-4 text-primary-500"></i><span class="text-gray-600">المادة ٢٣٢ - القانون المدني اليمني</span></div>
+            <div class="flex items-center gap-2 p-2 rounded-lg hover:bg-gray-50 cursor-pointer"><i data-lucide="file-text" class="w-4 h-4 text-primary-500"></i><span class="text-gray-600">حكم محكمة النقض رقم ٤٥/٢٠٢٤</span></div>
+            <div class="flex items-center gap-2 p-2 rounded-lg hover:bg-gray-50 cursor-pointer"><i data-lucide="file-text" class="w-4 h-4 text-primary-500"></i><span class="text-gray-600">قانون المرافعات والتنفيذ رقم ٢٨ لسنة ٢٠٢٢م</span></div>
+          </div>
+        </div>
+      </div>`;
+    showToast('تم العثور على إجابة لاستفسارك', 'success');
+  }
+
+  // ====== Drafting ======
+  function selectDraftType(type) {
+    selectedDraftType = type;
+    document.querySelectorAll('[id^="dtype-"]').forEach(el => {
+      el.className = 'p-3 rounded-lg border-2 text-center transition text-sm font-medium ' + (el.id === 'dtype-' + type ? 'border-primary-500 bg-primary-50' : 'border-gray-200 hover:border-primary-300');
+    });
+  }
+
+  function runDrafting() {
+    const context = document.getElementById('draft-context').value.trim();
+    if (!context) { showToast('يرجى إدخال سياق القضية أو الموضوع القانوني', 'error'); return; }
+    const typeNames = { complaint: 'صحيفة دعوى', defense: 'مذكرة دفاع', memorandum: 'مذكرة قانونية', appeal: 'لائحة استئناف/تمييز', contract: 'عقد' };
+    const instruct = document.getElementById('draft-instructions').value.trim();
+    const result = document.getElementById('draft-result');
+    result.classList.remove('hidden');
+    const content = document.getElementById('draft-content');
+    content.textContent = `بسم الله الرحمن الرحيم\n\n${typeNames[selectedDraftType]}\n\nالموضوع: ${context}\n\n${instruct ? 'تعليمات إضافية: ' + instruct + '\n\n' : ''}بناءً على ما تقدم، فإن المستند المطلوب يتضمن الأحكام التالية:\n\nأولاً: الأطراف:\n- المدعي: ________________________________\n- المدعى عليه: ________________________________\n- المحكمة المختصة: ________________________________\n\nثانياً: الوقائع:\n${context}\n\nثالثاً: الطلبات:\n١- الحكم بـ ________________________________\n٢- إلزام الطرف الآخر بـ ________________________________\n٣- ________________________________\n\nرابعاً: الأساس القانوني:\n- المادة (٢٣٢) من القانون المدني اليمني\n- قانون المرافعات والتنفيذ رقم (٢٨) لسنة ٢٠٢٢م\n\nحرر في: ____/____/٢٠٢٦م\n\nالتوقيع: ____________________`;
+    showToast('تمت الصياغة بنجاح', 'success');
+  }
+
+  function copyDraft() {
+    const text = document.getElementById('draft-content').textContent;
+    navigator.clipboard.writeText(text).then(() => showToast('تم نسخ المحتوى', 'success')).catch(() => showToast('فشل النسخ', 'error'));
+  }
+
+  // ====== Documents ======
+  function handleDocUpload(input) {
+    if (input.files.length > 0) {
+      const file = input.files[0];
+      const reader = new FileReader();
+      reader.onload = function() {
+        const preview = document.getElementById('doc-ocr-preview');
+        preview.classList.remove('hidden');
+        document.getElementById('doc-ocr-text').textContent = `[نتيجة معالجة OCR للملف: ${file.name}]\n\nتم استخراج النص بنجاح من المستند. الملف بصيغة ${file.name.split('.').pop().toUpperCase()} وبحجم ${(file.size / 1024).toFixed(1)} كيلوبايت.\n\nنموذج النص المستخرج من المستند:\n\n... هذا عقد بيع مبرم بين الطرف الأول (البائع) والطرف الثاني (المشتري) بموجبه يبيع الطرف الأول للطرف الثاني العقار الموصوف أدناه ...`;
+        mockDocuments.unshift({ name: file.name, date: new Date().toLocaleDateString('ar-EG'), size: (file.size / (1024*1024)).toFixed(1) + ' م.ب' });
+        renderDocuments();
+        showToast('تم رفع المستند ومعالجته', 'success');
+      };
+      reader.readAsDataURL(file);
+    }
+  }
+
+  function renderDocuments() {
+    const container = document.getElementById('documents-list');
+    container.innerHTML = mockDocuments.map(d => `
+      <div class="flex items-center justify-between p-4 hover:bg-gray-50 transition">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-lg bg-primary-100 flex items-center justify-center text-primary-600"><i data-lucide="file-text" class="w-5 h-5"></i></div>
+          <div><div class="text-sm font-medium text-primary-900">${d.name}</div><div class="text-xs text-gray-400">${d.date} • ${d.size}</div></div>
+        </div>
+        <div class="flex gap-2">
+          <button onclick="showToast('جاري تحميل الملف', 'info')" class="p-2 rounded-lg hover:bg-gray-100 text-gray-500" title="تحميل"><i data-lucide="download" class="w-4 h-4"></i></button>
+          <button onclick="showToast('جاري تشغيل المسح المتقدم', 'info')" class="p-2 rounded-lg hover:bg-gray-100 text-gray-500" title="مسح متقدم"><i data-lucide="scan" class="w-4 h-4"></i></button>
+          <button onclick="deleteDocument('${d.name}')" class="p-2 rounded-lg hover:bg-red-50 text-red-500" title="حذف"><i data-lucide="trash-2" class="w-4 h-4"></i></button>
+        </div>
+      </div>
+    `).join('');
+  }
+
+  function deleteDocument(name) {
+    const idx = mockDocuments.findIndex(d => d.name === name);
+    if (idx > -1) { mockDocuments.splice(idx, 1); renderDocuments(); showToast('تم حذف المستند', 'success'); }
+  }
+
+  // ====== Cases ======
+  function renderCases() {
+    const tbody = document.getElementById('cases-body');
+    tbody.innerHTML = mockCases.map(c => `
+      <tr class="hover:bg-gray-50 transition">
+        <td class="px-4 py-3 font-medium ltr-num">${c.id}</td>
+        <td class="px-4 py-3 text-gray-600">${c.subject}</td>
+        <td class="px-4 py-3"><span class="bg-primary-100 text-primary-700 px-2.5 py-0.5 rounded-full text-xs font-medium">${c.type}</span></td>
+        <td class="px-4 py-3 text-gray-500">${c.court}</td>
+        <td class="px-4 py-3 text-gray-500">${c.date}</td>
+        <td class="px-4 py-3"><span class="status-${c.status} px-2.5 py-1 rounded-full text-xs font-medium">${statusText(c.status)}</span></td>
+        <td class="px-4 py-3 text-center"><button onclick="showToast('فتح القضية رقم ${c.id}', 'info')" class="text-primary-600 hover:underline text-sm font-medium">عرض</button></td>
+      </tr>
+    `).join('');
+  }
+
+  function showNewCaseModal() {
+    document.getElementById('new-case-modal').classList.remove('hidden');
+    document.getElementById('new-case-modal').classList.add('flex');
+  }
+
+  function closeNewCaseModal() {
+    document.getElementById('new-case-modal').classList.add('hidden');
+    document.getElementById('new-case-modal').classList.remove('flex');
+  }
+
+  function createCase(e) {
+    e.preventDefault();
+    const subject = document.getElementById('new-case-subject').value;
+    const type = document.getElementById('new-case-type').value;
+    const court = document.getElementById('new-case-court').value;
+    const num = 2025 + '/' + (Math.floor(Math.random() * 90 + 10));
+    mockCases.unshift({ id: num, subject, type, court, date: new Date().toLocaleDateString('ar-EG'), status: 'open', owner: currentUser?.name || 'مستخدم' });
+    renderCases();
+    closeNewCaseModal();
+    showToast('تم إنشاء القضية بنجاح', 'success');
+    e.target.reset();
+  }
+
+  function statusText(status) {
+    return { open: 'مفتوحة', progress: 'قيد الإجراءات', closed: 'مغلقة', archived: 'مؤرشفة' }[status] || status;
+  }
+
+  // ====== Lawyers ======
+  function renderLawyers(filter) {
+    const grid = document.getElementById('lawyers-grid');
+    const list = filter ? mockLawyers.filter(l => l.name.includes(filter) || l.specialty.includes(filter) || l.city.includes(filter)) : mockLawyers;
+    grid.innerHTML = list.map(l => `
+      <div class="bg-white rounded-xl p-5 border border-gray-100 shadow-sm lawyer-card transition">
+        <div class="flex items-start gap-4">
+          <div class="w-16 h-16 rounded-xl gold-gradient flex items-center justify-center text-white text-xl font-extrabold shrink-0">${l.name.charAt(0)}</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-primary-900">${l.name}</h3>
+            <p class="text-xs text-primary-600 bg-primary-50 px-2 py-0.5 rounded-full inline-block mt-1">${l.specialty}</p>
+            <div class="flex items-center gap-3 mt-2 text-xs text-gray-400">
+              <span class="flex items-center gap-1"><i data-lucide="map-pin" class="w-3.5 h-3.5"></i>${l.city}</span>
+              <span class="flex items-center gap-1"><i data-lucide="briefcase" class="w-3.5 h-3.5"></i>${l.exp} سنة</span>
+            </div>
+            <div class="flex items-center gap-0.5 mt-1.5 ltr-num">
+              ${Array(5).fill(0).map((_, i) => `<span class="${i < l.rating ? 'text-accent-gold' : 'text-gray-200'}" style="font-size:16px;line-height:1">${i < l.rating ? '\u2605' : '\u2606'}</span>`).join('')}
+            </div>
+          </div>
+        </div>
+        <div class="mt-3 flex gap-2">
+          <button onclick="showToast('تم إرسال طلب التواصل إلى ${l.name}', 'success')" class="flex-1 bg-primary-600 text-white text-sm font-bold py-2 rounded-lg hover:bg-primary-700 transition flex items-center justify-center gap-1.5"><i data-lucide="message-square" class="w-3.5 h-3.5"></i>تواصل</button>
+          <button onclick="showToast('رقم الهاتف: ${l.phone}', 'info')" class="px-3 py-2 border border-gray-200 rounded-lg hover:bg-gray-50 transition"><i data-lucide="phone" class="w-4 h-4"></i></button>
+        </div>
+      </div>
+    `).join('');
+  }
+
+  function filterLawyers() {
+    const query = document.getElementById('lawyer-search-input').value.trim();
+    renderLawyers(query);
+  }
+
+  // ====== Admin Tables ======
+  function renderAdminUsers() {
+    const tbody = document.getElementById('admin-users-body');
+    tbody.innerHTML = mockUsers.map(u => `
+      <tr class="hover:bg-gray-50 transition">
+        <td class="px-4 py-3 font-medium text-primary-900">${u.name}</td>
+        <td class="px-4 py-3 text-gray-500">${u.email}</td>
+        <td class="px-4 py-3"><span class="bg-primary-100 text-primary-700 px-2.5 py-0.5 rounded-full text-xs font-medium">${u.role}</span></td>
+        <td class="px-4 py-3"><span class="${u.status === 'active' ? 'bg-green-100 text-green-700' : u.status === 'inactive' ? 'bg-gray-100 text-gray-500' : 'bg-red-100 text-red-700'} px-2.5 py-0.5 rounded-full text-xs font-medium">${u.status === 'active' ? 'نشط' : u.status === 'inactive' ? 'غير نشط' : 'موقوف'}</span></td>
+        <td class="px-4 py-3 text-center"><div class="flex items-center justify-center gap-2"><button onclick="showToast('تم تعديل دور المستخدم', 'success')" class="text-primary-600 hover:underline text-sm">تعديل الدور</button><button onclick="showToast('تم حذف المستخدم', 'success')" class="text-red-500 hover:underline text-sm">حذف</button></div></td>
+      </tr>
+    `).join('');
+  }
+
+  function renderAdminContent() {
+    const filter = document.getElementById('admin-content-filter').value;
+    const list = filter === 'all' ? mockContent : mockContent.filter(c => c.type === (filter === 'law' ? 'قانون' : filter === 'judgment' ? 'حكم قضائي' : 'مقال'));
+    const tbody = document.getElementById('admin-content-body');
+    tbody.innerHTML = list.map(c => `
+      <tr class="hover:bg-gray-50 transition">
+        <td class="px-4 py-3 font-medium text-primary-900">${c.title}</td>
+        <td class="px-4 py-3"><span class="bg-primary-100 text-primary-700 px-2.5 py-0.5 rounded-full text-xs font-medium">${c.type}</span></td>
+        <td class="px-4 py-3 text-gray-500">${c.date}</td>
+        <td class="px-4 py-3 text-center"><div class="flex items-center justify-center gap-2"><button onclick="showToast('فتح المحتوى', 'info')" class="text-primary-600 hover:underline text-sm">عرض</button><button onclick="showToast('تم حذف المحتوى', 'success')" class="text-red-500 hover:underline text-sm">حذف</button></div></td>
+      </tr>
+    `).join('');
+  }
+
+  function renderAdminCases() {
+    const tbody = document.getElementById('admin-cases-body');
+    tbody.innerHTML = mockCases.map(c => `
+      <tr class="hover:bg-gray-50 transition">
+        <td class="px-4 py-3 font-medium ltr-num">${c.id}</td>
+        <td class="px-4 py-3 text-gray-600">${c.subject}</td>
+        <td class="px-4 py-3 text-gray-500">${c.owner}</td>
+        <td class="px-4 py-3"><span class="status-${c.status} px-2.5 py-1 rounded-full text-xs font-medium">${statusText(c.status)}</span></td>
+        <td class="px-4 py-3 text-center"><div class="flex items-center justify-center gap-2"><button onclick="showToast('فتح القضية', 'info')" class="text-primary-600 hover:underline text-sm">عرض</button><button onclick="showToast('تم حذف القضية', 'success')" class="text-red-500 hover:underline text-sm">حذف</button></div></td>
+      </tr>
+    `).join('');
+  }
+
+  function renderAdminSubscriptions() {
+    const tbody = document.getElementById('admin-subs-body');
+    tbody.innerHTML = mockSubscriptions.map(s => `
+      <tr class="hover:bg-gray-50 transition">
+        <td class="px-4 py-3 font-medium text-primary-900">${s.user}</td>
+        <td class="px-4 py-3"><span class="bg-primary-100 text-primary-700 px-2.5 py-0.5 rounded-full text-xs font-medium">${s.plan}</span></td>
+        <td class="px-4 py-3 text-gray-500">${s.start}</td>
+        <td class="px-4 py-3 text-gray-500">${s.end}</td>
+        <td class="px-4 py-3"><span class="${s.status === 'active' ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'} px-2.5 py-0.5 rounded-full text-xs font-medium">${s.status === 'active' ? 'نشط' : 'منتهي'}</span></td>
+        <td class="px-4 py-3 text-center"><button onclick="showToast('تم تعديل الباقة', 'success')" class="text-primary-600 hover:underline text-sm">تعديل</button></td>
+      </tr>
+    `).join('');
+  }
+
+  // ====== Toast ======
+  function showToast(message, type) {
+    const container = document.getElementById('toast-container');
+    const colors = { success: 'bg-green-50 border-green-200 text-green-700', error: 'bg-red-50 border-red-200 text-red-700', info: 'bg-blue-50 border-blue-200 text-blue-700' };
+    const icons = { success: 'check-circle', error: 'alert-circle', info: 'info' };
+    const toast = document.createElement('div');
+    toast.className = `toast flex items-center gap-2.5 px-5 py-3 rounded-xl border shadow-lg text-sm font-medium ${colors[type] || colors.info}`;
+    toast.innerHTML = `<i data-lucide="${icons[type] || 'info'}" class="w-5 h-5 shrink-0"></i><span>${message}</span>`;
+    container.appendChild(toast);
+    setTimeout(() => { if (toast.parentNode) toast.remove(); }, 3000);
+  }
+
+  // ====== Init ======
+  document.addEventListener('DOMContentLoaded', function() {
+    applyAuthState();
+    renderLawyers();
+    // Click outside to close dropdown
+    document.addEventListener('click', function(e) {
+      if (!e.target.closest('#nav-user-menu')) closeUserDropdown();
+      const modal = document.getElementById('new-case-modal');
+      if (e.target === modal) closeNewCaseModal();
+    });
+    if (typeof lucide !== 'undefined') lucide.createIcons();
+  });
+</script>
+</body>
+</html>

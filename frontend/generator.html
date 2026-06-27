@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>منشئ المستندات القانونية — قانوني AI</title>
+  <meta name="description" content="أداة ذكية لإنشاء وصياغة المستندات والعقود القانونية تلقائياً بالذكاء الاصطناعي">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="styles/design-system.css">
+  <link rel="stylesheet" href="styles/app.css">
+  <link rel="stylesheet" href="styles/app-screens.css">
+
+  <!-- Instant theme script loader to prevent white flashes -->
+  <script>
+    (function() {
+      const theme = localStorage.getItem('theme') || 'light';
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+</head>
+<body class="app-body">
+
+  <div class="app-container">
+
+    <!-- ============================================
+         RIGHT SIDEBAR (Global Workspace Navigation)
+         ============================================ -->
+    <aside class="sidebar" id="app-sidebar">
+      <div class="sidebar__header">
+        <a href="index.html" class="sidebar__logo">
+          <div class="sidebar__logo-icon">ق</div>
+          <span class="sidebar__logo-text">قانوني AI</span>
+        </a>
+        <button class="sidebar__settings-btn" id="close-sidebar" style="display:none;">✕</button>
+      </div>
+
+      <button class="btn btn--primary sidebar__new-chat" onclick="window.location.href='app.html'">
+        <span>+ محادثة جديدة</span>
+      </button>
+
+      <div class="sidebar__search" style="padding-top: var(--space-4);">
+        <div class="sidebar__group-title" style="padding-right:0; margin-bottom:var(--space-2);">الأدوات والخدمات</div>
+        <div class="sidebar__list" style="margin-bottom: var(--space-6); gap: 4px;">
+          <a href="dashboard.html" class="sidebar__item" style="display:flex; align-items:center; gap:8px;">
+            <span>📊</span> <span>لوحة التحكم</span>
+          </a>
+          <a href="app.html" class="sidebar__item" style="display:flex; align-items:center; gap:8px;">
+            <span>🤖</span> <span>المساعد القانوني الذكي</span>
+          </a>
+          <a href="search.html" class="sidebar__item" style="display:flex; align-items:center; gap:8px;">
+            <span>🔍</span> <span>محرك البحث السيمانتك</span>
+          </a>
+          <a href="library.html" class="sidebar__item" style="display:flex; align-items:center; gap:8px;">
+            <span>📚</span> <span>مكتبة التشريعات</span>
+          </a>
+          <a href="generator.html" class="sidebar__item sidebar__item--active" style="display:flex; align-items:center; gap:8px;">
+            <span>🖋️</span> <span>منشئ المستندات</span>
+          </a>
+          <a href="analyzer.html" class="sidebar__item" style="display:flex; align-items:center; gap:8px;">
+            <span>📄</span> <span>محلل ومراجع العقود</span>
+          </a>
+          <a href="settings.html" class="sidebar__item" style="display:flex; align-items:center; gap:8px;">
+            <span>⚙️</span> <span>الإعدادات</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Recent Documents -->
+      <div class="sidebar__search" style="padding-top: 0;">
+        <div class="sidebar__group-title" style="padding-right:0; margin-bottom:var(--space-2);">المستندات الأخيرة</div>
+        <div class="sidebar__list" style="gap: 2px;">
+          <div class="sidebar__item" style="display:flex; align-items:center; gap:8px; opacity:0.8;">
+            <span style="font-size:12px;">📝</span> <span style="font-size:13px;">عقد إيجار — شركة النور</span>
+          </div>
+          <div class="sidebar__item" style="display:flex; align-items:center; gap:8px; opacity:0.8;">
+            <span style="font-size:12px;">📝</span> <span style="font-size:13px;">عقد عمل — أحمد محمد</span>
+          </div>
+          <div class="sidebar__item" style="display:flex; align-items:center; gap:8px; opacity:0.8;">
+            <span style="font-size:12px;">📝</span> <span style="font-size:13px;">توكيل عام — مكتب الأمين</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="sidebar__footer">
+        <div class="sidebar__user">
+          <div class="sidebar__avatar">مح</div>
+          <span class="sidebar__username" data-user-name>مستخدم</span>
+        </div>
+        <a href="#" onclick="QaniniAuth.logout(); return false;" class="sidebar__settings-btn" title="تسجيل خروج">🚪</a>
+      </div>
+    </aside>
+
+    <!-- ============================================
+         MAIN WORKSPACE CONTENT
+         ============================================ -->
+    <main class="chat-container">
+
+      <!-- Top header bar -->
+      <header class="chat-header">
+        <div class="chat-header__info">
+          <button class="chat-header__menu-btn" id="menu-toggle-btn" aria-label="عرض القائمة">☰</button>
+          <h1 class="chat-header__title">🖋️ منشئ وصائغ المستندات الذكي</h1>
+        </div>
+        <div class="chat-header__actions">
+          <span class="badge badge--teal" id="doc-counter">0 / 20 مستند هذا الشهر</span>
+        </div>
+      </header>
+
+      <!-- Content Area -->
+      <div class="app-content">
+
+        <div class="generator-wizard" id="generator-wizard">
+
+          <!-- ===== Wizard Progress Steps ===== -->
+          <div class="wizard-steps" id="wizard-steps-bar">
+            <div class="wizard-step wizard-step--active" data-step="1">
+              <div class="wizard-step__circle">1</div>
+              <span class="wizard-step__label">نوع الوثيقة</span>
+            </div>
+            <div class="wizard-step" data-step="2">
+              <div class="wizard-step__circle">2</div>
+              <span class="wizard-step__label">بيانات الأطراف</span>
+            </div>
+            <div class="wizard-step" data-step="3">
+              <div class="wizard-step__circle">3</div>
+              <span class="wizard-step__label">الشروط والبنود</span>
+            </div>
+            <div class="wizard-step" data-step="4">
+              <div class="wizard-step__circle">4</div>
+              <span class="wizard-step__label">المراجعة والتصدير</span>
+            </div>
+          </div>
+
+          <!-- ================================================
+               STEP 1: Document Type Selection (Card Grid)
+               ================================================ -->
+          <div class="wizard-panel" id="step-1">
+            <h3 class="wizard-panel__title">اختر نوع المستند القانوني</h3>
+            <p class="wizard-panel__desc">حدد نوع الوثيقة التي تريد إنشاءها وسيقوم الذكاء الاصطناعي بصياغتها لك</p>
+
+            <div class="doc-type-grid">
+              <button class="doc-type-card" data-type="إيجار" onclick="selectDocType(this)">
+                <div class="doc-type-card__icon">🏠</div>
+                <div class="doc-type-card__name">عقد إيجار</div>
+                <div class="doc-type-card__desc">سكني أو تجاري</div>
+              </button>
+              <button class="doc-type-card" data-type="عمل" onclick="selectDocType(this)">
+                <div class="doc-type-card__icon">💼</div>
+                <div class="doc-type-card__name">عقد عمل</div>
+                <div class="doc-type-card__desc">توظيف فردي أو جماعي</div>
+              </button>
+              <button class="doc-type-card" data-type="بيع" onclick="selectDocType(this)">
+                <div class="doc-type-card__icon">🤝</div>
+                <div class="doc-type-card__name">عقد بيع</div>
+                <div class="doc-type-card__desc">عقارات أو منقولات</div>
+              </button>
+              <button class="doc-type-card" data-type="شراكة" onclick="selectDocType(this)">
+                <div class="doc-type-card__icon">🏢</div>
+                <div class="doc-type-card__name">عقد شراكة</div>
+                <div class="doc-type-card__desc">تأسيس شركة أو شراكة</div>
+              </button>
+              <button class="doc-type-card" data-type="توكيل" onclick="selectDocType(this)">
+                <div class="doc-type-card__icon">📋</div>
+                <div class="doc-type-card__name">توكيل / وكالة</div>
+                <div class="doc-type-card__desc">توكيل عام أو خاص</div>
+              </button>
+              <button class="doc-type-card" data-type="دعوى" onclick="selectDocType(this)">
+                <div class="doc-type-card__icon">⚖️</div>
+                <div class="doc-type-card__name">صحيفة دعوى</div>
+                <div class="doc-type-card__desc">دعوى مدنية أو تجارية</div>
+              </button>
+              <button class="doc-type-card" data-type="مذكرة" onclick="selectDocType(this)">
+                <div class="doc-type-card__icon">📑</div>
+                <div class="doc-type-card__name">مذكرة قانونية</div>
+                <div class="doc-type-card__desc">مذكرة دفاع أو طعن</div>
+              </button>
+              <button class="doc-type-card" data-type="إقرار" onclick="selectDocType(this)">
+                <div class="doc-type-card__icon">✍️</div>
+                <div class="doc-type-card__name">إقرار / تعهد</div>
+                <div class="doc-type-card__desc">إقرارات وتعهدات رسمية</div>
+              </button>
+            </div>
+          </div>
+
+          <!-- ================================================
+               STEP 2: Party Information Form
+               ================================================ -->
+          <div class="wizard-panel" id="step-2" style="display:none;">
+            <h3 class="wizard-panel__title">بيانات أطراف العقد</h3>
+            <p class="wizard-panel__desc">أدخل معلومات الأطراف المعنية — يمكنك إضافة طرف ثالث إن لزم الأمر</p>
+
+            <form id="parties-form">
+              <!-- Party 1 -->
+              <div class="party-section">
+                <div class="party-section__header">
+                  <span class="party-section__badge">الطرف الأول</span>
+                  <span class="party-section__role" id="party1-role">المؤجر</span>
+                </div>
+                <div class="form-grid">
+                  <div class="wizard-form-group">
+                    <label class="wizard-form-group__label">الاسم الكامل / الشركة <span class="required-star">*</span></label>
+                    <input type="text" class="wizard-form-group__input" placeholder="مثال: شركة الأمين للتجارة" required>
+                  </div>
+                  <div class="wizard-form-group">
+                    <label class="wizard-form-group__label">رقم الهوية / السجل التجاري <span class="required-star">*</span></label>
+                    <input type="text" class="wizard-form-group__input" placeholder="رقم الإثبات الرسمي" required>
+                  </div>
+                  <div class="wizard-form-group">
+                    <label class="wizard-form-group__label">العنوان</label>
+                    <input type="text" class="wizard-form-group__input" placeholder="المدينة، الحي، الشارع">
+                  </div>
+                  <div class="wizard-form-group">
+                    <label class="wizard-form-group__label">رقم الهاتف</label>
+                    <input type="tel" class="wizard-form-group__input" placeholder="+967 ...">
+                  </div>
+                </div>
+              </div>
+
+              <!-- Party 2 -->
+              <div class="party-section">
+                <div class="party-section__header">
+                  <span class="party-section__badge party-section__badge--teal">الطرف الثاني</span>
+                  <span class="party-section__role" id="party2-role">المستأجر</span>
+                </div>
+                <div class="form-grid">
+                  <div class="wizard-form-group">
+                    <label class="wizard-form-group__label">الاسم الكامل / الشركة <span class="required-star">*</span></label>
+                    <input type="text" class="wizard-form-group__input" placeholder="مثال: أحمد عبدالله الحسني" required>
+                  </div>
+                  <div class="wizard-form-group">
+                    <label class="wizard-form-group__label">رقم الهوية / السجل التجاري <span class="required-star">*</span></label>
+                    <input type="text" class="wizard-form-group__input" placeholder="رقم الإثبات الرسمي" required>
+                  </div>
+                  <div class="wizard-form-group">
+                    <label class="wizard-form-group__label">العنوان</label>
+                    <input type="text" class="wizard-form-group__input" placeholder="المدينة، الحي، الشارع">
+                  </div>
+                  <div class="wizard-form-group">
+                    <label class="wizard-form-group__label">رقم الهاتف</label>
+                    <input type="tel" class="wizard-form-group__input" placeholder="+967 ...">
+                  </div>
+                </div>
+              </div>
+
+              <div class="wizard-footer">
+                <button type="button" class="btn btn--ghost" onclick="goToStep(1)">← الخطوة السابقة</button>
+                <button type="button" class="btn btn--primary" onclick="goToStep(3)">التالي: الشروط والبنود →</button>
+              </div>
+            </form>
+          </div>
+
+          <!-- ================================================
+               STEP 3: Terms & Conditions Builder
+               ================================================ -->
+          <div class="wizard-panel" id="step-3" style="display:none;">
+            <h3 class="wizard-panel__title">الشروط والبنود الرئيسية</h3>
+            <p class="wizard-panel__desc">حدد الشروط الأساسية — سيقوم الذكاء الاصطناعي بصياغة البنود القانونية الكاملة</p>
+
+            <div class="terms-builder">
+              <!-- Suggested Smart Clauses -->
+              <div class="smart-clauses">
+                <div class="smart-clauses__header">
+                  <span>✨ بنود مقترحة بالذكاء الاصطناعي</span>
+                  <span class="badge badge--teal">مخصصة لنوع عقدك</span>
+                </div>
+                <div class="smart-clauses__list">
+                  <label class="smart-clause">
+                    <input type="checkbox" checked>
+                    <span class="smart-clause__text">شرط الإخلاء: يلتزم المستأجر بإخلاء العين عند انتهاء العقد</span>
+                  </label>
+                  <label class="smart-clause">
+                    <input type="checkbox" checked>
+                    <span class="smart-clause__text">شرط الصيانة: يتحمل المستأجر الصيانة الدورية والمالك الإصلاحات الجوهرية</span>
+                  </label>
+                  <label class="smart-clause">
+                    <input type="checkbox" checked>
+                    <span class="smart-clause__text">شرط عدم التأجير من الباطن: لا يحق للمستأجر التأجير للغير دون إذن كتابي</span>
+                  </label>
+                  <label class="smart-clause">
+                    <input type="checkbox">
+                    <span class="smart-clause__text">شرط التحكيم: يتم حل النزاعات عبر التحكيم قبل اللجوء للقضاء</span>
+                  </label>
+                  <label class="smart-clause">
+                    <input type="checkbox">
+                    <span class="smart-clause__text">شرط جزائي: غرامة مالية عند الإخلال بأي بند من بنود العقد</span>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Custom Details -->
+              <div class="terms-details">
+                <div class="form-grid">
+                  <div class="wizard-form-group">
+                    <label class="wizard-form-group__label">مدة العقد <span class="required-star">*</span></label>
+                    <select class="wizard-form-group__input">
+                      <option value="">— اختر المدة —</option>
+                      <option value="6">6 أشهر</option>
+                      <option value="12" selected>سنة واحدة</option>
+                      <option value="24">سنتان</option>
+                      <option value="36">3 سنوات</option>
+                      <option value="60">5 سنوات</option>
+                      <option value="custom">مدة مخصصة</option>
+                    </select>
+                  </div>
+                  <div class="wizard-form-group">
+                    <label class="wizard-form-group__label">القيمة / الأجرة الشهرية <span class="required-star">*</span></label>
+                    <input type="text" class="wizard-form-group__input" placeholder="مثال: 150,000 ريال يمني">
+                  </div>
+                  <div class="wizard-form-group">
+                    <label class="wizard-form-group__label">طريقة الدفع</label>
+                    <select class="wizard-form-group__input">
+                      <option value="monthly">شهري</option>
+                      <option value="quarterly">ربع سنوي</option>
+                      <option value="semi">نصف سنوي</option>
+                      <option value="annual">سنوي مقدم</option>
+                    </select>
+                  </div>
+                  <div class="wizard-form-group">
+                    <label class="wizard-form-group__label">مبلغ التأمين / الضمان</label>
+                    <input type="text" class="wizard-form-group__input" placeholder="مثال: 300,000 ريال يمني">
+                  </div>
+                </div>
+                <div class="wizard-form-group" style="margin-top: var(--space-4);">
+                  <label class="wizard-form-group__label">ملاحظات إضافية (اختياري)</label>
+                  <textarea class="wizard-form-group__input wizard-form-group__textarea" placeholder="أضف أي تفاصيل أو شروط خاصة تريد تضمينها في العقد..."></textarea>
+                </div>
+              </div>
+            </div>
+
+            <div class="wizard-footer">
+              <button type="button" class="btn btn--ghost" onclick="goToStep(2)">← الخطوة السابقة</button>
+              <button type="button" class="btn btn--primary" onclick="goToStep(4)">
+                ✨ إنشاء المستند بالذكاء الاصطناعي
+              </button>
+            </div>
+          </div>
+
+          <!-- ================================================
+               STEP 4: Preview & Download
+               ================================================ -->
+          <div class="wizard-panel" id="step-4" style="display:none;">
+            <h3 class="wizard-panel__title">مراجعة المستند النهائي</h3>
+            <p class="wizard-panel__desc">راجع الوثيقة المُنشأة — يمكنك التعديل يدوياً أو إعادة الصياغة</p>
+
+            <!-- AI Generation Progress -->
+            <div class="ai-progress" id="ai-progress">
+              <div class="ai-progress__icon">
+                <div class="ai-progress__spinner"></div>
+              </div>
+              <div class="ai-progress__text">جارٍ صياغة المستند بالذكاء الاصطناعي...</div>
+              <div class="ai-progress__bar">
+                <div class="ai-progress__fill" id="ai-progress-fill"></div>
+              </div>
+              <div class="ai-progress__steps" id="ai-progress-steps">
+                <span class="ai-progress__step ai-progress__step--done">✓ تحليل البيانات المدخلة</span>
+                <span class="ai-progress__step ai-progress__step--active">⟳ صياغة البنود القانونية</span>
+                <span class="ai-progress__step">مراجعة التوافق القانوني</span>
+                <span class="ai-progress__step">إنشاء المسودة النهائية</span>
+              </div>
+            </div>
+
+            <!-- Document Preview (shown after generation) -->
+            <div class="doc-preview" id="doc-preview" style="display:none;">
+              <div class="doc-preview__toolbar">
+                <div class="doc-preview__toolbar-right">
+                  <span class="badge badge--teal">✓ تم الإنشاء بنجاح</span>
+                  <span class="badge badge--gold">موافق للقانون اليمني</span>
+                </div>
+                <div class="doc-preview__toolbar-left">
+                  <button class="btn btn--sm btn--ghost" title="نسخ">📋 نسخ</button>
+                  <button class="btn btn--sm btn--ghost" title="طباعة">🖨️ طباعة</button>
+                  <button class="btn btn--sm btn--primary" title="تحميل PDF">📥 تحميل PDF</button>
+                  <button class="btn btn--sm btn--gold" title="تحميل Word">📄 تحميل Word</button>
+                </div>
+              </div>
+
+              <div class="doc-preview__paper">
+                <div class="doc-preview__header-stamp">بسم الله الرحمن الرحيم</div>
+                <h2 class="doc-preview__doc-title">عقد إيجار تجاري</h2>
+                <p class="doc-preview__doc-ref">رقم العقد: QN-2026-00847 &nbsp;|&nbsp; التاريخ: 01/06/2026م</p>
+
+                <div class="doc-preview__section">
+                  <h4>المادة الأولى: الأطراف المتعاقدة</h4>
+                  <p><strong>الطرف الأول (المؤجر):</strong> شركة الأمين للتجارة والمقاولات، سجل تجاري رقم 12345، ومقرها صنعاء — شارع الزبيري.</p>
+                  <p><strong>الطرف الثاني (المستأجر):</strong> السيد/ أحمد عبدالله الحسني، بطاقة شخصية رقم 9876543، والمقيم في صنعاء — حي النهضة.</p>
+                </div>
+
+                <div class="doc-preview__section">
+                  <h4>المادة الثانية: موضوع العقد</h4>
+                  <p>بموجب هذا العقد يُؤجر الطرف الأول للطرف الثاني العقار الكائن في [العنوان] والمكون من [الوصف]، وذلك لاستخدامه في الأغراض التجارية المتفق عليها.</p>
+                </div>
+
+                <div class="doc-preview__section">
+                  <h4>المادة الثالثة: مدة العقد والأجرة</h4>
+                  <p>مدة هذا العقد <strong>سنة واحدة</strong> تبدأ من تاريخ التوقيع، وتكون الأجرة الشهرية <strong>150,000 ريال يمني</strong> تُدفع في بداية كل شهر ميلادي.</p>
+                </div>
+
+                <div class="doc-preview__section">
+                  <h4>المادة الرابعة: التزامات الأطراف</h4>
+                  <p>1. يلتزم المستأجر بالحفاظ على العين المؤجرة واستعمالها فيما أُعدت له.</p>
+                  <p>2. يلتزم المؤجر بتسليم العين صالحة للاستعمال وإجراء الإصلاحات الجوهرية.</p>
+                  <p>3. لا يحق للمستأجر التأجير من الباطن دون إذن كتابي من المؤجر.</p>
+                </div>
+
+                <div class="doc-preview__section doc-preview__section--highlight">
+                  <h4>📎 المرجع القانوني</h4>
+                  <p>تم صياغة هذا العقد وفقاً لأحكام <strong>القانون المدني اليمني</strong> المواد (234-267) والقوانين ذات الصلة.</p>
+                </div>
+
+                <div class="doc-preview__signatures">
+                  <div class="doc-preview__sig-block">
+                    <p>الطرف الأول</p>
+                    <div class="doc-preview__sig-line"></div>
+                    <small>التوقيع والختم</small>
+                  </div>
+                  <div class="doc-preview__sig-block">
+                    <p>الطرف الثاني</p>
+                    <div class="doc-preview__sig-line"></div>
+                    <small>التوقيع</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="wizard-footer" id="step4-footer" style="display:none;">
+              <button type="button" class="btn btn--ghost" onclick="goToStep(3)">← تعديل الشروط</button>
+              <button type="button" class="btn btn--gold" onclick="alert('يتم الآن حفظ المستند في مكتبتك الشخصية...')">💾 حفظ في مكتبتي</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <script src="api.js"></script>
+  <script>
+    if (!requireAuth()) throw new Error('redirect');
+
+    // User data
+    const _u = QaniniAuth.getUser();
+    if (_u) {
+      document.querySelectorAll('.sidebar__username').forEach(el => el.textContent = _u.full_name);
+      document.querySelectorAll('.sidebar__avatar').forEach(el => el.textContent = _u.full_name.substring(0,2));
+    }
+    document.querySelectorAll('[title="تسجيل خروج"]').forEach(b => b.addEventListener('click', e => { e.preventDefault(); QaniniAuth.logout(); }));
+
+    // ===== Sidebar Mobile Toggle =====
+    const sidebar = document.getElementById('app-sidebar');
+    const menuBtn = document.getElementById('menu-toggle-btn');
+    const closeBtn = document.getElementById('close-sidebar');
+
+    menuBtn.addEventListener('click', () => {
+      sidebar.classList.add('sidebar--active');
+      closeBtn.style.display = 'block';
+    });
+    closeBtn.addEventListener('click', () => {
+      sidebar.classList.remove('sidebar--active');
+      closeBtn.style.display = 'none';
+    });
+
+    // ===== Wizard Step Navigation =====
+    let currentStep = 1;
+    let selectedDocType = null;
+
+    function goToStep(step) {
+      // Validate before advancing
+      if (step > currentStep) {
+        if (currentStep === 1 && !selectedDocType) {
+          alert('الرجاء اختيار نوع المستند أولاً');
+          return;
+        }
+      }
+
+      // Hide current panel
+      const currentPanel = document.getElementById('step-' + currentStep);
+      if (currentPanel) {
+        currentPanel.style.display = 'none';
+      }
+
+      // Show target panel
+      const targetPanel = document.getElementById('step-' + step);
+      if (targetPanel) {
+        targetPanel.style.display = 'block';
+        targetPanel.style.animation = 'fadeInUp 0.4s ease-out';
+      }
+
+      // Update step indicators
+      const steps = document.querySelectorAll('.wizard-step');
+      steps.forEach((s, i) => {
+        const stepNum = i + 1;
+        s.classList.remove('wizard-step--active', 'wizard-step--completed');
+        if (stepNum < step) {
+          s.classList.add('wizard-step--completed');
+          s.querySelector('.wizard-step__circle').textContent = '✓';
+        } else if (stepNum === step) {
+          s.classList.add('wizard-step--active');
+        } else {
+          s.querySelector('.wizard-step__circle').textContent = stepNum;
+        }
+      });
+
+      currentStep = step;
+
+      // If step 4, run AI generation API
+      if (step === 4) {
+        runAIGeneration();
+      }
+    }
+
+    // ===== Dynamic Document Layout Maps =====
+    const docDataMap = {
+      'إيجار': {
+        clauses: [
+          { text: 'شرط الإخلاء: يلتزم المستأجر بإخلاء العين عند انتهاء العقد', checked: true },
+          { text: 'شرط الصيانة: يتحمل المستأجر الصيانة الدورية والمالك الإصلاحات الجوهرية', checked: true },
+          { text: 'شرط عدم التأجير من الباطن: لا يحق للمستأجر التأجير للغير دون إذن كتابي', checked: true },
+          { text: 'شرط التحكيم: يتم حل النزاعات عبر التحكيم وفق قانون التحكيم اليمني', checked: false },
+          { text: 'الشرط الجزائي: غرامة مالية عند الإخلال بأي بند أو التأخير في سداد الأجرة', checked: false }
+        ],
+        fields: `
+          <div class="form-grid">
+            <div class="wizard-form-group">
+              <label class="wizard-form-group__label">مدة العقد <span class="required-star">*</span></label>
+              <select class="wizard-form-group__input" id="field-duration" required>
+                <option value="6 أشهر">6 أشهر</option>
+                <option value="سنة واحدة" selected>سنة واحدة</option>
+                <option value="سنتين">سنتان</option>
+                <option value="3 سنوات">3 سنوات</option>
+                <option value="مفتوح">مدة غير محددة</option>
+              </select>
+            </div>
+            <div class="wizard-form-group">
+              <label class="wizard-form-group__label">قيمة الأجرة الشهرية <span class="required-star">*</span></label>
+              <input type="text" class="wizard-form-group__input" id="field-rent" placeholder="مثال: 150,000 ريال يمني" required>
+            </div>
+            <div class="wizard-form-group">
+              <label class="wizard-form-group__label">طريقة دفع الأجرة</label>
+              <select class="wizard-form-group__input" id="field-paymethod">
+                <option value="شهرياً في بداية كل شهر">شهرياً مقدم</option>
+                <option value="كل ثلاثة أشهر">ربع سنوي</option>
+                <option value="كل ستة أشهر">نصف سنوي</option>
+                <option value="سنوي مقدم">سنوياً مقدم</option>
+              </select>
+            </div>
+            <div class="wizard-form-group">
+              <label class="wizard-form-group__label">مبلغ التأمين/الضمان</label>
+              <input type="text" class="wizard-form-group__input" id="field-security" placeholder="مثال: 300,000 ريال يمني">
+            </div>
+            <div class="wizard-form-group" style="grid-column: span 2;">
+              <label class="wizard-form-group__label">وصف العين المؤجرة بالتفصيل <span class="required-star">*</span></label>
+              <input type="text" class="wizard-form-group__input" id="field-desc" placeholder="مثال: شقة سكنية بالدور الثاني تتكون من 3 غرف وحمامين ومطبخ كائنة في حي النهضة" required>
+            </div>
+          </div>
+        `,
+        placeholder: 'أضف أي تفاصيل أو شروط خاصة تريد تضمينها في عقد الإيجار...'
+      },
+      'عمل': {
+        clauses: [
+          { text: 'شرط السرية: يلتزم الموظف بعدم إفشاء أسرار العمل طوال مدة العقد وبعد انتهائه', checked: true },
+          { text: 'فترة التجربة: يخضع الموظف لفترة تجربة مدتها ثلاثة أشهر وفق قانون العمل اليمني', checked: true },
+          { text: 'شرط عدم المنافسة: يلتزم الموظف بعدم العمل لدى أي منافس لمدة سنة من تاريخ انتهاء العقد', checked: false },
+          { text: 'شرط الملكية الفكرية: جميع الابتكارات المصممة أثناء العمل تكون ملكاً لصاحب العمل', checked: true },
+          { text: 'الشرط الجزائي: التزام الطرف المخل بدفع تعويض يعادل راتب شهرين للطرف الآخر', checked: false }
+        ],
+        fields: `
+          <div class="form-grid">
+            <div class="wizard-form-group">
+              <label class="wizard-form-group__label">المسمى الوظيفي <span class="required-star">*</span></label>
+              <input type="text" class="wizard-form-group__input" id="field-jobtitle" placeholder="مثال: مدير تسويق / مهندس برمجيات" required>
+            </div>
+            <div class="wizard-form-group">
+              <label class="wizard-form-group__label">الراتب الشهري الأساسي <span class="required-star">*</span></label>
+              <input type="text" class="wizard-form-group__input" id="field-salary" placeholder="مثال: 500 دولار أمريكي أو ما يعادلها بالريال" required>
+            </div>
+            <div class="wizard-form-group">
+              <label class="wizard-form-group__label">مدة عقد العمل</label>
+              <select class="wizard-form-group__input" id="field-duration">
+                <option value="سنة واحدة">سنة واحدة (محدد المدة)</option>
+                <option value="سنتين" selected>سنتان</option>
+                <option value="غير محدد المدة">غير محدد المدة</option>
+              </select>
+            </div>
+            <div class="wizard-form-group">
+              <label class="wizard-form-group__label">ساعات العمل اليومية</label>
+              <input type="text" class="wizard-form-group__input" id="field-hours" placeholder="مثال: 8 ساعات يومياً" value="8 ساعات يومياً">
+            </div>
+            <div class="wizard-form-group" style="grid-column: span 2;">
+              <label class="wizard-form-group__label">المزايا والبدلات الأخرى</label>
+              <input type="text" class="wizard-form-group__input" id="field-benefits" placeholder="مثال: بدل سكن، بدل انتقال، تأمين صحي">
+            </div>
+          </div>
+        `,
+        placeholder: 'أضف مهام وظيفية محددة أو شروط خاصة لعقد العمل...'
+      },
+      'بيع': {
+        clauses: [
+          { text: 'إقرار بالخلو من الحقوق: يقر البائع بخلو المبيع من أي رهون أو حقوق للغير', checked: true },
+          { text: 'معاينة المبيع: يقر المشتري بمعاينة المبيع معاينة تامة نافية للجهالة والرضا به', checked: true },
+          { text: 'التزام بنقل الملكية: يلتزم البائع بالحضور أمام السجل العقاري لإتمام التنازل ونقل الملكية', checked: true },
+          { text: 'تبعة الهلاك: يتحمل البائع تبعة هلاك المبيع حتى تسليمه الفعلي للمشتري', checked: false },
+          { text: 'شرط جزائي: التزام الطرف المخل بدفع 10% من قيمة البيع كتعويض متفق عليه', checked: false }
+        ],
+        fields: `
+          <div class="form-grid">
+            <div class="wizard-form-group" style="grid-column: span 2;">
+              <label class="wizard-form-group__label">وصف المبيع بالتفصيل <span class="required-star">*</span></label>
+              <input type="text" class="wizard-form-group__input" id="field-itemsold" placeholder="مثال: السيارة تويوتا كورولا موديل 2020، رقم المحرك... ولون..." required>
+            </div>
+            <div class="wizard-form-group">
+              <label class="wizard-form-group__label">ثمن البيع الإجمالي <span class="required-star">*</span></label>
+              <input type="text" class="wizard-form-group__input" id="field-price" placeholder="مثال: 8,000,000 ريال يمني" required>
+            </div>
+            <div class="wizard-form-group">
+              <label class="wizard-form-group__label">طريقة السداد <span class="required-star">*</span></label>
+              <select class="wizard-form-group__input" id="field-paymethod">
+                <option value="دفعة واحدة عند التوقيع">دفعة واحدة عند التوقيع</option>
+                <option value="دفعة مقدمة والباقي عند التسليم">دفعة مقدمة والباقي عند التسليم</option>
+                <option value="أقساط شهرية">أقساط شهرية مجدولة</option>
+              </select>
+            </div>
+            <div class="wizard-form-group">
+              <label class="wizard-form-group__label">تاريخ ومكان تسليم المبيع</label>
+              <input type="text" class="wizard-form-group__input" id="field-delivery" placeholder="تاريخ ومكان التسليم الفعلي">
+            </div>
+            <div class="wizard-form-group">
+              <label class="wizard-form-group__label">الضمان ضد العيوب الخفية</label>
+              <input type="text" class="wizard-form-group__input" id="field-warranty" placeholder="مثال: ضمانة لمدة 3 أشهر ضد العيوب المصنعية">
+            </div>
+          </div>
+        `,
+        placeholder: 'أضف تفاصيل الدفعات، أو شروط نقل الملكية والتراخيص...'
+      },
+      'شراكة': {
+        clauses: [
+          { text: 'حظر التنازل: لا يحق لأي شريك التنازل عن حصته للغير إلا بموافقة باقي الشركاء كتابةً', checked: true },
+          { text: 'طريقة الإدارة: يتفق الشركاء على تعيين مدير للشراكة وتحديد صلاحيات التوقيع والتصرف', checked: true },
+          { text: 'تصفية الشراكة: يتم تصفية الشراكة وانقضاؤها وفقاً لأحكام القانون التجاري اليمني', checked: true },
+          { text: 'سرية الحسابات: يلتزم الشركاء بسرية السجلات المالية وعدم مشاركتها مع الغير', checked: false },
+          { text: 'فض النزاعات: يتم حل النزاعات ودياً وفي حال تعذر ذلك يتم اللجوء للتحكيم', checked: true }
+        ],
+        fields: `
+          <div class="form-grid">
+            <div class="wizard-form-group" style="grid-column: span 2;">
+              <label class="wizard-form-group__label">غرض الشراكة ونوع النشاط التجاري <span class="required-star">*</span></label>
+              <input type="text" class="wizard-form-group__input" id="field-purpose" placeholder="مثال: تأسيس وإدارة مشروع مطعم ومقهى سياحي في صنعاء" required>
+            </div>
+            <div class="wizard-form-group">
+              <label class="wizard-form-group__label">رأس مال الشراكة الإجمالي <span class="required-star">*</span></label>
+              <input type="text" class="wizard-form-group__input" id="field-capital" placeholder="مثال: 20,000,000 ريال يمني" required>
+            </div>
+            <div class="wizard-form-group">
+              <label class="wizard-form-group__label">حصة كل شريك في رأس المال والعمل <span class="required-star">*</span></label>
+              <input type="text" class="wizard-form-group__input" id="field-shares" placeholder="مثال: 50% للطرف الأول مال و 50% للثاني عمل وإدارة" required>
+            </div>
+            <div class="wizard-form-group">
+              <label class="wizard-form-group__label">نسبة توزيع الأرباح والخسائر <span class="required-star">*</span></label>
+              <input type="text" class="wizard-form-group__input" id="field-profitloss" placeholder="مثال: توزع الأرباح بنسبة 60% للأول و 40% للثاني" required>
+            </div>
+            <div class="wizard-form-group">
+              <label class="wizard-form-group__label">المفوض بالإدارة والتوقيع</label>
+              <input type="text" class="wizard-form-group__input" id="field-manager" placeholder="مثال: الطرف الثاني هو المدير المسؤول والمفوض بالتوقيع أمام الجهات">
+            </div>
+          </div>
+        `,
+        placeholder: 'أضف شروط انضمام شريك جديد، أو شروط انسحاب الشركاء...'
+      },
+      'توكيل': {
+        clauses: [
+          { text: 'حق توكيل الغير: للوكيل الحق في توكيل من يراه من المحامين والوكلاء وعزلهم', checked: true },
+          { text: 'التمثيل القضائي: التوكيل يمنح الوكيل حق المرافعة والمدافعة أمام جميع المحاكم والنيابات اليمنية', checked: true },
+          { text: 'التصرفات المالية: لا يحق للوكيل البيع أو الشراء أو القبض إلا بإذن كتابي خاص ومستقل', checked: true },
+          { text: 'سريان الوكالة: تسري هذه الوكالة حتى عزل الوكيل رسمياً أو إخطاره خطياً', checked: false },
+          { text: 'عدم القابلية للعزل المفرد: لا يحق للموكل عزل الوكيل إذا كانت الوكالة لصالح الوكيل أو الغير', checked: false }
+        ],
+        fields: `
+          <div class="form-grid">
+            <div class="wizard-form-group">
+              <label class="wizard-form-group__label">نوع الوكالة <span class="required-star">*</span></label>
+              <select class="wizard-form-group__input" id="field-poatype" required>
+                <option value="وكالة خاصة">وكالة خاصة (محددة لغرض معين)</option>
+                <option value="وكالة عامة">وكالة عامة (شاملة لجميع التصرفات)</option>
+                <option value="توكيل قضايا ومحاماة">توكيل قضايا ومحاماة (خاص بالمحاكم والجهات القضائية)</option>
+              </select>
+            </div>
+            <div class="wizard-form-group" style="grid-column: span 2;">
+              <label class="wizard-form-group__label">موضوع الوكالة والغرض منها بالتفصيل <span class="required-star">*</span></label>
+              <input type="text" class="wizard-form-group__input" id="field-poapurpose" placeholder="مثال: بيع الأرض المملوكة لي في همدان والوقوف أمام مكتب السجل العقاري..." required>
+            </div>
+            <div class="wizard-form-group">
+              <label class="wizard-form-group__label">مدة سريان الوكالة</label>
+              <input type="text" class="wizard-form-group__input" id="field-poaduration" placeholder="مثال: سنة واحدة أو مستمرة حتى إتمام الغرض">
+            </div>
+          </div>
+        `,
+        placeholder: 'أضف صلاحيات محددة مثل فتح الحسابات البنكية، أو التمثيل أمام مكاتب معينة...'
+      },
+      'دعوى': {
+        clauses: [
+          { text: 'المطالبة بالرسوم والأتعاب: إلزام المدعى عليه بكافة رسوم ومصاريف الدعوى وأتعاب المحاماة', checked: true },
+          { text: 'النفاذ المعجل: طلب شمول الحكم الصادر بالنفاد المعجل بلا كفالة وفق قانون المرافعات اليمني', checked: true },
+          { text: 'حفظ الحقوق والتعويض: احتفاظ المدعي بحقه في المطالبة بالتعويضات عن الأضرار اللاحقة به', checked: false },
+          { text: 'تقديم المستندات: الاحتفاظ بالحق في تقديم مستندات وأدلة إضافية أثناء جلسات المحاكمة', checked: true },
+          { text: 'إلزام بالالتزام الأصلي: إلزام المدعى عليه بتنفيذ عين ما التزم به مع الفوائد القانونية إن وجدت', checked: false }
+        ],
+        fields: `
+          <div class="form-grid">
+            <div class="wizard-form-group">
+              <label class="wizard-form-group__label">اسم المحكمة المختصة <span class="required-star">*</span></label>
+              <input type="text" class="wizard-form-group__input" id="field-court" placeholder="مثال: محكمة غرب الأمانة الابتدائية" required>
+            </div>
+            <div class="wizard-form-group">
+              <label class="wizard-form-group__label">موضوع الدعوى باختصار <span class="required-star">*</span></label>
+              <input type="text" class="wizard-form-group__input" id="field-claimsubject" placeholder="مثال: دعوى مطالبة بمديونية بموجب سند رسمي / دعوى إخلاء لعدم سداد الأجرة" required>
+            </div>
+            <div class="wizard-form-group" style="grid-column: span 2;">
+              <label class="wizard-form-group__label">وقائع الدعوى وأسبابها باختصار <span class="required-star">*</span></label>
+              <textarea class="wizard-form-group__input wizard-form-group__textarea" id="field-claimfacts" placeholder="اشرح الوقائع باختصار (مثال: المدعى عليه مدين بمبلغ... وامتنع عن السداد رغم مطالبته...)" required></textarea>
+            </div>
+            <div class="wizard-form-group" style="grid-column: span 2;">
+              <label class="wizard-form-group__label">الطلبات الختامية الموجهة للمحكمة <span class="required-star">*</span></label>
+              <input type="text" class="wizard-form-group__input" id="field-claimrequests" placeholder="مثال: الحكم بإلزام المدعى عليه بدفع المبلغ وقدره... مع تعويض وأتعاب المحاماة" required>
+            </div>
+          </div>
+        `,
+        placeholder: 'أضف أرقام وتواريخ السندات أو العقود أو الإثباتات التي تؤيد صحيفة الدعوى...'
+      },
+      'مذكرة': {
+        clauses: [
+          { text: 'الدفع بالتقادم: الدفع بسقوط حق المدعي لمرور الزمن المانع من سماع الدعوى', checked: false },
+          { text: 'الدفع بعدم قبول الدعوى: الدفع بعدم قبول الدعوى لرفعها من غير ذي صفة أو مصلحة', checked: true },
+          { text: 'الدفع بعدم الاختصاص: الدفع بعدم اختصاص المحكمة محلياً أو نوعياً بنظر الدعوى', checked: false },
+          { text: 'رفض الدعوى لعدم الثبوت: طلب رفض الدعوى لعدم وجود أدلة وإثباتات معتبرة قانوناً', checked: true },
+          { text: 'إلزام المدعي بالمصاريف: إلزام الطرف المدعي بكافة تكاليف التقاضي ومخاسير المحاماة', checked: true }
+        ],
+        fields: `
+          <div class="form-grid">
+            <div class="wizard-form-group">
+              <label class="wizard-form-group__label">اسم الجهة / المحكمة المقدم إليها <span class="required-star">*</span></label>
+              <input type="text" class="wizard-form-group__input" id="field-authority" placeholder="مثال: محكمة استئناف أمانة العاصمة - الشعبة المدنية" required>
+            </div>
+            <div class="wizard-form-group">
+              <label class="wizard-form-group__label">رقم القضية وتاريخها <span class="required-star">*</span></label>
+              <input type="text" class="wizard-form-group__input" id="field-casenum" placeholder="مثال: القضية رقم (152) لسنة 1445هـ" required>
+            </div>
+            <div class="wizard-form-group">
+              <label class="wizard-form-group__label">صفة مقدم المذكرة <span class="required-star">*</span></label>
+              <select class="wizard-form-group__input" id="field-filerrole" required>
+                <option value="المدعى عليه">المدعى عليه (مذكرة جوابية)</option>
+                <option value="المدعي">المدعي (مذكرة تعقيبية)</option>
+                <option value="المستأنف">المستأنف</option>
+                <option value="المستأنف ضده">المستأنف ضده</option>
+              </select>
+            </div>
+            <div class="wizard-form-group" style="grid-column: span 2;">
+              <label class="wizard-form-group__label">الدفوع والردود الجوهرية بالتفصيل <span class="required-star">*</span></label>
+              <textarea class="wizard-form-group__input wizard-form-group__textarea" id="field-defenses" placeholder="اكتب الردود القانونية على الدعوى والدفوع الموضوعية والشكلية..." required></textarea>
+            </div>
+          </div>
+        `,
+        placeholder: 'أضف أسانيد قانونية محددة من القوانين اليمنية (مثل مواد القانون المدني أو المرافعات)...'
+      },
+      'إقرار': {
+        clauses: [
+          { text: 'إقرار بالأهلية المعتبرة: يقر المقر بأنه في حالته المعتبرة شرعاً وقانوناً وخالٍ من عوارض الأهلية', checked: true },
+          { text: 'إلزام الخلف والورثة: هذا الإقرار والتعهد نافذ وسارٍ في حق المقر وورثته وخلفه العام والخاص', checked: true },
+          { text: 'حجية الإقرار: يعتبر هذا الإقرار وثيقة رسمية وحجة قاطعة ومستنداً تنفيذياً غير قابل للطعن', checked: true },
+          { text: 'تحمل المسؤولية: يقر المقر بتحمل كافة التبعات والمسؤوليات الجنائية والمدنية عند ثبوت عكس ما أقر به', checked: true },
+          { text: 'خضوع للقوانين اليمنية: يخضع هذا الإقرار وتفسيره لأحكام التشريعات المعمول بها في الجمهورية اليمنية', checked: true }
+        ],
+        fields: `
+          <div class="form-grid">
+            <div class="wizard-form-group" style="grid-column: span 2;">
+              <label class="wizard-form-group__label">موضوع الإقرار أو التعهد الرئيسي <span class="required-star">*</span></label>
+              <input type="text" class="wizard-form-group__input" id="field-acknowledgment" placeholder="مثال: الإقرار باستلام كامل مستحقاتي العمالية وإخلاء طرف الشركة..." required>
+            </div>
+            <div class="wizard-form-group">
+              <label class="wizard-form-group__label">المبلغ المالي أو الالتزام المقر به (إن وجد)</label>
+              <input type="text" class="wizard-form-group__input" id="field-amount" placeholder="مثال: مبلغ وقدره 1,000,000 ريال يمني">
+            </div>
+            <div class="wizard-form-group">
+              <label class="wizard-form-group__label">الضمانات أو الكفلاء المقدمة</label>
+              <input type="text" class="wizard-form-group__input" id="field-guarantees" placeholder="أسماء الكفلاء أو الرهون المرفقة">
+            </div>
+          </div>
+        `,
+        placeholder: 'أضف شروطاً وتفاصيل دقيقة بخصوص هذا الإقرار والتعهد لتوضيحه بالكامل...'
+      }
+    };
+
+    function selectDocType(card) {
+      // Remove previous selection
+      document.querySelectorAll('.doc-type-card').forEach(c => c.classList.remove('doc-type-card--selected'));
+      card.classList.add('doc-type-card--selected');
+      selectedDocType = card.dataset.type;
+
+      // Update party roles based on doc type
+      const roleMap = {
+        'إيجار': ['المؤجر', 'المستأجر'],
+        'عمل':   ['صاحب العمل', 'الموظف'],
+        'بيع':   ['البائع', 'المشتري'],
+        'شراكة': ['الشريك الأول', 'الشريك الثاني'],
+        'توكيل': ['الموكّل', 'الوكيل'],
+        'دعوى':  ['المدّعي', 'المدّعى عليه'],
+        'مذكرة': ['مقدم المذكرة', 'الجهة المقدم إليها'],
+        'إقرار': ['المُقِر', 'المُقَر لصالحه'],
+      };
+      const roles = roleMap[selectedDocType] || ['الطرف الأول', 'الطرف الثاني'];
+      const r1 = document.getElementById('party1-role');
+      const r2 = document.getElementById('party2-role');
+      if (r1) r1.textContent = roles[0];
+      if (r2) r2.textContent = roles[1];
+
+      // Update suggested clauses and form fields dynamically
+      const docData = docDataMap[selectedDocType] || docDataMap['إيجار'];
+
+      const clausesList = document.querySelector('.smart-clauses__list');
+      if (clausesList) {
+        clausesList.innerHTML = docData.clauses.map(c => `
+          <label class="smart-clause">
+            <input type="checkbox" ${c.checked ? 'checked' : ''}>
+            <span class="smart-clause__text">${c.text}</span>
+          </label>
+        `).join('');
+      }
+
+      const detailsContainer = document.querySelector('.terms-details');
+      if (detailsContainer) {
+        detailsContainer.innerHTML = `
+          ${docData.fields}
+          <div class="wizard-form-group" style="margin-top: var(--space-4);">
+            <label class="wizard-form-group__label">ملاحظات إضافية واستشهادات قانونية يمنية محددة (اختياري)</label>
+            <textarea class="wizard-form-group__input wizard-form-group__textarea" id="field-notes" placeholder="${docData.placeholder}"></textarea>
+          </div>
+        `;
+      }
+
+      // Auto-advance after brief delay
+      setTimeout(() => goToStep(2), 400);
+    }
+
+    // ===== Real AI Generation =====
+    async function runAIGeneration() {
+      const progress = document.getElementById('ai-progress');
+      const preview = document.getElementById('doc-preview');
+      const footer = document.getElementById('step4-footer');
+      const fill = document.getElementById('ai-progress-fill');
+      const stepsEl = document.getElementById('ai-progress-steps');
+
+      progress.style.display = 'flex';
+      preview.style.display = 'none';
+      footer.style.display = 'none';
+
+      const aiSteps = stepsEl.querySelectorAll('.ai-progress__step');
+
+      // Clear any state
+      fill.style.width = '10%';
+      aiSteps.forEach((s, idx) => {
+        s.className = 'ai-progress__step';
+        if (idx === 0) s.classList.add('ai-progress__step--active');
+      });
+
+      // Animate progress up to 75% mockingly while fetching the API
+      let pct = 10;
+      const progressInterval = setInterval(() => {
+        if (pct < 75) {
+          pct += 5;
+          fill.style.width = pct + '%';
+          if (pct >= 25 && pct < 50) {
+            aiSteps[0].className = 'ai-progress__step ai-progress__step--done';
+            aiSteps[1].className = 'ai-progress__step ai-progress__step--active';
+          } else if (pct >= 50 && pct < 75) {
+            aiSteps[1].className = 'ai-progress__step ai-progress__step--done';
+            aiSteps[2].className = 'ai-progress__step ai-progress__step--active';
+          }
+        }
+      }, 200);
+
+      // Gather input data
+      try {
+        const partyForm = document.getElementById('parties-form');
+        const partyInputs = partyForm.querySelectorAll('input');
+        const p1Name = partyInputs[0].value || 'غير محدد';
+        const p1Id = partyInputs[1].value || 'غير محدد';
+        const p1Addr = partyInputs[2].value || 'غير محدد';
+        const p1Phone = partyInputs[3].value || 'غير محدد';
+        const p2Name = partyInputs[4].value || 'غير محدد';
+        const p2Id = partyInputs[5].value || 'غير محدد';
+        const p2Addr = partyInputs[6].value || 'غير محدد';
+        const p2Phone = partyInputs[7].value || 'غير محدد';
+
+        // Gather details dynamically
+        let detailsString = '';
+        const detailsContainer = document.querySelector('.terms-details');
+        let customNotes = '';
+        if (detailsContainer) {
+          const inputs = detailsContainer.querySelectorAll('input, select, textarea');
+          inputs.forEach(input => {
+            if (input.id === 'field-notes') {
+              customNotes = input.value || '';
+            } else {
+              const labelEl = input.closest('.wizard-form-group')?.querySelector('.wizard-form-group__label');
+              const labelText = labelEl ? labelEl.innerText.replace('*', '').trim() : input.id;
+              const val = input.value || 'غير محدد';
+              detailsString += `- ${labelText}: ${val}\n`;
+            }
+          });
+        }
+
+        // Checked clauses
+        const checkedClauses = [];
+        document.querySelectorAll('.smart-clause input[type="checkbox"]:checked').forEach(cb => {
+          checkedClauses.push(cb.nextElementSibling.textContent);
+        });
+
+        // Determine API doc_type
+        let apiDocType = 'contract';
+        if (selectedDocType === 'دعوى') apiDocType = 'claim';
+        else if (selectedDocType === 'مذكرة') apiDocType = 'defense';
+        else if (selectedDocType === 'إقرار') apiDocType = 'memo';
+
+        const contextString = `
+النوع: ${selectedDocType}
+الطرف الأول الاسم الكامل: ${p1Name}، الهوية/السجل التجاري: ${p1Id}، العنوان: ${p1Addr}، الهاتف: ${p1Phone}
+الطرف الثاني الاسم الكامل: ${p2Name}، الهوية/السجل التجاري: ${p2Id}، العنوان: ${p2Addr}، الهاتف: ${p2Phone}
+البنود والشروط الأساسية:
+${detailsString}
+- البنود المقترحة المحددة: ${checkedClauses.join(' | ')}
+        `;
+
+        const response = await apiDraft(apiDocType, contextString, customNotes);
+        
+        // Fast forward progress animation
+        clearInterval(progressInterval);
+        fill.style.width = '100%';
+        aiSteps[2].className = 'ai-progress__step ai-progress__step--done';
+        aiSteps[3].className = 'ai-progress__step ai-progress__step--done';
+
+        setTimeout(() => {
+          progress.style.display = 'none';
+          preview.style.display = 'block';
+          preview.style.animation = 'fadeInUp 0.6s ease-out';
+          footer.style.display = 'flex';
+
+          // Inject generated document
+          const docTitle = `عقد ${selectedDocType} رسمي`;
+          const previewPaper = document.querySelector('.doc-preview__paper');
+          previewPaper.innerHTML = `
+            <div class="doc-preview__header-stamp">بسم الله الرحمن الرحيم</div>
+            <h2 class="doc-preview__doc-title" contenteditable="true">${docTitle}</h2>
+            <p class="doc-preview__doc-ref" contenteditable="false">رقم المسودة: QN-${Math.floor(Math.random()*900000+100000)} &nbsp;|&nbsp; التاريخ: ${new Date().toLocaleDateString('ar-YE')}</p>
+            
+            <div id="generated-doc-body" contenteditable="true" style="outline: none; line-height: 1.8; text-align: justify; white-space: pre-wrap; font-family: var(--font-body); margin-top: var(--space-4);">
+${response.document}
+            </div>
+
+            <div class="doc-preview__signatures" contenteditable="false" style="margin-top:var(--space-8);">
+              <div class="doc-preview__sig-block">
+                <p>الطرف الأول</p>
+                <div class="doc-preview__sig-line"></div>
+                <small>التوقيع والختم</small>
+              </div>
+              <div class="doc-preview__sig-block">
+                <p>الطرف الثاني</p>
+                <div class="doc-preview__sig-line"></div>
+                <small>التوقيع</small>
+              </div>
+            </div>
+          `;
+
+          // Setup action buttons
+          const copyBtn = document.querySelector('[title="نسخ"]');
+          copyBtn.onclick = () => {
+            const bodyText = document.getElementById('generated-doc-body').innerText;
+            navigator.clipboard.writeText(bodyText).then(() => {
+              showToast('تم نسخ نص المستند بنجاح!', 'success');
+            });
+          };
+
+          const printBtn = document.querySelector('[title="طباعة"]');
+          printBtn.onclick = () => {
+            window.print();
+          };
+
+          const pdfBtn = document.querySelector('[title="تحميل PDF"]');
+          pdfBtn.onclick = async () => {
+            const docBody = document.getElementById('generated-doc-body').innerText;
+            const currentTitle = document.querySelector('.doc-preview__doc-title').innerText;
+            setLoadingState(pdfBtn, true, 'تحميل PDF');
+            try {
+              const blob = await apiDraftToPdf(docBody, currentTitle, apiDocType);
+              const url = URL.createObjectURL(blob);
+              const a = document.createElement('a');
+              a.href = url;
+              a.download = currentTitle + '.pdf';
+              a.click();
+              showToast('تم تصدير وتحميل ملف PDF بنجاح!', 'success');
+            } catch (err) {
+              showToast('فشل تصدير PDF: ' + err.message, 'error');
+            } finally {
+              setLoadingState(pdfBtn, false, 'تحميل PDF');
+            }
+          };
+
+          const wordBtn = document.querySelector('[title="تحميل Word"]');
+          wordBtn.onclick = () => {
+            const docBody = document.getElementById('generated-doc-body').innerText;
+            const currentTitle = document.querySelector('.doc-preview__doc-title').innerText;
+            const blob = new Blob([docBody], {type: "application/msword;charset=utf-8"});
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = currentTitle + '.doc';
+            a.click();
+            showToast('تم تصدير وتحميل ملف Word بنجاح!', 'success');
+          };
+
+          const saveLibBtn = document.querySelector('.wizard-footer .btn--gold');
+          saveLibBtn.onclick = async () => {
+            setLoadingState(saveLibBtn, true, 'حفظ في مكتبتي');
+            try {
+              const currentTitle = document.querySelector('.doc-preview__doc-title').innerText;
+              const docBody = document.getElementById('generated-doc-body').innerText;
+              // Upload the generated document as a file or simulate save by calling create case/document API
+              const file = new File([docBody], currentTitle + ".txt", {type: "text/plain"});
+              await apiUploadDocument(file, currentTitle, apiDocType, null);
+              showToast('تم حفظ المستند في أرشيفك الشخصي بنجاح!', 'success');
+            } catch (err) {
+              showToast('فشل حفظ المستند: ' + err.message, 'error');
+            } finally {
+              setLoadingState(saveLibBtn, false, 'حفظ في مكتبتي');
+            }
+          };
+
+        }, 500);
+
+      } catch (err) {
+        clearInterval(progressInterval);
+        showToast('فشل في صياغة المستند بالذكاء الاصطناعي: ' + err.message, 'error');
+        goToStep(3);
+      }
+    }
+  </script>
+</body>
+</html>
+</body>
+</html>

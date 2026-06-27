@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>خطط الأسعار — قانوني</title>
+  <meta name="description" content="اختر باقة الاشتراك المناسبة لك للوصول إلى أدوات الذكاء الاصطناعي والبحث السيمانتك المتقدم وتحليل المستندات القانونية.">
+  
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="styles/design-system.css">
+  <link rel="stylesheet" href="styles/pricing.css">
+</head>
+<body>
+
+  <!-- ============================================
+       HEADER (NAVIGATION)
+       ============================================ -->
+  <header class="header header--scrolled" id="header">
+    <div class="container nav">
+      <a href="index.html" class="logo">
+        <div class="logo__icon">ق</div>
+        <span class="logo__text" style="color:white;">قانوني</span>
+      </a>
+      
+      <nav class="nav__menu">
+        <a href="index.html" class="nav__link" style="color:var(--color-gray-300);">الرئيسية</a>
+        <a href="index.html#features" class="nav__link" style="color:var(--color-gray-300);">المميزات</a>
+        <a href="index.html#solutions" class="nav__link" style="color:var(--color-gray-300);">الحلول</a>
+        <a href="pricing.html" class="nav__link" style="color:white;">الأسعار</a>
+        <a href="index.html#faq" class="nav__link" style="color:var(--color-gray-300);">الأسئلة الشائعة</a>
+      </nav>
+      
+      <div class="nav__actions">
+        <a href="login.html" class="btn btn--outline btn--sm" style="color:white; border-color:rgba(255,255,255,0.3);">تسجيل الدخول</a>
+        <a href="register.html" class="btn btn--primary btn--sm">ابدأ مجاناً</a>
+      </div>
+      
+      <button class="nav__toggle" id="nav-toggle" aria-label="فتح القائمة" style="color:white;">
+        ☰
+      </button>
+    </div>
+  </header>
+
+  <!-- ============================================
+       PRICING HERO SECTION
+       ============================================ -->
+  <section class="pricing-hero">
+    <div class="container">
+      <h1 class="pricing-hero__title">خطط أسعار مرنة ومناسبة للجميع</h1>
+      <p class="pricing-hero__desc">سواءً كنت مستشاراً مستقلاً أو مكتب محاماة متكامل، لدينا الخطة المناسبة لدعم أعمالك وتسريع إنجازاتك.</p>
+      
+      <!-- Billing Switch -->
+      <div class="pricing-toggle" id="billing-toggle">
+        <span class="pricing-toggle__label pricing-toggle__label--active" id="label-monthly">اشتراك شهري</span>
+        <div class="pricing-toggle__switch"></div>
+        <span class="pricing-toggle__label" id="label-annual">اشتراك سنوي</span>
+        <span class="pricing-toggle__badge">وفر 20%</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       PRICING CARDS SECTION
+       ============================================ -->
+  <section class="section section--light pricing-section">
+    <div class="container">
+      <div class="pricing-grid">
+        
+        <!-- Free Plan -->
+        <div class="pricing-card">
+          <div class="pricing-card__header">
+            <h3 class="pricing-card__name">الباقة المجانية</h3>
+            <p class="pricing-card__desc">للأفراد والباحثين الذين يرغبون في استكشاف المنصة بشكل أساسي.</p>
+          </div>
+          <div class="pricing-card__price-box">
+            <div class="pricing-card__price">$0 <span>/ شهرياً</span></div>
+            <div class="pricing-card__price-annual-info">$0 يدفع سنوياً</div>
+          </div>
+          <div class="pricing-card__features">
+            <div class="pricing-card__feature">
+              <span class="pricing-card__feature-icon">✓</span>
+              <span>10 استفسارات ذكية يومياً</span>
+            </div>
+            <div class="pricing-card__feature">
+              <span class="pricing-card__feature-icon">✓</span>
+              <span>البحث السيمانتك الأساسي</span>
+            </div>
+            <div class="pricing-card__feature">
+              <span class="pricing-card__feature-icon">✓</span>
+              <span>الوصول لأهم 100 قانون يمني</span>
+            </div>
+            <div class="pricing-card__feature pricing-card__feature--disabled">
+              <span class="pricing-card__feature-icon">✗</span>
+              <span>تحليل العقود الذكي (PDF)</span>
+            </div>
+            <div class="pricing-card__feature pricing-card__feature--disabled">
+              <span class="pricing-card__feature-icon">✗</span>
+              <span>مساحة العمل القانوني السحابية</span>
+            </div>
+          </div>
+          <a href="register.html?plan=free" class="btn btn--outline">ابدأ مجاناً</a>
+        </div>
+        
+        <!-- Professional Plan -->
+        <div class="pricing-card pricing-card--popular">
+          <span class="pricing-card__badge">الأكثر شعبية</span>
+          <div class="pricing-card__header">
+            <h3 class="pricing-card__name">الباقة الاحترافية</h3>
+            <p class="pricing-card__desc">للمحامين المستقلين والمستشارين القانونيين الباحثين عن التميز.</p>
+          </div>
+          <div class="pricing-card__price-box">
+            <div class="pricing-card__price" id="price-prof">$29 <span>/ شهرياً</span></div>
+            <div class="pricing-card__price-annual-info" id="annual-prof">$278 يدفع سنوياً</div>
+          </div>
+          <div class="pricing-card__features">
+            <div class="pricing-card__feature">
+              <span class="pricing-card__feature-icon">✓</span>
+              <span>استفسارات ذكية غير محدودة</span>
+            </div>
+            <div class="pricing-card__feature">
+              <span class="pricing-card__feature-icon">✓</span>
+              <span>البحث السيمانتك المتقدم للغاية</span>
+            </div>
+            <div class="pricing-card__feature">
+              <span class="pricing-card__feature-icon">✓</span>
+              <span>دخول أرشيف ومكتبة التشريعات كاملة</span>
+            </div>
+            <div class="pricing-card__feature">
+              <span class="pricing-card__feature-icon">✓</span>
+              <span>تحليل 30 مستند/عقد شهرياً</span>
+            </div>
+            <div class="pricing-card__feature">
+              <span class="pricing-card__feature-icon">✓</span>
+              <span>مساحة عمل قانونية لحفظ الأبحاث</span>
+            </div>
+          </div>
+          <a href="register.html?plan=professional" class="btn btn--primary">ابدأ التجربة المجانية</a>
+        </div>
+        
+        <!-- Business Plan -->
+        <div class="pricing-card">
+          <div class="pricing-card__header">
+            <h3 class="pricing-card__name">باقة المؤسسات</h3>
+            <p class="pricing-card__desc">لمكاتب المحاماة والشركات الصغيرة والمتوسطة التي تحتاج للعمل الجماعي.</p>
+          </div>
+          <div class="pricing-card__price-box">
+            <div class="pricing-card__price" id="price-bus">$79 <span>/ شهرياً</span></div>
+            <div class="pricing-card__price-annual-info" id="annual-bus">$758 يدفع سنوياً</div>
+          </div>
+          <div class="pricing-card__features">
+            <div class="pricing-card__features-inner" style="display:flex; flex-direction:column; gap:var(--space-4);">
+              <div class="pricing-card__feature">
+                <span class="pricing-card__feature-icon">✓</span>
+                <span>كل مزايا الباقة الاحترافية</span>
+              </div>
+              <div class="pricing-card__feature">
+                <span class="pricing-card__feature-icon">✓</span>
+                <span>تحليل مستندات وعقود غير محدود</span>
+              </div>
+              <div class="pricing-card__feature">
+                <span class="pricing-card__feature-icon">✓</span>
+                <span>حتى 5 مستخدمين للفريق الواحد</span>
+              </div>
+              <div class="pricing-card__feature">
+                <span class="pricing-card__feature-icon">✓</span>
+                <span>مشاركة الأبحاث ومساحات العمل جماعياً</span>
+              </div>
+              <div class="pricing-card__feature">
+                <span class="pricing-card__feature-icon">✓</span>
+                <span>أولوية الدعم الفني القانوني</span>
+              </div>
+            </div>
+          </div>
+          <a href="register.html?plan=business" class="btn btn--outline">ابدأ التجربة المجانية</a>
+        </div>
+        
+        <!-- Enterprise Plan -->
+        <div class="pricing-card">
+          <div class="pricing-card__header">
+            <h3 class="pricing-card__name">باقة الشركات الكبرى</h3>
+            <p class="pricing-card__desc">للمؤسسات والشركات الكبرى والجهات الحكومية ذات المتطلبات المخصصة.</p>
+          </div>
+          <div class="pricing-card__price-box">
+            <div class="pricing-card__price">تواصل معنا</div>
+            <div class="pricing-card__price-annual-info">أسعار مخصصة للاحتياجات الكبيرة</div>
+          </div>
+          <div class="pricing-card__features">
+            <div class="pricing-card__feature">
+              <span class="pricing-card__feature-icon">✓</span>
+              <span>مستخدمين ومساحات غير محدودة</span>
+            </div>
+            <div class="pricing-card__feature">
+              <span class="pricing-card__feature-icon">✓</span>
+              <span>ربط واجهة برمجة التطبيقات API</span>
+            </div>
+            <div class="pricing-card__feature">
+              <span class="pricing-card__feature-icon">✓</span>
+              <span>خوادم مخصصة لحماية فائقة للبيانات</span>
+            </div>
+            <div class="pricing-card__feature">
+              <span class="pricing-card__feature-icon">✓</span>
+              <span>مدير حساب قانوني وفني مخصص</span>
+            </div>
+            <div class="pricing-card__feature">
+              <span class="pricing-card__feature-icon">✓</span>
+              <span>اتفاقية مستوى الخدمة المخصصة (SLA)</span>
+            </div>
+          </div>
+          <a href="index.html#contact" class="btn btn--gold">تواصل مع المبيعات</a>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       FEATURE COMPARISON SECTION
+       ============================================ -->
+  <section class="section comparison-section">
+    <div class="container">
+      <div class="section__header">
+        <h2 class="section__title">مقارنة تفصيلية للمميزات</h2>
+        <p class="section__subtitle">قارن بين مزايا الباقات المختلفة لتجد الأنسب لك تماماً وبكل تفصيل.</p>
+      </div>
+      
+      <div class="comparison__table-wrapper">
+        <table class="comparison__table">
+          <thead>
+            <tr>
+              <th class="comparison__th">المميزات والخصائص</th>
+              <th class="comparison__th">المجانية</th>
+              <th class="comparison__th">الاحترافية</th>
+              <th class="comparison__th">المؤسسات</th>
+              <th class="comparison__th">الشركات الكبرى</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Core Features -->
+            <tr class="comparison__category">
+              <td colspan="5">البحث والوصول للمكتبة</td>
+            </tr>
+            <tr class="comparison__tr">
+              <td class="comparison__td">محرك البحث السيمانتك الذكي</td>
+              <td class="comparison__td">الأساسي</td>
+              <td class="comparison__td">المتقدم</td>
+              <td class="comparison__td">المتقدم للغاية</td>
+              <td class="comparison__td">المتقدم للغاية + API</td>
+            </tr>
+            <tr class="comparison__tr">
+              <td class="comparison__td">الوصول لمكتبة القوانين العامة</td>
+              <td class="comparison__td">محدود (100 قانون)</td>
+              <td class="comparison__td comparison__check">✓ غير محدود</td>
+              <td class="comparison__td comparison__check">✓ غير محدود</td>
+              <td class="comparison__td comparison__check">✓ غير محدود</td>
+            </tr>
+            <tr class="comparison__tr">
+              <td class="comparison__td">الوصول لمكتبة الأحكام والمبادئ العليا</td>
+              <td class="comparison__td comparison__dash">—</td>
+              <td class="comparison__td comparison__check">✓</td>
+              <td class="comparison__td comparison__check">✓</td>
+              <td class="comparison__td comparison__check">✓</td>
+            </tr>
+            
+            <!-- AI Tools -->
+            <tr class="comparison__category">
+              <td colspan="5">أدوات الذكاء الاصطناعي والمستندات</td>
+            </tr>
+            <tr class="comparison__tr">
+              <td class="comparison__td">استفسارات المساعد الذكي AI</td>
+              <td class="comparison__td">10 يومياً</td>
+              <td class="comparison__td">غير محدود</td>
+              <td class="comparison__td">غير محدود</td>
+              <td class="comparison__td">غير محدود</td>
+            </tr>
+            <tr class="comparison__tr">
+              <td class="comparison__td">تحليل العقود وكشف الثغرات</td>
+              <td class="comparison__td comparison__dash">—</td>
+              <td class="comparison__td">30 عقداً شهرياً</td>
+              <td class="comparison__td">غير محدود</td>
+              <td class="comparison__td">غير محدود</td>
+            </tr>
+            <tr class="comparison__tr">
+              <td class="comparison__td">صياغة العقود والمذكرات القانونية تلقائياً</td>
+              <td class="comparison__td">تنسيق بسيط</td>
+              <td class="comparison__td">احترافي وموثق</td>
+              <td class="comparison__td">مخصص بالكامل</td>
+              <td class="comparison__td">مخصص بالكامل + مراجع مخصصة</td>
+            </tr>
+            
+            <!-- Support -->
+            <tr class="comparison__category">
+              <td colspan="5">الدعم والخصوصية</td>
+            </tr>
+            <tr class="comparison__tr">
+              <td class="comparison__td">أولوية الدعم الفني</td>
+              <td class="comparison__td">دعم عادي بالبريد</td>
+              <td class="comparison__td">أولوية عالية خلال 24 ساعة</td>
+              <td class="comparison__td">دعم مباشر عبر الهاتف 24/7</td>
+              <td class="comparison__td">مدير حساب مخصص</td>
+            </tr>
+            <tr class="comparison__tr">
+              <td class="comparison__td">تشفير البيانات والسرية</td>
+              <td class="comparison__td">عادي</td>
+              <td class="comparison__td">متقدم (AES-256)</td>
+              <td class="comparison__td">متقدم للغاية</td>
+              <td class="comparison__td">استضافة على خوادم مخصصة</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       FAQ SECTION
+       ============================================ -->
+  <section class="section section--light">
+    <div class="container">
+      <div class="section__header">
+        <h2 class="section__title">الأسئلة الشائعة حول الخطط والأسعار</h2>
+      </div>
+      
+      <div class="faq__list" style="max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: var(--space-4);">
+        <div class="faq__item">
+          <button class="faq__question">
+            هل يمكنني تغيير خطة اشتراكي لاحقاً؟
+            <span class="faq__icon">+</span>
+          </button>
+          <div class="faq__answer">
+            بكل تأكيد. يمكنك الترقية أو الانتقال لباقة أدنى أو الإلغاء في أي وقت مباشرة من لوحة تحكم حسابك. عند الترقية، يتم احتساب الفارق النسبي مباشرة.
+          </div>
+        </div>
+        
+        <div class="faq__item">
+          <button class="faq__question">
+            هل توجد فترة تجريبية مجانية للباقات المدفوعة؟
+            <span class="faq__icon">+</span>
+          </button>
+          <div class="faq__answer">
+            نعم، نوفر تجربة مجانية بالكامل لمدة 7 أيام للباقات الاحترافية والمؤسسات لتتمكن من تجربة البحث المتقدم وتحليل المستندات وتتحقق من موثوقيتها بنفسك.
+          </div>
+        </div>
+        
+        <div class="faq__item">
+          <button class="faq__question">
+            ما هي وسائل الدفع المتاحة في اليمن والوطن العربي؟
+            <span class="faq__icon">+</span>
+          </button>
+          <div class="faq__answer">
+            ندعم كافة وسائل الدفع العالمية مثل البطاقات الائتمانية (Visa, MasterCard)، كما ندعم محافظ الهاتف المحلية في اليمن (مثل كريمي ام فلوس، جوالي، وغيرها) وبوابات الدفع الإلكترونية الإقليمية لتسهيل عملية الدفع.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       FOOTER
+       ============================================ -->
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div class="footer__info">
+        <a href="index.html" class="logo">
+          <div class="logo__icon">ق</div>
+          <span class="logo__text" style="color:white;">قانوني</span>
+        </a>
+        <p class="footer__desc">أول وأكبر منصة قانونية يمنية مدعومة بالذكاء الاصطناعي لحفظ وفهرسة الأبحاث والوصول السريع للتشريعات والقوانين.</p>
+      </div>
+      
+      <div>
+        <h3 class="footer__col-title">المنتج</h3>
+        <ul class="footer__links">
+          <li><a href="index.html#features" class="footer__link">المميزات</a></li>
+          <li><a href="pricing.html" class="footer__link">الأسعار</a></li>
+          <li><a href="app.html" class="footer__link">المساعد الذكي</a></li>
+        </ul>
+      </div>
+      
+      <div>
+        <h3 class="footer__col-title">المؤسسة</h3>
+        <ul class="footer__links">
+          <li><a href="#" class="footer__link">من نحن</a></li>
+          <li><a href="#" class="footer__link">الوظائف</a></li>
+          <li><a href="#" class="footer__link">تواصل معنا</a></li>
+        </ul>
+      </div>
+      
+      <div>
+        <h3 class="footer__col-title">الدعم</h3>
+        <ul class="footer__links">
+          <li><a href="#" class="footer__link">مركز المساعدة</a></li>
+          <li><a href="index.html#faq" class="footer__link">الأسئلة الشائعة</a></li>
+          <li><a href="#" class="footer__link">الخصوصية والأمان</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="container footer__bottom">
+      <div>جميع الحقوق محفوظة © قانوني 2026.</div>
+      <div>صنع بكل حب لدعم العدالة والتقنية.</div>
+    </div>
+  </footer>
+
+  <!-- ============================================
+       SCRIPTS (Pricing Toggle & FAQ)
+       ============================================ -->
+  <script src="api.js"></script>
+  <script>
+    // 1. Dynamic Upgrade flow for Logged in Users
+    async function upgradeUserPlan(planName) {
+      if (confirm(`هل أنت متأكد من رغبتك في ترقية حسابك إلى ${planName === 'professional' ? 'الباقة الاحترافية' : 'باقة المؤسسات'}؟`)) {
+        try {
+          await apiFetch(`/subscriptions/upgrade?plan=${planName}`, { method: 'POST' });
+          showToast('تم ترقية وتحديث باقتك بنجاح!', 'success');
+          setTimeout(() => { window.location.href = 'dashboard.html'; }, 1000);
+        } catch (err) {
+          showToast('فشل ترقية الاشتراك: ' + err.message, 'error');
+        }
+      }
+    }
+
+    if (typeof QaniniAuth !== 'undefined' && QaniniAuth.isLoggedIn()) {
+      const navActions = document.querySelector('.nav__actions');
+      if (navActions) {
+        navActions.innerHTML = `<a href="dashboard.html" class="btn btn--primary btn--sm">لوحة التحكم</a>`;
+      }
+      
+      const cards = document.querySelectorAll('.pricing-card');
+      if (cards.length >= 3) {
+        // Free
+        const freeBtn = cards[0].querySelector('a');
+        if (freeBtn) {
+          freeBtn.textContent = 'باقة افتراضية';
+          freeBtn.href = '#';
+          freeBtn.style.opacity = '0.5';
+        }
+
+        // Professional
+        const profBtn = cards[1].querySelector('a');
+        if (profBtn) {
+          profBtn.textContent = 'ترقية للباقة الاحترافية';
+          profBtn.removeAttribute('href');
+          profBtn.style.cursor = 'pointer';
+          profBtn.addEventListener('click', () => upgradeUserPlan('professional'));
+        }
+
+        // Business
+        const busBtn = cards[2].querySelector('a');
+        if (busBtn) {
+          busBtn.textContent = 'ترقية لباقة المؤسسات';
+          busBtn.removeAttribute('href');
+          busBtn.style.cursor = 'pointer';
+          busBtn.addEventListener('click', () => upgradeUserPlan('enterprise'));
+        }
+      }
+    }
+
+    // 2. FAQ Accordion Interaction
+    const faqItems = document.querySelectorAll('.faq__item');
+    faqItems.forEach(item => {
+      const question = item.querySelector('.faq__question');
+      question.addEventListener('click', () => {
+        const isActive = item.classList.contains('faq__item--active');
+        faqItems.forEach(i => i.classList.remove('faq__item--active'));
+        if (!isActive) {
+          item.classList.add('faq__item--active');
+        }
+      });
+    });
+
+    // 3. Billing Toggle Monthly / Annual
+    const toggleContainer = document.getElementById('billing-toggle');
+    const labelMonthly = document.getElementById('label-monthly');
+    const labelAnnual = document.getElementById('label-annual');
+    
+    const priceProf = document.getElementById('price-prof');
+    const priceBus = document.getElementById('price-bus');
+
+    toggleContainer.addEventListener('click', () => {
+      const isAnnual = toggleContainer.classList.toggle('pricing-toggle--annual');
+      
+      if (isAnnual) {
+        labelMonthly.classList.remove('pricing-toggle__label--active');
+        labelAnnual.classList.add('pricing-toggle__label--active');
+        priceProf.innerHTML = '$23 <span>/ شهرياً</span>';
+        priceBus.innerHTML = '$63 <span>/ شهرياً</span>';
+      } else {
+        labelAnnual.classList.remove('pricing-toggle__label--active');
+        labelMonthly.classList.add('pricing-toggle__label--active');
+        priceProf.innerHTML = '$29 <span>/ شهرياً</span>';
+        priceBus.innerHTML = '$79 <span>/ شهرياً</span>';
+      }
+    });
+
+    // 4. Mobile Navigation Menu Toggle
+    const toggleBtn = document.getElementById('nav-toggle');
+    const navMenu = document.querySelector('.nav__menu');
+    toggleBtn.addEventListener('click', () => {
+      navMenu.style.display = navMenu.style.display === 'flex' ? 'none' : 'flex';
+      navMenu.style.flexDirection = 'column';
+      navMenu.style.position = 'absolute';
+      navMenu.style.top = '80px';
+      navMenu.style.left = '0';
+      navMenu.style.right = '0';
+      navMenu.style.background = 'var(--surface-primary)';
+      navMenu.style.padding = 'var(--space-6)';
+      navMenu.style.boxShadow = 'var(--shadow-lg)';
+      navMenu.style.zIndex = 'var(--z-fixed)';
+    });
+  </script>
+</body>
+</html>

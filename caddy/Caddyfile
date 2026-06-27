@@ -1,0 +1,26 @@
+example.com {
+    reverse_proxy /api/* frontend:3000
+    reverse_proxy /docs backend:8000
+    reverse_proxy /redoc backend:8000
+    reverse_proxy /openapi.json backend:8000
+    reverse_proxy /api/v1/* backend:8000
+    reverse_proxy /uploads/* backend:8000
+    reverse_proxy /ocr/* ocr:8001
+
+    header {
+        X-Content-Type-Options nosniff
+        X-Frame-Options DENY
+        X-XSS-Protection "1; mode=block"
+        Referrer-Policy strict-origin-when-cross-origin
+    }
+
+    encode gzip
+
+    log {
+        output file /data/logs/caddy.log
+    }
+}
+
+:80 {
+    redir https://{host}{uri}
+}

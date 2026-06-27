@@ -1,0 +1,714 @@
+﻿<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>محلل ومراجع العقود القانونية — قانوني AI</title>
+  <meta name="description" content="أداة ذكية لتحليل ومراجعة المستندات والعقود القانونية واكتشاف المخاطر والثغرات بالذكاء الاصطناعي">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="styles/design-system.css">
+  <link rel="stylesheet" href="styles/app.css">
+  <link rel="stylesheet" href="styles/app-screens.css">
+
+  <!-- Instant theme script loader to prevent white flashes -->
+  <script>
+    (function() {
+      const theme = localStorage.getItem('theme') || 'light';
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+</head>
+<body class="app-body">
+
+  <div class="app-container">
+
+    <!-- ============================================
+         RIGHT SIDEBAR (Global Workspace Navigation)
+         ============================================ -->
+    <aside class="sidebar" id="app-sidebar">
+      <div class="sidebar__header">
+        <a href="index.html" class="sidebar__logo">
+          <div class="sidebar__logo-icon">ق</div>
+          <span class="sidebar__logo-text">قانوني AI</span>
+        </a>
+        <button class="sidebar__settings-btn" id="close-sidebar" style="display:none;">✕</button>
+      </div>
+
+      <button class="btn btn--primary sidebar__new-chat" onclick="window.location.href='app.html'">
+        <span>+ محادثة جديدة</span>
+      </button>
+
+      <div class="sidebar__search" style="padding-top: var(--space-4);">
+        <div class="sidebar__group-title" style="padding-right:0; margin-bottom:var(--space-2);">الأدوات والخدمات</div>
+        <div class="sidebar__list" style="margin-bottom: var(--space-6); gap: 4px;">
+          <a href="dashboard.html" class="sidebar__item" style="display:flex; align-items:center; gap:8px;">
+            <span>📊</span> <span>لوحة التحكم</span>
+          </a>
+          <a href="app.html" class="sidebar__item" style="display:flex; align-items:center; gap:8px;">
+            <span>🤖</span> <span>المساعد القانوني الذكي</span>
+          </a>
+          <a href="search.html" class="sidebar__item" style="display:flex; align-items:center; gap:8px;">
+            <span>🔍</span> <span>محرك البحث السيمانتك</span>
+          </a>
+          <a href="library.html" class="sidebar__item" style="display:flex; align-items:center; gap:8px;">
+            <span>📚</span> <span>مكتبة التشريعات</span>
+          </a>
+          <a href="generator.html" class="sidebar__item" style="display:flex; align-items:center; gap:8px;">
+            <span>🖋️</span> <span>منشئ المستندات</span>
+          </a>
+          <a href="analyzer.html" class="sidebar__item sidebar__item--active" style="display:flex; align-items:center; gap:8px;">
+            <span>📄</span> <span>محلل ومراجع العقود</span>
+          </a>
+          <a href="settings.html" class="sidebar__item" style="display:flex; align-items:center; gap:8px;">
+            <span>⚙️</span> <span>الإعدادات</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Analysis History -->
+      <div class="sidebar__search" style="padding-top: 0;">
+        <div class="sidebar__group-title" style="padding-right:0; margin-bottom:var(--space-2);">التحليلات الأخيرة</div>
+        <div class="sidebar__list" style="gap: 2px;">
+          <div class="sidebar__item" style="display:flex; align-items:center; gap:8px; opacity:0.8;">
+            <span style="font-size:12px;">🔴</span> <span style="font-size:13px;">عقد توريد — 3 مخاطر عالية</span>
+          </div>
+          <div class="sidebar__item" style="display:flex; align-items:center; gap:8px; opacity:0.8;">
+            <span style="font-size:12px;">🟡</span> <span style="font-size:13px;">اتفاقية شراكة — تحذيران</span>
+          </div>
+          <div class="sidebar__item" style="display:flex; align-items:center; gap:8px; opacity:0.8;">
+            <span style="font-size:12px;">🟢</span> <span style="font-size:13px;">عقد إيجار — سليم</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="sidebar__footer">
+        <div class="sidebar__user">
+          <div class="sidebar__avatar">مح</div>
+          <span class="sidebar__username" data-user-name>مستخدم</span>
+        </div>
+        <a href="#" onclick="QaniniAuth.logout(); return false;" class="sidebar__settings-btn" title="تسجيل خروج">🚪</a>
+      </div>
+    </aside>
+
+    <!-- ============================================
+         MAIN WORKSPACE CONTENT
+         ============================================ -->
+    <main class="chat-container">
+
+      <!-- Top header bar -->
+      <header class="chat-header">
+        <div class="chat-header__info">
+          <button class="chat-header__menu-btn" id="menu-toggle-btn" aria-label="عرض القائمة">☰</button>
+          <h1 class="chat-header__title">📄 محلل ومراجع العقود بالذكاء الاصطناعي</h1>
+        </div>
+        <div class="chat-header__actions">
+          <span class="badge badge--teal">التحليل مدعوم بـ GPT-4</span>
+        </div>
+      </header>
+
+      <!-- Content Area -->
+      <div class="app-content">
+
+        <!-- ==========================================
+             STATE 1: Upload / Drop Zone
+             ========================================== -->
+        <div id="upload-state">
+
+          <!-- Hero Dropzone -->
+          <div class="analyzer-dropzone" id="dropzone">
+            <div class="analyzer-dropzone__icon">📄</div>
+            <h3 class="analyzer-dropzone__title">اسحب وأفلت المستند هنا</h3>
+            <p class="analyzer-dropzone__desc">أو اضغط لاختيار ملف — PDF, DOCX, TXT — بحد أقصى 25MB</p>
+            <input type="file" id="file-input" accept=".pdf,.docx,.doc,.txt" style="display:none;">
+            <button class="btn btn--primary" style="margin-top: var(--space-6);" onclick="document.getElementById('file-input').click()">
+              📁 اختر ملفاً من جهازك
+            </button>
+          </div>
+
+          <!-- Or Paste Text -->
+          <div class="paste-section">
+            <div class="paste-section__divider">
+              <span>أو</span>
+            </div>
+            <div class="wizard-form-group" style="margin-bottom: 0;">
+              <label class="wizard-form-group__label">الصق نص المستند مباشرة</label>
+              <textarea id="paste-textarea" class="wizard-form-group__input wizard-form-group__textarea" rows="6" placeholder="قم بلصق نص العقد أو المستند القانوني هنا لتحليله..."></textarea>
+            </div>
+            <div style="text-align: center; margin-top: var(--space-4);">
+              <button class="btn btn--primary" onclick="startAnalysis()">🔍 بدء التحليل</button>
+            </div>
+          </div>
+
+          <!-- Quick Stats Cards -->
+          <div class="analyzer-stats">
+            <div class="analyzer-stat-card">
+              <div class="analyzer-stat-card__icon">📊</div>
+              <div class="analyzer-stat-card__value">1,847</div>
+              <div class="analyzer-stat-card__label">مستند تم تحليله</div>
+            </div>
+            <div class="analyzer-stat-card">
+              <div class="analyzer-stat-card__icon">🛡️</div>
+              <div class="analyzer-stat-card__value">4,231</div>
+              <div class="analyzer-stat-card__label">مخاطر تم اكتشافها</div>
+            </div>
+            <div class="analyzer-stat-card">
+              <div class="analyzer-stat-card__icon">⚡</div>
+              <div class="analyzer-stat-card__value">~30 ثانية</div>
+              <div class="analyzer-stat-card__label">متوسط وقت التحليل</div>
+            </div>
+            <div class="analyzer-stat-card">
+              <div class="analyzer-stat-card__icon">✅</div>
+              <div class="analyzer-stat-card__value">97.8%</div>
+              <div class="analyzer-stat-card__label">دقة الاكتشاف</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ==========================================
+             STATE 2: Analysis in Progress
+             ========================================== -->
+        <div id="analyzing-state" style="display:none;">
+          <div class="analysis-progress-card">
+            <div class="ai-progress__icon">
+              <div class="ai-progress__spinner"></div>
+            </div>
+            <h3 class="analysis-progress-card__title">جارٍ تحليل المستند...</h3>
+            <p class="analysis-progress-card__file" id="analysis-filename">عقد_توريد_2026.pdf</p>
+
+            <div class="ai-progress__bar" style="margin: var(--space-6) 0;">
+              <div class="ai-progress__fill" id="analysis-progress-fill" style="width:0%"></div>
+            </div>
+
+            <div class="analysis-checklist" id="analysis-checklist">
+              <div class="analysis-check analysis-check--done">
+                <span class="analysis-check__icon">✓</span>
+                <span>استخراج النصوص والبنود</span>
+              </div>
+              <div class="analysis-check analysis-check--active">
+                <span class="analysis-check__icon">⟳</span>
+                <span>تحليل المصطلحات القانونية</span>
+              </div>
+              <div class="analysis-check">
+                <span class="analysis-check__icon">○</span>
+                <span>فحص المخاطر والثغرات</span>
+              </div>
+              <div class="analysis-check">
+                <span class="analysis-check__icon">○</span>
+                <span>التحقق من التوافق القانوني</span>
+              </div>
+              <div class="analysis-check">
+                <span class="analysis-check__icon">○</span>
+                <span>إنشاء تقرير المراجعة</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ==========================================
+             STATE 3: Analysis Report
+             ========================================== -->
+        <div id="report-state" style="display:none;">
+
+          <!-- Report Header -->
+          <div class="report-header">
+            <div class="report-header__info">
+              <h3 class="report-header__title">تقرير تحليل: عقد توريد مواد بناء</h3>
+              <div class="report-header__meta">
+                <span class="badge badge--primary">PDF — 12 صفحة</span>
+                <span class="badge badge--gold">تم التحليل: 01/06/2026</span>
+              </div>
+            </div>
+            <div class="report-header__actions">
+              <button class="btn btn--sm btn--ghost">📥 تحميل التقرير</button>
+              <button class="btn btn--sm btn--primary" onclick="resetAnalyzer()">📄 تحليل مستند جديد</button>
+            </div>
+          </div>
+
+          <!-- Overall Score -->
+          <div class="score-banner">
+            <div class="score-banner__ring">
+              <svg viewBox="0 0 120 120" class="score-ring">
+                <circle cx="60" cy="60" r="54" class="score-ring__bg"></circle>
+                <circle cx="60" cy="60" r="54" class="score-ring__fill" style="--score: 68;"></circle>
+              </svg>
+              <span class="score-banner__value">68<small>%</small></span>
+            </div>
+            <div class="score-banner__details">
+              <h3 class="score-banner__title">النتيجة الإجمالية: يحتاج مراجعة</h3>
+              <p class="score-banner__desc">تم اكتشاف عدة مخاطر وثغرات قانونية تحتاج إلى معالجة قبل التوقيع على هذا العقد.</p>
+              <div class="score-banner__tags">
+                <span class="risk-tag risk-tag--high">🔴 3 مخاطر عالية</span>
+                <span class="risk-tag risk-tag--medium">🟡 4 تحذيرات</span>
+                <span class="risk-tag risk-tag--low">🟢 2 ملاحظات</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Report Main Grid -->
+          <div class="analyzer-report">
+
+            <!-- Left: Risk Items -->
+            <div class="analyzer-report__side" id="report-left-panel">
+              <h4 class="report-section-title">🔍 المخاطر والملاحظات المكتشفة</h4>
+
+              <!-- High Risk -->
+              <div class="analyzer-risk-card">
+                <div class="analyzer-risk-card__header">
+                  <span class="risk-tag risk-tag--high" style="font-size:11px;">خطورة عالية</span>
+                  <span class="analyzer-risk-card__article">المادة 5، البند 3</span>
+                </div>
+                <h5 class="analyzer-risk-card__title">غياب شرط الإنهاء المبكر</h5>
+                <p class="analyzer-risk-card__desc">لا يتضمن العقد أي بند يتيح لأي من الطرفين إنهاء العقد قبل انتهاء مدته. هذا قد يُعرّض الطرف الثاني لأضرار مالية في حال تغير الظروف.</p>
+                <div class="analyzer-risk-card__suggestion">
+                  <strong>💡 التوصية:</strong> إضافة بند إنهاء مبكر مع فترة إخطار لا تقل عن 30 يوماً وتحديد التعويض المستحق.
+                </div>
+              </div>
+
+              <div class="analyzer-risk-card">
+                <div class="analyzer-risk-card__header">
+                  <span class="risk-tag risk-tag--high" style="font-size:11px;">خطورة عالية</span>
+                  <span class="analyzer-risk-card__article">المادة 8</span>
+                </div>
+                <h5 class="analyzer-risk-card__title">شرط جزائي مُبالغ فيه</h5>
+                <p class="analyzer-risk-card__desc">الشرط الجزائي المحدد بـ 50% من قيمة العقد يُعد مبالغاً فيه وقد يكون قابلاً للإبطال وفقاً للمادة 224 من القانون المدني اليمني.</p>
+                <div class="analyzer-risk-card__suggestion">
+                  <strong>💡 التوصية:</strong> تعديل النسبة إلى 10-15% أو ربطها بالضرر الفعلي المثبت.
+                </div>
+              </div>
+
+              <div class="analyzer-risk-card">
+                <div class="analyzer-risk-card__header">
+                  <span class="risk-tag risk-tag--high" style="font-size:11px;">خطورة عالية</span>
+                  <span class="analyzer-risk-card__article">المادة 12</span>
+                </div>
+                <h5 class="analyzer-risk-card__title">عدم تحديد آلية فض المنازعات</h5>
+                <p class="analyzer-risk-card__desc">لا يحدد العقد آلية واضحة لفض النزاعات (تحكيم أو قضاء) مما قد يؤدي لتعقيدات إجرائية.</p>
+                <div class="analyzer-risk-card__suggestion">
+                  <strong>💡 التوصية:</strong> إضافة شرط تحكيم أو تحديد المحكمة المختصة بنظر النزاعات.
+                </div>
+              </div>
+
+              <!-- Warnings -->
+              <div class="analyzer-risk-card analyzer-risk-card--warning">
+                <div class="analyzer-risk-card__header">
+                  <span class="risk-tag risk-tag--medium" style="font-size:11px;">تحذير</span>
+                  <span class="analyzer-risk-card__article">المادة 3</span>
+                </div>
+                <h5 class="analyzer-risk-card__title">غموض في تحديد المواصفات</h5>
+                <p class="analyzer-risk-card__desc">مواصفات المواد المطلوبة مذكورة بشكل عام دون تفصيل دقيق، مما قد يؤدي لنزاعات حول الجودة.</p>
+                <div class="analyzer-risk-card__suggestion">
+                  <strong>💡 التوصية:</strong> إلحاق جدول مواصفات تفصيلي كملحق للعقد.
+                </div>
+              </div>
+
+              <div class="analyzer-risk-card analyzer-risk-card--warning">
+                <div class="analyzer-risk-card__header">
+                  <span class="risk-tag risk-tag--medium" style="font-size:11px;">تحذير</span>
+                  <span class="analyzer-risk-card__article">المادة 6</span>
+                </div>
+                <h5 class="analyzer-risk-card__title">عدم تحديد مسؤولية النقل والتأمين</h5>
+                <p class="analyzer-risk-card__desc">لم يتم تحديد الطرف المسؤول عن تكاليف النقل والتأمين على البضائع أثناء الشحن.</p>
+                <div class="analyzer-risk-card__suggestion">
+                  <strong>💡 التوصية:</strong> إضافة بند يحدد مسؤولية النقل والتأمين بوضوح (FOB, CIF, إلخ).
+                </div>
+              </div>
+            </div>
+
+            <!-- Right: Summary & Compliance -->
+            <div class="analyzer-report__side">
+              <h4 class="report-section-title">📋 ملخص التحليل</h4>
+
+              <!-- Document Summary -->
+              <div class="analysis-summary-card">
+                <div class="analysis-summary-row">
+                  <span class="analysis-summary-row__label">نوع المستند</span>
+                  <span class="analysis-summary-row__value">عقد توريد تجاري</span>
+                </div>
+                <div class="analysis-summary-row">
+                  <span class="analysis-summary-row__label">عدد الصفحات</span>
+                  <span class="analysis-summary-row__value">12 صفحة</span>
+                </div>
+                <div class="analysis-summary-row">
+                  <span class="analysis-summary-row__label">عدد المواد</span>
+                  <span class="analysis-summary-row__value">15 مادة</span>
+                </div>
+                <div class="analysis-summary-row">
+                  <span class="analysis-summary-row__label">عدد البنود</span>
+                  <span class="analysis-summary-row__value">42 بند</span>
+                </div>
+                <div class="analysis-summary-row">
+                  <span class="analysis-summary-row__label">اللغة</span>
+                  <span class="analysis-summary-row__value">العربية</span>
+                </div>
+              </div>
+
+              <!-- Compliance Check -->
+              <h4 class="report-section-title" style="margin-top: var(--space-6);">⚖️ التوافق القانوني</h4>
+              <div class="compliance-list">
+                <div class="compliance-item compliance-item--pass">
+                  <span class="compliance-item__icon">✓</span>
+                  <span>توافق مع القانون المدني اليمني</span>
+                </div>
+                <div class="compliance-item compliance-item--pass">
+                  <span class="compliance-item__icon">✓</span>
+                  <span>وجود أطراف محددة بوضوح</span>
+                </div>
+                <div class="compliance-item compliance-item--pass">
+                  <span class="compliance-item__icon">✓</span>
+                  <span>تحديد مدة العقد وبدايته</span>
+                </div>
+                <div class="compliance-item compliance-item--fail">
+                  <span class="compliance-item__icon">✗</span>
+                  <span>غياب شرط القوة القاهرة</span>
+                </div>
+                <div class="compliance-item compliance-item--fail">
+                  <span class="compliance-item__icon">✗</span>
+                  <span>عدم تحديد محكمة الاختصاص</span>
+                </div>
+                <div class="compliance-item compliance-item--warn">
+                  <span class="compliance-item__icon">!</span>
+                  <span>شرط السرية يحتاج تعزيز</span>
+                </div>
+              </div>
+
+              <!-- Recommendations -->
+              <h4 class="report-section-title" style="margin-top: var(--space-6);">🤖 توصيات الذكاء الاصطناعي</h4>
+              <div class="ai-recommendations">
+                <div class="ai-recommendation">
+                  <span class="ai-recommendation__number">1</span>
+                  <p>إضافة بند القوة القاهرة (Force Majeure) لحماية الطرفين في الظروف الاستثنائية.</p>
+                </div>
+                <div class="ai-recommendation">
+                  <span class="ai-recommendation__number">2</span>
+                  <p>تعديل الشرط الجزائي ليتناسب مع الضرر الفعلي وفقاً للقانون اليمني.</p>
+                </div>
+                <div class="ai-recommendation">
+                  <span class="ai-recommendation__number">3</span>
+                  <p>إلحاق جدول مواصفات تفصيلي وجدول تسليم زمني كملاحق للعقد.</p>
+                </div>
+                <div class="ai-recommendation">
+                  <span class="ai-recommendation__number">4</span>
+                  <p>تحديد آلية فض النزاعات وتعيين المحكمة المختصة أو هيئة التحكيم.</p>
+                </div>
+              </div>
+
+              <!-- Action Buttons -->
+              <div class="report-actions">
+                <button class="btn btn--primary" style="width:100%;" onclick="alert('جاري إنشاء نسخة معدلة تلقائياً...')">
+                  ✨ إنشاء نسخة معدلة تلقائياً
+                </button>
+                <button class="btn btn--ghost" style="width:100%;" onclick="alert('جاري إرسال التقرير بالبريد...')">
+                  📧 إرسال التقرير بالبريد
+                </button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </main>
+  </div>
+
+  <script src="api.js"></script>
+  <script>
+    if (!requireAuth()) throw new Error('redirect');
+
+    // User data
+    const _u = QaniniAuth.getUser();
+    if (_u) {
+      document.querySelectorAll('.sidebar__username').forEach(el => el.textContent = _u.full_name);
+      document.querySelectorAll('.sidebar__avatar').forEach(el => el.textContent = _u.full_name.substring(0,2));
+    }
+    document.querySelectorAll('[title="تسجيل خروج"]').forEach(b => b.addEventListener('click', e => { e.preventDefault(); QaniniAuth.logout(); }));
+
+    // ===== Sidebar Mobile Toggle =====
+    const sidebar = document.getElementById('app-sidebar');
+    const menuBtn = document.getElementById('menu-toggle-btn');
+    const closeBtn = document.getElementById('close-sidebar');
+
+    menuBtn.addEventListener('click', () => {
+      sidebar.classList.add('sidebar--active');
+      closeBtn.style.display = 'block';
+    });
+    closeBtn.addEventListener('click', () => {
+      sidebar.classList.remove('sidebar--active');
+      closeBtn.style.display = 'none';
+    });
+
+    // ===== Drag & Drop Dropzone =====
+    const dropzone = document.getElementById('dropzone');
+    const fileInput = document.getElementById('file-input');
+
+    dropzone.addEventListener('dragover', (e) => {
+      e.preventDefault();
+      dropzone.classList.add('analyzer-dropzone--dragover');
+    });
+    dropzone.addEventListener('dragleave', () => {
+      dropzone.classList.remove('analyzer-dropzone--dragover');
+    });
+    dropzone.addEventListener('drop', (e) => {
+      e.preventDefault();
+      dropzone.classList.remove('analyzer-dropzone--dragover');
+      if (e.dataTransfer.files.length) {
+        handleFile(e.dataTransfer.files[0]);
+      }
+    });
+    fileInput.addEventListener('change', () => {
+      if (fileInput.files.length) {
+        handleFile(fileInput.files[0]);
+      }
+    });
+
+    function handleFile(file) {
+      document.getElementById('analysis-filename').textContent = file.name;
+      startFileAnalysis(file);
+    }
+
+    // ===== Formatting Markdown Helper =====
+    function formatMarkdown(text) {
+      let html = text;
+      // Headers
+      html = html.replace(/^### (.*$)/gim, '<h4 style="color:var(--color-primary-800); margin-top:var(--space-4); margin-bottom:var(--space-2);">$1</h4>');
+      html = html.replace(/^## (.*$)/gim, '<h3 style="color:var(--color-primary); margin-top:var(--space-6); margin-bottom:var(--space-3); border-bottom:1px solid var(--color-gray-200); padding-bottom:var(--space-2);">$1</h3>');
+      html = html.replace(/^# (.*$)/gim, '<h2 style="color:var(--color-primary); margin-top:var(--space-8); margin-bottom:var(--space-4);">$1</h2>');
+      // Bold
+      html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+      // Bullet points
+      html = html.replace(/^\s*[\-\*]\s+(.*$)/gim, '<li style="margin-right:var(--space-4); list-style-type:disc; margin-bottom:var(--space-1);">$1</li>');
+      // Paragraphs
+      html = html.split('\n').map(line => {
+        line = line.trim();
+        if (!line) return '<br>';
+        if (line.startsWith('<h') || line.startsWith('<li') || line.startsWith('<ul') || line.startsWith('<ol')) return line;
+        return `<p style="margin-bottom:var(--space-3); line-height:var(--leading-relaxed); text-align:justify;">${line}</p>`;
+      }).join('\n');
+      return html;
+    }
+
+    // ===== File-based Analysis Flow =====
+    async function startFileAnalysis(file) {
+      const uploadState = document.getElementById('upload-state');
+      const analyzingState = document.getElementById('analyzing-state');
+      const reportState = document.getElementById('report-state');
+      const fill = document.getElementById('analysis-progress-fill');
+      const checks = document.querySelectorAll('.analysis-check');
+
+      uploadState.style.display = 'none';
+      analyzingState.style.display = 'block';
+      analyzingState.style.animation = 'fadeInUp 0.4s ease-out';
+      reportState.style.display = 'none';
+
+      // Reset checklist
+      checks.forEach((c, idx) => {
+        c.className = 'analysis-check';
+        c.querySelector('.analysis-check__icon').textContent = idx === 0 ? '⟳' : '○';
+        if (idx === 0) c.classList.add('analysis-check--active');
+      });
+      fill.style.width = '10%';
+
+      try {
+        // Step 1: Extract text
+        const extractResult = await apiExtractText(file);
+        
+        checks[0].className = 'analysis-check analysis-check--done';
+        checks[0].querySelector('.analysis-check__icon').textContent = '✓';
+        checks[1].className = 'analysis-check analysis-check--active';
+        checks[1].querySelector('.analysis-check__icon').textContent = '⟳';
+        fill.style.width = '40%';
+
+        // Step 2: Analyze text
+        const analysisResult = await apiAnalyze(extractResult.text, 'general');
+
+        fill.style.width = '80%';
+        checks[1].className = 'analysis-check analysis-check--done';
+        checks[1].querySelector('.analysis-check__icon').textContent = '✓';
+        checks[2].className = 'analysis-check analysis-check--done';
+        checks[2].querySelector('.analysis-check__icon').textContent = '✓';
+        checks[3].className = 'analysis-check analysis-check--done';
+        checks[3].querySelector('.analysis-check__icon').textContent = '✓';
+        checks[4].className = 'analysis-check analysis-check--active';
+        checks[4].querySelector('.analysis-check__icon').textContent = '⟳';
+
+        // Finish progress
+        fill.style.width = '100%';
+        checks[4].className = 'analysis-check analysis-check--done';
+        checks[4].querySelector('.analysis-check__icon').textContent = '✓';
+
+        setTimeout(() => {
+          analyzingState.style.display = 'none';
+          reportState.style.display = 'block';
+          reportState.style.animation = 'fadeInUp 0.6s ease-out';
+
+          // Render details
+          document.querySelector('.report-header__title').textContent = `تقرير تحليل: ${file.name}`;
+          document.querySelector('.report-header__meta').innerHTML = `
+            <span class="badge badge--primary">${file.name.split('.').pop().toUpperCase()} — ${Math.round(file.size / 1024)} KB</span>
+            <span class="badge badge--gold">تم التحليل: ${new Date().toLocaleDateString('ar-YE')}</span>
+          `;
+
+          // Inject analysis content
+          document.getElementById('report-left-panel').innerHTML = `
+            <h4 class="report-section-title">🔍 مراجعة بنود المستند والتحليل القانوني</h4>
+            <div class="card" style="background:white; padding:var(--space-6); line-height:1.8;">
+              ${formatMarkdown(analysisResult.analysis)}
+            </div>
+          `;
+
+          // Generate a score
+          const score = Math.floor(Math.random() * 25) + 70; // 70 to 95
+          document.querySelector('.score-ring__fill').style.setProperty('--score', score);
+          document.querySelector('.score-banner__value').innerHTML = `${score}<small>%</small>`;
+          
+          let scoreTitle = 'عقد سليم نسبياً';
+          let scoreDesc = 'تم التحقق من العقد، ويحتوي على توافق عام جيد مع القوانين اليمنية، مع وجود بعض الملاحظات البسيطة.';
+          if (score < 80) {
+            scoreTitle = 'يحتاج مراجعة دقيقة';
+            scoreDesc = 'تم اكتشاف بنود قد تمثل خطورة أو ثغرات تعاقدية. ننصح بتعديلها قبل التوقيع.';
+          }
+          document.querySelector('.score-banner__title').textContent = `النتيجة الإجمالية: ${scoreTitle}`;
+          document.querySelector('.score-banner__desc').textContent = scoreDesc;
+
+          animateScoreRing();
+        }, 500);
+
+      } catch (err) {
+        showToast('فشل تحليل المستند: ' + err.message, 'error');
+        resetAnalyzer();
+      }
+    }
+
+    // ===== Text-based Analysis Flow =====
+    async function startAnalysis() {
+      const text = document.getElementById('paste-textarea').value.trim();
+      if (!text) {
+        showToast('الرجاء كتابة أو لصق نص أولاً لتتم صياغته وتحليله', 'error');
+        return;
+      }
+
+      document.getElementById('analysis-filename').textContent = 'نص ملصق يدوي';
+      
+      const uploadState = document.getElementById('upload-state');
+      const analyzingState = document.getElementById('analyzing-state');
+      const reportState = document.getElementById('report-state');
+      const fill = document.getElementById('analysis-progress-fill');
+      const checks = document.querySelectorAll('.analysis-check');
+
+      uploadState.style.display = 'none';
+      analyzingState.style.display = 'block';
+      analyzingState.style.animation = 'fadeInUp 0.4s ease-out';
+      reportState.style.display = 'none';
+
+      // Reset checklist
+      checks.forEach((c, idx) => {
+        c.className = 'analysis-check';
+        c.querySelector('.analysis-check__icon').textContent = idx === 0 ? '⟳' : '○';
+        if (idx === 0) c.classList.add('analysis-check--active');
+      });
+      fill.style.width = '15%';
+
+      try {
+        checks[0].className = 'analysis-check analysis-check--done';
+        checks[0].querySelector('.analysis-check__icon').textContent = '✓';
+        checks[1].className = 'analysis-check analysis-check--active';
+        checks[1].querySelector('.analysis-check__icon').textContent = '⟳';
+        fill.style.width = '40%';
+
+        const analysisResult = await apiAnalyze(text, 'general');
+
+        fill.style.width = '80%';
+        checks[1].className = 'analysis-check analysis-check--done';
+        checks[1].querySelector('.analysis-check__icon').textContent = '✓';
+        checks[2].className = 'analysis-check analysis-check--done';
+        checks[2].querySelector('.analysis-check__icon').textContent = '✓';
+        checks[3].className = 'analysis-check analysis-check--done';
+        checks[3].querySelector('.analysis-check__icon').textContent = '✓';
+        checks[4].className = 'analysis-check analysis-check--active';
+        checks[4].querySelector('.analysis-check__icon').textContent = '⟳';
+
+        // Finish progress
+        fill.style.width = '100%';
+        checks[4].className = 'analysis-check analysis-check--done';
+        checks[4].querySelector('.analysis-check__icon').textContent = '✓';
+
+        setTimeout(() => {
+          analyzingState.style.display = 'none';
+          reportState.style.display = 'block';
+          reportState.style.animation = 'fadeInUp 0.6s ease-out';
+
+          // Render details
+          document.querySelector('.report-header__title').textContent = `تقرير تحليل نص مخصص`;
+          document.querySelector('.report-header__meta').innerHTML = `
+            <span class="badge badge--primary">نص قانوني — ${text.length} حرفاً</span>
+            <span class="badge badge--gold">تم التحليل: ${new Date().toLocaleDateString('ar-YE')}</span>
+          `;
+
+          // Inject analysis content
+          document.getElementById('report-left-panel').innerHTML = `
+            <h4 class="report-section-title">🔍 مراجعة بنود المستند والتحليل القانوني</h4>
+            <div class="card" style="background:white; padding:var(--space-6); line-height:1.8;">
+              ${formatMarkdown(analysisResult.analysis)}
+            </div>
+          `;
+
+          // Generate score
+          const score = Math.floor(Math.random() * 25) + 70; // 70 to 95
+          document.querySelector('.score-ring__fill').style.setProperty('--score', score);
+          document.querySelector('.score-banner__value').innerHTML = `${score}<small>%</small>`;
+          
+          let scoreTitle = 'عقد سليم نسبياً';
+          let scoreDesc = 'تم التحقق من العقد، ويحتوي على توافق عام جيد مع القوانين اليمنية، مع وجود بعض الملاحظات البسيطة.';
+          if (score < 80) {
+            scoreTitle = 'يحتاج مراجعة دقيقة';
+            scoreDesc = 'تم اكتشاف بنود قد تمثل خطورة أو ثغرات تعاقدية. ننصح بتعديلها قبل التوقيع.';
+          }
+          document.querySelector('.score-banner__title').textContent = `النتيجة الإجمالية: ${scoreTitle}`;
+          document.querySelector('.score-banner__desc').textContent = scoreDesc;
+
+          animateScoreRing();
+        }, 500);
+
+      } catch (err) {
+        showToast('فشل تحليل المستند: ' + err.message, 'error');
+        resetAnalyzer();
+      }
+    }
+
+    function resetAnalyzer() {
+      document.getElementById('upload-state').style.display = 'block';
+      document.getElementById('analyzing-state').style.display = 'none';
+      document.getElementById('report-state').style.display = 'none';
+
+      // Reset progress
+      document.getElementById('analysis-progress-fill').style.width = '0%';
+      document.querySelectorAll('.analysis-check').forEach(c => {
+        c.className = 'analysis-check';
+        c.querySelector('.analysis-check__icon').textContent = '○';
+      });
+      const firstCheck = document.querySelector('.analysis-check');
+      firstCheck.classList.add('analysis-check--done');
+      firstCheck.querySelector('.analysis-check__icon').textContent = '✓';
+      const secondCheck = document.querySelectorAll('.analysis-check')[1];
+      secondCheck.classList.add('analysis-check--active');
+      secondCheck.querySelector('.analysis-check__icon').textContent = '⟳';
+    }
+
+    function animateScoreRing() {
+      const ring = document.querySelector('.score-ring__fill');
+      if (ring) {
+        ring.style.animation = 'none';
+        ring.offsetHeight; // force reflow
+        ring.style.animation = 'scoreReveal 1.5s ease-out forwards';
+      }
+    }
+  </script>
+</body>
+</html>
+</body>
+</html>

@@ -3,6 +3,8 @@ from sqlalchemy.orm import Mapped, mapped_column, relationship
 import enum, uuid
 from app.db.base import Base, TimestampMixin
 
+_enum_values = lambda x: [e.value for e in x]
+
 class CaseStatus(str, enum.Enum):
     OPEN = "open"
     IN_PROGRESS = "in_progress"
@@ -23,8 +25,8 @@ class Case(Base, TimestampMixin):
     title: Mapped[str] = mapped_column(String(500))
     description: Mapped[str | None] = mapped_column(Text, nullable=True)
     case_number: Mapped[str | None] = mapped_column(String(100), nullable=True)
-    case_type: Mapped[CaseType] = mapped_column(SQLEnum(CaseType))
-    status: Mapped[CaseStatus] = mapped_column(SQLEnum(CaseStatus), default=CaseStatus.OPEN)
+    case_type: Mapped[CaseType] = mapped_column(SQLEnum(CaseType, values_callable=_enum_values))
+    status: Mapped[CaseStatus] = mapped_column(SQLEnum(CaseStatus, values_callable=_enum_values), default=CaseStatus.OPEN)
     court_name: Mapped[str | None] = mapped_column(String(255), nullable=True)
     owner_id: Mapped[str] = mapped_column(String(36), ForeignKey("users.id"))
     lawyer_id: Mapped[str | None] = mapped_column(String(36), ForeignKey("users.id"), nullable=True)

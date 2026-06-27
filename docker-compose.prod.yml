@@ -1,0 +1,146 @@
+services:
+  caddy:
+    image: caddy:2-alpine
+    container_name: qanuni-caddy
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./caddy/Caddyfile:/etc/caddy/Caddyfile
+      - caddy_data:/data
+    networks:
+      - qanuni-network
+    restart: unless-stopped
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile.prod
+    container_name: qanuni-backend
+    expose:
+      - "8000"
+    env_file:
+      - .env
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    volumes:
+      - uploaded_files:/app/uploads
+    networks:
+      - qanuni-network
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          memory: 1g
+          cpus: "1.0"
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile.prod
+    container_name: qanuni-frontend
+    expose:
+      - "3000"
+    environment:
+      - NEXT_PUBLIC_API_URL=https://api.example.com
+    networks:
+      - qanuni-network
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          memory: 512m
+          cpus: "0.5"
+
+  postgres:
+    image: postgres:16-alpine
+    container_name: qanuni-postgres
+    expose:
+      - "5432"
+    environment:
+      - POSTGRES_DB=qanuni_db
+      - POSTGRES_USER=qanuni
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-qanuni_secret}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./database/init:/docker-entrypoint-initdb.d
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U qanuni -d qanuni_db"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - qanuni-network
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          memory: 512m
+          cpus: "0.5"
+
+  redis:
+    image: redis:7-alpine
+    container_name: qanuni-redis
+    expose:
+      - "6379"
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - qanuni-network
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          memory: 256m
+          cpus: "0.3"
+
+  qdrant:
+    image: qdrant/qdrant:latest
+    container_name: qanuni-qdrant
+    expose:
+      - "6333"
+    volumes:
+      - qdrant_data:/qdrant/storage
+    networks:
+      - qanuni-network
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          memory: 512m
+          cpus: "0.5"
+
+  ocr:
+    build: ./ocr
+    container_name: qanuni-ocr
+    expose:
+      - "8001"
+    volumes:
+      - uploaded_files:/app/uploads
+    networks:
+      - qanuni-network
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          memory: 1g
+          cpus: "1.0"
+
+volumes:
+  postgres_data:
+  redis_data:
+  qdrant_data:
+  uploaded_files:
+  caddy_data:
+
+networks:
+  qanuni-network:
+    driver: bridge

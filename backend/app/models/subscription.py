@@ -4,6 +4,8 @@ from datetime import datetime
 import enum, uuid
 from app.db.base import Base, TimestampMixin
 
+_enum_values = lambda x: [e.value for e in x]
+
 class PlanType(str, enum.Enum):
     FREE = "free"
     PROFESSIONAL = "professional"
@@ -18,8 +20,8 @@ class Subscription(Base, TimestampMixin):
     __tablename__ = "subscriptions"
     id: Mapped[str] = mapped_column(String(36), primary_key=True, default=lambda: str(uuid.uuid4()))
     user_id: Mapped[str] = mapped_column(String(36), ForeignKey("users.id"))
-    plan: Mapped[PlanType] = mapped_column(SQLEnum(PlanType), default=PlanType.FREE)
-    status: Mapped[SubscriptionStatus] = mapped_column(SQLEnum(SubscriptionStatus), default=SubscriptionStatus.ACTIVE)
+    plan: Mapped[PlanType] = mapped_column(SQLEnum(PlanType, values_callable=_enum_values), default=PlanType.FREE)
+    status: Mapped[SubscriptionStatus] = mapped_column(SQLEnum(SubscriptionStatus, values_callable=_enum_values), default=SubscriptionStatus.ACTIVE)
     expires_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
     search_quota: Mapped[int] = mapped_column(Integer, default=10)
     analysis_quota: Mapped[int] = mapped_column(Integer, default=0)
@@ -27,3 +29,5 @@ class Subscription(Base, TimestampMixin):
     searches_used: Mapped[int] = mapped_column(Integer, default=0)
     analyses_used: Mapped[int] = mapped_column(Integer, default=0)
     drafts_used: Mapped[int] = mapped_column(Integer, default=0)
+    advanced_ocr_quota: Mapped[int] = mapped_column(Integer, default=0)
+    advanced_ocr_used: Mapped[int] = mapped_column(Integer, default=0)

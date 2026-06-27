@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>مكتبة التشريعات والقوانين — قانوني AI</title>
+  
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="styles/design-system.css">
+  <link rel="stylesheet" href="styles/app.css">
+  <link rel="stylesheet" href="styles/app-screens.css">
+  <link rel="stylesheet" href="styles/library.css">
+
+  <!-- Instant theme script loader to prevent white flashes -->
+  <script>
+    (function() {
+      const theme = localStorage.getItem('theme') || 'light';
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+</head>
+<body class="app-body">
+
+  <div class="app-container">
+    
+    <!-- ============================================
+         RIGHT SIDEBAR (Global Workspace Navigation)
+         ============================================ -->
+    <aside class="sidebar" id="app-sidebar">
+      <div class="sidebar__header">
+        <a href="index.html" class="sidebar__logo">
+          <div class="sidebar__logo-icon">ق</div>
+          <span class="sidebar__logo-text">قانوني AI</span>
+        </a>
+        <button class="sidebar__settings-btn" id="close-sidebar" style="display:none;">✕</button>
+      </div>
+      
+      <button class="btn btn--primary sidebar__new-chat" onclick="window.location.href='app.html'">
+        <span>+ محادثة جديدة</span>
+      </button>
+      
+      <div class="sidebar__search" style="padding-top: var(--space-4);">
+        <div class="sidebar__group-title" style="padding-right:0; margin-bottom:var(--space-2);">الأدوات والخدمات</div>
+        <div class="sidebar__list" style="margin-bottom: var(--space-6); gap: 4px;">
+          <a href="dashboard.html" class="sidebar__item" style="display:flex; align-items:center; gap:8px;">
+            <span>📊</span> <span>لوحة التحكم</span>
+          </a>
+          <a href="app.html" class="sidebar__item" style="display:flex; align-items:center; gap:8px;">
+            <span>🤖</span> <span>المساعد القانوني الذكي</span>
+          </a>
+          <a href="search.html" class="sidebar__item" style="display:flex; align-items:center; gap:8px;">
+            <span>🔍</span> <span>محرك البحث السيمانتك</span>
+          </a>
+          <a href="library.html" class="sidebar__item sidebar__item--active" style="display:flex; align-items:center; gap:8px;">
+            <span>📚</span> <span>مكتبة التشريعات</span>
+          </a>
+          <a href="generator.html" class="sidebar__item" style="display:flex; align-items:center; gap:8px;">
+            <span>🖋️</span> <span>منشئ المستندات</span>
+          </a>
+          <a href="analyzer.html" class="sidebar__item" style="display:flex; align-items:center; gap:8px;">
+            <span>📄</span> <span>محلل ومراجع العقود</span>
+          </a>
+          <a href="settings.html" class="sidebar__item" style="display:flex; align-items:center; gap:8px;">
+            <span>⚙️</span> <span>الإعدادات</span>
+          </a>
+        </div>
+      </div>
+      
+      <div class="sidebar__footer">
+        <div class="sidebar__user">
+          <div class="sidebar__avatar">مح</div>
+          <span class="sidebar__username" data-user-name>مستخدم</span>
+        </div>
+        <a href="#" onclick="QaniniAuth.logout(); return false;" class="sidebar__settings-btn" title="تسجيل خروج">🚪</a>
+      </div>
+    </aside>
+    
+    <!-- ============================================
+         MAIN WORKSPACE CONTENT
+         ============================================ -->
+    <main class="chat-container">
+      
+      <!-- Top header bar -->
+      <header class="chat-header">
+        <div class="chat-header__info">
+          <button class="chat-header__menu-btn" id="menu-toggle-btn" aria-label="عرض القائمة">☰</button>
+          <h2 class="chat-header__title">أرشيف ومكتبة القوانين واللوائح</h2>
+        </div>
+        
+        <div class="chat-header__actions">
+          <button class="btn btn--outline btn--sm" onclick="alert('جاري تحديث المكتبة التشريعية وتنزيل أحدث قرارات الجريدة الرسمية...')">🔄 تحديث المكتبة</button>
+        </div>
+      </header>
+      
+      <!-- Content Area -->
+      <div class="app-content">
+        
+        <!-- Premium Header Redesign -->
+        <div class="library-header-container">
+          <div class="library-header-main">
+            <div class="library-icon-box">
+              <div class="yemeni-flag-badge">
+                <div class="flag-red"></div>
+                <div class="flag-white"></div>
+                <div class="flag-black"></div>
+              </div>
+            </div>
+            <div class="library-title-group">
+              <h1 class="library-main-title">مكتبة القوانين</h1>
+              <p class="library-subtitle">تصفح الدستور، القوانين، اللوائح، والأحكام القضائية اليمنية</p>
+            </div>
+          </div>
+          <div class="library-total-badge">
+            <span class="library-total-label">إجمالي:</span>
+            <span class="library-total-num">10,243 نصاً</span>
+          </div>
+        </div>
+        
+        <!-- Category Selector Tabs -->
+        <div class="library-tabs-container">
+          <button class="library-tab-btn tab-active" data-filter="all">الكل</button>
+          <button class="library-tab-btn" data-filter="constitution">الدستور</button>
+          <button class="library-tab-btn" data-filter="law">القوانين</button>
+          <button class="library-tab-btn" data-filter="regulation">اللوائح التنفيذية</button>
+          <button class="library-tab-btn" data-filter="decree">القرارات</button>
+          <button class="library-tab-btn" data-filter="judgment">الأحكام القضائية</button>
+        </div>
+        
+        <!-- Premium Tree & Laws Layout -->
+        <div class="library-layout">
+          <!-- Right Sidebar: Tree Explorer -->
+          <aside class="library-tree-explorer">
+            <h3 class="library-tree-explorer__title">📂 شجرة التشريعات</h3>
+            <div id="tree-container">
+              <div style="text-align:center; padding:var(--space-4); color:var(--color-gray-400);">
+                جاري تحميل شجرة التشريعات... ⏳
+              </div>
+            </div>
+          </aside>
+          
+          <!-- Left Main Area: Laws Grid -->
+          <div class="library-main-content">
+            <div class="library-grid" id="laws-grid">
+              <!-- Dynamically populated -->
+            </div>
+          </div>
+        </div>
+        
+      </div>
+      
+    </main>
+    
+  </div>
+
+  <script src="api.js"></script>
+  <script>
+    if (!requireAuth()) throw new Error('redirect');
+
+    // User data
+    const _u = QaniniAuth.getUser();
+    if (_u) {
+      document.querySelectorAll('.sidebar__username').forEach(el => el.textContent = _u.full_name);
+      document.querySelectorAll('.sidebar__avatar').forEach(el => el.textContent = _u.full_name.substring(0,2));
+    }
+    document.querySelectorAll('[title="تسجيل خروج"]').forEach(b => b.addEventListener('click', e => { e.preventDefault(); QaniniAuth.logout(); }));
+
+    // Sidebar responsive toggle on mobile
+    const sidebar = document.getElementById('app-sidebar');
+    const menuBtn = document.getElementById('menu-toggle-btn');
+    const closeBtn = document.getElementById('close-sidebar');
+
+    menuBtn.addEventListener('click', () => {
+      sidebar.classList.add('sidebar--active');
+      closeBtn.style.display = 'block';
+    });
+
+    closeBtn.addEventListener('click', () => {
+      sidebar.classList.remove('sidebar--active');
+      closeBtn.style.display = 'none';
+    });
+
+    let currentCategory = 'all';
+    let selectedDivisionId = null;
+    let selectedCategoryFromTree = null; // used by virtual group nodes
+
+    // Map virtual group IDs to category filter values
+    const VIRTUAL_GROUP_CATEGORIES = {
+      'VIRTUAL-CONSTITUTION': 'constitution',
+      'VIRTUAL-AUTHORITIES': null,
+      'VIRTUAL-LAWS': 'law',
+      'VIRTUAL-JUDICIAL': 'judgment',
+      'VIRTUAL-SCHOLAR': null,
+    };
+
+    // Load interactive legal tree from backend
+    async function loadLegalTree() {
+      const treeContainer = document.getElementById('tree-container');
+      try {
+        const treeData = await apiFetch('/legal-tree');
+        
+        if (!treeData || !treeData.tree_nodes || treeData.tree_nodes.length === 0) {
+          treeContainer.innerHTML = '<div style="text-align:center; color:var(--color-gray-400); padding:var(--space-4);">شجرة التشريعات فارغة حالياً.</div>';
+          return;
+        }
+
+        const rawRoot = treeData.tree_nodes[0];
+        const children = rawRoot.children || [];
+
+        // Use treeData.divisions if available to build category groups
+        const divisions = treeData.divisions || [];
+        const divisionMap = {};
+        divisions.forEach(d => { divisionMap[d.name] = d; });
+
+        // Dynamically group child nodes by their node_type
+        const constitutionNodes = children.filter(c => c.node_type === 'دستور' || (c.name || '').includes('دستور'));
+        const lawsNodes = children.filter(c => 
+          c.node_type === 'قانون' || c.node_type === 'لائحة' || 
+          (c.name || '').includes('قانون') || (c.name || '').includes('لائحة') || (c.name || '').includes('قرار')
+        );
+        const judicialNodes = children.filter(c => 
+          c.node_type === 'قضائي' || c.node_type === 'حكم' || 
+          (c.name || '').includes('قضاء') || (c.name || '').includes('حكم') || (c.name || '').includes('سابقة')
+        );
+        const scholarNodes = children.filter(c => 
+          c.node_type === 'فقه' || c.node_type === 'دراسة' || 
+          (c.name || '').includes('فقه') || (c.name || '').includes('دراسة')
+        );
+        const authorityNodes = children.filter(c => 
+          c.node_type === 'سلطة' || (c.name || '').includes('سلطة')
+        );
+        const otherNodes = children.filter(c => 
+          constitutionNodes.includes(c) || lawsNodes.includes(c) || judicialNodes.includes(c) || 
+          scholarNodes.includes(c) || authorityNodes.includes(c) ? false : true
+        );
+
+        // Build the root children with virtual groups
+        rawRoot.children = [
+          constitutionNodes.length > 0
+            ? { id: 'VIRTUAL-CONSTITUTION', name: 'الدستور', icon: '📜', node_type: 'دستور', children: constitutionNodes, level: 1, parent_id: rawRoot.id }
+            : null,
+          authorityNodes.length > 0
+            ? { id: 'VIRTUAL-AUTHORITIES', name: 'السلطات الدستورية', icon: '🏛️', node_type: 'سلطات', children: authorityNodes, level: 1, parent_id: rawRoot.id }
+            : null,
+          { id: 'VIRTUAL-LAWS', name: 'القوانين واللوائح', icon: '⚖️', node_type: 'قوانين', children: lawsNodes.length > 0 ? lawsNodes : children, level: 1, parent_id: rawRoot.id },
+          judicialNodes.length > 0
+            ? { id: 'VIRTUAL-JUDICIAL', name: 'القضاء والأحكام', icon: '⚖️', node_type: 'قضائي', children: judicialNodes, level: 1, parent_id: rawRoot.id }
+            : null,
+          scholarNodes.length > 0
+            ? { id: 'VIRTUAL-SCHOLAR', name: 'الدراسات والفقه القانوني', icon: '📚', node_type: 'دراسات', children: scholarNodes, level: 1, parent_id: rawRoot.id }
+            : null,
+        ].filter(Boolean);
+        
+        // Append remaining uncategorized nodes directly under root
+        if (otherNodes.length > 0) {
+          rawRoot.children = rawRoot.children.concat(otherNodes);
+        }
+
+        // Recursive helper to build tree HTML
+        function buildNodeHtml(node) {
+          const hasChildren = node.children && node.children.length > 0;
+          const isLaw = node.ref_table === 'law' && node.ref_id;
+          
+          let actionAttr = '';
+          if (isLaw) {
+            actionAttr = `onclick="window.location.href='law-viewer.html?id=${node.ref_id}'"`;
+          } else {
+            actionAttr = `onclick="selectTreeNode('${node.id}', this)"`;
+          }
+          
+          const icon = node.icon || (isLaw ? '📜' : '⚖️');
+          const toggleHtml = hasChildren 
+            ? `<span class="tree-node__toggle" onclick="toggleTreeNode(event, '${node.id}')">◀</span>` 
+            : '<span class="tree-node__toggle" style="opacity:0;">◀</span>';
+            
+          const badgeHtml = node.node_type ? `<span class="tree-node__badge">${node.node_type}</span>` : '';
+          
+          return `
+            <li class="tree-node" id="node-${node.id}">
+              <div class="tree-node__header" ${actionAttr} data-node-id="${node.id}" title="${node.name}">
+                ${toggleHtml}
+                <span class="tree-node__icon">${icon}</span>
+                <span class="tree-node__name">${node.name}</span>
+                ${badgeHtml}
+              </div>
+              ${hasChildren ? `
+                <ul class="tree-list tree-node__children" id="children-${node.id}">
+                  ${node.children.map(child => buildNodeHtml(child)).join('')}
+                </ul>
+              ` : ''}
+            </li>
+          `;
+        }
+
+        treeContainer.innerHTML = `
+          <ul class="tree-list">
+            ${buildNodeHtml(rawRoot)}
+          </ul>
+        `;
+
+        // Update total documents count badge
+        try {
+          const lawsResult = await apiSearch('', 'law', 1, 1);
+          if (lawsResult && lawsResult.total !== undefined) {
+            document.querySelector('.library-total-num').textContent = `${lawsResult.total} وثيقة`;
+          }
+        } catch (e) {
+          console.error("Failed to fetch total documents count", e);
+        }
+
+      } catch (err) {
+        console.error("Failed to load legal tree", err);
+        treeContainer.innerHTML = `
+          <div style="text-align:center; color:var(--color-error-700); padding:var(--space-4); font-size:12px;">
+            فشل تحميل شجرة القوانين: <br/> ${err.message || err}
+          </div>
+        `;
+      }
+    }
+
+    // Toggle tree node collapse/expand
+    window.toggleTreeNode = function(event, nodeId) {
+      event.stopPropagation();
+      const target = event.target;
+      // Handle case where event.target is a text node or span
+      const toggle = target.closest ? target.closest('.tree-node__toggle') || target : target;
+      if (!toggle || !toggle.classList) return;
+      const childrenList = document.getElementById(`children-${nodeId}`);
+      if (childrenList) {
+        childrenList.classList.toggle('tree-node__children--open');
+        toggle.classList.toggle('tree-node__toggle--open');
+      }
+    };
+
+    // Filter main library by tree selection
+    window.selectTreeNode = function(nodeId, element) {
+      document.querySelectorAll('.tree-node__header').forEach(el => el.classList.remove('tree-node__header--active'));
+      element.classList.add('tree-node__header--active');
+      
+      // Check if this is a virtual group node -> use category filter instead of division_id
+      const virtualCategory = VIRTUAL_GROUP_CATEGORIES[nodeId];
+      if (virtualCategory !== undefined) {
+        selectedCategoryFromTree = virtualCategory;
+        selectedDivisionId = null;
+      } else {
+        selectedDivisionId = nodeId;
+        selectedCategoryFromTree = null;
+      }
+      loadLibrary(currentCategory, selectedDivisionId);
+    };
+
+    // Real library fetch integration
+    async function loadLibrary(category = 'all', divisionId = null) {
+      const grid = document.getElementById('laws-grid');
+      grid.innerHTML = `
+        <div style="grid-column:1/-1; text-align:center; padding:var(--space-12);">
+          <h3 style="color:var(--color-primary-800);">جاري تحميل المستندات والتشريعات من الأرشيف... 📚</h3>
+        </div>
+      `;
+
+      let docType = null;
+      let apiCategory = null;
+      // If a tree virtual group is selected, use its category instead of the tab
+      const effectiveCategory = selectedCategoryFromTree || category;
+      if (effectiveCategory === 'constitution' || effectiveCategory === 'law' || effectiveCategory === 'regulation' || effectiveCategory === 'decree') {
+        docType = 'law';
+        apiCategory = effectiveCategory;
+      } else if (effectiveCategory === 'judgment') {
+        docType = 'ruling';
+      }
+
+      try {
+        const data = await apiSearch('', docType, 1, 24, apiCategory, divisionId);
+        
+        if (data.results.length === 0) {
+          grid.innerHTML = `
+            <div style="grid-column:1/-1; text-align:center; padding:var(--space-12); color:var(--color-gray-400);">
+              لا توجد مستندات متوفرة في هذه الفئة حالياً.
+            </div>
+          `;
+          if (divisionId) {
+            showToast("لم يتم رفع البيانات بعد !", "info");
+          }
+          return;
+        }
+
+        grid.innerHTML = data.results.map(r => {
+          const typeText = r.doc_type === 'law' ? 'قانون' : r.doc_type === 'ruling' ? 'حكم قضائي' : 'مستند';
+          const typeClass = r.doc_type === 'law' ? 'lib-type-badge--law' : 'lib-type-badge--judgment';
+          return `
+            <div class="library-card-wrapper" style="opacity:0; transform:scale(0.95); transition: opacity 0.3s ease, transform 0.3s ease;">
+              <div class="library-card-badges">
+                <span class="lib-type-badge ${typeClass}">${typeText}</span>
+              </div>
+              <h3 class="library-card-title">${r.title}</h3>
+              <p class="library-card-subtitle">${r.snippet || 'لا يوجد وصف متاح لهذا المستند.'}</p>
+              <div class="library-card-footer" style="display:flex; flex-direction:column; gap: var(--space-2); width:100%;">
+                <span class="library-card-meta">
+                  <span>${r.source || 'أرشيف قانوني'}</span>
+                </span>
+                <div style="display:flex; gap:8px; width:100%; margin-top:var(--space-2);">
+                  ${r.doc_type === 'law' ? `<button class="btn btn--outline btn--sm" style="flex:1; padding: 6px 12px; font-size:12px; display:inline-flex; align-items:center; justify-content:center; gap:4px;" onclick="window.location.href='law-viewer.html?id=${r.id}'">📖 الاطلاع</button>` : ''}
+                  <button class="lib-btn-browse" style="flex:1.5; margin:0; padding: 6px 12px; font-size:12px; display:inline-flex; align-items:center; justify-content:center; gap:4px;" onclick="window.location.href='app.html?ask=${encodeURIComponent('حدثني بالتفصيل عن ' + r.title)}'">تصفح مع المساعد <span>←</span></button>
+                </div>
+              </div>
+            </div>
+          `;
+        }).join('');
+
+        // Trigger animation
+        setTimeout(() => {
+          document.querySelectorAll('.library-card-wrapper').forEach((el, index) => {
+            setTimeout(() => {
+              el.style.opacity = '1';
+              el.style.transform = 'scale(1)';
+            }, index * 50);
+          });
+        }, 50);
+
+      } catch (err) {
+        grid.innerHTML = `
+          <div style="grid-column:1/-1; text-align:center; padding:var(--space-12); color:var(--color-error-700);">
+            فشل تحميل المكتبة: ${err.message || err}
+          </div>
+        `;
+      }
+    }
+
+    // Tabs filter integration
+    const filterButtons = document.querySelectorAll('.library-tab-btn');
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterButtons.forEach(b => b.classList.remove('tab-active'));
+        btn.classList.add('tab-active');
+        currentCategory = btn.getAttribute('data-filter');
+        selectedCategoryFromTree = null; // reset tree override when clicking tab
+        loadLibrary(currentCategory, null);
+      });
+    });
+
+    // Initial load
+    loadLegalTree();
+    loadLibrary('all');
+  </script>
+</body>
+</html>
+

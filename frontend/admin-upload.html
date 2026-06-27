@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>رفع قانون — قانوني AI</title>
+  <link rel="stylesheet" href="styles/design-system.css">
+  <link rel="stylesheet" href="styles/app.css">
+  <script>
+    (function() {
+      const theme = localStorage.getItem('theme') || 'light';
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+  <style>
+    .upload-container { max-width: 900px; margin: 0 auto; padding: 24px; }
+    .upload-card { background: var(--surface-color); border-radius: var(--radius-lg); padding: 32px; box-shadow: var(--shadow-md); border: 1px solid var(--border-color); }
+    .upload-card h1 { font-size: 1.8rem; font-weight: 700; margin-bottom: 8px; color: var(--danger-color); }
+    .upload-card p.subtitle { color: var(--text-muted); margin-bottom: 28px; }
+    .form-group { margin-bottom: 20px; }
+    .form-group label { display: block; font-weight: 600; margin-bottom: 6px; }
+    .form-group select, .form-group input[type="text"], .form-group input[type="file"] { width: 100%; padding: 12px 16px; border: 1px solid var(--border-color); border-radius: var(--radius-md); font-size: 0.95rem; background: var(--bg-color); }
+    .checkbox-group { display: flex; align-items: center; gap: 10px; }
+    .checkbox-group input[type="checkbox"] { width: 18px; height: 18px; }
+    .btn-upload { background: var(--primary-color); color: #fff; padding: 14px 40px; border: none; border-radius: var(--radius-md); font-size: 1rem; font-weight: 600; cursor: pointer; transition: .2s; }
+    .btn-upload:hover { opacity: .9; transform: translateY(-1px); }
+    .btn-upload:disabled { opacity: .5; cursor: not-allowed; transform: none; }
+    .btn-confirm { background: #10b981; color: #fff; padding: 14px 40px; border: none; border-radius: var(--radius-md); font-size: 1rem; font-weight: 600; cursor: pointer; }
+    .btn-cancel { background: var(--border-color); color: var(--text-color); padding: 14px 32px; border: none; border-radius: var(--radius-md); font-size: 1rem; font-weight: 600; cursor: pointer; }
+    .error-msg { color: var(--danger-color); background: rgba(239,68,68,0.1); padding: 12px; border-radius: var(--radius-md); margin: 16px 0; }
+    .result-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; background: var(--bg-color); padding: 20px; border-radius: var(--radius-md); margin-bottom: 24px; }
+    .result-grid .label { color: var(--text-muted); font-size: .85rem; }
+    .result-grid .value { font-weight: 600; }
+    .structure-preview { margin: 20px 0; }
+    .part-node { border-right: 4px solid var(--primary-color); padding-right: 12px; margin-bottom: 12px; }
+    .part-title { font-weight: 700; color: var(--primary-color); }
+    .chapter-node { margin-right: 20px; border-right: 3px solid #10b981; padding-right: 10px; margin-top: 8px; }
+    .chapter-title { font-weight: 600; color: #059669; font-size: .9rem; }
+    .article-count { font-size: .8rem; color: var(--text-muted); margin-right: 8px; }
+    .raw-text-preview { background: var(--bg-color); padding: 16px; border-radius: var(--radius-md); max-height: 240px; overflow-y: auto; font-size: .85rem; line-height: 1.6; white-space: pre-wrap; }
+    details summary { cursor: pointer; font-weight: 600; color: var(--primary-color); padding: 8px 0; }
+    .flex-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+    .done-card { text-align: center; padding: 60px 40px; }
+    .done-card .icon { font-size: 4rem; margin-bottom: 16px; }
+    .done-card h2 { font-size: 1.5rem; color: #10b981; margin-bottom: 12px; }
+    .sidebar__item--upload { display: flex; align-items: center; gap: 8px; background: rgba(239,68,68,0.08); border-radius: var(--radius-sm); }
+  </style>
+</head>
+<body class="app-body">
+  <div class="app-container">
+    <aside class="sidebar" id="app-sidebar">
+      <div class="sidebar__header">
+        <a href="index.html" class="sidebar__logo">
+          <div class="sidebar__logo-icon">ق</div>
+          <span class="sidebar__logo-text">قانوني AI</span>
+        </a>
+      </div>
+      <div class="sidebar__search" style="padding-top: var(--space-4);">
+        <div class="sidebar__group-title">الأدوات والخدمات</div>
+        <div class="sidebar__list" style="gap: 4px;">
+          <a href="dashboard.html" class="sidebar__item" style="display:flex; align-items:center; gap:8px;"><span>📊</span> <span>لوحة التحكم</span></a>
+          <a href="app.html" class="sidebar__item" style="display:flex; align-items:center; gap:8px;"><span>🤖</span> <span>المساعد القانوني الذكي</span></a>
+          <a href="search.html" class="sidebar__item" style="display:flex; align-items:center; gap:8px;"><span>🔍</span> <span>محرك البحث</span></a>
+          <a href="library.html" class="sidebar__item" style="display:flex; align-items:center; gap:8px;"><span>📚</span> <span>مكتبة التشريعات</span></a>
+          <a href="generator.html" class="sidebar__item" style="display:flex; align-items:center; gap:8px;"><span>🖋️</span> <span>منشئ المستندات</span></a>
+          <a href="analyzer.html" class="sidebar__item" style="display:flex; align-items:center; gap:8px;"><span>📄</span> <span>محلل العقود</span></a>
+          <a href="settings.html" class="sidebar__item" style="display:flex; align-items:center; gap:8px;"><span>⚙️</span> <span>الإعدادات</span></a>
+          <hr style="border-color:var(--border-color);margin:12px 0;">
+          <a href="admin-upload.html" class="sidebar__item sidebar__item--upload" style="display:flex; align-items:center; gap:8px;"><span>📤</span> <span style="color:var(--danger-color);">رفع قانون (PDF)</span></a>
+        </div>
+      </div>
+      <div class="sidebar__footer">
+        <div class="sidebar__user">
+          <div class="sidebar__avatar">م</div>
+          <span class="sidebar__username" data-user-name>مستخدم</span>
+        </div>
+        <a href="#" onclick="QaniniAuth.logout(); return false;" class="sidebar__settings-btn" title="تسجيل خروج">🚪</a>
+      </div>
+    </aside>
+
+    <main class="chat-container">
+      <header class="chat-header">
+        <div class="chat-header__info">
+          <button class="chat-header__menu-btn" id="menu-toggle-btn" aria-label="عرض القائمة">☰</button>
+          <h2 class="chat-header__title">رفع قانون جديد (PDF)</h2>
+        </div>
+        <div class="chat-header__actions">
+          <span class="badge badge--danger" style="font-size: var(--text-xs);">الإدارة</span>
+        </div>
+      </header>
+
+      <div class="app-content upload-container" id="app-content">
+        <!-- Dynamic content rendered by JS -->
+      </div>
+    </main>
+  </div>
+
+  <script src="api.js"></script>
+  <script>
+    // ─── Auth Guard ──────────────────────────────────────────────────────────
+    requireAuth();
+
+    // ─── State ───────────────────────────────────────────────────────────────
+    let state = {
+      step: 'upload', // 'upload' | 'review' | 'done'
+      divisions: [],
+      selectedDivision: '',
+      lawTitle: '',
+      file: null,
+      useAdvancedOcr: false,
+      result: null,
+      loading: false,
+      error: ''
+    };
+
+    // ─── DOM ref ─────────────────────────────────────────────────────────────
+    const $content = document.getElementById('app-content');
+
+    // ─── Load divisions on mount ─────────────────────────────────────────────
+    async function loadDivisions() {
+      try {
+        state.divisions = await apiFetch('/divisions');
+      } catch (e) {
+        state.divisions = [];
+      }
+      render();
+    }
+
+    // ─── Render ──────────────────────────────────────────────────────────────
+    function render() {
+      if (state.step === 'done') renderDone();
+      else if (state.step === 'review') renderReview();
+      else renderUpload();
+    }
+
+    // ─── Step 1: Upload Form ─────────────────────────────────────────────────
+    function renderUpload() {
+      $content.innerHTML = `
+        <div class="upload-card">
+          <h1>📤 رفع قانون جديد</h1>
+          <p class="subtitle">رفع ملف PDF واستخراج هيكله القانوني تلقائياً باستخدام الذكاء الاصطناعي</p>
+
+          <div class="form-group">
+            <label>التصنيف القانوني</label>
+            <select id="select-division">
+              <option value="">اختر التصنيف...</option>
+              ${state.divisions.map(d => `<option value="${d.id}">${d.name} (${d.law_count} قانون)</option>`).join('')}
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>عنوان القانون (اختياري)</label>
+            <input type="text" id="input-title" placeholder="سيتم استخراجه تلقائياً من الملف" value="${state.lawTitle}">
+          </div>
+
+          <div class="form-group">
+            <label>ملف PDF</label>
+            <input type="file" id="input-file" accept=".pdf">
+            <p style="font-size:.85rem;color:var(--text-muted);margin-top:4px;">يدعم الملفات النصية والممسوحة ضوئياً (مع OCR)</p>
+          </div>
+
+          <div class="form-group checkbox-group">
+            <input type="checkbox" id="chk-advanced-ocr" ${state.useAdvancedOcr ? 'checked' : ''}>
+            <label for="chk-advanced-ocr" style="margin:0;">استخدام OCR متقدم (Google Vision) للملفات المصورة</label>
+          </div>
+
+          ${state.error ? `<div class="error-msg">${state.error}</div>` : ''}
+
+          <button class="btn-upload" id="btn-upload" ${state.loading ? 'disabled' : ''}>
+            ${state.loading ? '⏳ جاري المعالجة...' : '🔍 معالجة واستخراج النصوص'}
+          </button>
+        </div>
+      `;
+
+      // Bind events
+      document.getElementById('btn-upload').addEventListener('click', handleUpload);
+      document.getElementById('select-division').addEventListener('change', e => state.selectedDivision = e.target.value);
+      document.getElementById('input-title').addEventListener('input', e => state.lawTitle = e.target.value);
+      document.getElementById('input-file').addEventListener('change', e => state.file = e.target.files[0] || null);
+      document.getElementById('chk-advanced-ocr').addEventListener('change', e => state.useAdvancedOcr = e.target.checked);
+    }
+
+    // ─── Step 2: Review ──────────────────────────────────────────────────────
+    function renderReview() {
+      const r = state.result;
+      if (!r) return renderUpload();
+
+      const structureHtml = renderStructure(r.parsed_structure);
+
+      $content.innerHTML = `
+        <div class="upload-card">
+          <h1>📋 مراجعة الهيكل المستخرج</h1>
+          <p class="subtitle">تحقق من البيانات المستخرجة قبل الإدراج في قاعدة البيانات</p>
+
+          <div class="result-grid">
+            <div><div class="label">العنوان</div><div class="value">${r.title}</div></div>
+            ${r.law_number ? `<div><div class="label">رقم القانون</div><div class="value">${r.law_number}</div></div>` : ''}
+            ${r.year ? `<div><div class="label">السنة</div><div class="value">${r.year}</div></div>` : ''}
+            <div><div class="label">التصنيف</div><div class="value">${r.division_name}</div></div>
+            <div><div class="label">عدد الأبواب</div><div class="value">${r.total_parts}</div></div>
+            <div><div class="label">عدد المواد</div><div class="value" style="color:var(--primary-color);">${r.total_articles}</div></div>
+          </div>
+
+          <h3 style="margin-bottom:12px;">الهيكل الهرمي:</h3>
+          <div class="structure-preview">${structureHtml}</div>
+
+          ${r.raw_text_preview ? `
+            <details>
+              <summary>معاينة النص الخام</summary>
+              <div class="raw-text-preview">${escapeHtml(r.raw_text_preview)}</div>
+            </details>
+          ` : ''}
+
+          ${state.error ? `<div class="error-msg">${state.error}</div>` : ''}
+
+          <div class="flex-btns" style="margin-top:24px;">
+            <button class="btn-confirm" id="btn-confirm" ${state.loading ? 'disabled' : ''}>
+              ${state.loading ? '⏳ جاري الإدراج...' : '✅ تأكيد وإدراج في قاعدة البيانات'}
+            </button>
+            <button class="btn-cancel" id="btn-cancel" ${state.loading ? 'disabled' : ''}>إلغاء</button>
+          </div>
+        </div>
+      `;
+
+      document.getElementById('btn-confirm').addEventListener('click', handleConfirm);
+      document.getElementById('btn-cancel').addEventListener('click', () => { state.step = 'upload'; state.error = ''; render(); });
+    }
+
+    // ─── Step 3: Done ────────────────────────────────────────────────────────
+    function renderDone() {
+      $content.innerHTML = `
+        <div class="upload-card done-card">
+          <div class="icon">✅</div>
+          <h2>تم الإدراج بنجاح</h2>
+          <p style="color:var(--text-muted);margin-bottom:24px;">${state.successMessage || 'تم حفظ القانون وجميع مواده في قاعدة البيانات'}</p>
+          <button class="btn-upload" id="btn-reset">📤 رفع قانون آخر</button>
+        </div>
+      `;
+      document.getElementById('btn-reset').addEventListener('click', () => {
+        state.step = 'upload'; state.file = null; state.lawTitle = '';
+        state.result = null; state.error = ''; state.successMessage = '';
+        render();
+      });
+    }
+
+    // ─── Helper: render structure tree ───────────────────────────────────────
+    function renderStructure(parsed, depth = 0) {
+      if (!parsed || !parsed.parts) return '<p style="color:var(--text-muted)">لا يوجد هيكل مستخرج</p>';
+      return parsed.parts.map((part, pIdx) => `
+        <div class="part-node" style="margin-right: ${depth * 20}px;">
+          <div class="part-title">الباب ${part.part_number}: ${part.title}</div>
+          ${part.chapters && part.chapters.length > 0 ? part.chapters.map(ch => `
+            <div class="chapter-node">
+              <div class="chapter-title">الفصل ${ch.chapter_number}: ${ch.title}</div>
+              <span class="article-count">${(ch.articles || []).length} مادة</span>
+            </div>
+          `).join('') : `<span class="article-count" style="margin-right:20px;">${(part.articles || []).length} مادة</span>`}
+        </div>
+      `).join('');
+    }
+
+    // ─── Helper: escape HTML ─────────────────────────────────────────────────
+    function escapeHtml(text) {
+      const d = document.createElement('div');
+      d.textContent = text;
+      return d.innerHTML;
+    }
+
+    // ─── Handlers ────────────────────────────────────────────────────────────
+    async function handleUpload() {
+      if (!state.file || !state.selectedDivision) {
+        state.error = 'يرجى اختيار ملف PDF وتصنيف';
+        render();
+        return;
+      }
+      state.loading = true;
+      state.error = '';
+      render();
+
+      try {
+        const formData = new FormData();
+        formData.append('file', state.file);
+        formData.append('division_id', state.selectedDivision);
+        if (state.lawTitle) formData.append('law_title', state.lawTitle);
+        formData.append('use_advanced_ocr', String(state.useAdvancedOcr));
+
+        const res = await apiFetch('/admin/parse-ocr-pdf', {
+          method: 'POST',
+          body: formData,
+          isFormData: true,
+          headers: {} // Let apiFetch handle auth
+        });
+
+        state.result = res.data;
+        state.step = 'review';
+        state.loading = false;
+        render();
+      } catch (e) {
+        state.error = e.message || 'فشل معالجة الملف';
+        state.loading = false;
+        render();
+      }
+    }
+
+    async function handleConfirm() {
+      if (!state.result) return;
+      state.loading = true;
+      state.error = '';
+      render();
+
+      try {
+        const res = await apiFetch('/admin/confirm-parse', {
+          method: 'POST',
+          body: {
+            title: state.result.title,
+            division_id: state.result.division_id,
+            division_name: state.result.division_name,
+            parsed_structure: state.result.parsed_structure
+          }
+        });
+        state.successMessage = res.message;
+        state.step = 'done';
+        state.loading = false;
+        render();
+      } catch (e) {
+        state.error = e.message || 'فشل تأكيد الإدراج';
+        state.loading = false;
+        render();
+      }
+    }
+
+    // ─── Init ────────────────────────────────────────────────────────────────
+    updateUserUI();
+    loadDivisions();
+  </script>
+</body>
+</html>

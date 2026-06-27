@@ -1,0 +1,470 @@
+﻿<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>الإعدادات والخيارات — قانوني AI</title>
+  
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="styles/design-system.css">
+  <link rel="stylesheet" href="styles/app.css">
+  <link rel="stylesheet" href="styles/app-screens.css">
+  <link rel="stylesheet" href="styles/settings.css">
+
+  <!-- Instant theme script loader to prevent white flashes -->
+  <script>
+    (function() {
+      const theme = localStorage.getItem('theme') || 'light';
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+</head>
+<body class="app-body">
+
+  <div class="app-container">
+    
+    <!-- ============================================
+         RIGHT SIDEBAR (Global Workspace Navigation)
+         ============================================ -->
+    <aside class="sidebar" id="app-sidebar">
+      <div class="sidebar__header">
+        <a href="index.html" class="sidebar__logo">
+          <div class="sidebar__logo-icon">ق</div>
+          <span class="sidebar__logo-text">قانوني AI</span>
+        </a>
+        <button class="sidebar__settings-btn" id="close-sidebar" style="display:none;">✕</button>
+      </div>
+      
+      <button class="btn btn--primary sidebar__new-chat" onclick="window.location.href='app.html'">
+        <span>+ محادثة جديدة</span>
+      </button>
+      
+      <div class="sidebar__search" style="padding-top: var(--space-4);">
+        <div class="sidebar__group-title" style="padding-right:0; margin-bottom:var(--space-2);">الأدوات والخدمات</div>
+        <div class="sidebar__list" style="margin-bottom: var(--space-6); gap: 4px;">
+          <a href="dashboard.html" class="sidebar__item" style="display:flex; align-items:center; gap:8px;">
+            <span>📊</span> <span>لوحة التحكم</span>
+          </a>
+          <a href="app.html" class="sidebar__item" style="display:flex; align-items:center; gap:8px;">
+            <span>🤖</span> <span>المساعد القانوني الذكي</span>
+          </a>
+          <a href="search.html" class="sidebar__item" style="display:flex; align-items:center; gap:8px;">
+            <span>🔍</span> <span>محرك البحث السيمانتك</span>
+          </a>
+          <a href="library.html" class="sidebar__item" style="display:flex; align-items:center; gap:8px;">
+            <span>📚</span> <span>مكتبة التشريعات</span>
+          </a>
+          <a href="generator.html" class="sidebar__item" style="display:flex; align-items:center; gap:8px;">
+            <span>🖋️</span> <span>منشئ المستندات</span>
+          </a>
+          <a href="analyzer.html" class="sidebar__item" style="display:flex; align-items:center; gap:8px;">
+            <span>📄</span> <span>محلل ومراجع العقود</span>
+          </a>
+          <a href="settings.html" class="sidebar__item sidebar__item--active" style="display:flex; align-items:center; gap:8px;">
+            <span>⚙️</span> <span>الإعدادات</span>
+          </a>
+        </div>
+      </div>
+      
+      <div class="sidebar__footer">
+        <div class="sidebar__user">
+          <div class="sidebar__avatar">مح</div>
+          <span class="sidebar__username" data-user-name>مستخدم</span>
+        </div>
+        <a href="#" onclick="QaniniAuth.logout(); return false;" class="sidebar__settings-btn" title="تسجيل خروج">🚪</a>
+      </div>
+    </aside>
+    
+    <!-- ============================================
+         MAIN WORKSPACE CONTENT
+         ============================================ -->
+    <main class="chat-container">
+      
+      <!-- Top header bar -->
+      <header class="chat-header">
+        <div class="chat-header__info">
+          <button class="chat-header__menu-btn" id="menu-toggle-btn" aria-label="عرض القائمة">☰</button>
+          <h2 class="chat-header__title">إعدادات النظام والملف الشخصي</h2>
+        </div>
+        
+        <div class="chat-header__actions">
+          <button class="btn btn--outline btn--sm" onclick="location.reload();">🔄 تحديث الإعدادات</button>
+        </div>
+      </header>
+      
+      <!-- Content Area -->
+      <div class="app-content">
+        
+        <div class="settings-container">
+          
+          <!-- Heading Section -->
+          <div class="quick-actions__title" style="margin-bottom:var(--space-2); font-size:var(--text-xl);">لوحة التحكم بالخيارات والتفضيلات</div>
+          <p style="font-size:var(--text-xs); color:var(--color-gray-500); margin-bottom:var(--space-6);">إدارة ملفك القانوني الشخصي، وتغيير المظهر، وحجم الخط، وإدارة باقة اشتراكك الفعالة.</p>
+          
+          <!-- Split settings grid layout -->
+          <div class="settings-grid">
+            
+            <!-- 1. Right Navigation Column -->
+            <nav class="settings-nav">
+              <button class="settings-nav-item nav-active" data-target="panel-profile">👤 الملف الشخصي</button>
+              <button class="settings-nav-item" data-target="panel-theme">🎨 تفضيلات المظهر والنظام</button>
+              <button class="settings-nav-item" data-target="panel-security">🔒 أمان الحساب</button>
+              <button class="settings-nav-item" data-target="panel-billing">💳 الفواتير والاشتراك</button>
+            </nav>
+            
+            <!-- 2. Left Settings Panels Content -->
+            <div>
+              
+              <!-- Tab 1: Profile Panel -->
+              <div class="settings-panel panel-active" id="panel-profile">
+                <div class="settings-panel-header">
+                  <h3 class="settings-panel-title">الملف الشخصي للمستخدم</h3>
+                  <p class="settings-panel-desc">قم بتعديل بياناتك العامة لتظهر في الوثائق والاستشارات القانونية المصاغة.</p>
+                </div>
+                
+                <div class="avatar-settings-group">
+                  <div class="avatar-large-preview">مح</div>
+                  <div>
+                    <h4 class="form-label" style="font-size:var(--text-sm); margin-bottom:var(--space-1);">مستخدم</h4>
+                    <p style="font-size:var(--text-xs); color:var(--color-gray-500);">الرتبة: باحث ومستشار قانوني</p>
+                    <button class="btn btn--outline btn--sm" style="margin-top:var(--space-2); padding:var(--space-1) var(--space-3);" onclick="alert('خاصية رفع الصورة قيد التطوير في المرحلة القادمة!')">تغيير الصورة</button>
+                  </div>
+                </div>
+                
+                <form id="profile-form">
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label for="prof-name" class="form-label">الاسم الكامل</label>
+                      <input type="text" id="prof-name" class="form-input" value="محمد الكبسي" required>
+                    </div>
+                    <div class="form-group">
+                      <label for="prof-title" class="form-label">الصفة المهنية</label>
+                      <select id="prof-title" class="form-input">
+                        <option value="lawyer">محامي مرخص</option>
+                        <option value="researcher" selected>باحث / مستشار قانوني</option>
+                        <option value="corporate">ممثل قانوني لشركة</option>
+                        <option value="individual">مستفيد مستقل (فرد)</option>
+                      </select>
+                    </div>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="prof-email" class="form-label">البريد الإلكتروني المعتمد</label>
+                    <input type="email" id="prof-email" class="form-input" value="m.kibsi@qanuni-legal.ye" required>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="prof-address" class="form-label">المكتب والموقع الرئيسي</label>
+                    <input type="text" id="prof-address" class="form-input" value="شارع حدة، صنعاء، اليمن">
+                  </div>
+                  
+                  <button type="submit" class="btn btn--primary" style="margin-top:var(--space-2);">حفظ التغييرات</button>
+                </form>
+              </div>
+              
+              <!-- Tab 2: Theme / Preference Panel -->
+              <div class="settings-panel" id="panel-theme">
+                <div class="settings-panel-header">
+                  <h3 class="settings-panel-title">تفضيلات المظهر والنظام</h3>
+                  <p class="settings-panel-desc">اختر تفضيلاتك في العرض ولغة الواجهة لتسهيل قراءة وتصفح القوانين الطويلة.</p>
+                </div>
+                
+                <!-- 1. Dark Mode Toggle Switch -->
+                <div class="theme-switch-container">
+                  <div class="switch-label-group">
+                    <span class="switch-title">الوضع الليلي (Dark Mode)</span>
+                    <span class="switch-desc">تحويل الواجهة كاملة إلى اللون الداكن لحماية العين أثناء القراءة الطويلة.</span>
+                  </div>
+                  <label class="theme-switch">
+                    <input type="checkbox" id="dark-mode-toggle">
+                    <span class="slider"></span>
+                  </label>
+                </div>
+                
+                <!-- 2. Font Size Custom -->
+                <div class="theme-switch-container">
+                  <div class="switch-label-group">
+                    <span class="switch-title">حجم خط القراءة</span>
+                    <span class="switch-desc">تعديل حجم النصوص والفقرات في لوحات القراءة ومكتبة التشريعات.</span>
+                  </div>
+                  <select id="font-size-select" class="form-input" style="width: 140px;">
+                    <option value="small">صغير (14px)</option>
+                    <option value="medium" selected>متوسط (16px)</option>
+                    <option value="large">كبير (18px)</option>
+                    <option value="xlarge">ضخم (20px)</option>
+                  </select>
+                </div>
+                
+                <!-- 3. Accent Color Custom -->
+                <div class="theme-switch-container">
+                  <div class="switch-label-group">
+                    <span class="switch-title">اللون الثانوي للواجهة</span>
+                    <span class="switch-desc">اللون النشط للأزرار والعناصر والشارات التفاعلية.</span>
+                  </div>
+                  <select id="accent-color-select" class="form-input" style="width: 140px;" onchange="alert('تم تفعيل اللون المحدد كلون تفاعلي!')">
+                    <option value="teal" selected>أخضر تركوازي (الافتراضي)</option>
+                    <option value="navy">كحلي عميق</option>
+                    <option value="gold">ذهبي كلاسيكي</option>
+                  </select>
+                </div>
+                
+                <!-- 4. Language Custom -->
+                <div class="theme-switch-container">
+                  <div class="switch-label-group">
+                    <span class="switch-title">لغة واجهة النظام</span>
+                    <span class="switch-desc">اللغة المستخدمة في القوائم ولوحة المتابعة الجانبية.</span>
+                  </div>
+                  <select id="lang-select" class="form-input" style="width: 140px;" onchange="alert('اللغة المفضلة لديك هي العربية، سيتم إتاحة حزم اللغة الإنجليزية قريباً!')">
+                    <option value="ar" selected>العربية (Arabic)</option>
+                    <option value="en">الإنجليزية (English)</option>
+                  </select>
+                </div>
+              </div>
+              
+              <!-- Tab 3: Security Panel -->
+              <div class="settings-panel" id="panel-security">
+                <div class="settings-panel-header">
+                  <h3 class="settings-panel-title">أمان الحساب وحمايته</h3>
+                  <p class="settings-panel-desc">قم بتعديل كلمة المرور الخاصة بك وتفعيل خيارات الحماية الأمنية المزدوجة.</p>
+                </div>
+                
+                <form id="security-form">
+                  <div class="form-group">
+                    <label for="old-pass" class="form-label">كلمة المرور الحالية</label>
+                    <input type="password" id="old-pass" class="form-input" required placeholder="••••••••">
+                  </div>
+                  <div class="form-group">
+                    <label for="new-pass" class="form-label">كلمة المرور الجديدة</label>
+                    <input type="password" id="new-pass" class="form-input" required placeholder="••••••••">
+                  </div>
+                  <div class="form-group">
+                    <label for="confirm-pass" class="form-label">تأكيد كلمة المرور الجديدة</label>
+                    <input type="password" id="confirm-pass" class="form-input" required placeholder="••••••••">
+                  </div>
+                  
+                  <div class="theme-switch-container" style="border-top:1px solid var(--color-gray-100); border-bottom:none; margin-top:var(--space-4);">
+                    <div class="switch-label-group">
+                      <span class="switch-title">التحقق الثنائي بخطوتين (2FA)</span>
+                      <span class="switch-desc">حماية إضافية عن طريق إرسال رمز OTP لهاتفك أو بريدك الإلكتروني عند الدخول.</span>
+                    </div>
+                    <label class="theme-switch">
+                      <input type="checkbox" onchange="alert('تم تفعيل ميزة التحقق الثنائي بخطوتين لزيادة الأمان!')">
+                      <span class="slider"></span>
+                    </label>
+                  </div>
+                  
+                  <button type="submit" class="btn btn--primary" style="margin-top:var(--space-2);">تحديث كلمة المرور</button>
+                </form>
+              </div>
+              
+              <!-- Tab 4: Billing & Plan -->
+              <div class="settings-panel" id="panel-billing">
+                <div class="settings-panel-header">
+                  <h3 class="settings-panel-title">بيانات الباقة والاشتراك</h3>
+                  <p class="settings-panel-desc">راجع استهلاكك لمميزات الذكاء الاصطناعي وحدود الصياغة والتحليل المخصصة لباقة اشتراكك.</p>
+                </div>
+                
+                <div style="display:flex; justify-content:space-between; align-items:center; background:var(--color-primary-50); border:1px solid var(--color-primary-100); border-radius:var(--radius-lg); padding:var(--space-4); margin-bottom:var(--space-6);">
+                  <div>
+                    <h4 class="form-label" style="font-size:var(--text-sm); margin-bottom:var(--space-1); color:var(--color-primary);">الباقة الاحترافية النشطة (Professional Plan)</h4>
+                    <p style="font-size:var(--text-xs); color:var(--color-gray-500);">الرسوم الشهرية: $29/شهرياً • التجديد القادم: 1 يوليو 2026م</p>
+                  </div>
+                  <span class="badge badge--gold">نشط</span>
+                </div>
+                
+                <h4 class="form-label" style="margin-bottom:var(--space-2);">معدلات استهلاك الميزات هذا الشهر</h4>
+                
+                <!-- Usage Meter 1 -->
+                <div class="billing-progress-container">
+                  <div class="billing-progress-label">
+                    <span>الاستفسارات والبحث القانوني</span>
+                    <span id="usage-queries-label">0 / 0</span>
+                  </div>
+                  <div class="billing-progress-bar-bg">
+                    <div class="billing-progress-bar-fill" id="usage-queries-bar" style="width: 0%;"></div>
+                  </div>
+                </div>
+                
+                <!-- Usage Meter 2 -->
+                <div class="billing-progress-container" style="margin-top:var(--space-3);">
+                  <div class="billing-progress-label">
+                    <span>تحليل وتدقيق العقود والملفات</span>
+                    <span id="usage-analyses-label">0 / 0</span>
+                  </div>
+                  <div class="billing-progress-bar-bg">
+                    <div class="billing-progress-bar-fill" id="usage-analyses-bar" style="width: 0%;"></div>
+                  </div>
+                </div>
+                
+                <!-- Usage Meter 3 -->
+                <div class="billing-progress-container" style="margin-top:var(--space-3);">
+                  <div class="billing-progress-label">
+                    <span>توليد وصياغة الوثائق القانونية</span>
+                    <span id="usage-drafts-label">0 / 0</span>
+                  </div>
+                  <div class="billing-progress-bar-bg">
+                    <div class="billing-progress-bar-fill" id="usage-drafts-bar" style="width: 0%;"></div>
+                  </div>
+                </div>
+                
+                <div style="display:flex; gap:var(--space-3); margin-top:var(--space-6);">
+                  <button class="btn btn--primary" onclick="window.location.href='pricing.html'">ترقية الاشتراك</button>
+                  <button class="btn btn--outline" onclick="alert('جاري توليد وتنزيل الفواتير الأخيرة باللغة العربية كـ PDF...')">تنزيل كشف الفواتير</button>
+                </div>
+              </div>
+              
+            </div>
+            
+          </div>
+          
+        </div>
+        
+      </div>
+      
+    </main>
+    
+  </div>
+
+  <script src="api.js"></script>
+  <script>
+    if (!requireAuth()) throw new Error('redirect');
+
+    // Load User context
+    const user = QaniniAuth.getUser();
+    if (user) {
+      document.getElementById('prof-name').value = user.full_name;
+      document.getElementById('prof-email').value = user.email;
+      
+      const titleSelect = document.getElementById('prof-title');
+      if (titleSelect) {
+        titleSelect.value = user.role === 'client' ? 'individual' : user.role === 'lawyer' ? 'lawyer' : user.role === 'reviewer' ? 'researcher' : 'corporate';
+      }
+
+      document.querySelectorAll('.sidebar__username, .avatar-settings-group h4').forEach(el => el.textContent = user.full_name);
+      document.querySelectorAll('.avatar-large-preview, .sidebar__avatar').forEach(el => el.textContent = user.full_name.substring(0,2));
+      
+      const roleLabels = { admin: 'مدير النظام', lawyer: 'محامي مرخص', client: 'مستخدم مستقل (فرد)', reviewer: 'باحث / مستشار قانوني' };
+      document.querySelectorAll('.avatar-settings-group p').forEach(el => el.textContent = `الرتبة: ${roleLabels[user.role] || user.role}`);
+    }
+    document.querySelectorAll('[title="تسجيل خروج"]').forEach(b => b.addEventListener('click', e => { e.preventDefault(); QaniniAuth.logout(); }));
+
+    // Sidebar responsive toggle on mobile
+    const sidebar = document.getElementById('app-sidebar');
+    const menuBtn = document.getElementById('menu-toggle-btn');
+    const closeBtn = document.getElementById('close-sidebar');
+
+    menuBtn.addEventListener('click', () => {
+      sidebar.classList.add('sidebar--active');
+      closeBtn.style.display = 'block';
+    });
+
+    closeBtn.addEventListener('click', () => {
+      sidebar.classList.remove('sidebar--active');
+      closeBtn.style.display = 'none';
+    });
+
+    // 1. Tabs navigation in Settings
+    const navItems = document.querySelectorAll('.settings-nav-item');
+    const panels = document.querySelectorAll('.settings-panel');
+
+    navItems.forEach(item => {
+      item.addEventListener('click', () => {
+        navItems.forEach(nav => nav.classList.remove('nav-active'));
+        item.classList.add('nav-active');
+
+        panels.forEach(p => p.classList.remove('panel-active'));
+        const targetId = item.getAttribute('data-target');
+        document.getElementById(targetId).classList.add('panel-active');
+      });
+    });
+
+    // 2. Dark Mode Toggle Functionality
+    const darkModeToggle = document.getElementById('dark-mode-toggle');
+    const currentTheme = localStorage.getItem('theme') || 'light';
+    if (currentTheme === 'dark') {
+      darkModeToggle.checked = true;
+    }
+
+    darkModeToggle.addEventListener('change', () => {
+      if (darkModeToggle.checked) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
+      } else {
+        document.documentElement.setAttribute('data-theme', 'light');
+        localStorage.setItem('theme', 'light');
+      }
+    });
+
+    // 3. Real subscription usage loading
+    async function loadSubscriptionData() {
+      try {
+        const usage = await apiGetUsage();
+        
+        // Meter 1: Queries
+        const queriesUsed = usage.searches_quota - usage.searches_left;
+        document.getElementById('usage-queries-label').textContent = `${queriesUsed} استفسار / ${usage.searches_quota}`;
+        const queriesPct = usage.searches_quota > 0 ? (queriesUsed / usage.searches_quota) * 100 : 0;
+        document.getElementById('usage-queries-bar').style.width = `${queriesPct}%`;
+
+        // Meter 2: Analyses
+        const analysesUsed = usage.analyses_quota - usage.analyses_left;
+        document.getElementById('usage-analyses-label').textContent = `${analysesUsed} عقد / ${usage.analyses_quota}`;
+        const analysesPct = usage.analyses_quota > 0 ? (analysesUsed / usage.analyses_quota) * 100 : 0;
+        document.getElementById('usage-analyses-bar').style.width = `${analysesPct}%`;
+
+        // Meter 3: Drafts
+        const draftsUsed = usage.drafts_quota - usage.drafts_left;
+        document.getElementById('usage-drafts-label').textContent = `${draftsUsed} وثيقة / ${usage.drafts_quota}`;
+        const draftsPct = usage.drafts_quota > 0 ? (draftsUsed / usage.drafts_quota) * 100 : 0;
+        document.getElementById('usage-drafts-bar').style.width = `${draftsPct}%`;
+
+        // Load subscription details
+        const sub = await apiGetSubscription();
+        const planNames = { free: 'الباقة المجانية (Free Plan)', professional: 'الباقة الاحترافية النشطة (Professional Plan)', enterprise: 'باقة المؤسسات والشركات (Enterprise Plan)' };
+        const subHeader = document.querySelector('#panel-billing h4.form-label');
+        if (subHeader) {
+          subHeader.textContent = planNames[sub.plan] || `${sub.plan} Plan`;
+        }
+        
+        const subBadge = document.querySelector('#panel-billing .badge--gold');
+        if (subBadge) {
+          subBadge.textContent = sub.status === 'active' ? 'نشط' : 'غير نشط';
+          subBadge.style.background = sub.status === 'active' ? 'var(--color-success-50)' : 'var(--color-error-50)';
+          subBadge.style.color = sub.status === 'active' ? 'var(--color-success-700)' : 'var(--color-error-700)';
+        }
+
+      } catch (err) {
+        console.error('Failed to load subscription data:', err);
+      }
+    }
+
+    // Mock form submits with toast notifications
+    document.getElementById('profile-form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      showToast('تم حفظ تعديلات الملف الشخصي بنجاح!', 'success');
+    });
+
+    document.getElementById('security-form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const newPass = document.getElementById('new-pass').value;
+      const confirmPass = document.getElementById('confirm-pass').value;
+
+      if (newPass !== confirmPass) {
+        showToast('كلمتا المرور غير متطابقتين!', 'error');
+        return;
+      }
+      showToast('تم تحديث كلمة المرور وحماية الحساب بنجاح!', 'success');
+      document.getElementById('security-form').reset();
+    });
+
+    // Font size custom mock
+    const fontSizeSelect = document.getElementById('font-size-select');
+    fontSizeSelect.addEventListener('change', () => {
+      showToast(`تم تغيير حجم خط القراءة إلى: ${fontSizeSelect.options[fontSizeSelect.selectedIndex].text}`, 'success');
+    });
+
+    // Initial load
+    loadSubscriptionData();
+  </script>
+</body>
+</html>

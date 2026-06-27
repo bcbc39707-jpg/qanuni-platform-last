@@ -1,16 +1,14 @@
 {
   "name": "qanuni-frontend",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "private": true,
-  "scripts": { "dev": "next dev", "build": "next build", "start": "next start", "lint": "next lint" },
-  "dependencies": {
-    "next": "14.1.0", "react": "^18.2.0", "react-dom": "^18.2.0",
-    "axios": "^1.6.7", "zustand": "^4.5.0", "@tanstack/react-query": "^5.18.0",
-    "react-hook-form": "^7.50.0", "zod": "^3.22.4", "lucide-react": "^0.323.0",
-    "clsx": "^2.1.0", "tailwind-merge": "^2.2.1"
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0 --port 3000",
+    "build": "vite build",
+    "preview": "vite preview --host 0.0.0.0 --port 3000"
   },
   "devDependencies": {
-    "@types/node": "^20", "@types/react": "^18", "@types/react-dom": "^18",
-    "autoprefixer": "^10.0.1", "postcss": "^8", "tailwindcss": "^3.3.0", "typescript": "^5"
+    "vite": "^6.0.0"
   }
 }

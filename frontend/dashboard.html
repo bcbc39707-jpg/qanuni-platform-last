@@ -1,0 +1,315 @@
+﻿<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>لوحة التحكم — قانوني AI</title>
+  
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="styles/design-system.css">
+  <link rel="stylesheet" href="styles/app.css">
+  <link rel="stylesheet" href="styles/app-screens.css">
+
+  <!-- Instant theme script loader to prevent white flashes -->
+  <script>
+    (function() {
+      const theme = localStorage.getItem('theme') || 'light';
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+</head>
+<body class="app-body">
+
+  <div class="app-container">
+    
+    <!-- ============================================
+         RIGHT SIDEBAR (Global Workspace Navigation)
+         ============================================ -->
+    <aside class="sidebar" id="app-sidebar">
+      <div class="sidebar__header">
+        <a href="index.html" class="sidebar__logo">
+          <div class="sidebar__logo-icon">ق</div>
+          <span class="sidebar__logo-text">قانوني AI</span>
+        </a>
+        <button class="sidebar__settings-btn" id="close-sidebar" style="display:none;">✕</button>
+      </div>
+      
+      <button class="btn btn--primary sidebar__new-chat" onclick="window.location.href='app.html'">
+        <span>+ محادثة جديدة</span>
+      </button>
+      
+      <div class="sidebar__search" style="padding-top: var(--space-4);">
+        <div class="sidebar__group-title" style="padding-right:0; margin-bottom:var(--space-2);">الأدوات والخدمات</div>
+        <div class="sidebar__list" style="margin-bottom: var(--space-6); gap: 4px;">
+          <a href="dashboard.html" class="sidebar__item sidebar__item--active" style="display:flex; align-items:center; gap:8px;">
+            <span>📊</span> <span>لوحة التحكم</span>
+          </a>
+          <a href="app.html" class="sidebar__item" style="display:flex; align-items:center; gap:8px;">
+            <span>🤖</span> <span>المساعد القانوني الذكي</span>
+          </a>
+          <a href="search.html" class="sidebar__item" style="display:flex; align-items:center; gap:8px;">
+            <span>🔍</span> <span>محرك البحث السيمانتك</span>
+          </a>
+          <a href="library.html" class="sidebar__item" style="display:flex; align-items:center; gap:8px;">
+            <span>📚</span> <span>مكتبة التشريعات</span>
+          </a>
+          <a href="generator.html" class="sidebar__item" style="display:flex; align-items:center; gap:8px;">
+            <span>🖋️</span> <span>منشئ المستندات</span>
+          </a>
+          <a href="analyzer.html" class="sidebar__item" style="display:flex; align-items:center; gap:8px;">
+            <span>📄</span> <span>محلل ومراجع العقود</span>
+          </a>
+          <a href="settings.html" class="sidebar__item" style="display:flex; align-items:center; gap:8px;">
+            <span>⚙️</span> <span>الإعدادات</span>
+          </a>
+        </div>
+      </div>
+      
+      <div class="sidebar__footer">
+        <div class="sidebar__user">
+          <div class="sidebar__avatar">مح</div>
+          <span class="sidebar__username" data-user-name>مستخدم</span>
+        </div>
+        <a href="#" onclick="QaniniAuth.logout(); return false;" class="sidebar__settings-btn" title="تسجيل خروج">🚪</a>
+      </div>
+    </aside>
+    
+    <!-- ============================================
+         MAIN WORKSPACE CONTENT
+         ============================================ -->
+    <main class="chat-container">
+      
+      <!-- Top header bar -->
+      <header class="chat-header">
+        <div class="chat-header__info">
+          <button class="chat-header__menu-btn" id="menu-toggle-btn" aria-label="عرض القائمة">☰</button>
+          <h2 class="chat-header__title">لوحة التحكم والمتابعة</h2>
+        </div>
+        
+        <div class="chat-header__actions">
+          <span class="badge badge--gold" style="font-size: var(--text-xs);">الباقة الاحترافية نشطة</span>
+        </div>
+      </header>
+      
+      <!-- Dashboard Workspace Viewport -->
+      <div class="app-content">
+        
+        <!-- Welcome banner -->
+        <div class="welcome-banner">
+          <h3 class="welcome-banner__title">أهلاً بك مجدداً، مستخدم</h3>
+          <p class="welcome-banner__desc">لديك 3 استشارات جديدة قيد المتابعة، وعقد واحد تم تحليله بنجاح اليوم. يمكنك استخدام شريط الأدوات بالأسفل للوصول الفوري.</p>
+        </div>
+        
+        <!-- Stats Widgets Grid -->
+        <div class="dashboard-grid">
+          <div class="card dashboard-card">
+            <div class="dashboard-card__header">
+              <div class="dashboard-card__icon">🤖</div>
+              <h4 class="dashboard-card__title">استشارات الذكاء الاصطناعي</h4>
+            </div>
+            <div class="dashboard-card__value">42</div>
+            <div class="dashboard-card__trend">↑ 12% استفساراً إضافياً هذا الأسبوع</div>
+          </div>
+          
+          <div class="card dashboard-card">
+            <div class="dashboard-card__header">
+              <div class="dashboard-card__icon">🔍</div>
+              <h4 class="dashboard-card__title">البحوث التشريعية</h4>
+            </div>
+            <div class="dashboard-card__value">18</div>
+            <div class="dashboard-card__trend">✓ بحث سيمانتك ذكي في القوانين</div>
+          </div>
+          
+          <div class="card dashboard-card">
+            <div class="dashboard-card__header">
+              <div class="dashboard-card__icon">🖋️</div>
+              <h4 class="dashboard-card__title">وثائق وعقود تم توليدها</h4>
+            </div>
+            <div class="dashboard-card__value">29</div>
+            <div class="dashboard-card__trend">✓ صياغة قانونية بالذكاء الاصطناعي</div>
+          </div>
+        </div>
+        
+        <!-- Quick Actions Grid -->
+        <div class="quick-actions">
+          <h3 class="quick-actions__title">الوصول السريع للأدوات</h3>
+          <div class="quick-actions__grid">
+            <a href="app.html" class="quick-action-btn">
+              <span class="quick-action-btn__icon">🤖</span>
+              <span class="quick-action-btn__title">المساعد الذكي</span>
+              <span class="quick-action-btn__desc">استشارة فورية بمواد القانون</span>
+            </a>
+            
+            <a href="search.html" class="quick-action-btn">
+              <span class="quick-action-btn__icon">🔍</span>
+              <span class="quick-action-btn__title">البحث السيمانتك</span>
+              <span class="quick-action-btn__desc">تصفح التشريعات اليمنية</span>
+            </a>
+            
+            <a href="generator.html" class="quick-action-btn">
+              <span class="quick-action-btn__icon">🖋️</span>
+              <span class="quick-action-btn__title">منشئ المستندات</span>
+              <span class="quick-action-btn__desc">صياغة العقود خطوة بخطوة</span>
+            </a>
+            
+            <a href="analyzer.html" class="quick-action-btn">
+              <span class="quick-action-btn__icon">📄</span>
+              <span class="quick-action-btn__title">محلل ومراجع العقود</span>
+              <span class="quick-action-btn__desc">كشف الثغرات والأخطاء</span>
+            </a>
+          </div>
+        </div>
+        
+        <!-- Double Split Columns: Recent activities & Saved documents -->
+        <div class="dashboard-sections">
+          <div>
+            <h3 class="quick-actions__title">الأنشطة الأخيرة</h3>
+            <div class="activity-list">
+              <div class="activity-item">
+                <div class="activity-item__info">
+                  <span class="activity-item__icon">🤖</span>
+                  <div>
+                    <h5 class="activity-item__title">محادثة: فسخ عقد الإيجار لعدم دفع الأجرة</h5>
+                    <span class="activity-item__time">منذ ساعتين</span>
+                  </div>
+                </div>
+                <a href="app.html" style="color:var(--color-secondary-700); font-size:var(--text-xs); font-weight:bold;">متابعة الاستشارة ←</a>
+              </div>
+              
+              <div class="activity-item">
+                <div class="activity-item__info">
+                  <span class="activity-item__icon">📄</span>
+                  <div>
+                    <h5 class="activity-item__title">تحليل مستند: عقد بيع شقة سكنية - صنعاء.pdf</h5>
+                    <span class="activity-item__time">أمس الساعة 4:15 مساءً</span>
+                  </div>
+                </div>
+                <a href="analyzer.html" style="color:var(--color-secondary-700); font-size:var(--text-xs); font-weight:bold;">عرض التقرير ←</a>
+              </div>
+            </div>
+          </div>
+          
+          <div>
+            <h3 class="quick-actions__title">المستندات المحفوظة</h3>
+            <div class="saved-list">
+              <div class="saved-item">
+                <div class="saved-item__info">
+                  <span class="saved-item__icon">⚖️</span>
+                  <div>
+                    <h5 class="saved-item__title">مادة 234 - القانون المدني اليمني</h5>
+                    <span class="saved-item__meta">تصنيف: عقود الإيجار</span>
+                  </div>
+                </div>
+                <span>⭐</span>
+              </div>
+              
+              <div class="saved-item">
+                <div class="saved-item__info">
+                  <span class="saved-item__icon">📜</span>
+                  <div>
+                    <h5 class="saved-item__title">لائحة اعتراضية على حكم مستعجل</h5>
+                    <span class="saved-item__meta">تصنيف: المرافعات</span>
+                  </div>
+                </div>
+                <span>⭐</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+      
+    </main>
+    
+  </div>
+
+  <script src="api.js"></script>
+  <script>
+    if (!requireAuth()) throw new Error('redirect');
+ 
+    // Sidebar toggle
+    const sidebar = document.getElementById('app-sidebar');
+    const menuBtn = document.getElementById('menu-toggle-btn');
+    const closeBtn = document.getElementById('close-sidebar');
+    menuBtn.addEventListener('click', () => { sidebar.classList.add('sidebar--active'); closeBtn.style.display = 'block'; });
+    closeBtn.addEventListener('click', () => { sidebar.classList.remove('sidebar--active'); closeBtn.style.display = 'none'; });
+ 
+    // Logout button
+    const logoutBtn = document.querySelector('.sidebar__settings-btn[title="تسجيل خروج"]');
+    if (logoutBtn) { logoutBtn.addEventListener('click', (e) => { e.preventDefault(); QaniniAuth.logout(); }); }
+ 
+    // Load user data
+    const user = QaniniAuth.getUser();
+    if (user) {
+      const welcomeTitle = document.querySelector('.welcome-banner__title');
+      if (welcomeTitle) welcomeTitle.textContent = 'أهلاً بك مجدداً، ' + user.full_name;
+      const usernameEl = document.querySelector('.sidebar__username');
+      if (usernameEl) usernameEl.textContent = user.full_name;
+      const avatarEl = document.querySelector('.sidebar__avatar');
+      if (avatarEl) avatarEl.textContent = user.full_name.substring(0, 2);
+    }
+ 
+    // Load usage stats
+    (async () => {
+      try {
+        const usage = await apiGetUsage();
+        const cards = document.querySelectorAll('.dashboard-card__value');
+        if (cards[0]) cards[0].textContent = usage.analyses_quota - usage.analyses_left > 0 ? usage.analyses_quota - usage.analyses_left : '0';
+        if (cards[1]) cards[1].textContent = usage.searches_quota - usage.searches_left > 0 ? usage.searches_quota - usage.searches_left : '0';
+        if (cards[2]) cards[2].textContent = usage.drafts_quota - usage.drafts_left > 0 ? usage.drafts_quota - usage.drafts_left : '0';
+        // Update trends
+        const trends = document.querySelectorAll('.dashboard-card__trend');
+        if (trends[0]) trends[0].textContent = `متبقي: ${usage.analyses_left} تحليل من ${usage.analyses_quota}`;
+        if (trends[1]) trends[1].textContent = `متبقي: ${usage.searches_left} بحث من ${usage.searches_quota}`;
+        if (trends[2]) trends[2].textContent = `متبقي: ${usage.drafts_left} صياغة من ${usage.drafts_quota}`;
+      } catch (e) { console.warn('Could not load usage:', e); }
+
+      // Load subscription badge
+      try {
+        const sub = await apiGetSubscription();
+        const planNames = { free: 'الباقة المجانية', professional: 'الباقة الاحترافية', enterprise: 'باقة المؤسسات' };
+        const badge = document.querySelector('.badge--gold');
+        if (badge) badge.textContent = (planNames[sub.plan] || sub.plan) + ' نشطة';
+      } catch (e) { console.warn('Could not load subscription:', e); }
+
+      // Load recent cases into activity list
+      try {
+        const cases = await apiListCases(0, 5);
+        const activityList = document.querySelector('.activity-list');
+        if (activityList && cases.length > 0) {
+          activityList.innerHTML = cases.map(c => `
+            <div class="activity-item">
+              <div class="activity-item__info">
+                <span class="activity-item__icon">⚖️</span>
+                <div>
+                  <h5 class="activity-item__title">${c.title}</h5>
+                  <span class="activity-item__time">${c.case_type} — ${c.status}</span>
+                </div>
+              </div>
+            </div>
+          `).join('');
+        }
+      } catch (e) { console.warn('Could not load cases:', e); }
+
+      // Load recent documents
+      try {
+        const docs = await apiListDocuments();
+        const savedList = document.querySelector('.saved-list');
+        if (savedList && docs.length > 0) {
+          savedList.innerHTML = docs.slice(0, 5).map(d => `
+            <div class="saved-item">
+              <div class="saved-item__info">
+                <span class="saved-item__icon">📄</span>
+                <div>
+                  <h5 class="saved-item__title">${d.title}</h5>
+                  <span class="saved-item__meta">نوع: ${d.doc_type} ${d.ocr_processed ? '✓ OCR' : ''}</span>
+                </div>
+              </div>
+            </div>
+          `).join('');
+        }
+      } catch (e) { console.warn('Could not load documents:', e); }
+    })();
+  </script>
+</body>
+</html>

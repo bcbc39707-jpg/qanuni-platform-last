@@ -9,10 +9,15 @@ services:
     environment:
       - DATABASE_URL=postgresql+asyncpg://qanuni:qanuni_secret@postgres:5432/qanuni_db
       - REDIS_URL=redis://redis:6379/0
-      - ELASTICSEARCH_URL=http://elasticsearch:9200
       - QDRANT_URL=http://qdrant:6333
-      - OPENAI_API_KEY={OPENAI_API_KEY}
-      - SECRET_KEY={SECRET_KEY:-supersecretkey}
+      - AI_PROVIDER=${AI_PROVIDER:-ollama}
+      - OLLAMA_BASE_URL=http://host.docker.internal:11434
+      - OLLAMA_MODEL=${OLLAMA_MODEL:-aya:8b}
+      - OLLAMA_EMBEDDING_MODEL=${OLLAMA_EMBEDDING_MODEL:-nomic-embed-text}
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - SECRET_KEY=${SECRET_KEY}
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
     depends_on:
       postgres:
         condition: service_healthy
@@ -20,6 +25,7 @@ services:
         condition: service_healthy
     volumes:
       - ./backend:/app
+      - ./legal_data_json:/app/legal_data_json:ro
       - uploaded_files:/app/uploads
     networks:
       - qanuni-network
@@ -47,7 +53,7 @@ services:
     environment:
       - POSTGRES_DB=qanuni_db
       - POSTGRES_USER=qanuni
-      - POSTGRES_PASSWORD=qanuni_secret
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:?must be set}
     volumes:
       - postgres_data:/var/lib/postgresql/data
       - ./database/init:/docker-entrypoint-initdb.d
@@ -71,26 +77,6 @@ services:
       test: ["CMD", "redis-cli", "ping"]
       interval: 10s
       timeout: 5s
-      retries: 5
-    networks:
-      - qanuni-network
-    restart: unless-stopped
-
-  elasticsearch:
-    image: elasticsearch:8.12.0
-    container_name: qanuni-elasticsearch
-    ports:
-      - "9200:9200"
-    environment:
-      - discovery.type=single-node
-      - xpack.security.enabled=false
-      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
-    volumes:
-      - elasticsearch_data:/usr/share/elasticsearch/data
-    healthcheck:
-      test: ["CMD-SHELL", "curl -f http://localhost:9200/_cluster/health || exit 1"]
-      interval: 30s
-      timeout: 10s
       retries: 5
     networks:
       - qanuni-network
@@ -121,7 +107,6 @@ services:
 volumes:
   postgres_data:
   redis_data:
-  elasticsearch_data:
   qdrant_data:
   uploaded_files:
 
