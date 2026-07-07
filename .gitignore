@@ -15,3 +15,8 @@ node_modules/
 .DS_Store
 Thumbs.db
 uploads/
+
+# Large binary installers - excluded from git (exceed GitHub 100MB limit)
+installers/
+tools/postgresql/
+
