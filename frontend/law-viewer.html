@@ -214,21 +214,36 @@
           return;
         }
 
+        // Helper: safely parse string or array fields
+        function parseList(val) {
+          if (!val) return [];
+          if (Array.isArray(val)) return val;
+          if (typeof val === 'string') {
+            try { const parsed = JSON.parse(val); if (Array.isArray(parsed)) return parsed; } catch(e) {}
+            return val.split(',').map(s => s.trim()).filter(s => s);
+          }
+          return [];
+        }
+
         // Helper: render a single article card
         function renderArticle(art) {
-          const keywordsHtml = art.keywords && art.keywords.length > 0 
-            ? art.keywords.map(kw => `<span class="badge" style="background:var(--color-gray-100); color:var(--color-gray-600); font-size:11px; padding:2px 8px;">${kw}</span>`).join('') 
+          const artTitle = art.article_title || art.title || '';
+          const artText = art.article_text || art.content || '';
+          const keywords = parseList(art.keywords);
+          const topics = parseList(art.legal_topics);
+          const keywordsHtml = keywords.length > 0 
+            ? keywords.map(kw => `<span class="badge" style="background:var(--color-gray-100); color:var(--color-gray-600); font-size:11px; padding:2px 8px;">${kw}</span>`).join('') 
             : '';
-          const topicsHtml = art.legal_topics && art.legal_topics.length > 0 
-            ? art.legal_topics.map(tp => `<span class="badge badge--teal" style="font-size:11px; padding:2px 8px;">${tp}</span>`).join('') 
+          const topicsHtml = topics.length > 0 
+            ? topics.map(tp => `<span class="badge badge--teal" style="font-size:11px; padding:2px 8px;">${tp}</span>`).join('') 
             : '';
           return `
             <article class="article-card" id="art-${art.article_number}">
               <div class="article-card__header">
                 <span class="article-card__number">المادة (${art.article_number})</span>
-                ${art.article_title ? `<strong style="color:var(--color-primary-800);">${art.article_title}</strong>` : ''}
+                ${artTitle ? `<strong style="color:var(--color-primary-800);">${artTitle}</strong>` : ''}
               </div>
-              <p class="article-card__text">${art.article_text.replace(/\n/g, '<br>')}</p>
+              <p class="article-card__text">${artText.replace(/\n/g, '<br>')}</p>
               ${art.summary ? `<p style="margin-top:var(--space-3); font-size:13px; color:var(--color-gray-500); background:var(--color-gray-50); padding:8px 12px; border-radius:6px; border-left:3px solid var(--color-primary-300);"><strong>الملخص:</strong> ${art.summary}</p>` : ''}
               ${keywordsHtml || topicsHtml ? `
                 <div class="article-card__analysis">

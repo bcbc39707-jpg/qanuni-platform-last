@@ -200,8 +200,9 @@
           
           <div class="chat-input__footer">
             <div class="chat-input__tools">
-              <button class="chat-input__tool" title="إرفاق ملف عقد أو قضية (PDF, DOCX)">📎</button>
-              <button class="chat-input__tool" title="تحدث صوتياً">🎙️</button>
+              <button class="chat-input__tool" id="attach-file-btn" title="إرفاق ملف عقد أو قضية (PDF, DOCX)">📎</button>
+              <button class="chat-input__tool" id="voice-btn" title="تحدث صوتياً">🎙️</button>
+              <input type="file" id="attach-file-input" accept=".pdf,.docx,.txt" style="display:none;">
             </div>
             
             <button class="chat-input__send-btn" id="send-btn">←</button>
@@ -326,10 +327,121 @@
       document.getElementById('chat-title').textContent = 'محادثة جديدة';
     });
 
-    // 7. Export PDF
-    document.getElementById('export-pdf-btn').addEventListener('click', () => { showToast('ميزة التصدير ستكون متاحة قريباً', 'info'); });
+    // 7. Export chat to PDF
+    document.getElementById('export-pdf-btn').addEventListener('click', async () => {
+      const exportBtn = document.getElementById('export-pdf-btn');
+      // Collect conversation text from rendered bubbles
+      const bubbles = messagesBox.querySelectorAll('.msg-bubble');
+      if (bubbles.length === 0) {
+        showToast('لا يوجد محتوى لتصديره. ابدأ المحادثة أولاً.', 'info');
+        return;
+      }
+      let convoText = '';
+      bubbles.forEach(b => {
+        const sender = (b.querySelector('.msg-bubble__sender') || {}).textContent || '';
+        const cardText = (b.querySelector('.msg-bubble__card') || {}).innerText || '';
+        convoText += `── ${sender} ──\n${cardText}\n\n`;
+      });
+      setLoadingState(exportBtn, true, 'تصدير PDF');
+      try {
+        const blob = await apiDraftToPdf(convoText, 'محادثة المساعد القانوني', 'memo');
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'محادثة المساعد القانوني.pdf';
+        a.click();
+        URL.revokeObjectURL(url);
+        showToast('تم تصدير المحادثة إلى PDF بنجاح', 'success');
+      } catch (err) {
+        showToast('فشل تصدير المحادثة: ' + err.message, 'error');
+      } finally {
+        setLoadingState(exportBtn, false, 'تصدير PDF');
+      }
+    });
 
-    // 8. Handle URL query parameters on page load
+    // 8. File attachment — extract text and feed it into the question
+    const attachBtn = document.getElementById('attach-file-btn');
+    const attachInput = document.getElementById('attach-file-input');
+    if (attachBtn && attachInput) {
+      attachBtn.addEventListener('click', () => attachInput.click());
+      attachInput.addEventListener('change', async () => {
+        const file = attachInput.files && attachInput.files[0];
+        if (!file) return;
+        attachBtn.textContent = '⏳';
+        try {
+          const res = await apiExtractText(file);
+          const extracted = (res.text || '').trim();
+          if (!extracted) {
+            showToast('لم يتم استخراج نص من الملف', 'error');
+            return;
+          }
+          // Pre-fill the input field with the extracted text so the user can ask about it
+          const preview = extracted.length > 1500 ? extracted.slice(0, 1500) + '…' : extracted;
+          inputField.value = `حلّل المستند التالي قانونياً وأعطني ملخصاً ونقاط القوة والضعف والمواد ذات الصلة:\n\n${preview}`;
+          inputField.focus();
+          showToast('تم استخراج نص الملف. اضغط إرسال لتحليله.', 'success');
+        } catch (err) {
+          showToast('فشل استخراج نص الملف: ' + err.message, 'error');
+        } finally {
+          attachBtn.textContent = '📎';
+          attachInput.value = '';
+        }
+      });
+    }
+
+    // 9. Voice input via Web Speech API (Arabic)
+    const voiceBtn = document.getElementById('voice-btn');
+    let recognition = null;
+    let isRecording = false;
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    if (voiceBtn) {
+      if (SpeechRecognition) {
+        recognition = new SpeechRecognition();
+        recognition.lang = 'ar-YE';
+        recognition.interimResults = false;
+        recognition.maxAlternatives = 1;
+        recognition.onresult = (event) => {
+          const transcript = event.results[0][0].transcript;
+          inputField.value = (inputField.value ? inputField.value + ' ' : '') + transcript;
+          inputField.focus();
+        };
+        recognition.onerror = (event) => {
+          showToast('خطأ في الإدخال الصوتي: ' + (event.error || ''), 'error');
+          isRecording = false;
+          voiceBtn.textContent = '🎙️';
+        };
+        recognition.onend = () => {
+          isRecording = false;
+          voiceBtn.textContent = '🎙️';
+        };
+        voiceBtn.addEventListener('click', () => {
+          if (!recognition) return;
+          if (isRecording) {
+            recognition.stop();
+            isRecording = false;
+            voiceBtn.textContent = '🎙️';
+          } else {
+            try {
+              recognition.start();
+              isRecording = true;
+              voiceBtn.textContent = '🔴';
+              showToast('جارٍ الاستماع... تحدث الآن', 'info');
+            } catch (e) {
+              showToast('تعذّر بدء التسجيل الصوتي', 'error');
+            }
+          }
+        });
+      } else {
+        // Browser doesn't support speech recognition — disable gracefully
+        voiceBtn.style.opacity = '0.4';
+        voiceBtn.title = 'الإدخال الصوتي غير مدعوم في هذا المتصفح';
+        voiceBtn.addEventListener('click', () => {
+          showToast('الإدخال الصوتي غير مدعوم في هذا المتصفح. استخدم Chrome.', 'info');
+        });
+      }
+    }
+
+    // 10. Handle URL query parameters on page load
     window.addEventListener('DOMContentLoaded', () => {
       const urlParams = new URLSearchParams(window.location.search);
       const askParam = urlParams.get('ask');

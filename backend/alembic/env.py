@@ -1,4 +1,5 @@
 import asyncio
+import os
 import sys
 from pathlib import Path
 from logging.config import fileConfig
@@ -14,6 +15,13 @@ from app.models import legal_division, legal_part, legal_chapter, legal_article,
 config = context.config
 if config.config_file_name is not None:
     fileConfig(config.config_file_name)
+
+# Prefer DATABASE_URL from the environment (set by docker-compose / .env),
+# falling back to the value declared in alembic.ini. This lets the same
+# config run inside Docker, natively, or in CI without editing the file.
+db_url = os.getenv("DATABASE_URL") or config.get_main_option("sqlalchemy.url")
+if db_url:
+    config.set_main_option("sqlalchemy.url", db_url)
 
 target_metadata = Base.metadata
 

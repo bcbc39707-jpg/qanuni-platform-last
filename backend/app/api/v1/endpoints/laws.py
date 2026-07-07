@@ -1,6 +1,6 @@
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.ext.asyncio import AsyncSession
-from sqlalchemy import select
+from sqlalchemy import select, or_, func
 from typing import List, Optional
 from pydantic import BaseModel
 from app.db.session import get_db
@@ -64,6 +64,49 @@ async def list_laws(
         else:
             query = query.where(Law.category == category)
 
+    query = query.order_by(Law.year.desc().nullslast(), Law.title).offset(skip).limit(limit)
+    result = await db.execute(query)
+    laws = result.scalars().all()
+    return [
+        LawListResponse(
+            id=l.id,
+            title=l.title,
+            law_number=l.law_number,
+            year=l.year,
+            category=l.category
+        ) for l in laws
+    ]
+
+@router.get("/search")
+async def search_laws(
+    q: Optional[str] = None,
+    category: Optional[str] = None,
+    year: Optional[int] = None,
+    skip: int = 0,
+    limit: int = 50,
+    db: AsyncSession = Depends(get_db),
+    current_user: User = Depends(get_current_user)
+):
+    """Search laws by title, number, or year."""
+    query = select(Law).where(Law.is_active == True)
+    if q:
+        query = query.where(
+            Law.title.ilike(f"%{q}%")
+            | Law.law_number.ilike(f"%{q}%")
+        )
+    if category:
+        if category == "law":
+            query = query.where(Law.category.notin_(["دستور", "لائحة", "لائحة تنفيذية", "قرار"]))
+        elif category == "constitution":
+            query = query.where(Law.category == "دستور")
+        elif category == "regulation":
+            query = query.where(Law.category.in_(["لائحة", "لائحة تنفيذية"]))
+        elif category == "decree":
+            query = query.where(Law.category.like("%قرار%"))
+        else:
+            query = query.where(Law.category == category)
+    if year:
+        query = query.where(Law.year == year)
     query = query.order_by(Law.year.desc().nullslast(), Law.title).offset(skip).limit(limit)
     result = await db.execute(query)
     laws = result.scalars().all()

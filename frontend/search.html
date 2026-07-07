@@ -123,45 +123,22 @@
               <option value="recent">الأحدث تاريخاً</option>
             </select>
             
-            <button class="btn btn--ghost btn--sm" style="color:var(--color-gray-500);">✕ مسح التصفية</button>
+            <button class="btn btn--ghost btn--sm" style="color:var(--color-gray-500);" id="filter-clear">✕ مسح التصفية</button>
           </div>
         </div>
         
         <!-- Search Results area -->
-        <h3 class="quick-actions__title" id="results-count">نتائج البحث (البحث المدني المقترح)</h3>
+        <h3 class="quick-actions__title" id="results-count">ابدأ البحث في الأرشيف القانوني اليمني</h3>
         
         <div class="activity-list" id="results-list">
-          
-          <div class="card" style="background:white; padding:var(--space-5); margin-bottom:var(--space-3); border-right:4px solid var(--color-secondary);">
-            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:var(--space-2);">
-              <span class="badge badge--teal">المادة (234) — القانون المدني اليمني</span>
-              <span style="font-size:var(--text-xs); color:var(--color-gray-400);">التصنيف: عقود الإيجار</span>
-            </div>
-            <h4 style="font-size:var(--text-base); font-weight:bold; color:var(--color-primary-800); margin-bottom:var(--space-2);">التزام المستأجر بدفع الأجرة واستحقاق الفسخ</h4>
-            <p style="font-size:var(--text-sm); color:var(--color-gray-600); line-height:var(--leading-relaxed);">
-              "يلتزم المستأجر بأن يؤدي الأجرة في المواعيد المتفق عليها، فإذا لم يوجد اتفاق وجب دفعها في نهاية كل شهر للعين المؤجرة. وفي حال تأخر المستأجر عن سداد الأجرة يحق للمؤجر إعذاره رسمياً ثم رفع دعوى الفسخ..."
+          <div class="card" style="background:white; padding:var(--space-8); margin-bottom:var(--space-3); text-align:center;">
+            <div style="font-size:48px; margin-bottom:var(--space-4);">🔍</div>
+            <h4 style="font-size:var(--text-lg); font-weight:bold; color:var(--color-primary-800); margin-bottom:var(--space-2);">محرك البحث السيمانتكي</h4>
+            <p style="font-size:var(--text-sm); color:var(--color-gray-500); line-height:var(--leading-relaxed); max-width:500px; margin:0 auto;">
+              اكتب كلمة أو عبارة في حقل البحث بالأعلى للبحث في القوانين، اللوائح، المواد القانونية، والأحكام القضائية اليمنية.
+              <br/>يستخدم المحرك تقنية البحث الدلالي للعثور على أفضل النتائج المرتبطة باستعلامك.
             </p>
-            <div style="margin-top:var(--space-3); display:flex; gap:var(--space-4); font-size:var(--text-xs); color:var(--color-secondary-700); font-weight:bold;">
-              <a href="#" style="cursor:pointer;">📂 عرض النص الكامل للمادة</a>
-              <a href="app.html?ask=المادة 234 مدني يمني" style="cursor:pointer;">🤖 ناقش المادة مع المساعد الذكي</a>
-            </div>
           </div>
-          
-          <div class="card" style="background:white; padding:var(--space-5); margin-bottom:var(--space-3); border-right:4px solid var(--color-primary-300);">
-            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:var(--space-2);">
-              <span class="badge badge--primary">المبدأ القضائي — المحكمة العليا اليمنية</span>
-              <span style="font-size:var(--text-xs); color:var(--color-gray-400);">سنة الحكم: 2018م</span>
-            </div>
-            <h4 style="font-size:var(--text-base); font-weight:bold; color:var(--color-primary-800); margin-bottom:var(--space-2);">اشتراط توجيه الإعذار الرسمي قبل قبول دعوى الإخلاء</h4>
-            <p style="font-size:var(--text-sm); color:var(--color-gray-600); line-height:var(--leading-relaxed);">
-              "قضت الهيئة العامة للمحكمة العليا بأن إعذار المستأجر بالوفاء بالأجرة خلال 15 يوماً من تاريخ التبليغ يعتبر شرطاً شكلياً وإجرائياً جوهرياً لا تقبل دعوى الإخلاء والتخلية بدونه، ولا يجوز الاتفاق على مخالفته..."
-            </p>
-            <div style="margin-top:var(--space-3); display:flex; gap:var(--space-4); font-size:var(--text-xs); color:var(--color-secondary-700); font-weight:bold;">
-              <a href="#" style="cursor:pointer;">📂 عرض تفاصيل الحكم القضائي</a>
-              <a href="app.html?ask=شروط الاعذار للمستأجر" style="cursor:pointer;">🤖 استفسر عن هذا المبدأ</a>
-            </div>
-          </div>
-          
         </div>
         
       </div>
@@ -203,6 +180,9 @@
     const resultsList = document.getElementById('results-list');
     const resultsCount = document.getElementById('results-count');
     const filterDoc = document.getElementById('filter-doc');
+    const filterSort = document.getElementById('filter-sort');
+    const filterCountry = document.getElementById('filter-country');
+    const filterClear = document.getElementById('filter-clear');
 
     function escapeHtml(str) {
       if (!str) return '';
@@ -211,9 +191,22 @@
       return div.innerHTML;
     }
 
+    function sortResults(results, sortBy) {
+      if (sortBy === 'recent') {
+        // Stable sort: keep relevance order but push higher ids first (proxy for recent) — backend doesn't expose date here
+        return results.slice().reverse();
+      }
+      // relevance (default): sort by score descending
+      return results.slice().sort((a, b) => (b.score || 0) - (a.score || 0));
+    }
+
     async function performSearch() {
       const query = searchInput.value.trim();
-      if (!query) return;
+      if (!query) {
+        showToast('الرجاء إدخال نص للبحث', 'info');
+        searchInput.focus();
+        return;
+      }
 
       resultsCount.textContent = `جاري البحث عن: "${query}"...`;
       resultsList.innerHTML = `
@@ -236,26 +229,28 @@
 
       try {
         const data = await apiSearch(query, docType, 1, 15);
+        const sorted = sortResults(data.results, filterSort.value);
         resultsCount.textContent = `نتائج البحث عن: "${query}" (${data.total} نتيجة)`;
         
-        if (data.results.length === 0) {
+        if (sorted.length === 0) {
           resultsList.innerHTML = `
             <div class="card" style="background:white; padding:var(--space-5); margin-bottom:var(--space-3); text-align:center; color:var(--color-gray-500);">
               لا توجد نتائج تطابق بحثك. حاول تغيير كلمات البحث أو الفلاتر.
             </div>
           `;
         } else {
-          resultsList.innerHTML = data.results.map(r => {
+          resultsList.innerHTML = sorted.map(r => {
             const borderStyle = r.doc_type === 'law' ? 'border-right:4px solid var(--color-secondary);' : 'border-right:4px solid var(--color-primary-300);';
             const badgeClass = r.doc_type === 'law' ? 'badge--teal' : 'badge--primary';
             const typeText = r.doc_type === 'law' ? 'مادة قانونية' : r.doc_type === 'ruling' ? 'مبدأ قضائي' : 'مستند';
+            const scorePct = Math.max(0, Math.min(100, Math.round((r.score || 0) * 100)));
             return `
               <div class="card" style="background:white; padding:var(--space-5); margin-bottom:var(--space-3); ${borderStyle}">
                 <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:var(--space-2);">
                   <span class="badge ${badgeClass}">${typeText} — ${r.source || 'قانوني AI'}</span>
-                  <span style="font-size:var(--text-xs); color:var(--color-gray-400);">المطابقة: ${Math.round(r.score * 100)}%</span>
+                  <span style="font-size:var(--text-xs); color:var(--color-gray-400);">المطابقة: ${scorePct}%</span>
                 </div>
-                <h4 style="font-size:var(--text-base); font-weight:bold; color:var(--color-primary-800); margin-bottom:var(--space-2);">${r.title}</h4>
+                <h4 style="font-size:var(--text-base); font-weight:bold; color:var(--color-primary-800); margin-bottom:var(--space-2);">${escapeHtml(r.title)}</h4>
                 <p style="font-size:var(--text-sm); color:var(--color-gray-600); line-height:var(--leading-relaxed);">${escapeHtml(r.snippet)}</p>
                 <div style="display:flex; gap:8px; width:100%; margin-top:var(--space-4);">
                   ${r.doc_type === 'law' ? `<button class="btn btn--outline btn--sm" style="flex:1; padding: 6px 12px; font-size:12px; display:inline-flex; align-items:center; justify-content:center; gap:4px;" onclick="window.location.href='law-viewer.html?id=${r.id}'">📖 الاطلاع</button>` : ''}
@@ -268,7 +263,7 @@
       } catch (err) {
         showToast(err.message || 'فشل البحث', 'error');
         resultsCount.textContent = 'حدث خطأ أثناء البحث';
-        resultsList.innerHTML = `<div class="card" style="background:white; padding:var(--space-5); text-align:center; color:var(--color-error-700);">خطأ: ${err.message}</div>`;
+        resultsList.innerHTML = `<div class="card" style="background:white; padding:var(--space-5); text-align:center; color:var(--color-error-700);">خطأ: ${escapeHtml(err.message)}</div>`;
       } finally {
         setLoadingState(searchBtn, false, 'ابحث الآن');
       }
@@ -276,6 +271,34 @@
 
     searchBtn.addEventListener('click', performSearch);
     searchInput.addEventListener('keydown', (e) => { if (e.key === 'Enter') performSearch(); });
+
+    // Re-sort results when sort filter changes (if results already exist)
+    filterSort.addEventListener('change', () => {
+      const currentCards = resultsList.querySelectorAll('.card[data-score]');
+      if (currentCards.length > 0 && lastQuery) {
+        performSearch();
+      }
+    });
+    let lastQuery = '';
+
+    // Clear filters button
+    filterClear.addEventListener('click', () => {
+      filterDoc.value = 'civil';
+      filterCountry.value = 'ye';
+      filterSort.value = 'relevance';
+      searchInput.value = '';
+      resultsCount.textContent = 'ابدأ البحث في الأرشيف القانوني اليمني';
+      resultsList.innerHTML = `
+        <div class="card" style="background:white; padding:var(--space-8); margin-bottom:var(--space-3); text-align:center;">
+          <div style="font-size:48px; margin-bottom:var(--space-4);">🔍</div>
+          <h4 style="font-size:var(--text-lg); font-weight:bold; color:var(--color-primary-800); margin-bottom:var(--space-2);">محرك البحث السيمانتكي</h4>
+          <p style="font-size:var(--text-sm); color:var(--color-gray-500); line-height:var(--leading-relaxed); max-width:500px; margin:0 auto;">
+            اكتب كلمة أو عبارة في حقل البحث بالأعلى للبحث في القوانين، اللوائح، المواد القانونية، والأحكام القضائية اليمنية.
+          </p>
+        </div>
+      `;
+      showToast('تم مسح الفلاتر', 'info');
+    });
 
     // Handle URL search parameter on page load
     window.addEventListener('DOMContentLoaded', () => {

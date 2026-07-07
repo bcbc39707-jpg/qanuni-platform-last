@@ -1009,16 +1009,24 @@ ${response.document}
           };
 
           const wordBtn = document.querySelector('[title="تحميل Word"]');
-          wordBtn.onclick = () => {
+          wordBtn.onclick = async () => {
             const docBody = document.getElementById('generated-doc-body').innerText;
             const currentTitle = document.querySelector('.doc-preview__doc-title').innerText;
-            const blob = new Blob([docBody], {type: "application/msword;charset=utf-8"});
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = currentTitle + '.doc';
-            a.click();
-            showToast('تم تصدير وتحميل ملف Word بنجاح!', 'success');
+            setLoadingState(wordBtn, true, 'تحميل Word');
+            try {
+              const blob = await apiDraftToDocx(docBody, currentTitle, apiDocType);
+              const url = URL.createObjectURL(blob);
+              const a = document.createElement('a');
+              a.href = url;
+              a.download = currentTitle + '.docx';
+              a.click();
+              URL.revokeObjectURL(url);
+              showToast('تم تصدير وتحميل ملف Word بنجاح!', 'success');
+            } catch (err) {
+              showToast('فشل تصدير Word: ' + err.message, 'error');
+            } finally {
+              setLoadingState(wordBtn, false, 'تحميل Word');
+            }
           };
 
           const saveLibBtn = document.querySelector('.wizard-footer .btn--gold');

@@ -1,0 +1,46 @@
+# Version control
+.git
+.gitignore
+
+# Documentation
+*.md
+docs/
+
+# Environment / secrets
+.env
+.env.local
+.env.*.local
+backend/.env
+
+# Python — backend
+backend/venv
+backend/.venv
+**/__pycache__
+**/*.pyc
+**/*.pyo
+**/*.pyd
+**/.pytest_cache
+**/.mypy_cache
+**/.ruff_cache
+
+# Node — frontend
+frontend/node_modules
+frontend/dist
+frontend/.next
+src_next_backup/
+
+# Docker
+docker-compose.yml
+**/Dockerfile
+
+# Data & volumes (mounted at runtime, not needed in build context)
+database/
+ocr/
+**/*.log
+**/*.pid
+
+# OS / IDE
+**/.DS_Store
+**/Thumbs.db
+**/.vscode
+**/.idea

@@ -399,11 +399,14 @@
 
               <!-- Action Buttons -->
               <div class="report-actions">
-                <button class="btn btn--primary" style="width:100%;" onclick="alert('جاري إنشاء نسخة معدلة تلقائياً...')">
+                <button class="btn btn--primary" style="width:100%;" id="btn-create-modified">
                   ✨ إنشاء نسخة معدلة تلقائياً
                 </button>
-                <button class="btn btn--ghost" style="width:100%;" onclick="alert('جاري إرسال التقرير بالبريد...')">
-                  📧 إرسال التقرير بالبريد
+                <button class="btn btn--ghost" style="width:100%;" id="btn-download-pdf">
+                  📥 تحميل التقرير PDF
+                </button>
+                <button class="btn btn--ghost" style="width:100%;" id="btn-download-docx">
+                  📄 تحميل التقرير Word
                 </button>
               </div>
             </div>
@@ -553,6 +556,10 @@
             <span class="badge badge--gold">تم التحليل: ${new Date().toLocaleDateString('ar-YE')}</span>
           `;
 
+          // Store analysis for export actions
+          _lastAnalysisText = analysisResult.analysis || '';
+          _lastAnalysisTitle = file.name;
+
           // Inject analysis content
           document.getElementById('report-left-panel').innerHTML = `
             <h4 class="report-section-title">🔍 مراجعة بنود المستند والتحليل القانوني</h4>
@@ -561,8 +568,8 @@
             </div>
           `;
 
-          // Generate a score
-          const score = Math.floor(Math.random() * 25) + 70; // 70 to 95
+          // Generate a score derived from the analysis text
+          const score = extractScoreFromAnalysis(analysisResult.analysis);
           document.querySelector('.score-ring__fill').style.setProperty('--score', score);
           document.querySelector('.score-banner__value').innerHTML = `${score}<small>%</small>`;
           
@@ -649,6 +656,10 @@
             <span class="badge badge--gold">تم التحليل: ${new Date().toLocaleDateString('ar-YE')}</span>
           `;
 
+          // Store analysis for export actions
+          _lastAnalysisText = analysisResult.analysis || '';
+          _lastAnalysisTitle = 'نص مخصص';
+
           // Inject analysis content
           document.getElementById('report-left-panel').innerHTML = `
             <h4 class="report-section-title">🔍 مراجعة بنود المستند والتحليل القانوني</h4>
@@ -657,8 +668,8 @@
             </div>
           `;
 
-          // Generate score
-          const score = Math.floor(Math.random() * 25) + 70; // 70 to 95
+          // Generate score derived from the analysis text
+          const score = extractScoreFromAnalysis(analysisResult.analysis);
           document.querySelector('.score-ring__fill').style.setProperty('--score', score);
           document.querySelector('.score-banner__value').innerHTML = `${score}<small>%</small>`;
           
@@ -678,6 +689,33 @@
         showToast('فشل تحليل المستند: ' + err.message, 'error');
         resetAnalyzer();
       }
+    }
+
+    // ===== Extract a meaningful score from the AI analysis text =====
+    function extractScoreFromAnalysis(text) {
+      if (!text) return 75;
+      const lower = (text || '').toLowerCase();
+      // Look for explicit percentage in the text (e.g. "85%" or "85 %")
+      const pctMatch = text.match(/(\d{1,3})\s*%/);
+      if (pctMatch) {
+        const v = parseInt(pctMatch[1], 10);
+        if (v >= 0 && v <= 100) return v;
+      }
+      // Look for an explicit "score" label
+      const scoreLabelMatch = text.match(/(?:درجة|الدرجة|قوة|سلمة|مؤشر|نسبة)[^0-9]*(\d{1,3})/);
+      if (scoreLabelMatch) {
+        const v = parseInt(scoreLabelMatch[1], 10);
+        if (v >= 0 && v <= 100) return v;
+      }
+      // Otherwise derive from keywords
+      let base = 80;
+      const negatives = ['ثغرة', 'ثغرات', 'خطر', 'خطير', 'غير قانوني', 'مخالف', 'باطل', 'ناقص', 'ضعف', 'مشكلة', 'إشكال', 'تحذير', 'غير صحيح', 'مخالفة', 'بطلان'];
+      const positives = ['سليم', 'متوافق', 'صحيح', 'قوي', 'ملائم', 'مطابق', 'مستوفي', 'جيد', 'احترافي'];
+      let negCount = 0, posCount = 0;
+      negatives.forEach(w => { if (text.includes(w)) negCount++; });
+      positives.forEach(w => { if (text.includes(w)) posCount++; });
+      base = base - (negCount * 6) + (posCount * 3);
+      return Math.max(40, Math.min(98, base));
     }
 
     function resetAnalyzer() {
@@ -707,6 +745,82 @@
         ring.style.animation = 'scoreReveal 1.5s ease-out forwards';
       }
     }
+
+    // ===== Report Action Buttons (bound once, after load) =====
+    let _lastAnalysisText = '';
+    let _lastAnalysisTitle = '';
+
+    function bindReportActions() {
+      const btnModified = document.getElementById('btn-create-modified');
+      const btnPdf = document.getElementById('btn-download-pdf');
+      const btnDocx = document.getElementById('btn-download-docx');
+
+      if (btnModified) {
+        btnModified.addEventListener('click', async () => {
+          if (!_lastAnalysisText) { showToast('لا يوجد تحليل لإعادة الصياغة', 'error'); return; }
+          setLoadingState(btnModified, true, 'جارٍ الصياغة...');
+          try {
+            // Draft an improved/modified version using the AI drafting engine
+            const res = await apiDraft('memo', _lastAnalysisText, 'أعد صياغة هذه الوثيقة بصيغة قانونية محسّنة ومحترفة معالجة للملاحظات المذكورة في التحليل');
+            const blob = await apiDraftToDocx(res.document, (_lastAnalysisTitle || 'النسخة المعدلة') + ' - معدلة', 'memo');
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = (_lastAnalysisTitle || 'النسخة المعدلة') + ' - معدلة.docx';
+            a.click();
+            URL.revokeObjectURL(url);
+            showToast('تم إنشاء النسخة المعدلة وتحميلها بنجاح', 'success');
+          } catch (err) {
+            showToast('فشل إنشاء النسخة المعدلة: ' + err.message, 'error');
+          } finally {
+            setLoadingState(btnModified, false, '✨ إنشاء نسخة معدلة تلقائياً');
+          }
+        });
+      }
+
+      if (btnPdf) {
+        btnPdf.addEventListener('click', async () => {
+          if (!_lastAnalysisText) { showToast('لا يوجد تقرير للتحميل', 'error'); return; }
+          setLoadingState(btnPdf, true, 'جارٍ التحميل...');
+          try {
+            const blob = await apiDraftToPdf(_lastAnalysisText, 'تقرير تحليل: ' + (_lastAnalysisTitle || 'المستند'), 'memo');
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'تقرير تحليل: ' + (_lastAnalysisTitle || 'المستند') + '.pdf';
+            a.click();
+            URL.revokeObjectURL(url);
+            showToast('تم تحميل تقرير التحليل PDF بنجاح', 'success');
+          } catch (err) {
+            showToast('فشل تحميل التقرير: ' + err.message, 'error');
+          } finally {
+            setLoadingState(btnPdf, false, '📥 تحميل التقرير PDF');
+          }
+        });
+      }
+
+      if (btnDocx) {
+        btnDocx.addEventListener('click', async () => {
+          if (!_lastAnalysisText) { showToast('لا يوجد تقرير للتحميل', 'error'); return; }
+          setLoadingState(btnDocx, true, 'جارٍ التحميل...');
+          try {
+            const blob = await apiDraftToDocx(_lastAnalysisText, 'تقرير تحليل: ' + (_lastAnalysisTitle || 'المستند'), 'memo');
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'تقرير تحليل: ' + (_lastAnalysisTitle || 'المستند') + '.docx';
+            a.click();
+            URL.revokeObjectURL(url);
+            showToast('تم تحميل تقرير التحليل Word بنجاح', 'success');
+          } catch (err) {
+            showToast('فشل تحميل التقرير: ' + err.message, 'error');
+          } finally {
+            setLoadingState(btnDocx, false, '📄 تحميل التقرير Word');
+          }
+        });
+      }
+    }
+    bindReportActions();
   </script>
 </body>
 </html>

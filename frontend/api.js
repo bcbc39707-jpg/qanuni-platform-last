@@ -258,6 +258,29 @@ async function apiSearch(query, docType = null, page = 1, size = 10, category = 
   return apiFetch(url);
 }
 
+// ─── Laws Library ────────────────────────────────────────────────────────────
+
+async function apiListLaws(category = null, skip = 0, limit = 50) {
+  let url = `/laws/?skip=${skip}&limit=${limit}`;
+  if (category && category !== 'all') url += `&category=${encodeURIComponent(category)}`;
+  return apiFetch(url);
+}
+
+async function apiSearchLaws(q, category = null, year = null) {
+  let url = `/laws/search?q=${encodeURIComponent(q || '')}`;
+  if (category && category !== 'all') url += `&category=${encodeURIComponent(category)}`;
+  if (year) url += `&year=${year}`;
+  return apiFetch(url);
+}
+
+async function apiGetLaw(lawId) {
+  return apiFetch(`/laws/${lawId}`);
+}
+
+async function apiLegalTree() {
+  return apiFetch('/legal-tree');
+}
+
 
 // ─── AI Analysis (RAG) ─────────────────────────────────────────────────────
 
@@ -275,6 +298,10 @@ async function apiDraft(docType, context, instructions = '') {
 
 async function apiDraftToPdf(text, title, docType) {
   return apiFetch('/analysis/draft-to-pdf', { method: 'POST', body: { text, title, doc_type: docType } });
+}
+
+async function apiDraftToDocx(text, title, docType) {
+  return apiFetch('/analysis/draft-to-docx', { method: 'POST', body: { text, title, doc_type: docType } });
 }
 
 async function apiExtractText(file) {

@@ -1,0 +1,26 @@
+# Python virtual envs (very large, must not enter build context)
+venv/
+.venv/
+env/
+
+# Bytecode caches
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Test / type caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Local dev artifacts
+*.log
+*.pid
+.env
+.env.local
+
+# Alembic runtime artifacts (keep alembic/ source, skip caches)
+alembic/__pycache__/

@@ -563,7 +563,8 @@ async def check_if_image_pdf(pdf_path: str) -> bool:
 
 async def call_ocr_service(pdf_path: str, advanced: bool = False) -> str:
     try:
-        async with httpx.AsyncClient(timeout=300.0) as client:
+        import httpx as _httpx
+        async with _httpx.AsyncClient(timeout=300.0) as client:
             with open(pdf_path, "rb") as f:
                 files = {"file": ("document.pdf", f, "application/pdf")}
                 if advanced and settings.GOOGLE_VISION_API_KEY:

@@ -88,7 +88,7 @@
         </div>
         
         <div class="chat-header__actions">
-          <button class="btn btn--outline btn--sm" onclick="alert('جاري تحديث المكتبة التشريعية وتنزيل أحدث قرارات الجريدة الرسمية...')">🔄 تحديث المكتبة</button>
+          <button class="btn btn--outline btn--sm" id="refresh-library-btn">🔄 تحديث المكتبة</button>
         </div>
       </header>
       
@@ -299,9 +299,19 @@
 
         // Update total documents count badge
         try {
-          const lawsResult = await apiSearch('', 'law', 1, 1);
-          if (lawsResult && lawsResult.total !== undefined) {
-            document.querySelector('.library-total-num').textContent = `${lawsResult.total} وثيقة`;
+          const lawsResult = await apiListLaws(null, 0, 1);
+          const totalNum = lawsResult && lawsResult.length !== undefined ? lawsResult.length : null;
+          const badge = document.querySelector('.library-total-num');
+          if (totalNum !== null && totalNum > 0) {
+            badge.textContent = `${totalNum} قانون وتشريع`;
+          } else {
+            // Fallback: try search endpoint to count total documents
+            const sr = await apiSearch('', null, 1, 1);
+            if (sr && sr.total !== undefined) {
+              badge.textContent = `${sr.total} نصاً قانونياً`;
+            } else {
+              badge.textContent = '— نصاً قانونياً';
+            }
           }
         } catch (e) {
           console.error("Failed to fetch total documents count", e);
@@ -440,6 +450,26 @@
     // Initial load
     loadLegalTree();
     loadLibrary('all');
+
+    // Refresh library button — reloads tree and current category
+    const refreshBtn = document.getElementById('refresh-library-btn');
+    if (refreshBtn) {
+      refreshBtn.addEventListener('click', async () => {
+        refreshBtn.disabled = true;
+        const originalText = refreshBtn.textContent;
+        refreshBtn.textContent = '🔄 جارٍ التحديث...';
+        try {
+          await loadLegalTree();
+          await loadLibrary(currentCategory, selectedDivisionId);
+          showToast('تم تحديث المكتبة التشريعية بنجاح', 'success');
+        } catch (e) {
+          showToast('فشل تحديث المكتبة: ' + (e.message || e), 'error');
+        } finally {
+          refreshBtn.disabled = false;
+          refreshBtn.textContent = originalText;
+        }
+      });
+    }
   </script>
 </body>
 </html>

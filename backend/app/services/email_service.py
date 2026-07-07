@@ -1,4 +1,5 @@
 import logging
+import asyncio
 from sendgrid import SendGridAPIClient
 from sendgrid.helpers.mail import Mail
 from app.core.config import settings
@@ -15,7 +16,8 @@ class EmailService:
             return False
         message = Mail(from_email=settings.SENDGRID_FROM_EMAIL, to_emails=to_email, subject=subject, html_content=html_content)
         try:
-            response = self.client.send(message)
+            # SendGrid's send() is synchronous — run it in a thread to avoid blocking the event loop
+            response = await asyncio.to_thread(self.client.send, message)
             logger.info(f"Email sent to {to_email}: {response.status_code}")
             return True
         except Exception as e:

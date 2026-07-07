@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   backend:
     build: ./backend
@@ -94,6 +92,7 @@ services:
     restart: unless-stopped
 
   ocr:
+    profiles: ["ocr"]
     build: ./ocr
     container_name: qanuni-ocr
     ports:
